@@ -1,0 +1,956 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="最近在做一款全图片的壁纸的app应用，既然是全图片那么，必不可免的会出现oom异常，非常的头疼麻烦~~~,其他的瀑布流开源项目使用总是出现这样或那样的问题….说实话，下面这么长的代码我都不想看，又乱
+###借鉴  资源借鉴      //百度网盘里面有我借鉴的资源，可以下载来看一下
+###自定义ScrollView解决OOM
+    /**
+ * 自定义的ScrollView，在其中动态地对图片进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于瀑布流解决OOM问题">
+<meta property="og:url" content="http://yoursite.com/2015/08/10/关于瀑布流解决OOM问题/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近在做一款全图片的壁纸的app应用，既然是全图片那么，必不可免的会出现oom异常，非常的头疼麻烦~~~,其他的瀑布流开源项目使用总是出现这样或那样的问题….说实话，下面这么长的代码我都不想看，又乱
+###借鉴  资源借鉴      //百度网盘里面有我借鉴的资源，可以下载来看一下
+###自定义ScrollView解决OOM
+    /**
+ * 自定义的ScrollView，在其中动态地对图片进">
+<meta property="og:updated_time" content="2015-08-13T08:44:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于瀑布流解决OOM问题">
+<meta name="twitter:description" content="最近在做一款全图片的壁纸的app应用，既然是全图片那么，必不可免的会出现oom异常，非常的头疼麻烦~~~,其他的瀑布流开源项目使用总是出现这样或那样的问题….说实话，下面这么长的代码我都不想看，又乱
+###借鉴  资源借鉴      //百度网盘里面有我借鉴的资源，可以下载来看一下
+###自定义ScrollView解决OOM
+    /**
+ * 自定义的ScrollView，在其中动态地对图片进">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/08/10/关于瀑布流解决OOM问题/"/>
+
+  <title> 关于瀑布流解决OOM问题 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于瀑布流解决OOM问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-08-10T14:36:01+08:00" content="2015-08-10">
+              2015-08-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近在做一款全图片的壁纸的app应用，既然是全图片那么，必不可免的会出现oom异常，非常的头疼麻烦~~~,其他的瀑布流开源项目使用总是出现这样或那样的问题….说实话，下面这么长的代码我都不想看，又乱</p>
+<p>###借鉴<br>  <a href="http://pan.baidu.com/s/1i3rjMDJ" target="_blank" rel="external">资源借鉴</a>      //百度网盘里面有我借鉴的资源，可以下载来看一下</p>
+<p>###自定义ScrollView解决OOM</p>
+<pre><code>    /**
+ * 自定义的ScrollView，在其中动态地对图片进行添加。
+ *
+ * @author guolin
+ */
+public class MyScrollView2 extends ScrollView {
+
+    /**
+     * 每页要加载的图片数量
+     */
+    public static final int PAGE_SIZE = 20;
+
+    /**
+     * 记录当前已加载到第几页
+     */
+    private int page;
+
+    /**
+     * 每一列的宽度
+     */
+    private int columnWidth;
+
+    /**
+     * 当前第一列的高度
+     */
+    private int firstColumnHeight;
+
+    /**
+     * 当前第二列的高度
+     */
+    private int secondColumnHeight;
+
+
+    /**
+     * 是否已加载过一次layout，这里onLayout中的初始化只需加载一次
+     */
+    private boolean loadOnce;
+
+
+    /**
+     * 第一列的布局
+     */
+    private LinearLayout firstColumn;
+
+    /**
+     * 第二列的布局
+     */
+    private LinearLayout secondColumn;
+
+
+    /**
+     * MyScrollView下的直接子布局。
+     */
+    private static View scrollLayout;
+
+    /**
+     * MyScrollView布局的高度。
+     */
+    private static int scrollViewHeight;
+
+    /**
+     * 记录上垂直方距向的滚动离。
+     */
+    private static int lastScrollY = -1;
+
+    /**
+     * 记录所有界面上的图片，用以可以随时控制对图片的释放。
+     */
+    private List&lt;ImageView&gt; imageViewList = new ArrayList&lt;ImageView&gt;();
+
+    /**
+     * 在Handler中进行图片可见性检查的判断，以及加载更多图片的操作。
+     */
+    /*private Handler handler = new Handler() {
+
+        public void handleMessage(android.os.Message msg) {
+            MyScrollView2 myScrollView = (MyScrollView2) msg.obj;
+            int scrollY = myScrollView.getScrollY();
+            // 如果当前的滚动位置和上次相同，表示已停止滚动
+            if (scrollY == lastScrollY) {
+                // 当滚动的最底部，并且当前没有正在下载的任务时，开始加载下一页的图片
+                if (scrollViewHeight + scrollY &gt;= scrollLayout.getHeight()) {
+                    myScrollView.loadMoreImages();
+                }
+                myScrollView.checkVisibility();
+            } else {
+                lastScrollY = scrollY;
+                Message message = new Message();
+                message.obj = myScrollView;
+                // 5毫秒后再次对滚动位置进行判断
+                handler.sendMessageDelayed(message, 5);
+            }
+        };
+
+    };*/
+
+    /**
+     * MyScrollView的构造函数。
+     *
+     * @param context
+     * @param attrs
+     */
+    public MyScrollView2(Context context, AttributeSet attrs) {
+        super(context, attrs);
+       handler.sendEmptyMessageDelayed(11,500);
+//        setOnTouchListener(this);
+    }
+
+    Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            checkVisibility();
+            handler.sendEmptyMessageDelayed(11,500);
+        }
+    };
+
+    @Override
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+        super.onScrollChanged(l, t, oldl, oldt);
+        doOnBorderListener();
+    }
+
+    public boolean isZhixing;  //到底部是会一直夹在数据 加个标记 就只会加载一次
+    private void doOnBorderListener() {
+        if (scrollViewHeight + getScrollY() &gt;= scrollLayout.getHeight()) {
+            if(!isZhixing){
+                LLogUtils.d(&quot;============loadCount===&quot; + loadCount);
+                isZhixing=true;
+                initData(loadCount);
+            }
+        } else if (getScrollY() == 0) {
+
+        }
+    }
+
+    private String mUrl;
+
+    public void setUrl(String url) {
+        mUrl = url;
+        initData(loadCount);
+    }
+
+    List&lt;GroupPicture&gt; imageDatas = new ArrayList&lt;&gt;();
+
+    private void initData(int loadCount) {
+        int firstIndex = (loadCount - 1) * 20;
+        int endIndex = 20;
+        String selectUrl = mUrl + &quot;&amp;limit_a=&quot; + firstIndex + &quot;&amp;limit_b=&quot; + endIndex;
+        LApplication.getHttpUtils().send(HttpRequest.HttpMethod.GET, selectUrl, new RequestCallBack&lt;String&gt;() {
+
+            @Override
+            public void onSuccess(ResponseInfo&lt;String&gt; response) {
+                String result = response.result;
+                LogUtils.d(&quot;result&quot; + result);
+                Response&lt;GroupPicture&gt; data = GsonUtil.get(result, new TypeToken&lt;Response&lt;GroupPicture&gt;&gt;() {
+                });
+                if (data.getStatus() == Response.FAILED) {
+//                    ToastUtil.show(data.getMsg());
+                } else {
+                    List&lt;GroupPicture&gt; dataList = data.getList();
+
+                    if (dataList == null || dataList.size() == 0) {
+                        ToastUtil.show(&quot;暂未更多资源，敬请期待...&quot;);
+                        return;
+                    }
+                        imageDatas.addAll(dataList);
+
+                    LLogUtils.d(&quot;imageDatas===============&quot;+imageDatas.size());
+                        loadMoreImages();
+//                    handler.sendMessageDelayed(handler.obtainMessage(0, MyScrollView2.this), 5);
+
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(HttpException arg0, String arg1) {
+            }
+
+        });
+    }
+
+    /**
+     * 进行一些关键性的初始化操作，获取MyScrollView的高度，以及得到第一列的宽度值。并在这里开始加载第一页的图片。
+     */
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
+        if (changed &amp;&amp; !loadOnce) {
+            scrollViewHeight = getHeight();
+            scrollLayout = getChildAt(0);
+            firstColumn = (LinearLayout) findViewById(R.id.first_column);
+            secondColumn = (LinearLayout) findViewById(R.id.second_column);
+            columnWidth = firstColumn.getWidth();
+            loadOnce = true;
+        }
+    }
+
+    /**
+     * 监听用户的触屏事件，如果用户手指离开屏幕则开始进行滚动检测。
+     */
+   /* @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_UP) {
+            Message message = new Message();
+            message.obj = this;
+            handler.sendMessageDelayed(message, 5);
+        }
+        return false;
+    }*/
+
+    int loadCount = 1;
+
+
+    /**
+     * 开始加载下一页的图片，每张图片都会开启一个异步线程去下载。
+     */
+    public void loadMoreImages() {
+        int startIndex = page * PAGE_SIZE;
+        int endIndex = page * PAGE_SIZE + PAGE_SIZE;
+        if (startIndex &lt; imageDatas.size()) {
+            if (loadCount &gt;= 2) {
+                Toast.makeText(getContext(), &quot;正在加载...&quot;, Toast.LENGTH_SHORT).show();
+            }
+            loadCount++;
+            if (endIndex &gt; imageDatas.size()) {
+                endIndex = imageDatas.size();
+            }
+            for (int i = startIndex; i &lt; endIndex; i++) {
+                ImageView imageView = new ImageView(getContext());
+
+                final GroupPicture bean = imageDatas.get(i);
+                LApplication.getBitmapUtils().configDefaultShowOriginal(true);
+                LApplication.getBitmapUtils().display(imageView, bean.getPictureUrl(), new BitmapLoadCallBack&lt;ImageView&gt;() {
+                    @Override
+                    public void onLoadCompleted(ImageView imageView, String s, Bitmap bitmap, BitmapDisplayConfig bitmapDisplayConfig, BitmapLoadFrom bitmapLoadFrom) {
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                                ScreenUtil.getWidth() / 2, ScreenUtil.getWidth() / 2);
+                        params.setMargins(ScreenUtil.dp2px(1), 0, 0, ScreenUtil.dp2px(1));
+                        imageView.setTag(R.string.id, true);
+                        imageView.setLayoutParams(params);
+                        imageView.setImageBitmap(bitmap);
+                        imageView.setScaleType(ScaleType.CENTER_CROP);
+
+                        imageView.setTag(R.string.image_url, bean);
+                        imageViewList.add(imageView);
+                        imageView.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(getContext(), ImageShowActivity.class);
+                                String groupId = bean.getGroupId();
+                                intent.putExtra(&quot;groupId&quot;, groupId);
+                                getContext().startActivity(intent);
+                            }
+                        });
+
+                        findColumnToAdd(imageView, ScreenUtil.getWidth() / 2).addView(imageView);
+
+                        isZhixing=false;
+                    }
+
+                    @Override
+                    public void onLoadFailed(ImageView imageView, String s, Drawable drawable) {
+
+                    }
+                });
+            }
+
+            page++;
+        }
+        checkVisibility();
+    }
+
+    /**
+     * 遍历imageViewList中的每张图片，对图片的可见性进行检查，如果图片已经离开屏幕可见范围，则将图片替换成一张空图。
+     */
+    public void checkVisibility() {
+        for (int i = 0; i &lt; imageViewList.size(); i++) {
+            ImageView imageView = imageViewList.get(i);
+            boolean isSet = (boolean) imageView.getTag(R.string.id);
+            int borderTop = (Integer) imageView.getTag(R.string.border_top);
+            int borderBottom = (Integer) imageView
+                    .getTag(R.string.border_bottom);
+            //这个地方 getScrollY()-ScreenUtil.getWidth() 和getScrollY() + scrollViewHeight+ScreenUtil.getWidth() 多加个ScreenUtil.getWidth() 是为了上下提前显示一张图片
+            if (borderBottom &gt; getScrollY()-ScreenUtil.getWidth()
+                &amp;&amp; borderTop &lt; getScrollY() + scrollViewHeight+ScreenUtil.getWidth()) {//show
+                final GroupPicture bean = (GroupPicture) imageView.getTag(R.string.image_url);
+                imageView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getContext(), ImageShowActivity.class);
+                        String groupId = bean.getGroupId();
+                        intent.putExtra(&quot;groupId&quot;, groupId);
+                        getContext().startActivity(intent);
+                    }
+                });
+                 if(!isSet) {
+                     LApplication.getBitmapUtils().display(imageView, bean.getPictureUrl());
+                     imageView.setTag(R.string.id, true);
+                 }
+
+            } else {
+                imageView.setImageResource(R.drawable.empty_photo);
+                imageView.setOnClickListener(null);
+                imageView.setTag(R.string.id, false);
+            }
+        }
+    }
+
+    public LinearLayout findColumnToAdd(ImageView imageView, int imageHeight) {
+        if (firstColumnHeight &lt;= secondColumnHeight) {
+            imageView.setTag(R.string.border_top, firstColumnHeight);
+            firstColumnHeight += imageHeight;
+            imageView.setTag(R.string.border_bottom, firstColumnHeight);
+            return firstColumn;
+        } else {
+            imageView.setTag(R.string.border_top, secondColumnHeight);
+            secondColumnHeight += imageHeight;
+            imageView
+                    .setTag(R.string.border_bottom, secondColumnHeight);
+            return secondColumn;
+        }
+    }
+
+
+}
+</code></pre><p>此自定义ScrollView没有使用常规的实现解耦分离、这点没有做好~~</p>
+<p>使用方法：或者将这个布局文件加到其他布局文件中 或者作为根布局文件<br>布局文件</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+
+    &lt;com.qiao.custom.MyScrollView2
+        android:id=&quot;@+id/select_scroll&quot;
+        xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;&gt;
+
+        &lt;LinearLayout
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:orientation=&quot;vertical&quot;&gt;
+
+            //在顶部加了个自定义的viewPager 轮播图     看需求 不需要删除 不影响
+             &lt;com.klo.zz.bizhi.widget.CustomeViewPager
+                android:id=&quot;@+id/lunbo_pager&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;/&gt;
+
+            &lt;LinearLayout
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:layout_marginTop=&quot;1dp&quot;
+                android:orientation=&quot;horizontal&quot;&gt;
+
+                &lt;LinearLayout
+                    android:id=&quot;@+id/first_column&quot;
+                    android:layout_width=&quot;0dp&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_weight=&quot;1&quot;
+                    android:orientation=&quot;vertical&quot;&gt;&lt;/LinearLayout&gt;
+
+                &lt;LinearLayout
+                    android:id=&quot;@+id/second_column&quot;
+                    android:layout_width=&quot;0dp&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_weight=&quot;1&quot;
+                    android:orientation=&quot;vertical&quot;&gt;&lt;/LinearLayout&gt;
+            &lt;/LinearLayout&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/com.qiao.custom.MyScroll2&gt;
+</code></pre><p>在String.xml中添加</p>
+<pre><code>&lt;string name=&quot;border_top&quot;&gt;Border Top&lt;/string&gt;
+&lt;string name=&quot;border_bottom&quot;&gt;Border Bottom&lt;/string&gt;
+&lt;string name=&quot;image_url&quot;&gt;Image Url&lt;/string&gt;
+&lt;string name=&quot;bitmap&quot;&gt;bitmap&lt;/string&gt;
+&lt;string name=&quot;id&quot;&gt;99&lt;/string&gt;
+</code></pre><p>在类里面 findViewById()找到 myScrollView 然后 setUrl();</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/" rel="next" title="关于Android Studio的Gradle文件配置的一些知识">
+                <i class="fa fa-chevron-left"></i> 关于Android Studio的Gradle文件配置的一些知识
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/10/ScrollView滑动到顶部或底部的响应/" rel="prev" title="ScrollView滑动到顶部或底部的相应">
+                ScrollView滑动到顶部或底部的相应 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

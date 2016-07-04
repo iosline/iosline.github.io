@@ -1,0 +1,1095 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#开发Android壁纸:设置壁纸、设置锁屏直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
+##源码下载：     这个我还没添加到github上，添加之后更改本位置的内容
+##设置壁纸      public class Wallpaper {
+    private Activity mContext;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发Android壁纸:设置壁纸、设置锁屏心得">
+<meta property="og:url" content="http://yoursite.com/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#开发Android壁纸:设置壁纸、设置锁屏直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
+##源码下载：     这个我还没添加到github上，添加之后更改本位置的内容
+##设置壁纸      public class Wallpaper {
+    private Activity mContext;">
+<meta property="og:updated_time" content="2015-08-17T10:07:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开发Android壁纸:设置壁纸、设置锁屏心得">
+<meta name="twitter:description" content="#开发Android壁纸:设置壁纸、设置锁屏直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
+##源码下载：     这个我还没添加到github上，添加之后更改本位置的内容
+##设置壁纸      public class Wallpaper {
+    private Activity mContext;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/"/>
+
+  <title> 开发Android壁纸:设置壁纸、设置锁屏心得 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                开发Android壁纸:设置壁纸、设置锁屏心得
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-23T18:32:44+08:00" content="2015-07-23">
+              2015-07-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#开发Android壁纸:设置壁纸、设置锁屏<br>直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。</p>
+<p>##源码下载：<br>     这个我还没添加到github上，添加之后更改本位置的内容</p>
+<p>##设置壁纸<br>      public class Wallpaper {</p>
+<pre><code>    private Activity mContext;
+
+    public Wallpaper(ImageShowActivity imageShowActivity) {
+        mContext = imageShowActivity;
+    }
+
+    public void setWallPaper(String url) {
+        int index = url.lastIndexOf(&quot;/&quot;);
+        String pirtureName = url.substring(index + 1);
+        String path = AppConfig.DOWN_PATH;
+        File file = new File(path);
+        if (!file.exists() &amp;&amp; !file.isDirectory()) {
+            file.mkdir();
+        }
+        final String target = path + &quot;/&quot; + pirtureName;
+        File targetFile = new File(target);
+        if (targetFile.exists()) {
+            set(target);
+        } else {
+            LApplication.getHttpUtils().download(url, target, new RequestCallBack&lt;File&gt;() {
+
+                @Override
+                public void onLoading(long total, long current, boolean isUploading) {
+                    super.onLoading(total, current, isUploading);
+
+                }
+
+                @Override
+                public void onSuccess(ResponseInfo&lt;File&gt; arg0) {
+                    set(target);   //设置壁纸
+                }
+
+                @Override
+                public void onFailure(HttpException arg0, String arg1) {
+                    ToastUtil.show(&quot;网络异常&quot;);
+
+                }
+            });
+        }
+    }
+    /**
+     * 设置壁纸
+     * @param target 图片路径
+     */
+    public void set(String target) {
+        Bitmap bitmap = BitmapFactory.decodeFile(target);
+        try {
+            WallpaperManager wallpaperManager = android.app.WallpaperManager.getInstance(mContext);
+            wallpaperManager.setBitmap(bitmap);
+            ToastUtil.show(&quot;设置成功&quot;);
+        } catch (IOException e) {
+            String msg = &quot;设置桌面背景发生异常:&quot; + e.getLocalizedMessage();
+        }
+    }
+}
+</code></pre><p>别忘记在ApplicationManifest.xml 中加上权限的设置。</p>
+<pre><code>&lt;uses-permission android:name = &quot;android.permission.SET_WALLPAPER&quot;/&gt;
+</code></pre><p>壁纸设置方法有三种：  <b>（尼玛，这三种设置壁纸的方法，都不管我们的死活，直接设置随着屏幕滚动，图片都模糊了）</b></p>
+<p>第一 通过WallpaperManager方法中的 setBitmap（）</p>
+<pre><code>WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
+ Resources res = getResources();
+ Bitmap bitmap=BitmapFactory.decodeResource(res,R.drawable.h); 
+  try{
+    wallpaperManager.setBitmap(bitmap);
+   }catch (IOException e){
+   e.printStackTrace();
+   }
+</code></pre><p>第二 使用WallpaperManager的setResource(int ResourceID)方法</p>
+<pre><code>WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
+    try {
+        wallpaperManager.setResource(ResourceID);
+        Toast.makeText(this, &quot;设置成功&quot;, Toast.LENGTH_SHORT).show();
+    } catch (IOException e) {
+        e.printStackTrace();
+}
+</code></pre><p>第三 通过ContextWrapper 类中提供的setWallpaper（）方法</p>
+<pre><code>Resources localResources = getBaseContext().getResources();
+InputStream localInputStream2 = localResources.openRawResource(ResourceID);
+           try {
+               setWallpaper(localInputStream2);
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+</code></pre><p>####注意：设置单屏壁纸，不随着屏幕滑动而滑动<br>     public void set(String target) {<br>            Bitmap bitmap = BitmapFactory.decodeFile(target);<br>            try {<br>                WallpaperManager wallpaperManager = android.app.WallpaperManager.getInstance(mContext);<br>                int desiredMinimumWidth = mContext.getWindowManager().getDefaultDisplay().getWidth();  //获取屏幕的宽<br>                int desiredMinimumHeight = mContext.getWindowManager().getDefaultDisplay().getHeight(); //获取屏幕的高<br>                 //bitmap这个参数再加工一次，缩放到desireMinimumWidth,desireMinmunHeight宽度和高度后再设置<br>                Bitmap sbitmap = sBitmap(bitmap,desiredMinimumWidth,desiredMinimumHeight);<br>                //很重要，有的手机少了这句话不行……..<br>                wallpaperManager.suggestDesiredDimensions(screenWidth, screenHeight);//设置期望壁纸的尺寸<br>                wallpaperManager.setBitmap(sbitmap);<br>                ToastUtil.show(“设置成功”);<br>            } catch (IOException e) {<br>                String msg = “设置桌面背景发生异常:” + e.getLocalizedMessage();<br>                ToastUtil.show(msg);<br>            }<br>        }<br>        public  Bitmap sBitmap(Bitmap b, int w, int h) {<br>            int width = b.getWidth();<br>            int height = b.getHeight();<br>            float scaleWidth = ((float) w) / width;<br>            float scaleHeight = ((float) h) / height;<br>            Matrix matrix = new Matrix();<br>            matrix.postScale(scaleWidth, scaleHeight);//缩放<br>            return Bitmap.createBitmap(b, 0, 0, width, height, matrix, true);<br>        }</p>
+<p>##设置锁屏(此处的设置锁屏无法禁用home键，而且不好看，马上推出好看的….)</p>
+<h1><a href="https://github.com/iosline/lockScreen" target="_blank" rel="external">好看的锁屏：源码下载</a></h1>
+
+<p><b>设置锁屏壁纸的原理：</b></p>
+<p>  1.监测开机广播，开启锁屏服务，开启锁屏的Activity</p>
+<p>  2.设置锁屏壁纸其实就是，监测手机解锁屏幕，然后start一个Activity,该Activity设置壁纸，设置滑动按钮，滑倒指定位置，将当前Activity finish掉即可。</p>
+<p>  3.需要注意 home键    Home键在3.1之后就不能屏蔽掉了 所以我们采用广播的方式：在当前Activity注册监听home键的广播,然后重新启动该Activity</p>
+<p>####代码如下：</p>
+<p>设置锁屏：</p>
+<pre><code>public class LockManager {
+
+    private Activity mContext;
+
+    public LockManager(ImageShowActivity imageShowActivity) {
+        mContext = imageShowActivity;
+    }
+
+    public void setLock(String url) {
+        int index = url.lastIndexOf(&quot;/&quot;);
+        String pirtureName = url.substring(index + 1);
+        String path = AppConfig.DOWN_PATH;
+        File file = new File(path);
+        if (!file.exists() &amp;&amp; !file.isDirectory()) {
+            file.mkdir();
+        }
+        final String target = path + &quot;/&quot; + pirtureName;
+        File targetFile = new File(target);
+        if (targetFile.exists()) {
+            set(target);
+        } else {
+            LApplication.getHttpUtils().download(url, target, new RequestCallBack&lt;File&gt;() {
+
+                @Override
+                public void onLoading(long total, long current, boolean isUploading) {
+                    super.onLoading(total, current, isUploading);
+
+                }
+
+                @Override
+                public void onSuccess(ResponseInfo&lt;File&gt; arg0) {
+                    set(target);
+                }
+
+                @Override
+                public void onFailure(HttpException arg0, String arg1) {
+                    ToastUtil.show(&quot;网络异常&quot;);
+
+                }
+            });
+        }
+    }
+
+    private void set(String target) {
+        Intent i = new Intent(mContext, LockScreenActivity.class);
+        i.putExtra(&quot;targetPath&quot;, target);     //将图片路径传过去，设置新的壁纸
+        CacheUtil.save(&quot;targetLock&quot;,target);  //将图片路径存起来，这样做是为了 开机自动从存储系统里获取图片路径
+        mContext.startActivity(i);
+    }
+}
+</code></pre><p>在AndroidManifest.xml清单文件中配置</p>
+<pre><code>&lt;!-- ############ 锁屏界面、服务、监听器############ --&gt;
+  &lt;activity android:name=&quot;.lock.LockScreenActivity&quot; /&gt;
+
+  &lt;service
+      android:name=&quot;.lock.LockScreenService&quot;
+      android:process=&quot;system&quot; /&gt;
+
+  &lt;receiver
+      android:name=&quot;.lock.LockScreenReceiver&quot;
+      android:process=&quot;:remote&quot;&gt;
+      &lt;intent-filter android:priority=&quot;1000&quot;&gt;
+          &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;
+          &lt;action android:name=&quot;android.intent.action.USER_PRESENT&quot; /&gt;
+
+          &lt;category android:name=&quot;android.intent.category.HOME&quot; /&gt;
+      &lt;/intent-filter&gt;
+  &lt;/receiver&gt;
+</code></pre><p>监测开机的广播 广播接收者   (注意：开机启动，启动锁屏的service,然后service里面启动LockScreenActivity)</p>
+<pre><code> /**
+ * 开机广播，启动activity
+ * @author jyk
+ *
+ */
+public class LockScreenReceiver extends BroadcastReceiver {
+    private final static String TAG = &quot;LockScreenReceiver&quot;;
+    //private KeyguardManager keyguardManager = null;
+    //private KeyguardManager.KeyguardLock keyguardLock = null;
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if(intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)){
+            Intent mIntent = new Intent(context, LockScreenService.class);
+            mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            //keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+            //keyguardLock = keyguardManager.newKeyguardLock(&quot;&quot;);
+            //keyguardLock.disableKeyguard(); 
+
+            context.startActivity(mIntent);
+        }
+    }
+}
+</code></pre><p>锁屏的服务 同时注册屏幕锁住与解锁的广播</p>
+<pre><code>public class LockScreenService extends Service {
+    private final static String TAG = &quot;LockScreenService&quot;;
+    private Intent lockIntent;
+    private KeyguardManager keyguardManager = null;
+    private KeyguardManager.KeyguardLock keyguardLock = null;
+
+    @Override
+    public IBinder onBind(Intent arg0) {
+        return null;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        lockIntent = new Intent(LockScreenService.this, LockScreenActivity.class);
+        lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        //注册广播
+        IntentFilter mScreenOffFilter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
+        LockScreenService.this.registerReceiver(mScreenOffReceiver, mScreenOffFilter);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        keyguardLock.reenableKeyguard();
+        LockScreenService.this.unregisterReceiver(mScreenOffReceiver);
+        //重新启动activity
+        startService(new Intent(LockScreenService.this, LockScreenService.class));
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return Service.START_STICKY;
+    }
+
+    /**
+     * 屏幕变亮的广播，这里要隐藏系统的锁屏界面
+     */
+    private BroadcastReceiver mScreenOffReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.i(TAG, intent.getAction());
+            if(intent.getAction().equals(Intent.ACTION_SCREEN_OFF)
+                    || intent.getAction().equals(Intent.ACTION_SCREEN_ON)){
+
+                keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+                keyguardLock = keyguardManager.newKeyguardLock(&quot;&quot;);
+                keyguardLock.disableKeyguard(); //这里就是取消系统默认的锁屏
+
+                startActivity(lockIntent); //注意这里跳转的意图
+            }
+        }
+    };
+}
+</code></pre><p>###注意：取消系统默认的锁屏代码出现一次就够了  出现两次就会失效……</p>
+<p>锁屏的LockScreenActivity</p>
+<pre><code>    public class LockScreenActivity extends Activity implements Runnable {
+    private final String TAG = &quot;LockScreenActivity&quot;;
+    private SliderRelativeLayout sliderRelativeLayout;
+    public static int MSG_LOCK_SUCESS = 1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); //不要title
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); //全屏显示
+        setContentView(R.layout.activity_lock_screen);
+        LApplication.init(this);
+
+        //注册广播
+        registerReceiver(mHomeKeyEventReceiver, new IntentFilter(
+                Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
+
+        String targetPath = getIntent().getStringExtra(&quot;targetPath&quot;);
+        if(targetPath == null){
+            targetPath= CacheUtil.getString(&quot;targetLock&quot;);
+        }
+        Drawable bg = Drawable.createFromPath(targetPath);
+        RelativeLayout lockBg = (RelativeLayout) findViewById(R.id.lock_bg);
+        lockBg.setBackgroundDrawable(bg);
+
+        StringData();
+        sliderRelativeLayout = (SliderRelativeLayout) findViewById(R.id.sliderLayout);
+        sliderRelativeLayout.setMainHandler(handler);
+        sliderRelativeLayout.getBackground().setAlpha(180); //设置背景的透明度
+
+        startService(new Intent(LockScreenActivity.this, LockScreenService.class)); //这里要显示的调用服务
+    }
+
+    public void StringData() {
+        final Calendar c = Calendar.getInstance();
+        c.setTimeZone(TimeZone.getTimeZone(&quot;GMT+8:00&quot;));
+        String mYear = String.valueOf(c.get(Calendar.YEAR)); // 获取当前年份
+        String mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);// 获取当前月份
+        String mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));// 获取当前月份的日期号码
+        String mWay = String.valueOf(c.get(Calendar.DAY_OF_WEEK));
+        if (&quot;1&quot;.equals(mWay)) {
+            mWay = &quot;日&quot;;
+        } else if (&quot;2&quot;.equals(mWay)) {
+            mWay = &quot;一&quot;;
+        } else if (&quot;3&quot;.equals(mWay)) {
+            mWay = &quot;二&quot;;
+        } else if (&quot;4&quot;.equals(mWay)) {
+            mWay = &quot;三&quot;;
+        } else if (&quot;5&quot;.equals(mWay)) {
+            mWay = &quot;四&quot;;
+        } else if (&quot;6&quot;.equals(mWay)) {
+            mWay = &quot;五&quot;;
+        } else if (&quot;7&quot;.equals(mWay)) {
+            mWay = &quot;六&quot;;
+        }
+
+        ((TextView) findViewById(R.id.time_day)).setText(mMonth + &quot;月&quot; + mDay + &quot;日&quot;);
+        ((TextView) findViewById(R.id.time_week)).setText(&quot;星期&quot; + mWay);
+
+        new Thread(this).start();
+    }
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if (MSG_LOCK_SUCESS == msg.what) {
+                //Toast.makeText(getApplicationContext(), R.string.lockSuccess, 1).show();
+//                virbate();
+                finish();
+            }
+            if (msg.what == 100) {
+                ((TextView) findViewById(R.id.time_hour)).setText((String) msg.obj);
+            }
+            if(msg.what == 99){
+                Intent intent=new Intent(LockScreenActivity.this,LockScreenActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
+    };
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                SimpleDateFormat sdf = new SimpleDateFormat(&quot;HH:mm&quot;);
+                String str = sdf.format(new Date());
+                handler.sendMessage(handler.obtainMessage(100, str));
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 震动
+     */
+    /*private void virbate(){
+        Vibrator vibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(200);
+    }*/
+
+    /**
+     * 屏蔽掉Home键   自从3.1之后 就不能屏蔽了
+     */
+    /*@Override
+    public void onAttachedToWindow() {
+        this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
+        super.onAttachedToWindow();
+    }*/
+
+    /**
+     * 屏蔽掉返回键
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            return true;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+    }
+
+    /**
+     * 监听是否点击了home键将客户端推到后台
+     */
+    private BroadcastReceiver mHomeKeyEventReceiver = new BroadcastReceiver() {
+        String SYSTEM_REASON = &quot;reason&quot;;
+        String SYSTEM_HOME_KEY = &quot;homekey&quot;;
+        String SYSTEM_HOME_KEY_LONG = &quot;recentapps&quot;;
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)) {
+                String reason = intent.getStringExtra(SYSTEM_REASON);
+                if (TextUtils.equals(reason, SYSTEM_HOME_KEY)) {
+                    //表示按了home键,程序到了后台
+                    Toast.makeText(getApplicationContext(), &quot;home&quot;,Toast.LENGTH_SHORT).show();
+                    handler.sendEmptyMessageDelayed(99,3);
+                }else if(TextUtils.equals(reason, SYSTEM_HOME_KEY_LONG)){
+                    //表示长按home键,显示最近使用的程序列表
+                }
+            }
+        }
+    };
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mHomeKeyEventReceiver);
+    }
+}
+</code></pre><p>LockScreenActivity 锁屏Activity的布局文件</p>
+<pre><code>&lt;RelativeLayout xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/lock_bg&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.LockScreenActivity&quot; &gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginTop=&quot;100dp&quot;
+        android:orientation=&quot;vertical&quot;
+        android:gravity=&quot;center_horizontal&quot;
+        android:background=&quot;@drawable/shape_locktime_bg&quot;
+        android:padding=&quot;20dp&quot; &gt;
+
+        &lt;TextView
+            android:id=&quot;@+id/time_hour&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;11:30&quot;
+            android:textColor=&quot;@android:color/white&quot;
+            android:textSize=&quot;50sp&quot; /&gt;
+
+        &lt;LinearLayout
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:orientation=&quot;horizontal&quot; &gt;
+
+            &lt;TextView
+                android:id=&quot;@+id/time_day&quot;
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;07月07日&quot;
+                android:textColor=&quot;@android:color/white&quot;
+                android:textSize=&quot;30sp&quot; /&gt;
+
+            &lt;TextView
+                android:id=&quot;@+id/time_week&quot;
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;星期日&quot;
+                android:textColor=&quot;@android:color/white&quot;
+                android:textSize=&quot;30sp&quot; /&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;com.klo.zz.bizhi.lock.SliderRelativeLayout
+        android:id=&quot;@+id/sliderLayout&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;50dp&quot;
+        android:layout_alignParentBottom=&quot;true&quot;
+        android:layout_marginBottom=&quot;100dp&quot;
+        android:background=&quot;@drawable/shape_locktime_bg&quot;
+         &gt;
+
+        &lt;RelativeLayout
+            android:id=&quot;@+id/relativeLayout1&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_alignParentLeft=&quot;true&quot;
+            android:layout_centerHorizontal=&quot;true&quot;
+            android:layout_centerVertical=&quot;true&quot; &gt;
+
+            &lt;ImageView
+                android:id=&quot;@+id/leftRing&quot;
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:src=&quot;@mipmap/arrow_right&quot; /&gt;
+
+            &lt;TextView
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:layout_centerHorizontal=&quot;true&quot;
+                android:layout_centerVertical=&quot;true&quot;
+                android:textColor=&quot;#FF0000&quot; /&gt;
+        &lt;/RelativeLayout&gt;
+
+        &lt;RelativeLayout
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_alignParentRight=&quot;true&quot;
+            android:layout_centerHorizontal=&quot;true&quot;
+            android:layout_centerVertical=&quot;true&quot; &gt;
+
+            &lt;ImageView
+                android:id=&quot;@+id/rightRing&quot;
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:src=&quot;@mipmap/arrow_right&quot; /&gt;
+
+            &lt;TextView
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:layout_centerHorizontal=&quot;true&quot;
+                android:layout_centerVertical=&quot;true&quot;
+                android:textColor=&quot;#FF0000&quot; /&gt;
+        &lt;/RelativeLayout&gt;
+
+        &lt;RelativeLayout
+            android:layout_width=&quot;222dp&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginLeft=&quot;50dp&quot; &gt;
+
+            &lt;ImageView
+                android:id=&quot;@+id/loveView&quot;
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;match_parent&quot;
+                android:layout_alignParentLeft=&quot;true&quot;
+                android:layout_alignParentTop=&quot;true&quot;
+                android:src=&quot;@mipmap/open_lock&quot; /&gt;
+        &lt;/RelativeLayout&gt;
+    &lt;/com.klo.zz.bizhi.lock.SliderRelativeLayout&gt;
+
+&lt;/RelativeLayout&gt;
+</code></pre><p>滑动解锁屏幕的自定义view</p>
+<p>SliderRelativeLayout 这个是从从网上找的，就不列出代码了。</p>
+<p>#总结：<br>   不想写…….</p>
+<p>###源码敬请期待………</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/" rel="next" title="Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法">
+                <i class="fa fa-chevron-left"></i> Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/" rel="prev" title="android将给定图片维持宽高比例缩放后，截取正中间的正方形部分">
+                android将给定图片维持宽高比例缩放后，截取正中间的正方形部分 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">好看的锁屏：源码下载</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

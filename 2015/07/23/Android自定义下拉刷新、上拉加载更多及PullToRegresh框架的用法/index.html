@@ -1,0 +1,754 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#PullToRefresh框架的用法
+###一、首先Android Studio 如何集成PullToRefresh框架
+dependencies {
+
+    compile &amp;apos;com.loopeer.android.thirdparty.pulltorefresh:Android-PullToRefresh:2.1.1&amp;apos;
+}
+在项目的build.gradle里面添加上述代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法">
+<meta property="og:url" content="http://yoursite.com/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#PullToRefresh框架的用法
+###一、首先Android Studio 如何集成PullToRefresh框架
+dependencies {
+
+    compile &amp;apos;com.loopeer.android.thirdparty.pulltorefresh:Android-PullToRefresh:2.1.1&amp;apos;
+}
+在项目的build.gradle里面添加上述代">
+<meta property="og:updated_time" content="2015-12-24T09:59:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法">
+<meta name="twitter:description" content="#PullToRefresh框架的用法
+###一、首先Android Studio 如何集成PullToRefresh框架
+dependencies {
+
+    compile &amp;apos;com.loopeer.android.thirdparty.pulltorefresh:Android-PullToRefresh:2.1.1&amp;apos;
+}
+在项目的build.gradle里面添加上述代">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/"/>
+
+  <title> Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-23T18:31:10+08:00" content="2015-07-23">
+              2015-07-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#PullToRefresh框架的用法</p>
+<p>###一、首先Android Studio 如何集成PullToRefresh框架</p>
+<pre><code>dependencies {
+
+    compile &apos;com.loopeer.android.thirdparty.pulltorefresh:Android-PullToRefresh:2.1.1&apos;
+}
+</code></pre><p>在项目的build.gradle里面添加上述代码，sysc now 同步即可完成集成。</p>
+<p>Eclipse的集成不讲，太简单了。</p>
+<p>###二、使用<br>里面很好的封装了PullToRefreshScrollView、PullToRefreshListView、PullToRefreshGridView.</p>
+<p>和listview、gridview、scrollview 的用法一致。</p>
+<p>首先在布局文件中</p>
+<pre><code> &lt;com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id=&quot;@+id/select_scroll&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;&gt;
+&lt;/com.handmark.pulltorefresh.library.PullToRefreshScrollView&gt;
+</code></pre><p>在代码中 这一个接口 支持下拉刷新和上拉加载更多   <b>OnRefreshListener2</b></p>
+<pre><code>selectScroll= (PullToRefreshScrollView) view.findViewById(R.id.select_scroll);
+selectScroll.setMode(PullToRefreshBase.Mode.BOTH);      //支持下拉刷新和上拉加载更多，否则只支持下拉刷新
+selectScroll.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2&lt;ScrollView&gt;() {
+    int loadCount = 2;
+
+    @Override
+    public void onPullDownToRefresh(PullToRefreshBase&lt;ScrollView&gt; pullToRefreshBase) {
+        String label = DateUtils.formatDateTime(
+                getActivity(),
+                System.currentTimeMillis(),
+                DateUtils.FORMAT_SHOW_TIME
+                        | DateUtils.FORMAT_SHOW_DATE
+                        | DateUtils.FORMAT_ABBREV_ALL);
+        // 显示最后更新的时间
+        pullToRefreshBase.getLoadingLayoutProxy()
+                .setLastUpdatedLabel(label);
+        selectList.clear();
+        initSelectData(1);
+    }
+
+    @Override
+    public void onPullUpToRefresh(PullToRefreshBase&lt;ScrollView&gt; pullToRefreshBase) {
+        initSelectData(loadCount);
+        loadCount++;
+    }
+});
+</code></pre><p>别忘了 在加载完数据添加一句：</p>
+<pre><code>selectScroll.onRefreshComplete();    //表示刷新或加载完毕
+</code></pre><p>还有一个接口只支持下拉刷新     <b>OnRefreshListener</b></p>
+<pre><code>selectScroll.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener&lt;ScrollView&gt;() {
+
+            @Override
+            public void onPullDownToRefresh(PullToRefreshBase&lt;ScrollView&gt; pullToRefreshBase) {
+                String label = DateUtils.formatDateTime(
+                        getActivity(),
+                        System.currentTimeMillis(),
+                        DateUtils.FORMAT_SHOW_TIME
+                                | DateUtils.FORMAT_SHOW_DATE
+                                | DateUtils.FORMAT_ABBREV_ALL);
+                // 显示最后更新的时间
+                pullToRefreshBase.getLoadingLayoutProxy()
+                        .setLastUpdatedLabel(label);
+
+            }
+
+        });
+</code></pre><p>###出现的问题：</p>
+<p>#####1.使用开源框架pullToRefresh的时候 适用pullToRefreshScrollView中嵌套listview的时候，不管listview上面有什么，会出现listview在顶部的问题</p>
+<p>场景：</p>
+<p>遇见这样的场景，listview顶部有一个viewpager，还要下拉刷新和上拉加载更多，网上的listviewForScrollView 会一直测量，造成卡顿的现象，不建议使用scrollview 嵌套viewpager和listviewForScrollView。</p>
+<p><b>解决办法：</b></p>
+<pre><code>pulltorefreshlistview.getRefreshableView().addHeaderView(customviewpager);  
+</code></pre><p></p>
+<p>让listview上面的组件获得焦点</p>
+<pre><code>lunboPager.requestFocus();
+lunboPager.setFocusable(true);
+lunboPager.setFocusableInTouchMode(true);
+</code></pre><p>#####2.在使用PullToRefreshScrollView的时候，里面使用ListviewForScrollView、GridViewForScrollView,没上拉加载更多、下拉刷新的时候会一直的刷新数据，因为ListviewForScrollView、GridViewForScrollView里面重写了onMeasure()方法,会不断的测量位置，这样很不舒服。</p>
+<p>解决办法：</p>
+<pre><code>外界调用只需一句话：将这个自定义添加到布局文件中，调用就是 flowingGroupLayout.addPicture(集合);
+
+public class FlowingGroupLayout extends LinearLayout {
+    public FlowingGroupLayout(Context context) {
+        super(context);
+        init();
+
+    }
+
+    private LinearLayout oneLayout;
+    private LinearLayout twoLayout;
+
+    private void init() {
+        View.inflate(getContext(), R.layout.flowing_pic, this);
+        oneLayout = (LinearLayout) findViewById(R.id.ll_one);
+        twoLayout = (LinearLayout) findViewById(R.id.ll_two);
+    }
+
+    public FlowingGroupLayout(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public FlowingGroupLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+    public void clear() {
+//        this.removeAllViews();
+        oneLayout.removeAllViews();
+        twoLayout.removeAllViews();
+    }
+    public void addPicture(final List&lt;GroupPicture&gt; beans) {
+        LLogUtils.v(beans.size() + &quot;&quot;);
+        for (int i = 0; i &lt; beans.size(); i++) {
+            GroupPicture picture = beans.get(i);
+            final View view = LViewHelper.getView(R.layout.picture_item, getContext());
+            final int finalI1 = i;
+            LApplication.getBitmapUtils().display(view.findViewById(R.id.picture), picture.getPictureUrl(), new BitmapLoadCallBack&lt;View&gt;() {
+                @Override
+                public void onLoadCompleted(View container, String s, Bitmap bitmap, BitmapDisplayConfig bitmapDisplayConfig, BitmapLoadFrom bitmapLoadFrom) {        
+                    //这里面是对图片的缩放、拉伸然后设置到布局上，不用管
+                    int bitmapWidth=bitmap.getWidth();
+                    int bitmapHeight=bitmap.getHeight();
+                    int screenWidth=ScreenUtil.getWidth()/2;
+                    if(bitmapHeight&lt;screenWidth || bitmapWidth &lt; screenWidth){
+                        float scale;
+                        float scaleHeight=(float)screenWidth/bitmapHeight;
+                        float scaleWidth=(float)screenWidth/bitmapWidth;
+                        if(scaleHeight &gt; scaleWidth){
+                            scale=scaleHeight;
+                        }else{
+                            scale=scaleWidth;
+                        }
+                        int newBitWidth=(int)(bitmapWidth*scale);
+                        int newBitmapHeight=(int)(bitmapHeight*scale);
+                        Bitmap newBitmap = Bitmap.createScaledBitmap(bitmap, newBitWidth, newBitmapHeight, true);
+                        LLImageUtils.setBitmap((ImageView)container,screenWidth,screenWidth,newBitmap);
+                    }else{
+                        Bitmap showBitmap = ScaleBitmap.centerSquareScaleBitmap(bitmap, ScreenUtil.getWidth() / 2);
+                        LLImageUtils.setBitmap((ImageView)container,0,showBitmap.getHeight(),showBitmap);
+                    }
+
+                    LayoutParams lp = new LayoutParams(ScreenUtil.getWidth()/2,ScreenUtil.getWidth()/2);
+                    lp.bottomMargin=ScreenUtil.dp2px(1);
+
+                    if (finalI1 % 2 == 0) {
+                        //偶数
+                        oneLayout.addView(view, lp);
+                    } else {
+                        //单数
+                        twoLayout.addView(view, lp);
+                    }
+                }
+
+                @Override
+                public void onLoadFailed(View view, String s, Drawable drawable) {
+
+                }
+
+            });
+            final int finalI = i;
+            view.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), ImageShowActivity.class);
+                    String groupId = beans.get(finalI).getGroupId();
+                    intent.putExtra(&quot;groupId&quot;, groupId);
+                    getContext().startActivity(intent);
+                }
+            });
+
+        }
+    }
+}
+</code></pre><p>###参考资料：<br>   Android自定义控件——ListView的下拉刷新与上拉加载</p>
+<pre><code>http://www.tuicool.com/articles/3uAVRva
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/23/解决listview中每一项都有不同的布局/" rel="next" title="解决listview中每一项都有不同的布局">
+                <i class="fa fa-chevron-left"></i> 解决listview中每一项都有不同的布局
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/" rel="prev" title="开发Android壁纸:设置壁纸、设置锁屏心得">
+                开发Android壁纸:设置壁纸、设置锁屏心得 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

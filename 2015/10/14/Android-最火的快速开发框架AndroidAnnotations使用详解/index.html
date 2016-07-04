@@ -1,0 +1,1139 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#Android 最火的快速开发框架AndroidAnnotations使用详解
+###一、配置（Android Studio）
+1.在Model的build.gradle中添加
+apply plugin: &amp;apos;com.android.application&amp;apos;
+apply plugin: &amp;apos;android-apt&amp;apos;
+def AAVersion = &amp;apos;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 最火的快速开发框架AndroidAnnotations使用详解">
+<meta property="og:url" content="http://yoursite.com/2015/10/14/Android-最火的快速开发框架AndroidAnnotations使用详解/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#Android 最火的快速开发框架AndroidAnnotations使用详解
+###一、配置（Android Studio）
+1.在Model的build.gradle中添加
+apply plugin: &amp;apos;com.android.application&amp;apos;
+apply plugin: &amp;apos;android-apt&amp;apos;
+def AAVersion = &amp;apos;">
+<meta property="og:updated_time" content="2015-10-27T04:02:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 最火的快速开发框架AndroidAnnotations使用详解">
+<meta name="twitter:description" content="#Android 最火的快速开发框架AndroidAnnotations使用详解
+###一、配置（Android Studio）
+1.在Model的build.gradle中添加
+apply plugin: &amp;apos;com.android.application&amp;apos;
+apply plugin: &amp;apos;android-apt&amp;apos;
+def AAVersion = &amp;apos;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/10/14/Android-最火的快速开发框架AndroidAnnotations使用详解/"/>
+
+  <title> Android 最火的快速开发框架AndroidAnnotations使用详解 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android 最火的快速开发框架AndroidAnnotations使用详解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-14T16:47:48+08:00" content="2015-10-14">
+              2015-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Android 最火的快速开发框架AndroidAnnotations使用详解</p>
+<p>###一、配置（Android Studio）</p>
+<p><li>1.在Model的build.gradle中添加</li></p>
+<pre><code>apply plugin: &apos;com.android.application&apos;
+apply plugin: &apos;android-apt&apos;
+def AAVersion = &apos;XXX&apos;
+
+dependencies {
+    apt &quot;org.androidannotations:androidannotations:$AAVersion&quot;
+    compile &quot;org.androidannotations:androidannotations-api:$AAVersion&quot;
+}
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+    }
+} 
+</code></pre><p><li>2.在Project的build.gradle中添加 （就一行）</li></p>
+<pre><code>buildscript {
+    repositories {
+      mavenCentral()
+    }
+    dependencies {
+        // replace with the current version of the Android plugin
+        classpath &apos;com.android.tools.build:gradle:1.2.2&apos;
+        // replace with the current version of the android-apt plugin
+        classpath &apos;com.neenbedankt.gradle.plugins:android-apt:1.4&apos;    //就这一行
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+</code></pre><p>###二、使用<br>详细使用看github上的中文介绍：<a href="https://github.com/mrljdx/AndroidAnnotaions/blob/master/androidannotation_zh_CN/1.0.1_%E5%B8%B8%E7%94%A8%E6%B3%A8%E9%87%8A.markdown" target="_blank" rel="external">简单使用</a></p>
+<p>最最最要注意的一点就是：</p>
+<p>使用AndroidAnnotations千万要记得，编译的时候会生成一个子类，这个子类的名称就是在<br>原来的类之后加了一个下划线“<em>”，比如这个例子产生的子类名称为“MyActivity</em>”，这就需要你在注册这个Activity的时候，在<br>AndroidManifest.xml中将 MyActivity 改为 MyActivity<em> ，使用的时候也是使用MyActivity</em>来表示此类，如从另一个Activity跳转<br>到此节目就要这样用：</p>
+<pre><code>startActivity(new Intent(this,MyActivity_.class));  
+</code></pre><p>注意，是MyActivity_.class 不是 MyActivity.class;</p>
+<p>####@EActivity<br>示例：</p>
+<pre><code>@EActivity(R.layout.main)
+public class MyActivity extends Activity {
+
+}
+</code></pre><p>注意：清单文件中Activity的注册(Service、Receiver、Provider的注册一样)</p>
+<pre><code>&lt;Activity name=&quot;com.quwenleiqi.ui.MyActivity_.class&quot;/&gt;
+</code></pre><p>####@EFragment<br>示例：</p>
+<pre><code>@EFragment(R.layout.my_fragment_layout)
+public class MyFragment extends Fragment {
+}
+</code></pre><p>注册：</p>
+<pre><code>&lt;fragment
+        android:id=&quot;@+id/myFragment&quot;
+        android:name=&quot;com.company.MyFragment_&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;fill_parent&quot; /&gt;
+</code></pre><p>创建：</p>
+<pre><code>MyFragment fragment = new MyFragment_();
+</code></pre><p>####@FragmentArg<br>     @EFragment<br>    public class MyFragment extends Fragment {//等同于 Fragment Argument</p>
+<pre><code>  @FragmentArg(&quot;myStringArgument&quot;)
+  String myMessage;
+
+  @FragmentArg
+  String anotherStringArgument;
+
+  @FragmentArg(&quot;myDateExtra&quot;)
+  Date myDateArgumentWithDefaultValue = new Date();
+
+}
+MyFragment myFragment = MyFragment_.builder()
+  .myMessage(&quot;Hello&quot;)
+  .anotherStringArgument(&quot;World&quot;)
+  .build();
+</code></pre><p>####@OptionsMenu和OptionsItem<br>     @EActivity<br>    @OptionsMenu(R.menu.my_menu)<br>    public class MyActivity extends Activity {</p>
+<pre><code>    @OptionMenuItem
+    MenuItem menuSearch;
+
+    @OptionsItem(R.id.menuShare)
+        void myMethod() {
+          // You can specify the ID in the annotation, or use the naming convention
+        }
+
+    @OptionsItem
+    void homeSelected() {
+      // home was selected in the action bar
+          // The &quot;Selected&quot; keyword is optional
+    }
+
+    @OptionsItem
+    boolean menuSearch() {
+          menuSearch.setVisible(false);
+          // menuSearch was selected
+          // the return type may be void or boolean (false to allow normal menu processing to proceed, true to consume it here)
+          return true;
+    }
+
+    @OptionsItem({ R.id.menu_search, R.id.menu_delete })
+    void multipleMenuItems() {
+      // You can specify multiple menu item IDs in @OptionsItem
+    }
+
+    @OptionsItem
+    void menu_add(MenuItem item) {
+      // You can add a MenuItem parameter to access it
+    }
+}
+</code></pre><p>或者：</p>
+<pre><code> @EActivity
+@OptionsMenu({R.menu.my_menu1, R.menu.my_menu2})
+public class MyActivity extends Activity {
+
+}
+</code></pre><p>####@RestService</p>
+<p>声明：</p>
+<pre><code>@RestService
+BookmarkClient restClient;
+</code></pre><p>请求数据的url获取数据的服务</p>
+<pre><code>@Rest(&quot;http://www.bookmarks.com&quot;)
+public interface BookmarkClient {
+
+  @Get(&quot;/bookmarks/{userId}?search={search}&quot;)
+  Bookmarks getBookmarks(String search, String userId);
+
+}
+</code></pre><p>在background中执行 restClient.getBookmarks();</p>
+<p>####@Background<br>执行：</p>
+<pre><code> void myMethod() {
+    someBackgroundWork(&quot;hello&quot;, 42);
+}
+
+@Background
+void someBackgroundWork(String aParam, long anotherParam) {
+    [...]
+}
+</code></pre><p>取消：</p>
+<pre><code> void myMethod() {
+    someCancellableBackground(&quot;hello&quot;, 42);
+    [...]
+    boolean mayInterruptIfRunning = true;
+    BackgroundExecutor.cancelAll(&quot;cancellable_task&quot;, mayInterruptIfRunning);
+}
+
+@Background(id=&quot;cancellable_task&quot;)
+void someCancellableBackground(String aParam, long anotherParam) {
+    [...]
+}
+</code></pre><p>非并发执行：</p>
+<pre><code> void myMethod() {
+    for (int i = 0; i &lt; 10; i++)
+        someSequentialBackgroundMethod(i);
+}
+
+@Background(serial = &quot;test&quot;)
+void someSequentialBackgroundMethod(int i) {
+    SystemClock.sleep(new Random().nextInt(2000)+1000);
+    Log.d(&quot;AA&quot;, &quot;value : &quot; + i);
+}
+</code></pre><p>延迟：</p>
+<pre><code> @Background(delay=2000)
+void doInBackgroundAfterTwoSeconds() {
+}
+</code></pre><p>####@UiThread<br>UI线程：</p>
+<pre><code> void myMethod() {
+    doInUiThread(&quot;hello&quot;, 42);
+}
+
+@UiThread
+void doInUiThread(String aParam, long anotherParam) {
+    [...]
+}
+</code></pre><p>延迟：</p>
+<pre><code> @UiThread(delay=2000)
+void doInUiThreadAfterTwoSeconds() {
+}
+</code></pre><p>优化UI线程：</p>
+<pre><code> @UiThread(propagation = Propagation.REUSE)
+void runInSameThreadIfOnUiThread() {
+}
+</code></pre><p>进度值改变：</p>
+<pre><code> @EActivity
+public class MyActivity extends Activity {
+
+  @Background
+  void doSomeStuffInBackground() {
+    publishProgress(0);
+    // Do some stuff
+    publishProgress(10);
+    // Do some stuff
+    publishProgress(100);
+  }
+
+  @UiThread
+  void publishProgress(int progress) {
+    // Update progress views
+  }
+
+}
+</code></pre><p>####@OnActivityResult<br>     @OnActivityResult(REQUEST_CODE)<br>     void onResult(int resultCode, Intent data) {<br>     }</p>
+<pre><code>@OnActivityResult(REQUEST_CODE)
+void onResult(int resultCode) {
+}
+
+@OnActivityResult(ANOTHER_REQUEST_CODE)
+void onResult(Intent data) {
+}
+
+@OnActivityResult(ANOTHER_REQUEST_CODE)
+void onResult() {
+}
+</code></pre><p>####@EBean</p>
+<p>普通类：</p>
+<pre><code>@EBean
+public class MyClass {
+
+}
+</code></pre><p>注意：这个类必须仅仅只能有一个构造函数，参数最多有一个context。</p>
+<p>Activity中使用：</p>
+<pre><code>@EActivity
+public class MyActivity extends Activity {
+
+  @Bean
+  MyOtherClass myOtherClass;
+
+}
+</code></pre><p>也可以用来声明接口：</p>
+<pre><code>@Bean(MyImplementation.class)   //接口的实现类
+MyInterface myInterface;        //接口
+</code></pre><p>在普通类中还可以注入根环境:</p>
+<pre><code>@EBean
+public class MyClass {
+
+  @RootContext
+  Context context;
+
+  // Only injected if the root context is an activity
+  @RootContext
+  Activity activity;
+
+  // Only injected if the root context is a service
+  @RootContext
+  Service service;
+
+  // Only injected if the root context is an instance of MyActivity
+  @RootContext
+  MyActivity myActivity;
+
+}
+</code></pre><p>如果想在类创建时期做一些操作可以：</p>
+<pre><code>@AfterInject
+  public void doSomethingAfterInjection() {
+    // notificationManager and dependency are set
+  }
+</code></pre><p>单例类需要如下声明：</p>
+<pre><code>@EBean(scope = Scope.Singleton)
+public class MySingleton {
+
+}
+</code></pre><p>注意：在单例类里面不可以注入view和事件绑定，因为单例的生命周期比Activity和Service的要长，以免发生内存溢出。</p>
+<p>####@EView</p>
+<pre><code>@EView
+public class CustomButton extends Button {
+
+        @App
+        MyApplication application;
+
+        @StringRes
+        String someStringResource;
+
+    public CustomButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+}
+</code></pre><p>注册：</p>
+<pre><code>&lt;com.androidannotations.view.CustomButton_
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; /&gt;
+</code></pre><p>创建：</p>
+<pre><code>CustomButton button = CustomButton_.build(context);
+</code></pre><p>####@EViewGroup</p>
+<pre><code>@EViewGroup(R.layout.title_with_subtitle)
+public class TitleWithSubtitle extends RelativeLayout {
+
+    @ViewById
+    protected TextView title, subtitle;
+
+    public TitleWithSubtitle(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public void setTexts(String titleText, String subTitleText) {
+        title.setText(titleText);
+        subtitle.setText(subTitleText);
+    }
+
+}
+</code></pre><p>注册：</p>
+<pre><code>&lt;com.androidannotations.viewgroup.TitleWithSubtitle_
+        android:id=&quot;@+id/firstTitle&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; /&gt;
+</code></pre><p>####@EApplication</p>
+<pre><code>@EApplication
+public class MyApplication extends Application {
+
+}
+</code></pre><p>Activity中使用：</p>
+<pre><code> @EActivity
+public class MyActivity extends Activity {
+
+  @App
+  MyApplication application;
+
+}
+</code></pre><p>####@EService<br>     @EService<br>    public class MyService extends Service {</p>
+<pre><code>}
+</code></pre><p>跳转service：</p>
+<pre><code>MyService_.intent(getApplication()).start();
+</code></pre><p>停止service：</p>
+<pre><code>MyService_.intent(getApplication()).stop();
+</code></pre><p>####@EReceiver<br>     @EReceiver<br>    public class MyReceiver extends BroadcastReceiver {</p>
+<pre><code>}
+</code></pre><p>####@Receiver<br>可以替代声明BroadcastReceiver</p>
+<pre><code> @EActivity
+public class MyActivity extends Activity {
+
+  @Receiver(actions = &quot;org.androidannotations.ACTION_1&quot;)
+  protected void onAction1() {
+
+  }
+
+}
+</code></pre><p>####@EProvider<br>     @EProvider<br>    public class MyContentProvider extends ContentProvider {</p>
+<pre><code>}
+</code></pre><p>####@ViewById<br>     @EActivity<br>    public class MyActivity extends Activity {</p>
+<pre><code>  // Injects R.id.myEditText，变量名称必须和布局的id名称一致
+  @ViewById
+  EditText myEditText;
+
+  @ViewById(R.id.myTextView)
+  TextView textView;
+}
+</code></pre><p>####@AfterViews<br>     @EActivity(R.layout.main)<br>    public class MyActivity extends Activity {</p>
+<pre><code>    @ViewById
+    TextView myTextView;
+
+    @AfterViews
+    void updateTextWithDate() {
+//一定要在这里进行view的一些设置，不要在oncreate()中设置，因为oncreate()在执行时 view还没有注入
+        myTextView.setText(&quot;Date: &quot; + new Date());    }[...]
+</code></pre><p>####@StringRes<br>     @EActivity<br>    public class MyActivity extends Activity {</p>
+<pre><code>  @StringRes(R.string.hello)
+  String myHelloString;//不能设置成私有变量
+
+  @StringRes
+  String hello;
+
+}
+</code></pre><p>####@ColorRes<br>     @EActivity<br>    public class MyActivity extends Activity {</p>
+<pre><code>  @ColorRes(R.color.backgroundColor)
+  int someColor;
+
+  @ColorRes
+  int backgroundColor;
+
+}
+</code></pre><p>####@AnimationRes<br>     @EActivity<br>    public class MyActivity extends Activity {</p>
+<pre><code>  @AnimationRes(R.anim.fadein)
+  XmlResourceParser xmlResAnim;
+
+  @AnimationRes
+  Animation fadein;
+
+}
+</code></pre><p>####@DimensionRes<br>     @EActivity<br>    public class MyActivity extends Activity {</p>
+<pre><code>  @DimensionRes(R.dimen.fontsize)
+  float fontSizeDimension;
+
+  @DimensionRes
+  float fontsize;
+
+}
+</code></pre><p>####@DImensionPixelOffsetRes<br>     @EActivity<br>    public class MyActivity extends Activity {</p>
+<pre><code>  @DimensionPixelOffsetRes(R.string.fontsize)
+  int fontSizeDimension;
+
+  @DimensionPixelOffsetRes
+  int fontsize;
+
+}
+</code></pre><p>####@DimensionPixelSizeRes<br>     @EActivity<br>    public class MyActivity extends Activity {</p>
+<pre><code>  @DimensionPixelSizeRes(R.string.fontsize)
+  int fontSizeDimension;
+
+  @DimensionPixelSizeRes
+  int fontsize;
+
+}
+</code></pre><p>####其他的Res：<br><li>@BooleanRes<br></li><li>@ColorStateListRes<br></li><li>@DrawableRes<br></li><li>@IntArrayRes<br></li><li>@IntegerRes<br></li><li>@LayoutRes<br></li><li>@MovieRes<br></li><li>@TextRes<br></li><li>@TextArrayRes<br></li><li>@StringArrayRes</li></p>
+<p>####@Extra<br>     @EActivity<br>    public class MyActivity extends Activity {</p>
+<pre><code>  @Extra(&quot;myStringExtra&quot;)
+  String myMessage;
+
+  @Extra(&quot;myDateExtra&quot;)
+  Date myDateExtraWithDefaultValue = new Date();
+
+}
+</code></pre><p>或者：</p>
+<pre><code> @EActivity
+public class MyActivity extends Activity {
+
+  // The name of the extra will be &quot;myMessage&quot;，名字必须一致
+  @Extra
+  String myMessage;
+}
+</code></pre><p>传值：</p>
+<pre><code>MyActivity_.intent().myMessage(&quot;hello&quot;).start() ;
+</code></pre><p>####@SystemService<br>     @EActivity<br>    public class MyActivity extends Activity {//<br>      @SystemService<br>      NotificationManager notificationManager;</p>
+<pre><code>}
+</code></pre><p>####@Click<br>     @Click(R.id.myButton)<br>    void myButtonWasClicked() {<br>        […]<br>    }<br>    @Click<br>    void anotherButton() {//如果不指定则函数名和id对应<br>        […]<br>    }<br>    @Click<br>    void yetAnotherButton(View clickedView) {<br>        […]<br>    }</p>
+<p>其他点击事件：</p>
+<p><li>Clicks with @Click</li></p>
+<p><li>Long clicks with @LongClick</li></p>
+<p><li>Touches with @Touch</li></p>
+<p>####AdapterViewEvents </p>
+<p><li>Item clicks with @ItemClick</li></p>
+<p><li>Long item clicks with @ItemLongClick</li></p>
+<p><li>Item selection with @ItemSelect</li></p>
+<p>有两种方式调用：</p>
+<p><li>1.</li></p>
+<pre><code> @EActivity(R.layout.my_list)
+public class MyListActivity extends Activity {
+
+    // ...
+
+    @ItemClick
+    public void myListItemClicked(MyItem clickedItem) {//MyItem是adapter的实体类，等同于adapter.getItem(position)
+
+    }
+
+    @ItemLongClick
+    public void myListItemLongClicked(MyItem clickedItem) {
+
+    }
+
+    @ItemSelect
+    public void myListItemSelected(boolean selected, MyItem selectedItem) {
+
+    }
+
+}
+</code></pre><p><li>2.</li></p>
+<pre><code> @EActivity(R.layout.my_list)
+public class MyListActivity extends Activity {
+
+    // ...
+
+    @ItemClick
+    public void myListItemClicked(int position) {//位置id
+
+    }
+
+    @ItemLongClick
+    public void myListItemLongClicked(int position) {
+
+    }
+
+    @ItemSelect
+    public void myListItemSelected(boolean selected, int position) {
+
+    }
+
+}
+</code></pre><p>####@SeekBarProgressChange<br>     //等同于SeekBar.OnSeekBarChangeListener.onProgressChanged(SeekBar, int, boolean)<br>         @SeekBarProgressChange(R.id.seekBar)<br>         void onProgressChangeOnSeekBar(SeekBar seekBar, int progress, boolean fromUser) {<br>            // Something Here<br>         }</p>
+<pre><code>@SeekBarProgressChange(R.id.seekBar)
+void onProgressChangeOnSeekBar(SeekBar seekBar, int progress) {
+   // Something Here
+}
+
+@SeekBarProgressChange({R.id.seekBar1, R.id.seekBar2})
+void onProgressChangeOnSeekBar(SeekBar seekBar) {
+   // Something Here
+}
+
+@SeekBarProgressChange({R.id.seekBar1, R.id.seekBar2})
+void onProgressChangeOnSeekBar() {
+   // Something Here
+}
+</code></pre><p>@SeekBarTouchStart 和 @SeekBarTouchStop<br>接受开始和结束事件的监听</p>
+<p>####@HttpsClient<br>     @HttpsClient<br>    HttpClient httpsClient;</p>
+<p>示例：</p>
+<pre><code> @EActivity
+public class MyActivity extends Activity {
+
+    @HttpsClient(trustStore=R.raw.cacerts,
+        trustStorePwd=&quot;changeit&quot;, 
+        hostnameVerif=true)
+    HttpClient httpsClient;
+
+    @AfterInject
+    @Background
+    public void securedRequest() {
+        try {
+            HttpGet httpget = new HttpGet(&quot;https://www.verisign.com/&quot;);
+            HttpResponse response = httpsClient.execute(httpget);
+            doSomethingWithResponse(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @UiThread
+    public void doSomethingWithResponse(HttpResponse resp) {
+        Toast.makeText(this, &quot;HTTP status &quot; + resp.getStatusLine().getStatusCode(), Toast.LENGTH_LONG).show();
+    }
+}
+</code></pre><p>####@TextChange<br>     @TextChange(R.id.helloTextView)<br>     void onTextChangesOnHelloTextView(CharSequence text, TextView hello, int before, int start, int count) {<br>        // Something Here<br>     }</p>
+<pre><code>@TextChange
+void helloTextViewTextChanged(TextView hello) {
+   // Something Here
+}
+
+@TextChange({R.id.editText, R.id.helloTextView})
+void onTextChangesOnSomeTextViews(TextView tv, CharSequence text) {
+   // Something Here
+}
+
+@TextChange(R.id.helloTextView)
+void onTextChangesOnHelloTextView() {
+   // Something Here
+}
+</code></pre><p>####@BeforeTextChange<br>     @BeforeTextChange(R.id.helloTextView)<br>     void beforeTextChangedOnHelloTextView(TextView hello, CharSequence text, int start, int count, int after) {<br>        // Something Here<br>     }</p>
+<pre><code>@BeforeTextChange
+void helloTextViewBeforeTextChanged(TextView hello) {
+   // Something Here
+}
+
+@BeforeTextChange({R.id.editText, R.id.helloTextView})
+void beforeTextChangedOnSomeTextViews(TextView tv, CharSequence text) {
+   // Something Here
+}
+
+@BeforeTextChange(R.id.helloTextView)
+void beforeTextChangedOnHelloTextView() {
+   // Something Here
+}
+</code></pre><p>####@AfterTextChange<br>     @AfterTextChange(R.id.helloTextView)<br>     void afterTextChangedOnHelloTextView(Editable text, TextView hello) {<br>        // Something Here<br>     }</p>
+<pre><code>@AfterTextChange
+void helloTextViewAfterTextChanged(TextView hello) {
+   // Something Here
+}
+
+@AfterTextChange({R.id.editText, R.id.helloTextView})
+void afterTextChangedOnSomeTextViews(TextView tv, Editable text) {
+   // Something Here
+}
+
+@AfterTextChange(R.id.helloTextView)
+void afterTextChangedOnHelloTextView() {
+   // Something Here
+}
+</code></pre><p>书写参考：<a href="http://www.csdn123.com/html/topnews201408/29/729.htm" target="_blank" rel="external">出处</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/13/SwipeRefreshLayout-RecyclerView-实现下拉刷新和上拉加载更多/" rel="next" title="SwipeRefreshLayout + RecyclerView 实现下拉刷新和上拉加载更多">
+                <i class="fa fa-chevron-left"></i> SwipeRefreshLayout + RecyclerView 实现下拉刷新和上拉加载更多
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/17/Android-Studio如何导入第三方类库/" rel="prev" title="Android Studio如何导入第三方类库">
+                Android Studio如何导入第三方类库 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

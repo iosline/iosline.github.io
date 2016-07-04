@@ -1,0 +1,656 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="实现自定义的通知栏效果：
+主要要用到RemoteViews这个类
+注意：Notification的自定义布局是RemoteViews，和其他RemoteViews一样，在自定义视图布局文件中，仅支持FrameLayout、LinearLayout、RelativeLayout三种布局控件和AnalogClock、Chronometer、Button、ImageButton、ImageView、Pr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通知学习之自定义通知">
+<meta property="og:url" content="http://yoursite.com/2016/02/24/通知学习之自定义通知/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="实现自定义的通知栏效果：
+主要要用到RemoteViews这个类
+注意：Notification的自定义布局是RemoteViews，和其他RemoteViews一样，在自定义视图布局文件中，仅支持FrameLayout、LinearLayout、RelativeLayout三种布局控件和AnalogClock、Chronometer、Button、ImageButton、ImageView、Pr">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/notifications_pattern_ongoing_music.png">
+<meta property="og:updated_time" content="2016-07-04T15:47:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通知学习之自定义通知">
+<meta name="twitter:description" content="实现自定义的通知栏效果：
+主要要用到RemoteViews这个类
+注意：Notification的自定义布局是RemoteViews，和其他RemoteViews一样，在自定义视图布局文件中，仅支持FrameLayout、LinearLayout、RelativeLayout三种布局控件和AnalogClock、Chronometer、Button、ImageButton、ImageView、Pr">
+<meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/notifications_pattern_ongoing_music.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/02/24/通知学习之自定义通知/"/>
+
+  <title> 通知学习之自定义通知 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                通知学习之自定义通知
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-24T16:23:17+08:00" content="2016-02-24">
+              2016-02-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>实现自定义的通知栏效果：</p>
+<p>主要要用到RemoteViews这个类</p>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>Notification的自定义布局是RemoteViews，和其他RemoteViews一样，在自定义视图布局文件中，仅支持FrameLayout、LinearLayout、RelativeLayout三种布局控件和AnalogClock、Chronometer、Button、ImageButton、ImageView、ProgressBar、TextView、ViewFlipper、ListView、GridView、StackView和AdapterViewFlipper这些显示控件，不支持这些类的子类或Android提供的其他控件。否则会引起ClassNotFoundException异常</p>
+<h4 id="步骤如下："><a href="#步骤如下：" class="headerlink" title="步骤如下："></a>步骤如下：</h4><p><li>1）创建自定义视图</li></p>
+<p><li>2）获取远程视图对象（注：Notification的contentView不能为空）</li></p>
+<p><li>3）设置PendingIntent（来响应各种事件）</li></p>
+<p><li>4）发起Notification</li></p>
+<h3 id="代码模块："><a href="#代码模块：" class="headerlink" title="代码模块："></a>代码模块：</h3><p>样式：</p>
+<h4 id="1-自定义带按钮通知栏-如下样式"><a href="#1-自定义带按钮通知栏-如下样式" class="headerlink" title="1.自定义带按钮通知栏(如下样式)"></a>1.自定义带按钮通知栏(如下样式)</h4><p>正在进行的<br>“正在进行的”通知使用户了解正在运行的后台进程。例如，音乐播放器可以显示正在播放的音乐。也可以用来显示需要长时间处理的操作，例如下载或编码视频。“正在进行的”通知不能被手动删除。<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/notifications_pattern_ongoing_music.png"></p>
+<p>实现方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showButtonNotify</span><span class="params">()</span></span>&#123;</div><div class="line">     NotificationCompat.Builder mBuilder = <span class="keyword">new</span> Builder(<span class="keyword">this</span>);</div><div class="line">     RemoteViews mRemoteViews = <span class="keyword">new</span> RemoteViews(getPackageName(), R.layout.view_custom_button);</div><div class="line">     mRemoteViews.setImageViewResource(R.id.custom_song_icon, R.drawable.sing_icon);</div><div class="line">     <span class="comment">//API3.0 以上的时候显示按钮，否则消失</span></div><div class="line">     mRemoteViews.setTextViewText(R.id.tv_custom_song_singer, <span class="string">"周杰伦"</span>);</div><div class="line">     mRemoteViews.setTextViewText(R.id.tv_custom_song_name, <span class="string">"七里香"</span>);</div><div class="line">     <span class="comment">//如果版本号低于（3。0），那么不显示按钮</span></div><div class="line">     <span class="keyword">if</span>(BaseTools.getSystemVersion() &lt;= <span class="number">9</span>)&#123;</div><div class="line">           mRemoteViews.setViewVisibility(R.id.ll_custom_button, View.GONE);</div><div class="line">     &#125;<span class="keyword">else</span>&#123;</div><div class="line">           mRemoteViews.setViewVisibility(R.id.ll_custom_button, View.VISIBLE);</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//</span></div><div class="line">     <span class="keyword">if</span>(isPlay)&#123;</div><div class="line">           mRemoteViews.setImageViewResource(R.id.btn_custom_play, R.drawable.btn_pause);</div><div class="line">     &#125;<span class="keyword">else</span>&#123;</div><div class="line">           mRemoteViews.setImageViewResource(R.id.btn_custom_play, R.drawable.btn_play);</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//点击的事件处理</span></div><div class="line">     Intent buttonIntent = <span class="keyword">new</span> Intent(ACTION_BUTTON);</div><div class="line">     <span class="comment">/* 上一首按钮 */</span></div><div class="line">     buttonIntent.putExtra(INTENT_BUTTONID_TAG, BUTTON_PREV_ID);</div><div class="line">     <span class="comment">//这里加了广播，所及INTENT的必须用getBroadcast方法</span></div><div class="line">     PendingIntent intent_prev = PendingIntent.getBroadcast(<span class="keyword">this</span>, <span class="number">1</span>, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);</div><div class="line">     mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_prev, intent_prev);</div><div class="line">     <span class="comment">/* 播放/暂停  按钮 */</span></div><div class="line">     buttonIntent.putExtra(INTENT_BUTTONID_TAG, BUTTON_PALY_ID);</div><div class="line">     PendingIntent intent_paly = PendingIntent.getBroadcast(<span class="keyword">this</span>, <span class="number">2</span>, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);</div><div class="line">     mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_play, intent_paly);</div><div class="line">     <span class="comment">/* 下一首 按钮  */</span></div><div class="line">     buttonIntent.putExtra(INTENT_BUTTONID_TAG, BUTTON_NEXT_ID);</div><div class="line">     PendingIntent intent_next = PendingIntent.getBroadcast(<span class="keyword">this</span>, <span class="number">3</span>, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);</div><div class="line">     mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_next, intent_next);</div><div class="line"> </div><div class="line">     mBuilder.setContent(mRemoteViews)</div><div class="line">             .setContentIntent(getDefalutIntent(Notification.FLAG_ONGOING_EVENT))</div><div class="line">             .setWhen(System.currentTimeMillis())<span class="comment">// 通知产生的时间，会在通知信息里显示</span></div><div class="line">             .setTicker(<span class="string">"正在播放"</span>)</div><div class="line">             .setPriority(Notification.PRIORITY_DEFAULT)<span class="comment">// 设置该通知优先级</span></div><div class="line">             .setOngoing(<span class="keyword">true</span>)</div><div class="line">             .setSmallIcon(R.drawable.sing_icon);</div><div class="line">     Notification notify = mBuilder.build();</div><div class="line">     notify.flags = Notification.FLAG_ONGOING_EVENT;</div><div class="line">     mNotificationManager.notify(notifyId, notify);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：带按钮的布局相应点击事件在3.0以下版本没有用，所以这边作了系统版本判断，来显示消失按钮。</p>
+<h4 id="2-自定义不带按钮通知栏"><a href="#2-自定义不带按钮通知栏" class="headerlink" title="2.自定义不带按钮通知栏"></a>2.自定义不带按钮通知栏</h4><p>实现方法如下：</p>
+<pre><code>//先设定RemoteViews
+RemoteViews view_custom = new RemoteViews(getPackageName(), R.layout.view_custom);
+//设置对应IMAGEVIEW的ID的资源图片
+view_custom.setImageViewResource(R.id.custom_icon, R.drawable.icon);
+//view_custom.setInt(R.id.custom_icon,&quot;setBackgroundResource&quot;,R.drawable.icon);
+view_custom.setTextViewText(R.id.tv_custom_title, &quot;今日头条&quot;);
+view_custom.setTextViewText(R.id.tv_custom_content, &quot;金州勇士官方宣布球队已经解雇了主帅马克-杰克逊&quot;);
+</code></pre><p>之后调用：</p>
+<pre><code>mBuilder.setContent(view_custom)
+</code></pre><p>来设定自定义的这个布局。</p>
+<h4 id="最近遇到的代码例子："><a href="#最近遇到的代码例子：" class="headerlink" title="最近遇到的代码例子："></a>最近遇到的代码例子：</h4><pre><code>//final String STATUS_BAR_COVER_CLICK_ACTION=&quot;download&quot;;
+    private void showNotification() {
+
+        final NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
+        final RemoteViews mRemoteViews = new RemoteViews(getPackageName(), R.layout.layout_notification_custom);
+
+
+//        Intent buttonIntent=new Intent(this, SendNewsActivity.class);
+//        buttonIntent.putExtra(&quot;key&quot;, 1456546);
+//        buttonIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        mBuilder.setContent(mRemoteViews)
+                .setWhen(System.currentTimeMillis())// 通知产生的时间，会在通知信息里显示
+                .setPriority(Notification.PRIORITY_DEFAULT)// 设置该通知优先级
+                .setSmallIcon(R.drawable.myicon).setAutoCancel(true);
+
+//        BroadcastReceiver onClickReceiver = new BroadcastReceiver() {
+//            private boolean flag = false;
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                if (intent.getAction().equals(STATUS_BAR_COVER_CLICK_ACTION)) {
+//                 //在这里处理点击事件
+//                   ToastUtil.show(&quot;========wobeidianjile&quot;);
+//                 //取消通知栏
+////                    mNotificationManager.cancel(0);
+//                }
+//            }};
+
+//        IntentFilter filter = new IntentFilter();
+//        filter.addAction(STATUS_BAR_COVER_CLICK_ACTION);
+//        registerReceiver(onClickReceiver, filter);
+//        Intent buttonIntent = new Intent(STATUS_BAR_COVER_CLICK_ACTION);
+
+        Intent buttonIntent=new Intent();
+        buttonIntent.setAction(Intent.ACTION_VIEW);
+        buttonIntent.setData(Uri.parse(&quot;http://img.zcool.cn/community/01b28d554bcd6e000001bf72eacf96.jpg&quot;));
+        PendingIntent pendingIntent=PendingIntent.getActivity(this,0,buttonIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+//        PendingIntent pendingIntent=PendingIntent.getBroadcast(this, 0, buttonIntent, 0);
+        mBuilder.setContentIntent(pendingIntent);
+//        mRemoteViews.setOnClickPendingIntent(R.id.image,pendingIntent);
+        Notification notify = mBuilder.build();
+Picasso.with(this).load(bean.getImg()).into(mRemoteViews,R.id.image,0,notify);
+        mNotificationManager.notify(0, notify);
+    }
+</code></pre><p>###Android 5.0之后通知栏图标为白色的解决方案：</p>
+<p>####1.<br>Android 5.0(API23)针对targetSdkVersion&gt;=21（Build.VERSION_CODES.LOLLIPOP是21，非23 )， 通知栏图标均自动做了过滤处理，为了统一整个系统的风格。 </p>
+<pre><code>if (entry.icon != null) {
+            if (entry.targetSdk &gt;= Build.VERSION_CODES.LOLLIPOP) {
+                entry.icon.setColorFilter(mContext.getResources().getColor(android.R.color.white));
+            } else {
+                entry.icon.setColorFilter(null);
+            }
+        }
+</code></pre><p>目前可行的就是把AndroidManifest.xml uses-sdk节点的targetSdkVersion属性设置为21以下（不含21）。</p>
+<p>####2.<br>在5.0之前的版本用一个图片，在之后的版本用另一张只有白色和透明的颜色，然后再设置一个背景颜色</p>
+<pre><code>if (android.os.Build.VERSION.SDK_INT &lt; 21)                         
+     nf.icon = R.drawable.ic_launcher;                     
+else {                         
+     nf.icon = R.drawable.ic_launcher_notification;                         
+     Class&lt;?&gt; clazz = nf.getClass();                         
+     Field field = clazz.getDeclaredField(&quot;color&quot;);                         
+     field.setAccessible(true);                         
+     field.set(nf, context.getResources().getColor(R.color.red_launcher));         
+    }
+</code></pre><p>###<a href="https://github.com/iosline/Notification" target="_blank" rel="external">知识点示例代码</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/24/Android通知详解学习/" rel="next" title="Android通知详解学习">
+                <i class="fa fa-chevron-left"></i> Android通知详解学习
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意："><span class="nav-number">1.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤如下："><span class="nav-number">2.</span> <span class="nav-text">步骤如下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码模块："><span class="nav-number"></span> <span class="nav-text">代码模块：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-自定义带按钮通知栏-如下样式"><span class="nav-number">1.</span> <span class="nav-text">1.自定义带按钮通知栏(如下样式)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-自定义不带按钮通知栏"><span class="nav-number">2.</span> <span class="nav-text">2.自定义不带按钮通知栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最近遇到的代码例子："><span class="nav-number">3.</span> <span class="nav-text">最近遇到的代码例子：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

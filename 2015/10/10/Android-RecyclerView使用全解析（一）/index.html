@@ -1,0 +1,1086 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#RecyclerView的使用解析
+###一、概述整体上看RecyclerView架构，提供了一种插拔式的体验，高度的解耦，异常的灵活，通过设置它提供的不同LayoutManager，ItemDecoration , ItemAnimator实现令人瞠目的效果。
+你想要控制其显示的方式，请通过布局管理器LayoutManager（代替listview、gridview、horgiridview、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android RecyclerView使用全解析">
+<meta property="og:url" content="http://yoursite.com/2015/10/10/Android-RecyclerView使用全解析（一）/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#RecyclerView的使用解析
+###一、概述整体上看RecyclerView架构，提供了一种插拔式的体验，高度的解耦，异常的灵活，通过设置它提供的不同LayoutManager，ItemDecoration , ItemAnimator实现令人瞠目的效果。
+你想要控制其显示的方式，请通过布局管理器LayoutManager（代替listview、gridview、horgiridview、">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/recyclerview_type.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/listvioew_nodivider.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/listview_divider.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/listview_custom_divider.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/gridview.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/hor_gridview.gif">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/pull.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/pull_animator.gif">
+<meta property="og:updated_time" content="2015-10-12T10:19:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android RecyclerView使用全解析">
+<meta name="twitter:description" content="#RecyclerView的使用解析
+###一、概述整体上看RecyclerView架构，提供了一种插拔式的体验，高度的解耦，异常的灵活，通过设置它提供的不同LayoutManager，ItemDecoration , ItemAnimator实现令人瞠目的效果。
+你想要控制其显示的方式，请通过布局管理器LayoutManager（代替listview、gridview、horgiridview、">
+<meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/recyclerview_type.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/10/10/Android-RecyclerView使用全解析（一）/"/>
+
+  <title> Android RecyclerView使用全解析 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android RecyclerView使用全解析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-10T15:04:10+08:00" content="2015-10-10">
+              2015-10-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#RecyclerView的使用解析</p>
+<p>###一、概述<br>整体上看RecyclerView架构，提供了一种插拔式的体验，高度的解耦，异常的灵活，通过设置它提供的不同LayoutManager，ItemDecoration , ItemAnimator实现令人瞠目的效果。</p>
+<p><li>你想要控制其显示的方式，请通过布局管理器LayoutManager（代替listview、gridview、horgiridview、瀑布流）</li></p>
+<p><li>你想要控制Item间的间隔（可绘制），请通过ItemDecoration（默认没有间隔，特别难看）</li></p>
+<p><li>你想要控制Item增删的动画，请通过ItemAnimator</li></p>
+<p><li>你想要控制点击、长按事件，请自己写（接口回调）</li></p>
+<p>###二、导入<br>    compile ‘com.android.support:recyclerview-v7:23.0.1’</p>
+<p>###三、使用</p>
+<p>RecyclerView的使用代码：</p>
+<pre><code>mRecyclerView = findView(R.id.id_recyclerview);
+//设置布局管理器  
+mRecyclerView.setLayoutManager(layoutManager);
+//设置adapter
+mRecyclerView.setAdapter(adapter)
+//设置Item增加、移除动画
+mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+//添加分割线
+mRecyclerView.addItemDecoration(new DividerItemDecoration(
+                getActivity(), DividerItemDecoration.HORIZONTAL_LIST));
+</code></pre><p>RecyclerView代表的意义是，我只管Recycler View，也就是说RecyclerView只管回收与复用View，其他的你可以自己去设置。可以看出其高度的解耦，给予你充分的定制自由（所以你才可以轻松的通过这个控件实现ListView,GirdView，瀑布流等效果）。</p>
+<p>####RecyclerView设置Adapter<br>RecyclerView 自带adapter、viewHolder 继承他们</p>
+<pre><code>public class SimpleAdapter extends RecyclerView.Adapter&lt;SimpleAdapter.MyViewHolder&gt;{    
+
+    private List&lt;String&gt; mDatas;
+    public Context context;
+    public SimpleAdapter(MainActivity mainActivity, List&lt;String&gt; mDatas) {
+        this.mDatas=mDatas;
+        this.context=mainActivity;
+    }
+
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.recycle_item, parent, false));
+        return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+         holder.tv.setText(mDatas.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return mDatas.size();
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder{
+
+        TextView tv;
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            tv= (TextView) itemView.findViewById(R.id.tv);
+        }
+}
+}
+</code></pre><p><img src="http://7xl32g.com1.z0.glb.clouddn.com/recyclerview_type.png"></p>
+<p>####替代ListView<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/listvioew_nodivider.png" width="300dp" height="500dp"></p>
+<pre><code>mRecyclerView= (RecyclerView) findViewById(R.id.recycleview);
+RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this);
+mRecyclerView.setLayoutManager(layoutManager);
+</code></pre><p>演示效果你会发现item之间没有分界线，你去找时，你又会发现recyclerview没有divider这个属性。此时有两个办法可以解决：</p>
+<p><li>1.你可以给item的布局设置margin值</li></p>
+<p><li>2.定制分割线</li></p>
+<p>#####ItemDecoration<br>我们可以通过该方法添加分割线： </p>
+<pre><code>mRecyclerView.addItemDecoration() 
+</code></pre><p>该方法的参数为RecyclerView.ItemDecoration，该类为抽象类，官方目前并没有提供默认的实现类（我觉得最好能提供几个）。 </p>
+<p>该类的源码：</p>
+<pre><code>public static abstract class ItemDecoration {
+
+public void onDraw(Canvas c, RecyclerView parent, State state) {
+            onDraw(c, parent);
+ }
+
+
+public void onDrawOver(Canvas c, RecyclerView parent, State state) {
+            onDrawOver(c, parent);
+ }
+
+public void getItemOffsets(Rect outRect, View view, RecyclerView parent, State state) {
+            getItemOffsets(outRect, ((LayoutParams) view.getLayoutParams()).getViewLayoutPosition(),
+                    parent);
+}
+
+@Deprecated
+public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
+            outRect.set(0, 0, 0, 0);
+ }
+</code></pre><p>当我们调用mRecyclerView.addItemDecoration()方法添加decoration的时候，RecyclerView在绘制的时候，去会绘制decorator，即调用该类的onDraw和onDrawOver方法，</p>
+<p><li>onDraw方法先于drawChildren</li></p>
+<p><li>onDrawOver在drawChildren之后，一般我们选择复写其中一个即可。</li></p>
+<p><li>getItemOffsets 可以通过outRect.set()为每个Item设置一定的偏移量，主要用于绘制Decorator。</li></p>
+<p>接下来我们看一个RecyclerView.ItemDecoration的实现类，该类很好的实现了RecyclerView添加分割线（当使用LayoutManager为LinearLayoutManager时）。 </p>
+<p>#####DividerItemDecoration</p>
+<pre><code>public class DividerItemDecoration extends RecyclerView.ItemDecoration {
+
+    private static final int[] ATTRS = new int[]{
+            android.R.attr.listDivider
+    };
+
+    public static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
+
+    public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
+
+    private Drawable mDivider;
+
+    private int mOrientation;
+
+    public DividerItemDecoration(Context context, int orientation) {
+        final TypedArray a = context.obtainStyledAttributes(ATTRS);
+        mDivider = a.getDrawable(0);
+        a.recycle();
+        setOrientation(orientation);
+    }
+
+    public void setOrientation(int orientation) {
+        if (orientation != HORIZONTAL_LIST &amp;&amp; orientation != VERTICAL_LIST) {
+            throw new IllegalArgumentException(&quot;invalid orientation&quot;);
+        }
+        mOrientation = orientation;
+    }
+
+    @Override
+    public void onDraw(Canvas c, RecyclerView parent) {
+        Log.v(&quot;recyclerview - itemdecoration&quot;, &quot;onDraw()&quot;);
+
+        if (mOrientation == VERTICAL_LIST) {
+            drawVertical(c, parent);
+        } else {
+            drawHorizontal(c, parent);
+        }
+
+    }
+
+
+    public void drawVertical(Canvas c, RecyclerView parent) {
+        final int left = parent.getPaddingLeft();
+        final int right = parent.getWidth() - parent.getPaddingRight();
+
+        final int childCount = parent.getChildCount();
+        for (int i = 0; i &lt; childCount; i++) {
+            final View child = parent.getChildAt(i);
+            android.support.v7.widget.RecyclerView v = new android.support.v7.widget.RecyclerView(parent.getContext());
+            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                    .getLayoutParams();
+            final int top = child.getBottom() + params.bottomMargin;
+            final int bottom = top + mDivider.getIntrinsicHeight();
+            mDivider.setBounds(left, top, right, bottom);
+            mDivider.draw(c);
+        }
+    }
+
+    public void drawHorizontal(Canvas c, RecyclerView parent) {
+        final int top = parent.getPaddingTop();
+        final int bottom = parent.getHeight() - parent.getPaddingBottom();
+
+        final int childCount = parent.getChildCount();
+        for (int i = 0; i &lt; childCount; i++) {
+            final View child = parent.getChildAt(i);
+            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                    .getLayoutParams();
+            final int left = child.getRight() + params.rightMargin;
+            final int right = left + mDivider.getIntrinsicHeight();
+            mDivider.setBounds(left, top, right, bottom);
+            mDivider.draw(c);
+        }
+    }
+
+    @Override
+    public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
+        if (mOrientation == VERTICAL_LIST) {
+            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+        } else {
+            outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
+        }
+    }
+}
+</code></pre><p>该实现类可以看到通过读取系统主题中的 android.R.attr.listDivider作为Item间的分割线，并且支持横向和纵向。</p>
+<p>获取到listDivider以后，该属性的值是个Drawable，在getItemOffsets中，outRect去设置了绘制的范围。onDraw中实现了真正的绘制。</p>
+<p>我们在原来的代码中添加一句：</p>
+<pre><code>mRecyclerView.addItemDecoration(new DividerItemDecoration(this,
+DividerItemDecoration.VERTICAL_LIST));
+</code></pre><p><img src="http://7xl32g.com1.z0.glb.clouddn.com/listview_divider.png" width="300dp" height="500dp"></p>
+<p>该分割线是系统默认的，你可以在theme.xml中找到该属性的使用情况。那么，使用系统的listDivider有什么好处呢？就是方便我们去随意的改变，该属性我们可以直接声明在：</p>
+<pre><code> &lt;!-- Application theme. --&gt;
+&lt;style name=&quot;AppTheme&quot; parent=&quot;AppBaseTheme&quot;&gt;
+  &lt;item name=&quot;android:listDivider&quot;&gt;@drawable/divider_bg&lt;/item&gt;  
+&lt;/style&gt;
+</code></pre><p>然后自己写个drawable即可，下面我们换一种分隔符：</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;rectangle&quot; &gt;
+
+    &lt;gradient
+        android:centerColor=&quot;#ff00ff00&quot;
+        android:endColor=&quot;#ff0000ff&quot;
+        android:startColor=&quot;#ffff0000&quot;
+        android:type=&quot;linear&quot; /&gt;
+    &lt;size android:height=&quot;4dp&quot;/&gt;
+
+&lt;/shape&gt;
+</code></pre><p><img src="http://7xl32g.com1.z0.glb.clouddn.com/listview_custom_divider.png" width="300dp" height="500dp"></p>
+<p>####LayoutManager<br>上面实现了类似ListView样子的Demo，通过使用其默认的LinearLayoutManager。</p>
+<p>RecyclerView.LayoutManager吧，这是一个抽象类，好在系统提供了3个实现类：</p>
+<p><li>LinearLayoutManager 线性管理器，支持横向、纵向。</li></p>
+<p><li>GridLayoutManager 网格布局管理器</li></p>
+<p><li>StaggeredGridLayoutManager 瀑布流式布局管理器</li></p>
+<p>上面我们已经初步体验了下LinearLayoutManager，接下来看GridLayoutManager。</p>
+<p>#####GridLayoutManager</p>
+<p>我们尝试去实现类似GridView，秒秒钟的事情：</p>
+<pre><code>//mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+  mRecyclerView.setLayoutManager(new GridLayoutManager(this,4));   //4列
+</code></pre><p>只需要修改LayoutManager即可，还是很nice的。</p>
+<p>当然了，改为GridLayoutManager以后，对于分割线，前面的DividerItemDecoration就不适用了，主要是因为它在绘制的时候，比如水平线，针对每个child的取值为：</p>
+<pre><code>final int left = parent.getPaddingLeft();
+final int right = parent.getWidth() - parent.getPaddingRight();
+</code></pre><p>因为每个Item一行，这样是没问题的。而GridLayoutManager时，一行有多个childItem，这样就多次绘制了，并且GridLayoutManager时，Item如果为最后一列（则右边无间隔线）或者为最后一行（底部无分割线）。</p>
+<p>针对上述，我们编写了DividerGridItemDecoration。</p>
+<pre><code>public class DividerGridItemDecoration extends RecyclerView.ItemDecoration
+{
+
+    private static final int[] ATTRS = new int[] { android.R.attr.listDivider };
+    private Drawable mDivider;
+
+    public DividerGridItemDecoration(Context context)
+    {
+        final TypedArray a = context.obtainStyledAttributes(ATTRS);
+        mDivider = a.getDrawable(0);
+        a.recycle();
+    }
+
+    @Override
+    public void onDraw(Canvas c, RecyclerView parent, State state)
+    {
+
+        drawHorizontal(c, parent);
+        drawVertical(c, parent);
+
+    }
+
+    private int getSpanCount(RecyclerView parent)
+    {
+        // 列数
+        int spanCount = -1;
+        LayoutManager layoutManager = parent.getLayoutManager();
+        if (layoutManager instanceof GridLayoutManager)
+        {
+
+            spanCount = ((GridLayoutManager) layoutManager).getSpanCount();
+        } else if (layoutManager instanceof StaggeredGridLayoutManager)
+        {
+            spanCount = ((StaggeredGridLayoutManager) layoutManager)
+                    .getSpanCount();
+        }
+        return spanCount;
+    }
+
+    public void drawHorizontal(Canvas c, RecyclerView parent)
+    {
+        int childCount = parent.getChildCount();
+        for (int i = 0; i &lt; childCount; i++)
+        {
+            final View child = parent.getChildAt(i);
+            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                    .getLayoutParams();
+            final int left = child.getLeft() - params.leftMargin;
+            final int right = child.getRight() + params.rightMargin
+                    + mDivider.getIntrinsicWidth();
+            final int top = child.getBottom() + params.bottomMargin;
+            final int bottom = top + mDivider.getIntrinsicHeight();
+            mDivider.setBounds(left, top, right, bottom);
+            mDivider.draw(c);
+        }
+    }
+
+    public void drawVertical(Canvas c, RecyclerView parent)
+    {
+        final int childCount = parent.getChildCount();
+        for (int i = 0; i &lt; childCount; i++)
+        {
+            final View child = parent.getChildAt(i);
+
+            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                    .getLayoutParams();
+            final int top = child.getTop() - params.topMargin;
+            final int bottom = child.getBottom() + params.bottomMargin;
+            final int left = child.getRight() + params.rightMargin;
+            final int right = left + mDivider.getIntrinsicWidth();
+
+            mDivider.setBounds(left, top, right, bottom);
+            mDivider.draw(c);
+        }
+    }
+
+    private boolean isLastColum(RecyclerView parent, int pos, int spanCount,
+            int childCount)
+    {
+        LayoutManager layoutManager = parent.getLayoutManager();
+        if (layoutManager instanceof GridLayoutManager)
+        {
+            if ((pos + 1) % spanCount == 0)// 如果是最后一列，则不需要绘制右边
+            {
+                return true;
+            }
+        } else if (layoutManager instanceof StaggeredGridLayoutManager)
+        {
+            int orientation = ((StaggeredGridLayoutManager) layoutManager)
+                    .getOrientation();
+            if (orientation == StaggeredGridLayoutManager.VERTICAL)
+            {
+                if ((pos + 1) % spanCount == 0)// 如果是最后一列，则不需要绘制右边
+                {
+                    return true;
+                }
+            } else
+            {
+                childCount = childCount - childCount % spanCount;
+                if (pos &gt;= childCount)// 如果是最后一列，则不需要绘制右边
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isLastRaw(RecyclerView parent, int pos, int spanCount,
+            int childCount)
+    {
+        LayoutManager layoutManager = parent.getLayoutManager();
+        if (layoutManager instanceof GridLayoutManager)
+        {
+            childCount = childCount - childCount % spanCount;
+            if (pos &gt;= childCount)// 如果是最后一行，则不需要绘制底部
+                return true;
+        } else if (layoutManager instanceof StaggeredGridLayoutManager)
+        {
+            int orientation = ((StaggeredGridLayoutManager) layoutManager)
+                    .getOrientation();
+            // StaggeredGridLayoutManager 且纵向滚动
+            if (orientation == StaggeredGridLayoutManager.VERTICAL)
+            {
+                childCount = childCount - childCount % spanCount;
+                // 如果是最后一行，则不需要绘制底部
+                if (pos &gt;= childCount)
+                    return true;
+            } else
+            // StaggeredGridLayoutManager 且横向滚动
+            {
+                // 如果是最后一行，则不需要绘制底部
+                if ((pos + 1) % spanCount == 0)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public void getItemOffsets(Rect outRect, int itemPosition,
+            RecyclerView parent)
+    {
+        int spanCount = getSpanCount(parent);
+        int childCount = parent.getAdapter().getItemCount();
+        if (isLastRaw(parent, itemPosition, spanCount, childCount))// 如果是最后一行，则不需要绘制底部
+        {
+            outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
+        } else if (isLastColum(parent, itemPosition, spanCount, childCount))// 如果是最后一列，则不需要绘制右边
+        {
+            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+        } else
+        {
+            outRect.set(0, 0, mDivider.getIntrinsicWidth(),
+                    mDivider.getIntrinsicHeight());
+        }
+    }
+}
+</code></pre><p>主要在getItemOffsets方法中，去判断如果是最后一行，则不需要绘制底部；如果是最后一列，则不需要绘制右边，整个判断也考虑到了StaggeredGridLayoutManager的横向和纵向，所以稍稍有些复杂。最重要还是去理解，如何绘制什么的不重要。一般如果仅仅是希望有空隙，还是去设置item的margin方便。</p>
+<p><img src="http://7xl32g.com1.z0.glb.clouddn.com/gridview.png" width="300dp" height="500dp"></p>
+<p>#####StaggeredGridLayoutMnager</p>
+<p>瀑布流式的布局，其实他可以实现GridLayoutManager一样的功能，仅仅按照下列代码：</p>
+<pre><code>// mRecyclerView.setLayoutManager(new GridLayoutManager(this,4));
+   mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4,        StaggeredGridLayoutManager.VERTICAL));
+</code></pre><p>这两种写法显示的效果是一致的，但是注意StaggeredGridLayoutManager构造的第二个参数传一个orientation，如果传入的是StaggeredGridLayoutManager.VERTICAL代表有多少列；那么传入的如果是StaggeredGridLayoutManager.HORIZONTAL就代表有多少行，比如本例如果改为：</p>
+<pre><code>mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4,
+        StaggeredGridLayoutManager.HORIZONTAL));
+</code></pre><p>可以看到，固定为4行，变成了左右滑动。有一点需要注意，如果是横向的时候，item的宽度需要注意去设置，毕竟横向的宽度没有约束了，应为控件可以横向滚动了。<br>如果你需要一样横向滚动的GridView，那么恭喜你。</p>
+<p><img src="http://7xl32g.com1.z0.glb.clouddn.com/hor_gridview.gif"></p>
+<p>#####用RecyclerView实现瀑布流<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/pull.png" width="300dp" height="500dp"></p>
+<p>只要使用StaggeredGridLayoutManager我们就已经实现了，只是上面的item布局我们使用了固定的高度，下面我们仅仅在适配器的onBindViewHolder方法中为我们的item设置个随机的高度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">mHeights = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mDatas.size(); i++) &#123;</div><div class="line">           mHeights.add((<span class="keyword">int</span>) (<span class="number">100</span> + Math.random() * <span class="number">300</span>));    <span class="comment">//产生100-400的随机高度</span></div><div class="line">       &#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(PullViewHolder holder, <span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line"></div><div class="line">       ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();</div><div class="line">       lp.height=mHeights.get(position);</div><div class="line">       holder.itemView.setLayoutParams(lp);          <span class="comment">//设置item的高度</span></div><div class="line">       holder.tv.setText(mDatas.get(position));</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>####ItemAnimator<br>ItemAnimator也是一个抽象类，好在系统为我们提供了一种默认的实现类，期待系统多<br>添加些默认的实现。</p>
+<p>借助默认的实现，当Item添加和移除的时候，添加动画效果很简单:</p>
+<pre><code>// 设置item动画
+mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+</code></pre><p>注意，这里更新数据集不是用adapter.notifyDataSetChanged()而是<br>notifyItemInserted(position)与notifyItemRemoved(position)<br>否则没有动画效果。 </p>
+<p>上述为adapter中添加了两个方法：</p>
+<pre><code>public void addData(int position) {
+        mDatas.add(position, &quot;Insert One&quot;);
+        notifyItemInserted(position);
+    }
+
+    public void removeData(int position) {
+            mDatas.remove(position);
+        notifyItemRemoved(position);
+    }
+</code></pre><p>Activity中点击MenuItem触发：</p>
+<pre><code>@Override
+public boolean onCreateOptionsMenu(Menu menu)
+{
+    getMenuInflater().inflate(R.menu.main, menu);
+    return super.onCreateOptionsMenu(menu);
+}
+
+@Override
+public boolean onOptionsItemSelected(MenuItem item)
+{
+    switch (item.getItemId())
+    {
+    case R.id.id_action_add:
+        mAdapter.addData(1);
+        break;
+    case R.id.id_action_delete:
+        mAdapter.removeData(1);
+        break;
+    }
+    return true;
+}
+</code></pre><p><img src="http://7xl32g.com1.z0.glb.clouddn.com/pull_animator.gif"><br>当然了只提供了一种动画，那么我们肯定可以去自定义各种nice的动画效果。 </p>
+<p>高兴的是，github上已经有很多类似的项目了，这里我们直接引用下：RecyclerViewItemAnimators，大家自己下载查看。 </p>
+<p>提供了SlideInOutLeftItemAnimator,SlideInOutRightItemAnimator,<br>SlideInOutTopItemAnimator,SlideInOutBottomItemAnimator等动画效果。</p>
+<p>####Click and LongClick<br>不过一个挺郁闷的地方就是，系统没有提供ClickListener和LongClickListener。</p>
+<p>不过我们也可以自己去添加，只是会多了些代码而已。 </p>
+<p>实现的方式比较多，你可以通过mRecyclerView.addOnItemTouchListener去监听然后去判断手势，<br>当然你也可以通过adapter中自己去提供回调，这里我们选择后者，前者的方式，大家有兴趣自己去实现。</p>
+<pre><code>public class PullAdapter extends RecyclerView.Adapter&lt;PullViewHolder&gt; {
+
+    public interface ItemClickListener{
+        void onItemClickListener(View view,int position);
+        boolean onItemLongClickListener(View view,int position);
+    }
+
+    public ItemClickListener mItemClickListener;
+
+    public void setOnItemClickListener(ItemClickListener itemClickListener){
+        this.mItemClickListener=itemClickListener;
+    }
+    @Override
+    public void onBindViewHolder(final PullViewHolder holder, int position) {
+
+        ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
+        lp.height=mHeights.get(position);
+        holder.itemView.setLayoutParams(lp);
+        holder.tv.setText(mDatas.get(position));
+        if(mItemClickListener != null){
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos=holder.getLayoutPosition();       //这个位置position注意
+                    mItemClickListener.onItemClickListener(holder.itemView,pos);
+                }
+            });
+
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int pos=holder.getLayoutPosition();
+                    return  mItemClickListener.onItemLongClickListener(holder.itemView,pos);
+                }
+            });
+        }
+    }
+</code></pre><p>在Activity中</p>
+<pre><code>adapter.setOnItemClickListener(new PullAdapter.ItemClickListener() {
+          @Override
+          public void onItemClickListener(View view, int position) {
+              Toast.makeText(PullActivity.this,&quot;Click&quot;+position,Toast.LENGTH_SHORT).show();
+          }
+
+          @Override
+          public boolean onItemLongClickListener(View view, int position) {
+              Toast.makeText(PullActivity.this,&quot;LongClick&quot;+position,Toast.LENGTH_SHORT).show();
+              return true;
+          }
+      });
+</code></pre><p>adapter中自己定义了个接口，然后在onBindViewHolder中去为holder.itemView去设置相应<br>的监听最后回调我们设置的监听。</p>
+<p>最后别忘了给item添加一个drawable:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+    &lt;item android:state_pressed=&quot;true&quot; android:drawable=&quot;@color/color_item_press&quot;&gt;&lt;/item&gt;
+    &lt;item android:drawable=&quot;@color/color_item_normal&quot;&gt;&lt;/item&gt;
+&lt;/selector&gt;
+</code></pre><p>###总结<br>到此我们基本介绍了RecylerView常见用法，包含了：</p>
+<p><li>系统提供了几种LayoutManager的使用；</li></p>
+<p><li>如何通过自定义ItemDecoration去设置分割线，或者一些你想作为分隔的drawable，注意这里 </li></p>
+<p><li>巧妙的使用了系统的listDivider属性，你可以尝试添加使用divider和dividerHeight属性。</li></p>
+<p><li>如何使用ItemAnimator为RecylerView去添加Item移除、添加的动画效果。</li></p>
+<p><li>介绍了如何添加ItemClickListener与ItemLongClickListener。</li></p>
+<p>可以看到RecyclerView可以实现：</p>
+<p><li>ListView的功能</li></p>
+<p><li>GridView的功能</li></p>
+<p><li>横向ListView的功能，参考Android 自定义RecyclerView 实现真正的Gallery效果</li></p>
+<p><li>横向ScrollView的功能</li></p>
+<p><li>瀑布流效果</li></p>
+<p><li>便于添加Item增加和移除动画</li></p>
+<p>通过简单改变下LayoutManager，就可以产生不同的效果，那么我们可以根据手机屏幕的宽度去动态设置LayoutManager，屏幕宽度一般的，显示为ListView；宽度稍大的显示两列的GridView或者瀑布流（或者横纵屏幕切换时变化，有点意思~）；显示的列数和宽度成正比。甚至某些特殊屏幕，让其横向滑动~~再选择一个nice的动画效果，相信这种插件式的编码体验一定会让你迅速爱上RecyclerView。</p>
+<p>最后说明：</p>
+<p>此文章转载于：<br><a href="http://blog.csdn.net/lmj623565791/article/details/45059587" target="_blank" rel="external">http://blog.csdn.net/lmj623565791/article/details/45059587</a></p>
+<p>本文出自:<a href="
+http://blog.csdn.net/lmj623565791" target="_blank" rel="external">【张鸿洋的博客】</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/10/Android沉浸式通知栏的一个开源库SystemBarTint的使用/" rel="next" title="Android沉浸式通知栏的一个开源库SystemBarTint的使用">
+                <i class="fa fa-chevron-left"></i> Android沉浸式通知栏的一个开源库SystemBarTint的使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/13/SwipeRefreshLayout-RecyclerView-实现下拉刷新和上拉加载更多/" rel="prev" title="SwipeRefreshLayout + RecyclerView 实现下拉刷新和上拉加载更多">
+                SwipeRefreshLayout + RecyclerView 实现下拉刷新和上拉加载更多 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

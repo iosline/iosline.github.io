@@ -1,0 +1,925 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#进入 Material Design时代（一）之design包
+###一、导入导入design包：
+compile &amp;apos;com.android.support:design:23.0.1&amp;apos;    
+###二、主要使用组件
+AppBarlayout: 
+
+AppBarLayout是继承LinearLayout实现的一个ViewGroup容器组件，它是为了Material Desi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进入 Material Design时代（一）之design包">
+<meta property="og:url" content="http://yoursite.com/2015/10/10/进入-Material-Design时代（一）之design包/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#进入 Material Design时代（一）之design包
+###一、导入导入design包：
+compile &amp;apos;com.android.support:design:23.0.1&amp;apos;    
+###二、主要使用组件
+AppBarlayout: 
+
+AppBarLayout是继承LinearLayout实现的一个ViewGroup容器组件，它是为了Material Desi">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/appbarlayout.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/演示coordinatorLayout.gif">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/CollapsingToolbarLayout.gif">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/navigationView.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/snackbar.gif">
+<meta property="og:updated_time" content="2015-10-10T06:28:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="进入 Material Design时代（一）之design包">
+<meta name="twitter:description" content="#进入 Material Design时代（一）之design包
+###一、导入导入design包：
+compile &amp;apos;com.android.support:design:23.0.1&amp;apos;    
+###二、主要使用组件
+AppBarlayout: 
+
+AppBarLayout是继承LinearLayout实现的一个ViewGroup容器组件，它是为了Material Desi">
+<meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/appbarlayout.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/10/10/进入-Material-Design时代（一）之design包/"/>
+
+  <title> 进入 Material Design时代（一）之design包 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                进入 Material Design时代（一）之design包
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-10T10:25:34+08:00" content="2015-10-10">
+              2015-10-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#进入 Material Design时代（一）之design包</p>
+<p>###一、导入<br>导入design包：</p>
+<pre><code>compile &apos;com.android.support:design:23.0.1&apos;    
+</code></pre><p>###二、主要使用组件</p>
+<h3>AppBarlayout:</h3> 
+
+<p>AppBarLayout是继承LinearLayout实现的一个ViewGroup容器组件，它是为了Material Design设计的App Bar,支持手势滑动操作。</p>
+<p>默认的AppBarLayout是垂直方向的，它的作用是把AppBarLayout包裹的内容都作为AppBar。</p>
+<p><b>常用效果是：将Toolbar 和Tablayout的组合部分共同构成 AppBar的效果。</b></p>
+<p><b>注意：</b>AppBarLayout必须作为Toolbar的父布局容器</p>
+<p>AppBarLayout是支持手势滑动效果的，不过的跟CoordinatorLayout配合使用<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/appbarlayout.png"></p>
+<h3>Coordinatorlayout:</h3>
+
+<p>CoordinatorLayout是一个增强型的FrameLayout。它的作用有两个：</p>
+<p><li>1.作为一个布局的根布局 </li></p>
+<p><li>2.最后一个为子视图之间相互协调手势效果的一个协调布局</li></p>
+<p>布局文件：</p>
+<pre><code>&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:id=&quot;@+id/main_content&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:id=&quot;@+id/appbar&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot;&gt;
+
+        &lt;android.support.v7.widget.Toolbar
+            android:id=&quot;@+id/toolbar&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;?attr/actionBarSize&quot;
+            android:background=&quot;?attr/colorPrimary&quot;
+            app:popupTheme=&quot;@style/ThemeOverlay.AppCompat.Light&quot;
+            app:layout_scrollFlags=&quot;scroll|enterAlways&quot; /&gt;
+
+        &lt;android.support.design.widget.TabLayout
+            android:id=&quot;@+id/tabs&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+
+    &lt;android.support.v4.view.ViewPager
+        android:id=&quot;@+id/viewpager&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot; /&gt;
+
+    &lt;android.support.design.widget.FloatingActionButton
+        android:id=&quot;@+id/fab&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_gravity=&quot;end|bottom&quot;
+        android:layout_margin=&quot;@dimen/fab_margin&quot;
+        android:src=&quot;@drawable/ic_done&quot; /&gt;
+
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre><p>Acitvity:</p>
+<pre><code>Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+setSupportActionBar(toolbar);
+
+final ActionBar ab = getSupportActionBar();
+ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+ ab.setDisplayHomeAsUpEnabled(true);
+TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+tabLayout.setupWithViewPager(viewPager);    //design包自带的TabLayout自带和viewpager关联的方法
+</code></pre><p>效果：<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/演示coordinatorLayout.gif"></p>
+<p>代码介绍：</p>
+<p>####1.<br>由于CoordinatorLayout是FrameLayout布局，我们可以通过<br><code avrasm="" class="hljs">android:layout_gravity=bottom|end</code><br>属性来控制组件在整个布局中的位置，比如上面效果中的FAB就是通过android:layout_gravity=”bottom|end”来确定 FAB的位置在底端的最右边的位置。</p>
+<p>####2.<br>为了达到上面效果图的手势动画效果，我们必须做如下设置，通过app:layout_scrollFlags=”scroll|enterAlways” 属性来确定哪个组件是可滑动的</p>
+<p>设置的layout_scrollFlags有如下几种选项：</p>
+<p><li>scroll: 所有想滚动出屏幕的view都需要设置这个flag- 没有设置这个flag的view将被固定在屏幕顶部。</li></p>
+<p><li>enterAlways: 这个flag让任意向下的滚动都会导致该view变为可见，启用快速“返回模式”。</li></p>
+<p><li>enterAlwaysCollapsed: 当你的视图已经设置minHeight属性又使用此标志时，你的视图只能已最小高度进入，只有当滚动视图到达顶部时才扩大到完整高度。</li></p>
+<p><li>exitUntilCollapsed: 滚动退出屏幕，最后折叠在顶端。</li></p>
+<p>我们上面的布局中 给Toolbar设置了app:layout_scrollFlags属性，因此，Toolbar是可以滚动出屏幕，且向下滚动有可以出现。</p>
+<p>####3.<br>为了使得Toolbar可以滑动，我们必须还得有个条件，就是CoordinatorLayout布局下包裹一个可以滑动的布局，比如 RecyclerView，ViewPager,NestedScrollView(经过测试，ListView，ScrollView不支持)具有滑动效果的组件。并且给这些组件设置如下属性来告诉CoordinatorLayout，该组件是带有滑动行为的组件，然后CoordinatorLayout在接受到滑动时会通知AppBarLayout 中可滑动的Toolbar可以滑出屏幕了。</p>
+<pre><code>app:layout_behavior=@string/appbar_scrolling_view_behavior
+</code></pre><p>####4.总结<br>为了使得Toolbar有滑动效果，必须做到如下三点：</p>
+<p><li>CoordinatorLayout必须作为整个布局的父布局容器。</li></p>
+<p><li>给需要滑动的组件设置 app:layout_scrollFlags=”scroll|enterAlways” 属性。 (ToolBar)</li></p>
+<p><li>给你的可滑动的组件，也就是RecyclerView、ViewPager或者 NestedScrollView 设置如下属性：</li></p>
+<pre><code>app:layout_behavior=@string/appbar_scrolling_view_behavior
+</code></pre><h3>CollapsingToolbarLayout:</h3>
+
+<p>CollapsingToolbarLayout包裹 Toolbar 的时候提供一个可折叠的 Toolbar，一般作为AppbarLayout的子视图使用。</p>
+<p>CollapsingToolbarLayout 提供以下属性和方法是用：</p>
+<ol>
+<li><p>Collapsing title：ToolBar的标题，当CollapsingToolbarLayout全屏没有折叠时，title显示的是大字体，在折叠的过程中，title不断变小到一定大小的效果。你可以调用setTitle(CharSequence)方法设置title。</p>
+</li>
+<li><p>Content scrim：ToolBar被折叠到顶部固定时候的背景，你可以调用setContentScrim(Drawable)方法改变背景或者 在属性中使用 app:contentScrim=?attr/colorPrimary来改变背景。</p>
+</li>
+<li><p>Status bar scrim：状态栏的背景，调用方法setStatusBarScrim(Drawable)。还没研究明白，不过这个只能在Android5.0以上系统有效果。</p>
+</li>
+<li><p>Parallax scrolling children：CollapsingToolbarLayout滑动时，子视图的视觉差，可以通过属性app:layout_collapseParallaxMultiplier=0.6改变。</p>
+</li>
+<li><p>CollapseMode ：子视图的折叠模式，在子布局中使用。有两种 “pin”：固定模式，在折叠的时候最后固定在顶端；“parallax”：视差模式，在折叠的时候会有个视差折叠的效果。我们可以在布局中使用属性app:layout_collapseMode=parallax来改变。</p>
+<p>效果：<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/CollapsingToolbarLayout.gif"></p>
+</li>
+</ol>
+<p>布局文件：</p>
+<pre><code>&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:id=&quot;@+id/main_content&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:fitsSystemWindows=&quot;true&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:id=&quot;@+id/appbar&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;@dimen/detail_backdrop_height&quot;
+        android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot;
+        android:fitsSystemWindows=&quot;true&quot;&gt;
+
+        &lt;android.support.design.widget.CollapsingToolbarLayout
+            android:id=&quot;@+id/collapsing_toolbar&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            app:layout_scrollFlags=&quot;scroll|exitUntilCollapsed&quot;
+            android:fitsSystemWindows=&quot;true&quot;
+            app:contentScrim=&quot;?attr/colorPrimary&quot;
+            app:expandedTitleMarginStart=&quot;48dp&quot;
+            app:expandedTitleMarginEnd=&quot;64dp&quot;&gt;
+
+            &lt;ImageView
+                android:id=&quot;@+id/backdrop&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;match_parent&quot;
+                android:scaleType=&quot;centerCrop&quot;
+                android:fitsSystemWindows=&quot;true&quot;
+                app:layout_collapseMode=&quot;parallax&quot; /&gt;
+
+            &lt;android.support.v7.widget.Toolbar
+                android:id=&quot;@+id/toolbar&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;?attr/actionBarSize&quot;
+                app:popupTheme=&quot;@style/ThemeOverlay.AppCompat.Light&quot;
+                app:layout_collapseMode=&quot;pin&quot; /&gt;
+
+        &lt;/android.support.design.widget.CollapsingToolbarLayout&gt;
+
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+
+    &lt;android.support.v4.widget.NestedScrollView
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot;&gt;
+
+        &lt;LinearLayout
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:orientation=&quot;vertical&quot;
+            android:paddingTop=&quot;24dp&quot;&gt;
+
+            &lt;android.support.v7.widget.CardView
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:layout_margin=&quot;@dimen/card_margin&quot;&gt;
+
+                &lt;LinearLayout
+                    style=&quot;@style/Widget.CardContent&quot;
+                    android:layout_width=&quot;match_parent&quot;
+                    android:layout_height=&quot;wrap_content&quot;&gt;
+
+                    &lt;TextView
+                        android:layout_width=&quot;match_parent&quot;
+                        android:layout_height=&quot;wrap_content&quot;
+                        android:text=&quot;Info&quot;
+                        android:textAppearance=&quot;@style/TextAppearance.AppCompat.Title&quot; /&gt;
+
+                    &lt;TextView
+                        android:layout_width=&quot;match_parent&quot;
+                        android:layout_height=&quot;wrap_content&quot;
+                        android:text=&quot;@string/cheese_ipsum&quot; /&gt;
+
+                &lt;/LinearLayout&gt;
+
+            &lt;/android.support.v7.widget.CardView&gt;
+
+        &lt;/LinearLayout&gt;
+
+    &lt;/android.support.v4.widget.NestedScrollView&gt;
+
+    &lt;android.support.design.widget.FloatingActionButton
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        app:layout_anchor=&quot;@id/appbar&quot;
+        app:layout_anchorGravity=&quot;bottom|right|end&quot;
+        android:src=&quot;@drawable/ic_discuss&quot;
+        android:layout_margin=&quot;@dimen/fab_margin&quot;
+        android:clickable=&quot;true&quot;/&gt;
+
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre><p>Activity:</p>
+<pre><code>Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+setSupportActionBar(toolbar);
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+CollapsingToolbarLayout collaspingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+collaspingToolbar.setTitle(cheeseName);
+ImageView imageview = (ImageView) findViewById(R.id.backdrop);
+Glide.with(this).load(Cheeses.getRandomCheeseDrawable()).centerCrop().into(imageview);
+</code></pre><p>####总结：</p>
+<p>CollapsingToolbarLayout主要是提供一个可折叠的Toolbar容器，对容器中的不同视图设置layout_collapseMode折叠模式，来达到不同的折叠效果。</p>
+<p>1.Toolbar 的高度layout_height必须固定，不能 “wrap_content”，否则Toolbar不会滑动，也没有折叠效果。</p>
+<p>2.为了能让FloatingActionButton也能折叠且消失出现，我们必须给FAB设置锚点属性</p>
+<p><code class="hljs" perl="">app:layout_anchor=@id/appbar</code></p>
+<p>意思是FAB浮动按钮显示在哪个布局区域。<br>且设置当前锚点的位置</p>
+<p>app:layout_anchorGravity=”bottom|end|right”</p>
+<p>意思FAB浮动按钮在这个布局区域的具体位置。<br>两个属性共同作用才是的FAB 浮动按钮也能折叠消失，出现。</p>
+<p>3.给需要有折叠效果的组件设置 layout_collapseMode属性。</p>
+<p></p><h3>NavigationView:</h3><br>用于侧滑菜单中的menu布局。之前Google在V4包中推出自己的 DrawerLayout作为抽屉侧滑菜单，其实这次谷歌只是将之前的ListView布局替换成NavigationView了。简化了之前ListView写适配器的繁琐。<p></p>
+<p>效果：<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/navigationView.png"></p>
+<pre><code>&lt;android.support.v4.widget.DrawerLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:id=&quot;@+id/drawer_layout&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:fitsSystemWindows=&quot;true&quot;&gt;
+
+    &lt;include layout=&quot;@layout/include_list_viewpager&quot;/&gt;   //主界面布局
+
+    &lt;android.support.design.widget.NavigationView        //侧滑菜单布局
+        android:id=&quot;@+id/nav_view&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_gravity=&quot;start&quot;
+        android:fitsSystemWindows=&quot;true&quot;
+        app:headerLayout=&quot;@layout/nav_header&quot;         //侧滑顶部的头布局
+        app:menu=&quot;@menu/drawer_view&quot;/&gt;                //侧滑菜单项
+
+&lt;/android.support.v4.widget.DrawerLayout&gt;
+</code></pre><p>其中NavigationView 中的 android:layout_gravity=”start” 属性来控制抽屉菜单从哪边滑出，一般“start ”从左边滑出，“end”从右边滑出。</p>
+<p>这里最主要的两个属性分别是：</p>
+<p>1.app:headerLayout: 给NavigationView添加头部布局</p>
+<p>2.app：menu：给NavigationView添加menu菜单布局</p>
+<p>nav_header.xml</p>
+<pre><code>&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;192dp&quot;
+    android:background=&quot;?attr/colorPrimaryDark&quot;
+    android:padding=&quot;16dp&quot;
+    android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark&quot;
+    android:orientation=&quot;vertical&quot;
+    android:gravity=&quot;bottom&quot;&gt;
+
+    &lt;TextView
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Username&quot;
+        android:textAppearance=&quot;@style/TextAppearance.AppCompat.Body1&quot;/&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre><p>drawer_view.xml (menu布局)</p>
+<pre><code>&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+
+    &lt;group android:checkableBehavior=&quot;single&quot;&gt;
+        &lt;item
+            android:id=&quot;@+id/nav_home&quot;
+            android:icon=&quot;@drawable/ic_dashboard&quot;
+            android:title=&quot;Home&quot; /&gt;
+        &lt;item
+            android:id=&quot;@+id/nav_messages&quot;
+            android:icon=&quot;@drawable/ic_event&quot;
+            android:title=&quot;Messages&quot; /&gt;
+        &lt;item
+            android:id=&quot;@+id/nav_friends&quot;
+            android:icon=&quot;@drawable/ic_headset&quot;
+            android:title=&quot;Friends&quot; /&gt;
+        &lt;item
+            android:id=&quot;@+id/nav_discussion&quot;
+            android:icon=&quot;@drawable/ic_forum&quot;
+            android:title=&quot;Discussion&quot; /&gt;
+    &lt;/group&gt;
+
+    &lt;item android:title=&quot;Sub items&quot;&gt;
+        &lt;menu&gt;
+            &lt;item
+                android:icon=&quot;@drawable/ic_dashboard&quot;
+                android:title=&quot;Sub item 1&quot; /&gt;
+            &lt;item
+                android:icon=&quot;@drawable/ic_forum&quot;
+                android:title=&quot;Sub item 2&quot; /&gt;
+        &lt;/menu&gt;
+    &lt;/item&gt;
+
+&lt;/menu&gt;
+</code></pre><p>####java代码使用：</p>
+<pre><code>private void initNavigationView(){
+        navigationView = (NavigationView) findViewById(R.id.navigationView);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //设置侧滑菜单选择监听事件
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                menuItem.setChecked(true);
+                //关闭抽屉侧滑菜单
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home){
+            //打开抽屉侧滑菜单
+            drawerLayout.openDrawer(GravityCompat.START);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+</code></pre><p>关于NavigationView中item的字体颜色和icon选中状态颜色是去当前主题theme中的</p>
+<pre><code>&lt;--正常状态下字体颜色和icon颜色--&gt;
+&lt;item name=&quot;android:textColorPrimary&quot;&gt;@android:color/darker_gray&lt;/item&gt;
+
+&lt;--选中状态icon的颜色和字体颜色--&gt;
+ &lt;item name=&quot;colorPrimary&quot;&gt;@color/accent_material_light&lt;/item&gt;&lt;/code&gt;
+</code></pre><p>当然你可以通过如下方法或者属性来改变这一状态：</p>
+<p><li>setItemBackgroundResource(int)：给menu设置背景资源，对应的属性app:itemBackground </li></p>
+<p><li>setItemIconTintList(ColorStateList)：给menu的icon设置颜色，对应的属性app:itemIconTint</li></p>
+<p><li>setItemTextColor(ColorStateList)：给menu的item设置字体颜色，对应的属性app:itemTextColor</li></p>
+<p></p><h3>SnackBar:</h3><br>当Snackbar在显示的时候，往往出现在屏幕的底部。为了给Snackbar留出空间，浮动操作按钮需要向上移动。<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/snackbar.gif"><p></p>
+<pre><code>FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, &quot;Here&apos;s a Snackbar&quot;, Snackbar.LENGTH_LONG)
+                        .setAction(&quot;Action&quot;, null).show();
+            }
+        });
+</code></pre><p>SnackBar可用于代替Toast弹出再按一次返回的情况。</p>
+<p></p><h3><a href="https://github.com/chrisbanes/cheesesquare" target="_blank" rel="external">完整代码地址</a><p></p>
+</h3>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/" rel="next" title="Android Studio插件GsonFormat快速实现JavaBean">
+                <i class="fa fa-chevron-left"></i> Android Studio插件GsonFormat快速实现JavaBean
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/10/Android沉浸式通知栏的一个开源库SystemBarTint的使用/" rel="prev" title="Android沉浸式通知栏的一个开源库SystemBarTint的使用">
+                Android沉浸式通知栏的一个开源库SystemBarTint的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">AppBarlayout:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Coordinatorlayout:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">CollapsingToolbarLayout:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">NavigationView:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">SnackBar:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">完整代码地址
+</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

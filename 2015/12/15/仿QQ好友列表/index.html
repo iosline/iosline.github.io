@@ -1,0 +1,735 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前段时间，朋友不经意间就说起了那天发生的事，一个ios面试者去他公司面试，让他直接做一个QQ好友列表，那哥们不会，被他彻底的鄙视了一番，马丹，我一听，草，我也不会啊，然后我就默默的记住了，回来去查了下资料写了下。
+唉，我太菜了，学无止境啊
+
+进入正题：
+其实就是用到了ExpandableListView这个组件，用法和listview相似。
+####一、默认图标
+在Activity的布局文件中
+&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="仿QQ好友列表">
+<meta property="og:url" content="http://yoursite.com/2015/12/15/仿QQ好友列表/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前段时间，朋友不经意间就说起了那天发生的事，一个ios面试者去他公司面试，让他直接做一个QQ好友列表，那哥们不会，被他彻底的鄙视了一番，马丹，我一听，草，我也不会啊，然后我就默默的记住了，回来去查了下资料写了下。
+唉，我太菜了，学无止境啊
+
+进入正题：
+其实就是用到了ExpandableListView这个组件，用法和listview相似。
+####一、默认图标
+在Activity的布局文件中
+&amp;">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/仿QQ好友列表.gif">
+<meta property="og:updated_time" content="2015-12-15T09:50:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="仿QQ好友列表">
+<meta name="twitter:description" content="前段时间，朋友不经意间就说起了那天发生的事，一个ios面试者去他公司面试，让他直接做一个QQ好友列表，那哥们不会，被他彻底的鄙视了一番，马丹，我一听，草，我也不会啊，然后我就默默的记住了，回来去查了下资料写了下。
+唉，我太菜了，学无止境啊
+
+进入正题：
+其实就是用到了ExpandableListView这个组件，用法和listview相似。
+####一、默认图标
+在Activity的布局文件中
+&amp;">
+<meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/仿QQ好友列表.gif">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/12/15/仿QQ好友列表/"/>
+
+  <title> 仿QQ好友列表 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                仿QQ好友列表
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-15T17:28:06+08:00" content="2015-12-15">
+              2015-12-15
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前段时间，朋友不经意间就说起了那天发生的事，一个ios面试者去他公司面试，让他直接做一个QQ好友列表，那哥们不会，被他彻底的鄙视了一番，马丹，我一听，草，我也不会啊，然后我就默默的记住了，回来去查了下资料写了下。</p>
+<h3>唉，我太菜了，学无止境啊</h3>
+
+<p>进入正题：</p>
+<p>其实就是用到了<b>ExpandableListView</b>这个组件，用法和listview相似。</p>
+<p>####一、默认图标</p>
+<p>在Activity的布局文件中</p>
+<pre><code>&lt;RelativeLayout 
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    &gt;
+
+    &lt;ExpandableListView
+        android:id=&quot;@+id/expanded_list&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:divider=&quot;@null&quot;
+        android:scrollbars=&quot;none&quot;/&gt;
+&lt;/RelativeLayout&gt;
+</code></pre><p>然后在Activity中</p>
+<pre><code>public class MainActivity extends AppCompatActivity {
+
+    ExpandableListView expandablelistview;
+    //群组名称
+    private String[] group = new String[] { &quot;在线好友&quot;, &quot;我的好友&quot;, &quot;我的同事&quot;};
+    //好友名称
+    private String[][] buddy = new String[][] {
+            { &quot;元芳&quot;, &quot;雷丶小贱&quot;, &quot;狄大人&quot;},
+            {&quot;高太后&quot;, &quot;士兵甲&quot;, &quot;士兵乙&quot;, &quot;士兵丙&quot; },
+            { &quot;艺术家&quot;, &quot;叫兽&quot;, &quot;攻城师&quot;, &quot;职业玩家&quot; }};
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        expandablelistview= (ExpandableListView) findViewById(R.id.expanded_list);
+        ExpandableListAdapter adapter=new BuddyAdapter();
+        expandablelistview.setAdapter(adapter);
+        expandablelistview.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                Toast.makeText(MainActivity.this,buddy[groupPosition][childPosition].toString(),Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+    }
+
+    class BuddyAdapter extends BaseExpandableListAdapter {
+
+        @Override
+        public int getGroupCount() {
+            return group.length;
+        }
+
+        @Override
+        public int getChildrenCount(int groupPosition) {
+            return buddy[groupPosition].length;
+        }
+
+        @Override
+        public Object getGroup(int groupPosition) {
+            return group[groupPosition];
+        }
+
+        @Override
+        public Object getChild(int groupPosition, int childPosition) {
+            return buddy[groupPosition][childPosition];
+        }
+
+        @Override
+        public long getGroupId(int groupPosition) {
+            return groupPosition;
+        }
+
+        @Override
+        public long getChildId(int groupPosition, int childPosition) {
+            return childPosition;
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
+        @Override
+        public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+            TextView textView = getTextView();//调用定义的getTextView()方法
+            textView.setText(getGroup(groupPosition).toString());//添加数据
+            return textView;
+        }
+
+        @Override
+        public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+            LinearLayout ll = new LinearLayout(MainActivity.this);
+            ll.setOrientation(LinearLayout.HORIZONTAL);//定义为纵向排列
+            ImageView logo = new ImageView(MainActivity.this);
+            logo.setImageResource(R.mipmap.ic_launcher);//添加图片
+            ll.addView(logo);
+            TextView textView = getTextView();//调用定义的getTextView()方法
+            LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.gravity= Gravity.CENTER;
+            textView.setLayoutParams(params);
+            textView.setText(getChild(groupPosition,childPosition).toString());//添加数据
+            ll.addView(textView);
+            return ll;
+        }
+
+        @Override
+        public boolean isChildSelectable(int groupPosition, int childPosition) {
+            return true;
+        }
+    }
+
+    private TextView getTextView() {
+        AbsListView.LayoutParams lp = new AbsListView.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,100);
+        TextView textView = new TextView(MainActivity.this);
+        textView.setLayoutParams(lp);
+        textView.setPadding(100, 0, 0, 0);
+        textView.setTextSize(20);
+        return textView;
+    }
+
+}
+</code></pre><p>效果图：<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/仿QQ好友列表.gif"></p>
+<p>####二、自定义列表图标</p>
+<p><li>1、更改自定义图标</li></p>
+<p>在drawable文件夹下新建expandablelistview_change.xml</p>
+<pre><code>&lt;?xml version = &quot;1.0&quot;   encoding = &quot;utf-8&quot;?&gt;
+&lt;selector   xmlns:android = &quot;http://schemas.android.com/apk/res/android&quot; &gt;      
+     &lt;item android:state_expanded = &quot;true&quot;   android:drawable = &quot;@drawable/w2&quot;/&gt;      
+     &lt;item android:drawable = &quot;@drawable/w1&quot;/&gt;      
+&lt;/selector &gt;
+</code></pre><p><li>2.修改布局文件中Expandablelistview的属性等</li></p>
+<pre><code>&lt;ExpandableListView
+    android:id=&quot;@+id/expanded_list&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:divider=&quot;@null&quot;
+    android:scrollbars=&quot;none&quot;
+    android:groupIndicator=&quot;@drawable/expandablelistview_change&quot;/&gt;   //就是添加这个
+</code></pre><p><li>3.如果想让图标放在右边可以这样做：</li></p>
+<pre><code>// 得到屏幕的大小
+DisplayMetrics dm = new DisplayMetrics();
+getWindowManager().getDefaultDisplay().getMetrics(dm);
+//图标设置在右边
+getExpandableListView().setIndicatorBounds(dm.widthPixels-60, dm.widthPixels); // 设置指示图标的位置
+</code></pre><p></p><h1>引以为戒<p></p>
+</h1>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/31/Android-夜间模式的简单实现/" rel="next" title="Android 夜间模式的简单实现">
+                <i class="fa fa-chevron-left"></i> Android 夜间模式的简单实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/17/Android中WebView使用之一（基础用法）/" rel="prev" title="Android中WebView使用之一（基础用法）">
+                Android中WebView使用之一（基础用法） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">唉，我太菜了，学无止境啊</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">引以为戒
+</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
