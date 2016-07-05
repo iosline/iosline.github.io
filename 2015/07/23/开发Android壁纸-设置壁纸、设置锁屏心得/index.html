@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,32 +95,29 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
-<meta name="description" content="#开发Android壁纸:设置壁纸、设置锁屏直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
-##源码下载：     这个我还没添加到github上，添加之后更改本位置的内容
-##设置壁纸      public class Wallpaper {
-    private Activity mContext;">
+<meta name="description" content="直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
+源码下载：这个我还没添加到github上，添加之后更改本位置的内容
+设置壁纸1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发Android壁纸:设置壁纸、设置锁屏心得">
 <meta property="og:url" content="http://yoursite.com/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#开发Android壁纸:设置壁纸、设置锁屏直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
-##源码下载：     这个我还没添加到github上，添加之后更改本位置的内容
-##设置壁纸      public class Wallpaper {
-    private Activity mContext;">
-<meta property="og:updated_time" content="2015-08-17T10:07:40.000Z">
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
+源码下载：这个我还没添加到github上，添加之后更改本位置的内容
+设置壁纸1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253">
+<meta property="og:updated_time" content="2016-07-05T12:56:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发Android壁纸:设置壁纸、设置锁屏心得">
-<meta name="twitter:description" content="#开发Android壁纸:设置壁纸、设置锁屏直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
-##源码下载：     这个我还没添加到github上，添加之后更改本位置的内容
-##设置壁纸      public class Wallpaper {
-    private Activity mContext;">
+<meta name="twitter:description" content="直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。
+源码下载：这个我还没添加到github上，添加之后更改本位置的内容
+设置壁纸1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253">
 
 
 
@@ -125,7 +140,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/"/>
 
-  <title> 开发Android壁纸:设置壁纸、设置锁屏心得 | Hexo </title>
+  <title> 开发Android壁纸:设置壁纸、设置锁屏心得 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,6 +148,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -156,7 +181,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -229,9 +254,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -286,11 +334,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/" class="leancloud_visitors" data-flag-title="开发Android壁纸:设置壁纸、设置锁屏心得">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -305,530 +369,33 @@
       
 
       
-        <p>#开发Android壁纸:设置壁纸、设置锁屏<br>直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。</p>
-<p>##源码下载：<br>     这个我还没添加到github上，添加之后更改本位置的内容</p>
-<p>##设置壁纸<br>      public class Wallpaper {</p>
-<pre><code>    private Activity mContext;
-
-    public Wallpaper(ImageShowActivity imageShowActivity) {
-        mContext = imageShowActivity;
-    }
-
-    public void setWallPaper(String url) {
-        int index = url.lastIndexOf(&quot;/&quot;);
-        String pirtureName = url.substring(index + 1);
-        String path = AppConfig.DOWN_PATH;
-        File file = new File(path);
-        if (!file.exists() &amp;&amp; !file.isDirectory()) {
-            file.mkdir();
-        }
-        final String target = path + &quot;/&quot; + pirtureName;
-        File targetFile = new File(target);
-        if (targetFile.exists()) {
-            set(target);
-        } else {
-            LApplication.getHttpUtils().download(url, target, new RequestCallBack&lt;File&gt;() {
-
-                @Override
-                public void onLoading(long total, long current, boolean isUploading) {
-                    super.onLoading(total, current, isUploading);
-
-                }
-
-                @Override
-                public void onSuccess(ResponseInfo&lt;File&gt; arg0) {
-                    set(target);   //设置壁纸
-                }
-
-                @Override
-                public void onFailure(HttpException arg0, String arg1) {
-                    ToastUtil.show(&quot;网络异常&quot;);
-
-                }
-            });
-        }
-    }
-    /**
-     * 设置壁纸
-     * @param target 图片路径
-     */
-    public void set(String target) {
-        Bitmap bitmap = BitmapFactory.decodeFile(target);
-        try {
-            WallpaperManager wallpaperManager = android.app.WallpaperManager.getInstance(mContext);
-            wallpaperManager.setBitmap(bitmap);
-            ToastUtil.show(&quot;设置成功&quot;);
-        } catch (IOException e) {
-            String msg = &quot;设置桌面背景发生异常:&quot; + e.getLocalizedMessage();
-        }
-    }
-}
-</code></pre><p>别忘记在ApplicationManifest.xml 中加上权限的设置。</p>
-<pre><code>&lt;uses-permission android:name = &quot;android.permission.SET_WALLPAPER&quot;/&gt;
-</code></pre><p>壁纸设置方法有三种：  <b>（尼玛，这三种设置壁纸的方法，都不管我们的死活，直接设置随着屏幕滚动，图片都模糊了）</b></p>
+        <p>直接获取网络上的图片，然后设置壁纸、锁屏可以，不过我这里是先将网络上的图片下载下来，存到sd卡上，然后设置sd卡上的图片为壁纸。</p>
+<h2 id="源码下载："><a href="#源码下载：" class="headerlink" title="源码下载："></a>源码下载：</h2><pre><code>这个我还没添加到github上，添加之后更改本位置的内容
+</code></pre><h2 id="设置壁纸"><a href="#设置壁纸" class="headerlink" title="设置壁纸"></a>设置壁纸</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Wallpaper</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Activity mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Wallpaper</span><span class="params">(ImageShowActivity imageShowActivity)</span> </span>&#123;</div><div class="line">        mContext = imageShowActivity;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWallPaper</span><span class="params">(String url)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> index = url.lastIndexOf(<span class="string">"/"</span>);</div><div class="line">        String pirtureName = url.substring(index + <span class="number">1</span>);</div><div class="line">        String path = AppConfig.DOWN_PATH;</div><div class="line">        File file = <span class="keyword">new</span> File(path);</div><div class="line">        <span class="keyword">if</span> (!file.exists() &amp;&amp; !file.isDirectory()) &#123;</div><div class="line">            file.mkdir();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">final</span> String target = path + <span class="string">"/"</span> + pirtureName;</div><div class="line">        File targetFile = <span class="keyword">new</span> File(target);</div><div class="line">        <span class="keyword">if</span> (targetFile.exists()) &#123;</div><div class="line">            set(target);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            LApplication.getHttpUtils().download(url, target, <span class="keyword">new</span> RequestCallBack&lt;File&gt;() &#123;</div><div class="line"></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoading</span><span class="params">(<span class="keyword">long</span> total, <span class="keyword">long</span> current, <span class="keyword">boolean</span> isUploading)</span> </span>&#123;</div><div class="line">                    <span class="keyword">super</span>.onLoading(total, current, isUploading);</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(ResponseInfo&lt;File&gt; arg0)</span> </span>&#123;</div><div class="line">                    set(target);   <span class="comment">//设置壁纸</span></div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(HttpException arg0, String arg1)</span> </span>&#123;</div><div class="line">                    ToastUtil.show(<span class="string">"网络异常"</span>);</div><div class="line"></div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">	<span class="comment">/**</span></div><div class="line">     * 设置壁纸</div><div class="line">     * <span class="doctag">@param</span> target 图片路径</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String target)</span> </span>&#123;</div><div class="line">        Bitmap bitmap = BitmapFactory.decodeFile(target);</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            WallpaperManager wallpaperManager = android.app.WallpaperManager.getInstance(mContext);</div><div class="line">            wallpaperManager.setBitmap(bitmap);</div><div class="line">            ToastUtil.show(<span class="string">"设置成功"</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            String msg = <span class="string">"设置桌面背景发生异常:"</span> + e.getLocalizedMessage();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>别忘记在ApplicationManifest.xml 中加上权限的设置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name = <span class="string">"android.permission.SET_WALLPAPER"</span>/&gt;</div></pre></td></tr></table></figure>
+<p>壁纸设置方法有三种：  <b>（尼玛，这三种设置壁纸的方法，都不管我们的死活，直接设置随着屏幕滚动，图片都模糊了）</b></p>
 <p>第一 通过WallpaperManager方法中的 setBitmap（）</p>
-<pre><code>WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
- Resources res = getResources();
- Bitmap bitmap=BitmapFactory.decodeResource(res,R.drawable.h); 
-  try{
-    wallpaperManager.setBitmap(bitmap);
-   }catch (IOException e){
-   e.printStackTrace();
-   }
-</code></pre><p>第二 使用WallpaperManager的setResource(int ResourceID)方法</p>
-<pre><code>WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
-    try {
-        wallpaperManager.setResource(ResourceID);
-        Toast.makeText(this, &quot;设置成功&quot;, Toast.LENGTH_SHORT).show();
-    } catch (IOException e) {
-        e.printStackTrace();
-}
-</code></pre><p>第三 通过ContextWrapper 类中提供的setWallpaper（）方法</p>
-<pre><code>Resources localResources = getBaseContext().getResources();
-InputStream localInputStream2 = localResources.openRawResource(ResourceID);
-           try {
-               setWallpaper(localInputStream2);
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
-</code></pre><p>####注意：设置单屏壁纸，不随着屏幕滑动而滑动<br>     public void set(String target) {<br>            Bitmap bitmap = BitmapFactory.decodeFile(target);<br>            try {<br>                WallpaperManager wallpaperManager = android.app.WallpaperManager.getInstance(mContext);<br>                int desiredMinimumWidth = mContext.getWindowManager().getDefaultDisplay().getWidth();  //获取屏幕的宽<br>                int desiredMinimumHeight = mContext.getWindowManager().getDefaultDisplay().getHeight(); //获取屏幕的高<br>                 //bitmap这个参数再加工一次，缩放到desireMinimumWidth,desireMinmunHeight宽度和高度后再设置<br>                Bitmap sbitmap = sBitmap(bitmap,desiredMinimumWidth,desiredMinimumHeight);<br>                //很重要，有的手机少了这句话不行……..<br>                wallpaperManager.suggestDesiredDimensions(screenWidth, screenHeight);//设置期望壁纸的尺寸<br>                wallpaperManager.setBitmap(sbitmap);<br>                ToastUtil.show(“设置成功”);<br>            } catch (IOException e) {<br>                String msg = “设置桌面背景发生异常:” + e.getLocalizedMessage();<br>                ToastUtil.show(msg);<br>            }<br>        }<br>        public  Bitmap sBitmap(Bitmap b, int w, int h) {<br>            int width = b.getWidth();<br>            int height = b.getHeight();<br>            float scaleWidth = ((float) w) / width;<br>            float scaleHeight = ((float) h) / height;<br>            Matrix matrix = new Matrix();<br>            matrix.postScale(scaleWidth, scaleHeight);//缩放<br>            return Bitmap.createBitmap(b, 0, 0, width, height, matrix, true);<br>        }</p>
-<p>##设置锁屏(此处的设置锁屏无法禁用home键，而且不好看，马上推出好看的….)</p>
-<h1><a href="https://github.com/iosline/lockScreen" target="_blank" rel="external">好看的锁屏：源码下载</a></h1>
-
-<p><b>设置锁屏壁纸的原理：</b></p>
-<p>  1.监测开机广播，开启锁屏服务，开启锁屏的Activity</p>
-<p>  2.设置锁屏壁纸其实就是，监测手机解锁屏幕，然后start一个Activity,该Activity设置壁纸，设置滑动按钮，滑倒指定位置，将当前Activity finish掉即可。</p>
-<p>  3.需要注意 home键    Home键在3.1之后就不能屏蔽掉了 所以我们采用广播的方式：在当前Activity注册监听home键的广播,然后重新启动该Activity</p>
-<p>####代码如下：</p>
-<p>设置锁屏：</p>
-<pre><code>public class LockManager {
-
-    private Activity mContext;
-
-    public LockManager(ImageShowActivity imageShowActivity) {
-        mContext = imageShowActivity;
-    }
-
-    public void setLock(String url) {
-        int index = url.lastIndexOf(&quot;/&quot;);
-        String pirtureName = url.substring(index + 1);
-        String path = AppConfig.DOWN_PATH;
-        File file = new File(path);
-        if (!file.exists() &amp;&amp; !file.isDirectory()) {
-            file.mkdir();
-        }
-        final String target = path + &quot;/&quot; + pirtureName;
-        File targetFile = new File(target);
-        if (targetFile.exists()) {
-            set(target);
-        } else {
-            LApplication.getHttpUtils().download(url, target, new RequestCallBack&lt;File&gt;() {
-
-                @Override
-                public void onLoading(long total, long current, boolean isUploading) {
-                    super.onLoading(total, current, isUploading);
-
-                }
-
-                @Override
-                public void onSuccess(ResponseInfo&lt;File&gt; arg0) {
-                    set(target);
-                }
-
-                @Override
-                public void onFailure(HttpException arg0, String arg1) {
-                    ToastUtil.show(&quot;网络异常&quot;);
-
-                }
-            });
-        }
-    }
-
-    private void set(String target) {
-        Intent i = new Intent(mContext, LockScreenActivity.class);
-        i.putExtra(&quot;targetPath&quot;, target);     //将图片路径传过去，设置新的壁纸
-        CacheUtil.save(&quot;targetLock&quot;,target);  //将图片路径存起来，这样做是为了 开机自动从存储系统里获取图片路径
-        mContext.startActivity(i);
-    }
-}
-</code></pre><p>在AndroidManifest.xml清单文件中配置</p>
-<pre><code>&lt;!-- ############ 锁屏界面、服务、监听器############ --&gt;
-  &lt;activity android:name=&quot;.lock.LockScreenActivity&quot; /&gt;
-
-  &lt;service
-      android:name=&quot;.lock.LockScreenService&quot;
-      android:process=&quot;system&quot; /&gt;
-
-  &lt;receiver
-      android:name=&quot;.lock.LockScreenReceiver&quot;
-      android:process=&quot;:remote&quot;&gt;
-      &lt;intent-filter android:priority=&quot;1000&quot;&gt;
-          &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;
-          &lt;action android:name=&quot;android.intent.action.USER_PRESENT&quot; /&gt;
-
-          &lt;category android:name=&quot;android.intent.category.HOME&quot; /&gt;
-      &lt;/intent-filter&gt;
-  &lt;/receiver&gt;
-</code></pre><p>监测开机的广播 广播接收者   (注意：开机启动，启动锁屏的service,然后service里面启动LockScreenActivity)</p>
-<pre><code> /**
- * 开机广播，启动activity
- * @author jyk
- *
- */
-public class LockScreenReceiver extends BroadcastReceiver {
-    private final static String TAG = &quot;LockScreenReceiver&quot;;
-    //private KeyguardManager keyguardManager = null;
-    //private KeyguardManager.KeyguardLock keyguardLock = null;
-
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        if(intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)){
-            Intent mIntent = new Intent(context, LockScreenService.class);
-            mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-            //keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
-            //keyguardLock = keyguardManager.newKeyguardLock(&quot;&quot;);
-            //keyguardLock.disableKeyguard(); 
-
-            context.startActivity(mIntent);
-        }
-    }
-}
-</code></pre><p>锁屏的服务 同时注册屏幕锁住与解锁的广播</p>
-<pre><code>public class LockScreenService extends Service {
-    private final static String TAG = &quot;LockScreenService&quot;;
-    private Intent lockIntent;
-    private KeyguardManager keyguardManager = null;
-    private KeyguardManager.KeyguardLock keyguardLock = null;
-
-    @Override
-    public IBinder onBind(Intent arg0) {
-        return null;
-    }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        lockIntent = new Intent(LockScreenService.this, LockScreenActivity.class);
-        lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        //注册广播
-        IntentFilter mScreenOffFilter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
-        LockScreenService.this.registerReceiver(mScreenOffReceiver, mScreenOffFilter);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        keyguardLock.reenableKeyguard();
-        LockScreenService.this.unregisterReceiver(mScreenOffReceiver);
-        //重新启动activity
-        startService(new Intent(LockScreenService.this, LockScreenService.class));
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        return Service.START_STICKY;
-    }
-
-    /**
-     * 屏幕变亮的广播，这里要隐藏系统的锁屏界面
-     */
-    private BroadcastReceiver mScreenOffReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.i(TAG, intent.getAction());
-            if(intent.getAction().equals(Intent.ACTION_SCREEN_OFF)
-                    || intent.getAction().equals(Intent.ACTION_SCREEN_ON)){
-
-                keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
-                keyguardLock = keyguardManager.newKeyguardLock(&quot;&quot;);
-                keyguardLock.disableKeyguard(); //这里就是取消系统默认的锁屏
-
-                startActivity(lockIntent); //注意这里跳转的意图
-            }
-        }
-    };
-}
-</code></pre><p>###注意：取消系统默认的锁屏代码出现一次就够了  出现两次就会失效……</p>
-<p>锁屏的LockScreenActivity</p>
-<pre><code>    public class LockScreenActivity extends Activity implements Runnable {
-    private final String TAG = &quot;LockScreenActivity&quot;;
-    private SliderRelativeLayout sliderRelativeLayout;
-    public static int MSG_LOCK_SUCESS = 1;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //不要title
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN); //全屏显示
-        setContentView(R.layout.activity_lock_screen);
-        LApplication.init(this);
-
-        //注册广播
-        registerReceiver(mHomeKeyEventReceiver, new IntentFilter(
-                Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
-
-        String targetPath = getIntent().getStringExtra(&quot;targetPath&quot;);
-        if(targetPath == null){
-            targetPath= CacheUtil.getString(&quot;targetLock&quot;);
-        }
-        Drawable bg = Drawable.createFromPath(targetPath);
-        RelativeLayout lockBg = (RelativeLayout) findViewById(R.id.lock_bg);
-        lockBg.setBackgroundDrawable(bg);
-
-        StringData();
-        sliderRelativeLayout = (SliderRelativeLayout) findViewById(R.id.sliderLayout);
-        sliderRelativeLayout.setMainHandler(handler);
-        sliderRelativeLayout.getBackground().setAlpha(180); //设置背景的透明度
-
-        startService(new Intent(LockScreenActivity.this, LockScreenService.class)); //这里要显示的调用服务
-    }
-
-    public void StringData() {
-        final Calendar c = Calendar.getInstance();
-        c.setTimeZone(TimeZone.getTimeZone(&quot;GMT+8:00&quot;));
-        String mYear = String.valueOf(c.get(Calendar.YEAR)); // 获取当前年份
-        String mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);// 获取当前月份
-        String mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));// 获取当前月份的日期号码
-        String mWay = String.valueOf(c.get(Calendar.DAY_OF_WEEK));
-        if (&quot;1&quot;.equals(mWay)) {
-            mWay = &quot;日&quot;;
-        } else if (&quot;2&quot;.equals(mWay)) {
-            mWay = &quot;一&quot;;
-        } else if (&quot;3&quot;.equals(mWay)) {
-            mWay = &quot;二&quot;;
-        } else if (&quot;4&quot;.equals(mWay)) {
-            mWay = &quot;三&quot;;
-        } else if (&quot;5&quot;.equals(mWay)) {
-            mWay = &quot;四&quot;;
-        } else if (&quot;6&quot;.equals(mWay)) {
-            mWay = &quot;五&quot;;
-        } else if (&quot;7&quot;.equals(mWay)) {
-            mWay = &quot;六&quot;;
-        }
-
-        ((TextView) findViewById(R.id.time_day)).setText(mMonth + &quot;月&quot; + mDay + &quot;日&quot;);
-        ((TextView) findViewById(R.id.time_week)).setText(&quot;星期&quot; + mWay);
-
-        new Thread(this).start();
-    }
-
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            if (MSG_LOCK_SUCESS == msg.what) {
-                //Toast.makeText(getApplicationContext(), R.string.lockSuccess, 1).show();
-//                virbate();
-                finish();
-            }
-            if (msg.what == 100) {
-                ((TextView) findViewById(R.id.time_hour)).setText((String) msg.obj);
-            }
-            if(msg.what == 99){
-                Intent intent=new Intent(LockScreenActivity.this,LockScreenActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }
-    };
-
-    @Override
-    public void run() {
-        try {
-            while (true) {
-                SimpleDateFormat sdf = new SimpleDateFormat(&quot;HH:mm&quot;);
-                String str = sdf.format(new Date());
-                handler.sendMessage(handler.obtainMessage(100, str));
-                Thread.sleep(1000);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * 震动
-     */
-    /*private void virbate(){
-        Vibrator vibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(200);
-    }*/
-
-    /**
-     * 屏蔽掉Home键   自从3.1之后 就不能屏蔽了
-     */
-    /*@Override
-    public void onAttachedToWindow() {
-        this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
-        super.onAttachedToWindow();
-    }*/
-
-    /**
-     * 屏蔽掉返回键
-     */
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-            return true;
-        } else {
-            return super.onKeyDown(keyCode, event);
-        }
-    }
-
-    /**
-     * 监听是否点击了home键将客户端推到后台
-     */
-    private BroadcastReceiver mHomeKeyEventReceiver = new BroadcastReceiver() {
-        String SYSTEM_REASON = &quot;reason&quot;;
-        String SYSTEM_HOME_KEY = &quot;homekey&quot;;
-        String SYSTEM_HOME_KEY_LONG = &quot;recentapps&quot;;
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (action.equals(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)) {
-                String reason = intent.getStringExtra(SYSTEM_REASON);
-                if (TextUtils.equals(reason, SYSTEM_HOME_KEY)) {
-                    //表示按了home键,程序到了后台
-                    Toast.makeText(getApplicationContext(), &quot;home&quot;,Toast.LENGTH_SHORT).show();
-                    handler.sendEmptyMessageDelayed(99,3);
-                }else if(TextUtils.equals(reason, SYSTEM_HOME_KEY_LONG)){
-                    //表示长按home键,显示最近使用的程序列表
-                }
-            }
-        }
-    };
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(mHomeKeyEventReceiver);
-    }
-}
-</code></pre><p>LockScreenActivity 锁屏Activity的布局文件</p>
-<pre><code>&lt;RelativeLayout xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:id=&quot;@+id/lock_bg&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    tools:context=&quot;.LockScreenActivity&quot; &gt;
-
-    &lt;LinearLayout
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_marginTop=&quot;100dp&quot;
-        android:orientation=&quot;vertical&quot;
-        android:gravity=&quot;center_horizontal&quot;
-        android:background=&quot;@drawable/shape_locktime_bg&quot;
-        android:padding=&quot;20dp&quot; &gt;
-
-        &lt;TextView
-            android:id=&quot;@+id/time_hour&quot;
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;11:30&quot;
-            android:textColor=&quot;@android:color/white&quot;
-            android:textSize=&quot;50sp&quot; /&gt;
-
-        &lt;LinearLayout
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:orientation=&quot;horizontal&quot; &gt;
-
-            &lt;TextView
-                android:id=&quot;@+id/time_day&quot;
-                android:layout_width=&quot;wrap_content&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:text=&quot;07月07日&quot;
-                android:textColor=&quot;@android:color/white&quot;
-                android:textSize=&quot;30sp&quot; /&gt;
-
-            &lt;TextView
-                android:id=&quot;@+id/time_week&quot;
-                android:layout_width=&quot;wrap_content&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:text=&quot;星期日&quot;
-                android:textColor=&quot;@android:color/white&quot;
-                android:textSize=&quot;30sp&quot; /&gt;
-        &lt;/LinearLayout&gt;
-    &lt;/LinearLayout&gt;
-
-    &lt;com.klo.zz.bizhi.lock.SliderRelativeLayout
-        android:id=&quot;@+id/sliderLayout&quot;
-        android:layout_width=&quot;fill_parent&quot;
-        android:layout_height=&quot;50dp&quot;
-        android:layout_alignParentBottom=&quot;true&quot;
-        android:layout_marginBottom=&quot;100dp&quot;
-        android:background=&quot;@drawable/shape_locktime_bg&quot;
-         &gt;
-
-        &lt;RelativeLayout
-            android:id=&quot;@+id/relativeLayout1&quot;
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_alignParentLeft=&quot;true&quot;
-            android:layout_centerHorizontal=&quot;true&quot;
-            android:layout_centerVertical=&quot;true&quot; &gt;
-
-            &lt;ImageView
-                android:id=&quot;@+id/leftRing&quot;
-                android:layout_width=&quot;wrap_content&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:src=&quot;@mipmap/arrow_right&quot; /&gt;
-
-            &lt;TextView
-                android:layout_width=&quot;wrap_content&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:layout_centerHorizontal=&quot;true&quot;
-                android:layout_centerVertical=&quot;true&quot;
-                android:textColor=&quot;#FF0000&quot; /&gt;
-        &lt;/RelativeLayout&gt;
-
-        &lt;RelativeLayout
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_alignParentRight=&quot;true&quot;
-            android:layout_centerHorizontal=&quot;true&quot;
-            android:layout_centerVertical=&quot;true&quot; &gt;
-
-            &lt;ImageView
-                android:id=&quot;@+id/rightRing&quot;
-                android:layout_width=&quot;wrap_content&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:src=&quot;@mipmap/arrow_right&quot; /&gt;
-
-            &lt;TextView
-                android:layout_width=&quot;wrap_content&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:layout_centerHorizontal=&quot;true&quot;
-                android:layout_centerVertical=&quot;true&quot;
-                android:textColor=&quot;#FF0000&quot; /&gt;
-        &lt;/RelativeLayout&gt;
-
-        &lt;RelativeLayout
-            android:layout_width=&quot;222dp&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_marginLeft=&quot;50dp&quot; &gt;
-
-            &lt;ImageView
-                android:id=&quot;@+id/loveView&quot;
-                android:layout_width=&quot;wrap_content&quot;
-                android:layout_height=&quot;match_parent&quot;
-                android:layout_alignParentLeft=&quot;true&quot;
-                android:layout_alignParentTop=&quot;true&quot;
-                android:src=&quot;@mipmap/open_lock&quot; /&gt;
-        &lt;/RelativeLayout&gt;
-    &lt;/com.klo.zz.bizhi.lock.SliderRelativeLayout&gt;
-
-&lt;/RelativeLayout&gt;
-</code></pre><p>滑动解锁屏幕的自定义view</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">WallpaperManager wallpaperManager = WallpaperManager.getInstance(<span class="keyword">this</span>);</div><div class="line"> Resources res = getResources();</div><div class="line"> Bitmap bitmap=BitmapFactory.decodeResource(res,R.drawable.h); </div><div class="line">  <span class="keyword">try</span>&#123;</div><div class="line"> wallpaperManager.setBitmap(bitmap);</div><div class="line">&#125;<span class="keyword">catch</span> (IOException e)&#123;</div><div class="line">e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第二 使用WallpaperManager的setResource(int ResourceID)方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">WallpaperManager wallpaperManager = WallpaperManager.getInstance(<span class="keyword">this</span>);</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		wallpaperManager.setResource(ResourceID);</div><div class="line">        Toast.makeText(<span class="keyword">this</span>, <span class="string">"设置成功"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第三 通过ContextWrapper 类中提供的setWallpaper（）方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Resources localResources = getBaseContext().getResources();</div><div class="line">InputStream localInputStream2 = localResources.openRawResource(ResourceID);</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			setWallpaper(localInputStream2);</div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div></pre></td></tr></table></figure>
+<h4 id="注意：设置单屏壁纸，不随着屏幕滑动而滑动"><a href="#注意：设置单屏壁纸，不随着屏幕滑动而滑动" class="headerlink" title="注意：设置单屏壁纸，不随着屏幕滑动而滑动"></a>注意：设置单屏壁纸，不随着屏幕滑动而滑动</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">	 public void set(String target) &#123;</div><div class="line">	        Bitmap bitmap = BitmapFactory.decodeFile(target);</div><div class="line">	        try &#123;</div><div class="line">	            WallpaperManager wallpaperManager = android.app.WallpaperManager.getInstance(mContext);</div><div class="line">	            int desiredMinimumWidth = mContext.getWindowManager().getDefaultDisplay().getWidth();  //获取屏幕的宽</div><div class="line">	            int desiredMinimumHeight = mContext.getWindowManager().getDefaultDisplay().getHeight(); //获取屏幕的高</div><div class="line">                 //bitmap这个参数再加工一次，缩放到desireMinimumWidth,desireMinmunHeight宽度和高度后再设置</div><div class="line">	            Bitmap sbitmap = sBitmap(bitmap,desiredMinimumWidth,desiredMinimumHeight);</div><div class="line">                //很重要，有的手机少了这句话不行........</div><div class="line">                wallpaperManager.suggestDesiredDimensions(screenWidth, screenHeight);//设置期望壁纸的尺寸</div><div class="line">	            wallpaperManager.setBitmap(sbitmap);</div><div class="line">	            ToastUtil.show("设置成功");</div><div class="line">	        &#125; catch (IOException e) &#123;</div><div class="line">	            String msg = "设置桌面背景发生异常:" + e.getLocalizedMessage();</div><div class="line">	            ToastUtil.show(msg);</div><div class="line">	        &#125;</div><div class="line">	    &#125;</div><div class="line">	    public  Bitmap sBitmap(Bitmap b, int w, int h) &#123;</div><div class="line">	        int width = b.getWidth();</div><div class="line">	        int height = b.getHeight();</div><div class="line">	        float scaleWidth = ((float) w) / width;</div><div class="line">	        float scaleHeight = ((float) h) / height;</div><div class="line">	        Matrix matrix = new Matrix();</div><div class="line">	        matrix.postScale(scaleWidth, scaleHeight);//缩放</div><div class="line">	        return Bitmap.createBitmap(b, 0, 0, width, height, matrix, true);</div><div class="line">	    &#125;</div><div class="line">```	   </div><div class="line"></div><div class="line">### 设置锁屏(此处的设置锁屏无法禁用home键，而且不好看，马上推出好看的....)</div><div class="line"></div><div class="line">&lt;h1&gt;&lt;a href="https://github.com/iosline/lockScreen"&gt;好看的锁屏：源码下载&lt;/a&gt;&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;b&gt;设置锁屏壁纸的原理：</div><div class="line"></div><div class="line">  1.监测开机广播，开启锁屏服务，开启锁屏的Activity</div><div class="line"></div><div class="line">  2.设置锁屏壁纸其实就是，监测手机解锁屏幕，然后start一个Activity,该Activity设置壁纸，设置滑动按钮，滑倒指定位置，将当前Activity finish掉即可。</div><div class="line"></div><div class="line">  3.需要注意 home键    Home键在3.1之后就不能屏蔽掉了 所以我们采用广播的方式：在当前Activity注册监听home键的广播,然后重新启动该Activity&lt;/b&gt;</div><div class="line"></div><div class="line">#### 代码如下：</div><div class="line"></div><div class="line">设置锁屏：</div><div class="line"></div><div class="line">```java</div><div class="line">	public class LockManager &#123;</div><div class="line">	</div><div class="line">	    private Activity mContext;</div><div class="line">	</div><div class="line">	    public LockManager(ImageShowActivity imageShowActivity) &#123;</div><div class="line">	        mContext = imageShowActivity;</div><div class="line">	    &#125;</div><div class="line">	</div><div class="line">	    public void setLock(String url) &#123;</div><div class="line">	        int index = url.lastIndexOf("/");</div><div class="line">	        String pirtureName = url.substring(index + 1);</div><div class="line">	        String path = AppConfig.DOWN_PATH;</div><div class="line">	        File file = new File(path);</div><div class="line">	        if (!file.exists() &amp;&amp; !file.isDirectory()) &#123;</div><div class="line">	            file.mkdir();</div><div class="line">	        &#125;</div><div class="line">	        final String target = path + "/" + pirtureName;</div><div class="line">	        File targetFile = new File(target);</div><div class="line">	        if (targetFile.exists()) &#123;</div><div class="line">	            set(target);</div><div class="line">	        &#125; else &#123;</div><div class="line">	            LApplication.getHttpUtils().download(url, target, new RequestCallBack&lt;File&gt;() &#123;</div><div class="line">	</div><div class="line">	                @Override</div><div class="line">	                public void onLoading(long total, long current, boolean isUploading) &#123;</div><div class="line">	                    super.onLoading(total, current, isUploading);</div><div class="line">	</div><div class="line">	                &#125;</div><div class="line">	</div><div class="line">	                @Override</div><div class="line">	                public void onSuccess(ResponseInfo&lt;File&gt; arg0) &#123;</div><div class="line">	                    set(target);</div><div class="line">	                &#125;</div><div class="line">	</div><div class="line">	                @Override</div><div class="line">	                public void onFailure(HttpException arg0, String arg1) &#123;</div><div class="line">	                    ToastUtil.show("网络异常");</div><div class="line">	</div><div class="line">	                &#125;</div><div class="line">	            &#125;);</div><div class="line">	        &#125;</div><div class="line">	    &#125;</div><div class="line">	</div><div class="line">	    private void set(String target) &#123;</div><div class="line">	        Intent i = new Intent(mContext, LockScreenActivity.class);</div><div class="line">	        i.putExtra("targetPath", target);     //将图片路径传过去，设置新的壁纸</div><div class="line">	        CacheUtil.save("targetLock",target);  //将图片路径存起来，这样做是为了 开机自动从存储系统里获取图片路径</div><div class="line">	        mContext.startActivity(i);</div><div class="line">	    &#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>在AndroidManifest.xml清单文件中配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!-- ############ 锁屏界面、服务、监听器############ --&gt;</div><div class="line">  &lt;activity android:name=".lock.LockScreenActivity" /&gt;</div><div class="line"></div><div class="line">  &lt;service</div><div class="line">      android:name=".lock.LockScreenService"</div><div class="line">      android:process="system" /&gt;</div><div class="line"></div><div class="line">  &lt;receiver</div><div class="line">      android:name=".lock.LockScreenReceiver"</div><div class="line">      android:process=":remote"&gt;</div><div class="line">      &lt;intent-filter android:priority="1000"&gt;</div><div class="line">          &lt;action android:name="android.intent.action.BOOT_COMPLETED" /&gt;</div><div class="line">          &lt;action android:name="android.intent.action.USER_PRESENT" /&gt;</div><div class="line"></div><div class="line">          &lt;category android:name="android.intent.category.HOME" /&gt;</div><div class="line">      &lt;/intent-filter&gt;</div><div class="line">  &lt;/receiver&gt;</div></pre></td></tr></table></figure>
+<p>监测开机的广播 广播接收者   (注意：开机启动，启动锁屏的service,然后service里面启动LockScreenActivity)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">/**</span></div><div class="line"> * 开机广播，启动activity</div><div class="line"> * <span class="doctag">@author</span> jyk</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LockScreenReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String TAG = <span class="string">"LockScreenReceiver"</span>;</div><div class="line">	<span class="comment">//private KeyguardManager keyguardManager = null;</span></div><div class="line">	<span class="comment">//private KeyguardManager.KeyguardLock keyguardLock = null;</span></div><div class="line">	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED))&#123;</div><div class="line">			Intent mIntent = <span class="keyword">new</span> Intent(context, LockScreenService.class);</div><div class="line">			mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</div><div class="line"></div><div class="line">			<span class="comment">//keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);</span></div><div class="line">			<span class="comment">//keyguardLock = keyguardManager.newKeyguardLock("");</span></div><div class="line">			<span class="comment">//keyguardLock.disableKeyguard(); </span></div><div class="line">			</div><div class="line">			context.startActivity(mIntent);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>锁屏的服务 同时注册屏幕锁住与解锁的广播</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LockScreenService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String TAG = <span class="string">"LockScreenService"</span>;</div><div class="line">	<span class="keyword">private</span> Intent lockIntent;</div><div class="line">	<span class="keyword">private</span> KeyguardManager keyguardManager = <span class="keyword">null</span>;</div><div class="line">	<span class="keyword">private</span> KeyguardManager.KeyguardLock keyguardLock = <span class="keyword">null</span>;</div><div class="line">	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> IBinder <span class="title">onBind</span><span class="params">(Intent arg0)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>.onCreate();</div><div class="line">		lockIntent = <span class="keyword">new</span> Intent(LockScreenService.<span class="keyword">this</span>, LockScreenActivity.class);</div><div class="line">		lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</div><div class="line">		</div><div class="line">		<span class="comment">//注册广播</span></div><div class="line">		IntentFilter mScreenOffFilter = <span class="keyword">new</span> IntentFilter(Intent.ACTION_SCREEN_OFF);</div><div class="line">		LockScreenService.<span class="keyword">this</span>.registerReceiver(mScreenOffReceiver, mScreenOffFilter);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>.onDestroy();</div><div class="line">           keyguardLock.reenableKeyguard();</div><div class="line">		LockScreenService.<span class="keyword">this</span>.unregisterReceiver(mScreenOffReceiver);</div><div class="line">		<span class="comment">//重新启动activity</span></div><div class="line">		startService(<span class="keyword">new</span> Intent(LockScreenService.<span class="keyword">this</span>, LockScreenService.class));</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">onStartCommand</span><span class="params">(Intent intent, <span class="keyword">int</span> flags, <span class="keyword">int</span> startId)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> Service.START_STICKY;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 屏幕变亮的广播，这里要隐藏系统的锁屏界面</div><div class="line">	 */</div><div class="line">	<span class="keyword">private</span> BroadcastReceiver mScreenOffReceiver = <span class="keyword">new</span> BroadcastReceiver() &#123;</div><div class="line">		<span class="meta">@Override</span></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">			Log.i(TAG, intent.getAction());</div><div class="line">			<span class="keyword">if</span>(intent.getAction().equals(Intent.ACTION_SCREEN_OFF)</div><div class="line">					|| intent.getAction().equals(Intent.ACTION_SCREEN_ON))&#123;</div><div class="line">				</div><div class="line">				keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);</div><div class="line">				keyguardLock = keyguardManager.newKeyguardLock(<span class="string">""</span>);</div><div class="line">				keyguardLock.disableKeyguard(); <span class="comment">//这里就是取消系统默认的锁屏</span></div><div class="line">				</div><div class="line">				startActivity(lockIntent); <span class="comment">//注意这里跳转的意图</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="注意：取消系统默认的锁屏代码出现一次就够了-出现两次就会失效……"><a href="#注意：取消系统默认的锁屏代码出现一次就够了-出现两次就会失效……" class="headerlink" title="注意：取消系统默认的锁屏代码出现一次就够了  出现两次就会失效……"></a>注意：取消系统默认的锁屏代码出现一次就够了  出现两次就会失效……</h3><p>锁屏的LockScreenActivity</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div></pre></td><td class="code"><pre><div class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LockScreenActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String TAG = <span class="string">"LockScreenActivity"</span>;</div><div class="line">    <span class="keyword">private</span> SliderRelativeLayout sliderRelativeLayout;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> MSG_LOCK_SUCESS = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        requestWindowFeature(Window.FEATURE_NO_TITLE); <span class="comment">//不要title</span></div><div class="line">        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,</div><div class="line">                WindowManager.LayoutParams.FLAG_FULLSCREEN); <span class="comment">//全屏显示</span></div><div class="line">        setContentView(R.layout.activity_lock_screen);</div><div class="line">        LApplication.init(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">        <span class="comment">//注册广播</span></div><div class="line">        registerReceiver(mHomeKeyEventReceiver, <span class="keyword">new</span> IntentFilter(</div><div class="line">                Intent.ACTION_CLOSE_SYSTEM_DIALOGS));</div><div class="line"></div><div class="line">        String targetPath = getIntent().getStringExtra(<span class="string">"targetPath"</span>);</div><div class="line">        <span class="keyword">if</span>(targetPath == <span class="keyword">null</span>)&#123;</div><div class="line">            targetPath= CacheUtil.getString(<span class="string">"targetLock"</span>);</div><div class="line">        &#125;</div><div class="line">        Drawable bg = Drawable.createFromPath(targetPath);</div><div class="line">        RelativeLayout lockBg = (RelativeLayout) findViewById(R.id.lock_bg);</div><div class="line">        lockBg.setBackgroundDrawable(bg);</div><div class="line"></div><div class="line">        StringData();</div><div class="line">        sliderRelativeLayout = (SliderRelativeLayout) findViewById(R.id.sliderLayout);</div><div class="line">        sliderRelativeLayout.setMainHandler(handler);</div><div class="line">        sliderRelativeLayout.getBackground().setAlpha(<span class="number">180</span>); <span class="comment">//设置背景的透明度</span></div><div class="line"></div><div class="line">        startService(<span class="keyword">new</span> Intent(LockScreenActivity.<span class="keyword">this</span>, LockScreenService.class)); <span class="comment">//这里要显示的调用服务</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">StringData</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">final</span> Calendar c = Calendar.getInstance();</div><div class="line">        c.setTimeZone(TimeZone.getTimeZone(<span class="string">"GMT+8:00"</span>));</div><div class="line">        String mYear = String.valueOf(c.get(Calendar.YEAR)); <span class="comment">// 获取当前年份</span></div><div class="line">        String mMonth = String.valueOf(c.get(Calendar.MONTH) + <span class="number">1</span>);<span class="comment">// 获取当前月份</span></div><div class="line">        String mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));<span class="comment">// 获取当前月份的日期号码</span></div><div class="line">        String mWay = String.valueOf(c.get(Calendar.DAY_OF_WEEK));</div><div class="line">        <span class="keyword">if</span> (<span class="string">"1"</span>.equals(mWay)) &#123;</div><div class="line">            mWay = <span class="string">"日"</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"2"</span>.equals(mWay)) &#123;</div><div class="line">            mWay = <span class="string">"一"</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"3"</span>.equals(mWay)) &#123;</div><div class="line">            mWay = <span class="string">"二"</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"4"</span>.equals(mWay)) &#123;</div><div class="line">            mWay = <span class="string">"三"</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"5"</span>.equals(mWay)) &#123;</div><div class="line">            mWay = <span class="string">"四"</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"6"</span>.equals(mWay)) &#123;</div><div class="line">            mWay = <span class="string">"五"</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"7"</span>.equals(mWay)) &#123;</div><div class="line">            mWay = <span class="string">"六"</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        ((TextView) findViewById(R.id.time_day)).setText(mMonth + <span class="string">"月"</span> + mDay + <span class="string">"日"</span>);</div><div class="line">        ((TextView) findViewById(R.id.time_week)).setText(<span class="string">"星期"</span> + mWay);</div><div class="line"></div><div class="line">        <span class="keyword">new</span> Thread(<span class="keyword">this</span>).start();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Handler handler = <span class="keyword">new</span> Handler() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span> (MSG_LOCK_SUCESS == msg.what) &#123;</div><div class="line">                <span class="comment">//Toast.makeText(getApplicationContext(), R.string.lockSuccess, 1).show();</span></div><div class="line"><span class="comment">//				virbate();</span></div><div class="line">                finish();</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (msg.what == <span class="number">100</span>) &#123;</div><div class="line">                ((TextView) findViewById(R.id.time_hour)).setText((String) msg.obj);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(msg.what == <span class="number">99</span>)&#123;</div><div class="line">                Intent intent=<span class="keyword">new</span> Intent(LockScreenActivity.<span class="keyword">this</span>,LockScreenActivity.class);</div><div class="line">                startActivity(intent);</div><div class="line">                finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">                SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"HH:mm"</span>);</div><div class="line">                String str = sdf.format(<span class="keyword">new</span> Date());</div><div class="line">                handler.sendMessage(handler.obtainMessage(<span class="number">100</span>, str));</div><div class="line">                Thread.sleep(<span class="number">1000</span>);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 震动</div><div class="line">     */</div><div class="line">    <span class="comment">/*private void virbate()&#123;</span></div><div class="line">		Vibrator vibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);</div><div class="line">		vibrator.vibrate(200);</div><div class="line">	&#125;*/</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 屏蔽掉Home键   自从3.1之后 就不能屏蔽了</div><div class="line">     */</div><div class="line">	<span class="comment">/*@Override</span></div><div class="line">	public void onAttachedToWindow() &#123;</div><div class="line">		this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);</div><div class="line">		super.onAttachedToWindow();</div><div class="line">	&#125;*/</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 屏蔽掉返回键</div><div class="line">     */</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (event.getKeyCode() == KeyEvent.KEYCODE_BACK) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.onKeyDown(keyCode, event);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 监听是否点击了home键将客户端推到后台</div><div class="line">     */</div><div class="line">    <span class="keyword">private</span> BroadcastReceiver mHomeKeyEventReceiver = <span class="keyword">new</span> BroadcastReceiver() &#123;</div><div class="line">        String SYSTEM_REASON = <span class="string">"reason"</span>;</div><div class="line">        String SYSTEM_HOME_KEY = <span class="string">"homekey"</span>;</div><div class="line">        String SYSTEM_HOME_KEY_LONG = <span class="string">"recentapps"</span>;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">            String action = intent.getAction();</div><div class="line">            <span class="keyword">if</span> (action.equals(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)) &#123;</div><div class="line">                String reason = intent.getStringExtra(SYSTEM_REASON);</div><div class="line">                <span class="keyword">if</span> (TextUtils.equals(reason, SYSTEM_HOME_KEY)) &#123;</div><div class="line">                    <span class="comment">//表示按了home键,程序到了后台</span></div><div class="line">                    Toast.makeText(getApplicationContext(), <span class="string">"home"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">                    handler.sendEmptyMessageDelayed(<span class="number">99</span>,<span class="number">3</span>);</div><div class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(TextUtils.equals(reason, SYSTEM_HOME_KEY_LONG))&#123;</div><div class="line">                    <span class="comment">//表示长按home键,显示最近使用的程序列表</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">   </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        unregisterReceiver(mHomeKeyEventReceiver);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>LockScreenActivity 锁屏Activity的布局文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div></pre></td><td class="code"><pre><div class="line">&lt;RelativeLayout xmlns:tools="http://schemas.android.com/tools"</div><div class="line">    xmlns:android="http://schemas.android.com/apk/res/android"</div><div class="line">    android:id="@+id/lock_bg"</div><div class="line">    android:layout_width="match_parent"</div><div class="line">    android:layout_height="match_parent"</div><div class="line">    tools:context=".LockScreenActivity" &gt;</div><div class="line"></div><div class="line">    &lt;LinearLayout</div><div class="line">        android:layout_width="match_parent"</div><div class="line">        android:layout_height="wrap_content"</div><div class="line">        android:layout_marginTop="100dp"</div><div class="line">        android:orientation="vertical"</div><div class="line">        android:gravity="center_horizontal"</div><div class="line">        android:background="@drawable/shape_locktime_bg"</div><div class="line">        android:padding="20dp" &gt;</div><div class="line"></div><div class="line">        &lt;TextView</div><div class="line">            android:id="@+id/time_hour"</div><div class="line">            android:layout_width="wrap_content"</div><div class="line">            android:layout_height="wrap_content"</div><div class="line">            android:text="11:30"</div><div class="line">            android:textColor="@android:color/white"</div><div class="line">            android:textSize="50sp" /&gt;</div><div class="line"></div><div class="line">        &lt;LinearLayout</div><div class="line">            android:layout_width="wrap_content"</div><div class="line">            android:layout_height="wrap_content"</div><div class="line">            android:orientation="horizontal" &gt;</div><div class="line"></div><div class="line">            &lt;TextView</div><div class="line">                android:id="@+id/time_day"</div><div class="line">                android:layout_width="wrap_content"</div><div class="line">                android:layout_height="wrap_content"</div><div class="line">                android:text="07月07日"</div><div class="line">                android:textColor="@android:color/white"</div><div class="line">                android:textSize="30sp" /&gt;</div><div class="line"></div><div class="line">            &lt;TextView</div><div class="line">                android:id="@+id/time_week"</div><div class="line">                android:layout_width="wrap_content"</div><div class="line">                android:layout_height="wrap_content"</div><div class="line">                android:text="星期日"</div><div class="line">                android:textColor="@android:color/white"</div><div class="line">                android:textSize="30sp" /&gt;</div><div class="line">        &lt;/LinearLayout&gt;</div><div class="line">    &lt;/LinearLayout&gt;</div><div class="line"></div><div class="line">    &lt;com.klo.zz.bizhi.lock.SliderRelativeLayout</div><div class="line">        android:id="@+id/sliderLayout"</div><div class="line">        android:layout_width="fill_parent"</div><div class="line">        android:layout_height="50dp"</div><div class="line">        android:layout_alignParentBottom="true"</div><div class="line">        android:layout_marginBottom="100dp"</div><div class="line">        android:background="@drawable/shape_locktime_bg"</div><div class="line">         &gt;</div><div class="line"></div><div class="line">        &lt;RelativeLayout</div><div class="line">            android:id="@+id/relativeLayout1"</div><div class="line">            android:layout_width="wrap_content"</div><div class="line">            android:layout_height="wrap_content"</div><div class="line">            android:layout_alignParentLeft="true"</div><div class="line">            android:layout_centerHorizontal="true"</div><div class="line">            android:layout_centerVertical="true" &gt;</div><div class="line"></div><div class="line">            &lt;ImageView</div><div class="line">                android:id="@+id/leftRing"</div><div class="line">                android:layout_width="wrap_content"</div><div class="line">                android:layout_height="wrap_content"</div><div class="line">                android:src="@mipmap/arrow_right" /&gt;</div><div class="line"></div><div class="line">            &lt;TextView</div><div class="line">                android:layout_width="wrap_content"</div><div class="line">                android:layout_height="wrap_content"</div><div class="line">                android:layout_centerHorizontal="true"</div><div class="line">                android:layout_centerVertical="true"</div><div class="line">                android:textColor="#FF0000" /&gt;</div><div class="line">        &lt;/RelativeLayout&gt;</div><div class="line"></div><div class="line">        &lt;RelativeLayout</div><div class="line">            android:layout_width="wrap_content"</div><div class="line">            android:layout_height="wrap_content"</div><div class="line">            android:layout_alignParentRight="true"</div><div class="line">            android:layout_centerHorizontal="true"</div><div class="line">            android:layout_centerVertical="true" &gt;</div><div class="line"></div><div class="line">            &lt;ImageView</div><div class="line">                android:id="@+id/rightRing"</div><div class="line">                android:layout_width="wrap_content"</div><div class="line">                android:layout_height="wrap_content"</div><div class="line">                android:src="@mipmap/arrow_right" /&gt;</div><div class="line"></div><div class="line">            &lt;TextView</div><div class="line">                android:layout_width="wrap_content"</div><div class="line">                android:layout_height="wrap_content"</div><div class="line">                android:layout_centerHorizontal="true"</div><div class="line">                android:layout_centerVertical="true"</div><div class="line">                android:textColor="#FF0000" /&gt;</div><div class="line">        &lt;/RelativeLayout&gt;</div><div class="line"></div><div class="line">        &lt;RelativeLayout</div><div class="line">            android:layout_width="222dp"</div><div class="line">            android:layout_height="wrap_content"</div><div class="line">            android:layout_marginLeft="50dp" &gt;</div><div class="line"></div><div class="line">            &lt;ImageView</div><div class="line">                android:id="@+id/loveView"</div><div class="line">                android:layout_width="wrap_content"</div><div class="line">                android:layout_height="match_parent"</div><div class="line">                android:layout_alignParentLeft="true"</div><div class="line">                android:layout_alignParentTop="true"</div><div class="line">                android:src="@mipmap/open_lock" /&gt;</div><div class="line">        &lt;/RelativeLayout&gt;</div><div class="line">    &lt;/com.klo.zz.bizhi.lock.SliderRelativeLayout&gt;</div><div class="line"></div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure>
+<p>滑动解锁屏幕的自定义view</p>
 <p>SliderRelativeLayout 这个是从从网上找的，就不列出代码了。</p>
-<p>#总结：<br>   不想写…….</p>
-<p>###源码敬请期待………</p>
-
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>   不想写…….</p>
+<h3 id="源码敬请期待………"><a href="#源码敬请期待………" class="headerlink" title="源码敬请期待………"></a>源码敬请期待………</h3>
       
     </div>
 
@@ -841,6 +408,27 @@ public class LockScreenReceiver extends BroadcastReceiver {
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -877,6 +465,25 @@ public class LockScreenReceiver extends BroadcastReceiver {
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/"
+     data-title="开发Android壁纸:设置壁纸、设置锁屏心得"
+     data-content=""
+     data-url="http://yoursite.com/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -887,6 +494,10 @@ public class LockScreenReceiver extends BroadcastReceiver {
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/"
+           data-title="开发Android壁纸:设置壁纸、设置锁屏心得" data-url="http://yoursite.com/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/">
+      </div>
     
   </div>
 
@@ -922,10 +533,10 @@ public class LockScreenReceiver extends BroadcastReceiver {
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -936,7 +547,21 @@ public class LockScreenReceiver extends BroadcastReceiver {
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -945,12 +570,41 @@ public class LockScreenReceiver extends BroadcastReceiver {
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -962,7 +616,7 @@ public class LockScreenReceiver extends BroadcastReceiver {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">好看的锁屏：源码下载</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码下载："><span class="nav-number">1.</span> <span class="nav-text">源码下载：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置壁纸"><span class="nav-number">2.</span> <span class="nav-text">设置壁纸</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意：设置单屏壁纸，不随着屏幕滑动而滑动"><span class="nav-number">2.0.1.</span> <span class="nav-text">注意：设置单屏壁纸，不随着屏幕滑动而滑动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意：取消系统默认的锁屏代码出现一次就够了-出现两次就会失效……"><span class="nav-number">2.1.</span> <span class="nav-text">注意：取消系统默认的锁屏代码出现一次就够了  出现两次就会失效……</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number">2.2.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码敬请期待………"><span class="nav-number">2.3.</span> <span class="nav-text">源码敬请期待………</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -985,7 +639,7 @@ public class LockScreenReceiver extends BroadcastReceiver {
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -1076,18 +730,275 @@ public class LockScreenReceiver extends BroadcastReceiver {
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

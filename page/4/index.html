@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,19 +95,22 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
+<meta name="description" content="不忘初心,方得始终">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="不忘初心 方得始终">
 <meta property="og:url" content="http://yoursite.com/page/4/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="不忘初心,方得始终">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="不忘初心 方得始终">
+<meta name="twitter:description" content="不忘初心,方得始终">
 
 
 
@@ -112,7 +133,7 @@
 
   <link rel="canonical" href="http://yoursite.com/page/4/"/>
 
-  <title> Hexo </title>
+  <title> 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -120,6 +141,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -145,7 +176,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -218,9 +249,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -278,11 +332,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/解决scrollview中嵌套listview、gridview的问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/" class="leancloud_visitors" data-flag-title="解决scrollview中嵌套listview、gridview的问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -299,128 +369,15 @@
       
         
           
-            <p>#三种方案解决ScrollView嵌套listview、gridView的问题</p>
-<p>###出现的问题：<br>   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。</p>
-<p>   2.嵌套中的子ListView和GridvIew是无法滑动的，因为子控件的滑动事件会被外面的ScrollView吃掉，如果想让子控件可以滑动，只能强行的截取滑动的相关事件了。</p>
-<p>###原因：原因就是scroll事件的消费处理以及ListView控件的高度设定问题。</p>
-<p>###解决的办法：</p>
-<p>####一、手动设置listview高度<br>    /**</p>
-<pre><code>* 动态设置ListView的高度
-* @param listView
-*/
-public static void setListViewHeightBasedOnChildren(ListView listView) {
-if(listView == null) return;
-ListAdapter listAdapter = listView.getAdapter();
-if (listAdapter == null) {
-    // pre-condition
-    return;
-}
-int totalHeight = 0;
-for (int i = 0; i &lt; listAdapter.getCount(); i++) {
-    View listItem = listAdapter.getView(i, null, listView);
-    listItem.measure(0, 0);
-    totalHeight += listItem.getMeasuredHeight();
-}
-ViewGroup.LayoutParams params = listView.getLayoutParams();
-params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-listView.setLayoutParams(params);
-}
-</code></pre><p>  上面这个方法就是设定ListView的高度了，<b>在为ListView设置了Adapter之后使用</b>，就可以解决问题了。</p>
-<p>  但是这个方法有个两个细节需要注意：</p>
-<p>   <b>一是Adapter中getView方法返回的View的必须由LinearLayout组成</b>，因为只有LinearLayout才有measure()方法，如果使用其他的布局如RelativeLayout，在调用listItem.measure(0, 0);时就会抛异常，因为除LinearLayout外的其他布局的这个方法就是直接抛异常的，没理由…。我最初使用的就是这个方法，但是因为子控件的顶层布局是RelativeLayout，所以一直报错，不得不放弃这个方法。</p>
-<p>   <b>二是需要手动把ScrollView滚动至最顶端</b>，因为使用这个方法的话，默认在ScrollView顶端的项是ListView，具体原因不了解，求大神解答…可以在Activity中设置：</p>
-<pre><code>sv = (ScrollView) findViewById(R.id.act_solution_1_sv);
-sv.ScrollTo(0,0);
-</code></pre><p>####二、使用LinearLayout取代ListView</p>
-<p>既然ListView不能适应ScrollView，那就换一个可以适应ScrollView的控件，干嘛非要吊死在ListView这一棵树上呢？</p>
-<p>而LinearLayout是最好的选择。但如果我仍想继续使用已经定义好的Adater呢？我们只需要自定义一个类继承自LinearLayout，为其加上对BaseAdapter的适配。</p>
-<pre><code>/**
-* 取代ListView的LinearLayout，使之能够成功嵌套在ScrollView中
-* @author 
-*/
-public class LinearLayoutForListView extends LinearLayout {
-private BaseAdapter adapter;
-private OnClickListener onClickListener = null;
-/**
- * 绑定布局
- */
-public void bindLinearLayout() {
-    int count = adapter.getCount();
-    this.removeAllViews();
-    for (int i = 0; i &lt; count; i++) {
-        View v = adapter.getView(i, null, null);
-        v.setOnClickListener(this.onClickListener);
-        addView(v, i);
-    }
-   Log.v(&quot;countTAG&quot;, &quot;&quot; + count);
-}
-public LinearLayoutForListView(Context context) {
-    super(context);
-    }
-}
-</code></pre><p>它的使用和listview一样，写在布局文件里 然后setAdapter就ok了</p>
-<p>####三、自定义适应ScrollView的listview</p>
-<p>自定义一个类继承自ListView，通过重写其onMeasure方法，达到对ScrollView适配的效果。</p>
-<pre><code>import android.content.Context;
-import android.util.AttributeSet;
-import android.widget.ListView;
-public class ListViewForScrollView extends ListView {
-    public ListViewForScrollView(Context context) {
-        super(context);
-    }
-    public ListViewForScrollView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-    public ListViewForScrollView(Context context, AttributeSet attrs,
-        int defStyle) {
-        super(context, attrs, defStyle);
-    }
-    @Override
-    /**
-     * 重写该方法，达到使ListView适应ScrollView的效果
-     */
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2,
-        MeasureSpec.AT_MOST);
-        super.onMeasure(widthMeasureSpec, expandSpec);
-    }
-}
-</code></pre><p>三个构造方法完全不用动，只要重写onMeasure方法，需要改动的地方比起方法2少了不是一点半点…</p>
-<p>在xml布局中和Activty中使用的ListView改成这个自定义ListView就行了。代码就省了吧…</p>
-<p>这个方法和方法1有一个同样的毛病，就是默认显示的首项是ListView，需要手动把ScrollView滚动至最顶端。</p>
-<pre><code>sv = (ScrollView) findViewById(R.id.act_solution_4_sv);
-sv.smoothScrollTo(0, 0);
-</code></pre><p><b>GridView也一样，只需重写onMeasure()方法即可</b></p>
-<pre><code>public class NoScrollGridView extends GridView{  
+          出现的问题：   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。
+   2.嵌套中的子ListView和GridvIew是无法滑动的，
+          ...
 
-     public NoScrollGridView(Context context, AttributeSet attrs){  
-          super(context, attrs);  
-     }  
-
-     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec){  
-          int mExpandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2, MeasureSpec.AT_MOST);  
-          super.onMeasure(widthMeasureSpec, mExpandSpec);  
-     }  
-}  
-</code></pre><p>####注意：</p>
-<p>使用PullToRefresh下拉刷新和上拉加载更多时，sv.ScrollTo(0,0) 是起不到作用的。</p>
-<p>解决办法一：  亲测没用</p>
-<pre><code>pullScrollView.getRefreshableView().ScrollTo(0,0);
-</code></pre><p>解决办法二： 在PullToRefreshAdapterViewBase源码中添加这两个方法即可 （本人觉得麻烦，不建议）</p>
-<pre><code>public final void setSelection(int scrollTop){
-      mRefreshableView.setSelection(scrollTop);
-  }
-   public final int getFirstVisiablePosition(){
-       return mRefreshableView.getFirstVisiablePosition();
-   }
-</code></pre><p>解决办法三：<b>让listview顶部的组件获得焦点（非常好用）</b></p>
-<pre><code>testPager.requestFocus();
-tsstPager.setFocusable(true);
-testPager.setFocusableInTouchMode(true);
-</code></pre><p>#总结：</p>
-<p>####上述几个方法无非就是对listview（gridview）进行重新测量，但在pullToRefresh加载更多和下拉刷新时，会出现不停的测量，不停的刷新数据，手机屏幕乱跳等现象。解决办法：暂无。有能力再解决。</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -488,14 +445,49 @@ testPager.setFocusableInTouchMode(true);
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/23/关于EditText的一些特别使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/关于EditText的一些特别使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
           
 
           
+          
+             <span id="/2015/07/23/关于EditText的一些特别使用/" class="leancloud_visitors" data-flag-title="关于EditText的一些特别使用">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -512,60 +504,16 @@ testPager.setFocusableInTouchMode(true);
       
         
           
-            <p>##关于EditText的一些特别使用<br> 首先，会有这样的需求，进入这个Activity,会默认让当前EditText不获取焦点，点击这个组件之后才获取焦点，弹出输入法，（或者做一些操作）。</p>
-<p>解决办法：<br>   在布局文件中，在这个EditText组件的父view中添加</p>
-<pre><code>android:focusable=&quot;true&quot;
-android:focusableInTouchMode=&quot;true&quot;
-</code></pre><p>   即可解决让当前EditText默认不获取焦点。</p>
-<p>对EditText进行监听，失去和获取焦点的事件</p>
-<pre><code>input.setOnFocusChangeListener(new    View.OnFocusChangeListener() {
-       @Override
-       public void onFocusChange(View v, boolean hasFocus) {
-           if(hasFocus){
-              //逻辑操作
-              input.clearFocus();  //失去焦点 不然输入法会一直存在
-           }else{
-             //逻辑操作
-         }
-       }
-   });
-</code></pre><p>增加一个需求，就是让点击搜索之后EditText中显示刚才输入的值,其实很简单，只需要一句话</p>
-<pre><code>input.setText(inputContent);
-</code></pre><h3 id="一、进入这个页面的时候默认弹出输入法"><a href="#一、进入这个页面的时候默认弹出输入法" class="headerlink" title="一、进入这个页面的时候默认弹出输入法"></a>一、进入这个页面的时候默认弹出输入法</h3><p>看一个manifest中Activity的配置，如果这个页面有EditText，并且我们想要进入这个页面的时候默认弹出输入法，可以这样设置这个属性：                 </p>
-<pre><code>android:windowSoftInputMode=stateVisible
-</code></pre><p>这样就会默认弹起输入法，当然还有别的办法。</p>
-<pre><code>&lt;activity android:name=&quot;.ui.LoginActivity&quot; 
-             android:configChanges=&quot;orientation|keyboardHidden|locale&quot; 
-             android:screenOrientation=&quot;portrait&quot; 
-             android:windowSoftInputMode=&quot;stateVisible|adjustPan&quot; &gt; 
- &lt;/activity&gt;  
-</code></pre><p>###二、Android EditText 不弹出输入法总结</p>
-<p>方法一：</p>
-<p>在AndroidMainfest.xml中选择哪个activity，设置windowSoftInputMode属性为adjustUnspecified|stateHidden</p>
-<p>例如：</p>
-<pre><code>&lt;activity android:name=&quot;.Main&quot; 
-     android:windowSoftInputMode=&quot;adjustUnspecified|stateHidden&quot; 
-     android:configChanges=&quot;orientation|keyboardHidden&quot;&gt; 
-&lt; /activity&gt;  
-</code></pre><p>方法二：</p>
-<p>让EditText失去焦点，使用EditText的clearFocus方法</p>
-<p>例如：</p>
-<pre><code>EditText edit=(EditText)findViewById(R.id.edit); 
-edit.clearFocus();  
-</code></pre><p>方法三：</p>
-<p>强制隐藏Android输入法窗口</p>
-<p>例如：</p>
-<pre><code>EditText edit=(EditText)findViewById(R.id.edit); 
-InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE); 
-imm.hideSoftInputFromWindow(edit.getWindowToken(),0); 
-</code></pre><p>方法四：</p>
-<p>EditText始终不弹出软件键盘</p>
-<p>例：</p>
-<pre><code>EditText edit=(EditText)findViewById(R.id.edit); 
-edit.setInputType(InputType.TYPE_NULL);  
-</code></pre><p>###三、总结 后续添加，敬请期待……..</p>
+           首先，会有这样的需求，进入这个Activity,会默认让当前EditText不获取焦点，点击这个组件之后才获取焦点，弹出输入法，（或者做一些操作）。
+解决办法：   在布局文件中，在这个EditText组件的父view中添加
+123456789101112131415161718192021   
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/23/关于EditText的一些特别使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -636,11 +584,27 @@ edit.setInputType(InputType.TYPE_NULL);
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/16/my-first-blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/16/my-first-blog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/07/16/my-first-blog/" class="leancloud_visitors" data-flag-title="my first blog">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -657,10 +621,16 @@ edit.setInputType(InputType.TYPE_NULL);
       
         
           
-            <p>##初次见面，请多关照<br>  从建这个博客开始，即开始一种新的体验。为了很好的督促自己，让自己不至于迷失的太远。将自己工作中遇到的问题，涉及到的知识点及难点记录下来便于知识的掌握和将来时时的回头查阅，更好的丰富自己。</p>
-<p>#####正解（我自己都不信）<br>  瞎扯蛋，以上皆为废话…………</p>
+          初次见面，请多关照  从建这个博客开始，即开始一种新的体验。为了很好的督促自己，让自己不至于迷失的太远。将自己工作中遇到的问题，涉及到的知识点及难点记录下来便于知识的掌握和将来时时的回头查阅，更好的丰富自己。
+正解（我自己都不信）  瞎扯蛋，以上皆为废话…………
 
           
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/16/my-first-blog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -724,10 +694,10 @@ edit.setInputType(InputType.TYPE_NULL);
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -738,7 +708,21 @@ edit.setInputType(InputType.TYPE_NULL);
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -747,12 +731,41 @@ edit.setInputType(InputType.TYPE_NULL);
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -776,7 +789,7 @@ edit.setInputType(InputType.TYPE_NULL);
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -863,18 +876,275 @@ edit.setInputType(InputType.TYPE_NULL);
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

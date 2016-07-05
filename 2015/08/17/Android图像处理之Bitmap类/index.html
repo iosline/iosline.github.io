@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,7 +95,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
@@ -85,26 +103,23 @@
 
 
 <meta name="description" content="Bitmap是Android系统中的图像处理的最重要类之一。用它可以获取图像文件信息，进行图像剪切、旋转、缩放等操作，并可以指定格式保存图像文件。
-###一、Bitmap生成
-####1.1 BitmapFactory decode出Bitmap Bitmap实现在android.graphics包中。但是Bitmap类的构造函数是私有的，外面并不能实例化，只能是通过JNI实例化。这必然是 某个辅">
+一、Bitmap生成1.1 BitmapFactory decode出Bitmap Bitmap实现在android.graphics包中。但是Bitmap类的构造函数是私有的，外面并不能实例化，只能是通过JNI实例化。这必然是 某个辅助类提供了创建B">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android图像处理之Bitmap类">
 <meta property="og:url" content="http://yoursite.com/2015/08/17/Android图像处理之Bitmap类/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="不忘初心 方得始终">
 <meta property="og:description" content="Bitmap是Android系统中的图像处理的最重要类之一。用它可以获取图像文件信息，进行图像剪切、旋转、缩放等操作，并可以指定格式保存图像文件。
-###一、Bitmap生成
-####1.1 BitmapFactory decode出Bitmap Bitmap实现在android.graphics包中。但是Bitmap类的构造函数是私有的，外面并不能实例化，只能是通过JNI实例化。这必然是 某个辅">
+一、Bitmap生成1.1 BitmapFactory decode出Bitmap Bitmap实现在android.graphics包中。但是Bitmap类的构造函数是私有的，外面并不能实例化，只能是通过JNI实例化。这必然是 某个辅助类提供了创建B">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/BitmapFactory&Options.gif">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/BitmapFactory&decodeFile.gif">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/Bitmap&Scale.gif">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/Bitmap&Rotate.gif">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/Bitmap&Save.gif">
-<meta property="og:updated_time" content="2015-08-17T04:09:58.000Z">
+<meta property="og:updated_time" content="2016-07-05T03:12:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android图像处理之Bitmap类">
 <meta name="twitter:description" content="Bitmap是Android系统中的图像处理的最重要类之一。用它可以获取图像文件信息，进行图像剪切、旋转、缩放等操作，并可以指定格式保存图像文件。
-###一、Bitmap生成
-####1.1 BitmapFactory decode出Bitmap Bitmap实现在android.graphics包中。但是Bitmap类的构造函数是私有的，外面并不能实例化，只能是通过JNI实例化。这必然是 某个辅">
+一、Bitmap生成1.1 BitmapFactory decode出Bitmap Bitmap实现在android.graphics包中。但是Bitmap类的构造函数是私有的，外面并不能实例化，只能是通过JNI实例化。这必然是 某个辅助类提供了创建B">
 <meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/BitmapFactory&Options.gif">
 
 
@@ -128,7 +143,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2015/08/17/Android图像处理之Bitmap类/"/>
 
-  <title> Android图像处理之Bitmap类 | Hexo </title>
+  <title> Android图像处理之Bitmap类 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,6 +151,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -159,7 +184,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -232,9 +257,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -289,11 +337,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/17/Android图像处理之Bitmap类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/17/Android图像处理之Bitmap类/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/08/17/Android图像处理之Bitmap类/" class="leancloud_visitors" data-flag-title="Android图像处理之Bitmap类">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -309,12 +373,10 @@
 
       
         <p>Bitmap是Android系统中的图像处理的最重要类之一。用它可以获取图像文件信息，进行图像剪切、旋转、缩放等操作，并可以指定格式保存图像文件。</p>
-<p>###一、Bitmap生成</p>
-<p>####1.1 BitmapFactory decode出Bitmap<br> Bitmap实现在android.graphics包中。但是Bitmap类的构造函数是私有的，外面并不能实例化，只能是通过JNI实例化。这必然是 某个辅助类提供了创建Bitmap的接口，而这个类的实现通过JNI接口来实例化Bitmap的，这个类就是BitmapFactory。</p>
+<h3 id="一、Bitmap生成"><a href="#一、Bitmap生成" class="headerlink" title="一、Bitmap生成"></a>一、Bitmap生成</h3><h4 id="1-1-BitmapFactory-decode出Bitmap"><a href="#1-1-BitmapFactory-decode出Bitmap" class="headerlink" title="1.1 BitmapFactory decode出Bitmap"></a>1.1 BitmapFactory decode出Bitmap</h4><p> Bitmap实现在android.graphics包中。但是Bitmap类的构造函数是私有的，外面并不能实例化，只能是通过JNI实例化。这必然是 某个辅助类提供了创建Bitmap的接口，而这个类的实现通过JNI接口来实例化Bitmap的，这个类就是BitmapFactory。</p>
 <p><img src="http://7xl32g.com1.z0.glb.clouddn.com/BitmapFactory&Options.gif">图一、BitmapFactory主要方法及Options选项</p>
 <p>利用BitmapFactory可以从一个指定文件中，利用decodeFile()解出Bitmap；也可以定义的图片资源中，利用decodeResource()解出Bitmap。</p>
-<p>####1.2 decode时的选项</p>
-<p>在使用方法decodeFile()/decodeResource()时，都可以指定一个BitmapFacotry.Options。</p>
+<h4 id="1-2-decode时的选项"><a href="#1-2-decode时的选项" class="headerlink" title="1.2 decode时的选项"></a>1.2 decode时的选项</h4><p>在使用方法decodeFile()/decodeResource()时，都可以指定一个BitmapFacotry.Options。</p>
 <p>利用Options的下列属性，可以指定decode的选项：</p>
 <ul><br><li>inPreferredConfig 指定decode到内存中，手机中所采用的编码，可选值定义在Bitmap.Config中。缺省值是ARGB_8888。<br><br></li><li>inJustDecodeBounds 如果设置为true，并不会把图像的数据完全解码，亦即decodeXyz()返回值为null，但是Options的outAbc中解出了图像的基本信息。<br><br></li><li>inSampleSize 设置decode时的缩放比例。<br></li></ul>
 
@@ -323,20 +385,15 @@
 <p>先设置inJustDecodeBounds= true，调用decodeFile()得到图像的基本信息[Step#2~4]；</p>
 <p>利用图像的宽度（或者高度，或综合）以及目标的宽度，得到inSampleSize值，再设置inJustDecodeBounds= false，调用decodeFile()得到完整的图像数据[Step#5~8]。</p>
 <p>先获取比例，再读入数据，如果欲读入大比例缩小的图，将显著的节约内容资源。有时候还会读入大量的缩略图，这效果就更明显了。</p>
-<p>###二、利用Bitmap和Matrix实现图像变换<br> Bitmap可以和Matrix结合实现图像的剪切、旋转、缩放等操作。</p>
+<h3 id="二、利用Bitmap和Matrix实现图像变换"><a href="#二、利用Bitmap和Matrix实现图像变换" class="headerlink" title="二、利用Bitmap和Matrix实现图像变换"></a>二、利用Bitmap和Matrix实现图像变换</h3><p> Bitmap可以和Matrix结合实现图像的剪切、旋转、缩放等操作。</p>
 <p><img src="http://7xl32g.com1.z0.glb.clouddn.com/Bitmap&Scale.gif">图三、Bitmap方法</p>
 <p>用源Bitmap通过变换生成新的Bitmap的方法：</p>
-<pre><code>public static Bitmap createBitmap(Bitmap source, int x, int y, intwidth, int height, 
-            Matrix m, boolean filter) 
-public static Bitmap createBitmap(Bitmap source, int x, int y, intwidth, int height) 
-public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, 
-            int dstHeight,boolean filter)
-</code></pre><p>第一个方法是最终的实现，后两种只是对第一种方法的封装。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">createBitmap</span><span class="params">(Bitmap source, <span class="keyword">int</span> x, <span class="keyword">int</span> y, intwidth, <span class="keyword">int</span> height, </span></span></div><div class="line">            Matrix m, <span class="keyword">boolean</span> filter) </div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">createBitmap</span><span class="params">(Bitmap source, <span class="keyword">int</span> x, <span class="keyword">int</span> y, intwidth, <span class="keyword">int</span> height)</span> </div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">createScaledBitmap</span><span class="params">(Bitmap src, <span class="keyword">int</span> dstWidth, </span></div><div class="line">            <span class="keyword">int</span> dstHeight,<span class="keyword">boolean</span> filter)</div></pre></td></tr></table></figure>
+<p>第一个方法是最终的实现，后两种只是对第一种方法的封装。</p>
 <p>第二个方法可以从源Bitmap中指定区域(x,y, width, height)中挖出一块来实现剪切；第三个方法可以把源Bitmap缩放为dstWidth x dstHeight的Bitmap。</p>
 <p>设置Matrix的Rotate（通过setRotate()）或者Scale（通过setScale()），传入第一个方法，可实现旋转或缩放。</p>
 <p><img src="http://7xl32g.com1.z0.glb.clouddn.com/Bitmap&Rotate.gif">图四、Bitmap实现旋转</p>
-<p>###三、保存图像文件</p>
-<p>经过图像变换之后的Bitmap里的数据可以保存到图像压缩文件里（JPG/PNG）。</p>
+<h3 id="三、保存图像文件"><a href="#三、保存图像文件" class="headerlink" title="三、保存图像文件"></a>三、保存图像文件</h3><p>经过图像变换之后的Bitmap里的数据可以保存到图像压缩文件里（JPG/PNG）。</p>
 <p><img src="http://7xl32g.com1.z0.glb.clouddn.com/Bitmap&Save.gif">图五、保存Bitmap数据到文件</p>
 <p>这个操作过程中，Bitmap.compress()方法的参数format可设置JPEG或PNG格式；quality可选择压缩质量；fOut是输出流（OutputStream），这里的FileOutputStream是OutputStream的一个子类。</p>
 <p>总结一下，本文介绍Bitmap的使用方法——用Bitmap实现图像文件的读取和写入，并用Bitmap实现图像的剪切、旋转和缩放变换。</p>
@@ -353,6 +410,27 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -389,6 +467,25 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/08/17/Android图像处理之Bitmap类/"
+     data-title="Android图像处理之Bitmap类"
+     data-content=""
+     data-url="http://yoursite.com/2015/08/17/Android图像处理之Bitmap类/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -399,6 +496,10 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/08/17/Android图像处理之Bitmap类/"
+           data-title="Android图像处理之Bitmap类" data-url="http://yoursite.com/2015/08/17/Android图像处理之Bitmap类/">
+      </div>
     
   </div>
 
@@ -434,10 +535,10 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -448,7 +549,21 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -457,12 +572,41 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -474,7 +618,7 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、Bitmap生成"><span class="nav-number">1.</span> <span class="nav-text">一、Bitmap生成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-BitmapFactory-decode出Bitmap"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 BitmapFactory decode出Bitmap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-decode时的选项"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 decode时的选项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、利用Bitmap和Matrix实现图像变换"><span class="nav-number">2.</span> <span class="nav-text">二、利用Bitmap和Matrix实现图像变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、保存图像文件"><span class="nav-number">3.</span> <span class="nav-text">三、保存图像文件</span></a></li></ol></div>
             
           </div>
         </section>
@@ -497,7 +641,7 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -588,18 +732,275 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

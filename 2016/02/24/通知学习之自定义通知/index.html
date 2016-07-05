@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,7 +95,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
@@ -90,12 +108,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="通知学习之自定义通知">
 <meta property="og:url" content="http://yoursite.com/2016/02/24/通知学习之自定义通知/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="不忘初心 方得始终">
 <meta property="og:description" content="实现自定义的通知栏效果：
 主要要用到RemoteViews这个类
 注意：Notification的自定义布局是RemoteViews，和其他RemoteViews一样，在自定义视图布局文件中，仅支持FrameLayout、LinearLayout、RelativeLayout三种布局控件和AnalogClock、Chronometer、Button、ImageButton、ImageView、Pr">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/notifications_pattern_ongoing_music.png">
-<meta property="og:updated_time" content="2016-07-04T15:47:51.000Z">
+<meta property="og:updated_time" content="2016-07-05T10:59:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通知学习之自定义通知">
 <meta name="twitter:description" content="实现自定义的通知栏效果：
@@ -124,7 +142,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2016/02/24/通知学习之自定义通知/"/>
 
-  <title> 通知学习之自定义通知 | Hexo </title>
+  <title> 通知学习之自定义通知 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -132,6 +150,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -155,7 +183,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -228,9 +256,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -285,11 +336,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/24/通知学习之自定义通知/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/24/通知学习之自定义通知/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2016/02/24/通知学习之自定义通知/" class="leancloud_visitors" data-flag-title="通知学习之自定义通知">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -311,89 +378,21 @@
 <p><li>2）获取远程视图对象（注：Notification的contentView不能为空）</li></p>
 <p><li>3）设置PendingIntent（来响应各种事件）</li></p>
 <p><li>4）发起Notification</li></p>
-<h3 id="代码模块："><a href="#代码模块：" class="headerlink" title="代码模块："></a>代码模块：</h3><p>样式：</p>
-<h4 id="1-自定义带按钮通知栏-如下样式"><a href="#1-自定义带按钮通知栏-如下样式" class="headerlink" title="1.自定义带按钮通知栏(如下样式)"></a>1.自定义带按钮通知栏(如下样式)</h4><p>正在进行的<br>“正在进行的”通知使用户了解正在运行的后台进程。例如，音乐播放器可以显示正在播放的音乐。也可以用来显示需要长时间处理的操作，例如下载或编码视频。“正在进行的”通知不能被手动删除。<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/notifications_pattern_ongoing_music.png"></p>
+<h4 id="代码模块："><a href="#代码模块：" class="headerlink" title="代码模块："></a>代码模块：</h4><p>样式：</p>
+<h5 id="1-自定义带按钮通知栏-如下样式"><a href="#1-自定义带按钮通知栏-如下样式" class="headerlink" title="1.自定义带按钮通知栏(如下样式)"></a>1.自定义带按钮通知栏(如下样式)</h5><p>正在进行的<br>“正在进行的”通知使用户了解正在运行的后台进程。例如，音乐播放器可以显示正在播放的音乐。也可以用来显示需要长时间处理的操作，例如下载或编码视频。“正在进行的”通知不能被手动删除。<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/notifications_pattern_ongoing_music.png"></p>
 <p>实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showButtonNotify</span><span class="params">()</span></span>&#123;</div><div class="line">     NotificationCompat.Builder mBuilder = <span class="keyword">new</span> Builder(<span class="keyword">this</span>);</div><div class="line">     RemoteViews mRemoteViews = <span class="keyword">new</span> RemoteViews(getPackageName(), R.layout.view_custom_button);</div><div class="line">     mRemoteViews.setImageViewResource(R.id.custom_song_icon, R.drawable.sing_icon);</div><div class="line">     <span class="comment">//API3.0 以上的时候显示按钮，否则消失</span></div><div class="line">     mRemoteViews.setTextViewText(R.id.tv_custom_song_singer, <span class="string">"周杰伦"</span>);</div><div class="line">     mRemoteViews.setTextViewText(R.id.tv_custom_song_name, <span class="string">"七里香"</span>);</div><div class="line">     <span class="comment">//如果版本号低于（3。0），那么不显示按钮</span></div><div class="line">     <span class="keyword">if</span>(BaseTools.getSystemVersion() &lt;= <span class="number">9</span>)&#123;</div><div class="line">           mRemoteViews.setViewVisibility(R.id.ll_custom_button, View.GONE);</div><div class="line">     &#125;<span class="keyword">else</span>&#123;</div><div class="line">           mRemoteViews.setViewVisibility(R.id.ll_custom_button, View.VISIBLE);</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//</span></div><div class="line">     <span class="keyword">if</span>(isPlay)&#123;</div><div class="line">           mRemoteViews.setImageViewResource(R.id.btn_custom_play, R.drawable.btn_pause);</div><div class="line">     &#125;<span class="keyword">else</span>&#123;</div><div class="line">           mRemoteViews.setImageViewResource(R.id.btn_custom_play, R.drawable.btn_play);</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//点击的事件处理</span></div><div class="line">     Intent buttonIntent = <span class="keyword">new</span> Intent(ACTION_BUTTON);</div><div class="line">     <span class="comment">/* 上一首按钮 */</span></div><div class="line">     buttonIntent.putExtra(INTENT_BUTTONID_TAG, BUTTON_PREV_ID);</div><div class="line">     <span class="comment">//这里加了广播，所及INTENT的必须用getBroadcast方法</span></div><div class="line">     PendingIntent intent_prev = PendingIntent.getBroadcast(<span class="keyword">this</span>, <span class="number">1</span>, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);</div><div class="line">     mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_prev, intent_prev);</div><div class="line">     <span class="comment">/* 播放/暂停  按钮 */</span></div><div class="line">     buttonIntent.putExtra(INTENT_BUTTONID_TAG, BUTTON_PALY_ID);</div><div class="line">     PendingIntent intent_paly = PendingIntent.getBroadcast(<span class="keyword">this</span>, <span class="number">2</span>, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);</div><div class="line">     mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_play, intent_paly);</div><div class="line">     <span class="comment">/* 下一首 按钮  */</span></div><div class="line">     buttonIntent.putExtra(INTENT_BUTTONID_TAG, BUTTON_NEXT_ID);</div><div class="line">     PendingIntent intent_next = PendingIntent.getBroadcast(<span class="keyword">this</span>, <span class="number">3</span>, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);</div><div class="line">     mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_next, intent_next);</div><div class="line"> </div><div class="line">     mBuilder.setContent(mRemoteViews)</div><div class="line">             .setContentIntent(getDefalutIntent(Notification.FLAG_ONGOING_EVENT))</div><div class="line">             .setWhen(System.currentTimeMillis())<span class="comment">// 通知产生的时间，会在通知信息里显示</span></div><div class="line">             .setTicker(<span class="string">"正在播放"</span>)</div><div class="line">             .setPriority(Notification.PRIORITY_DEFAULT)<span class="comment">// 设置该通知优先级</span></div><div class="line">             .setOngoing(<span class="keyword">true</span>)</div><div class="line">             .setSmallIcon(R.drawable.sing_icon);</div><div class="line">     Notification notify = mBuilder.build();</div><div class="line">     notify.flags = Notification.FLAG_ONGOING_EVENT;</div><div class="line">     mNotificationManager.notify(notifyId, notify);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>注意：带按钮的布局相应点击事件在3.0以下版本没有用，所以这边作了系统版本判断，来显示消失按钮。</p>
-<h4 id="2-自定义不带按钮通知栏"><a href="#2-自定义不带按钮通知栏" class="headerlink" title="2.自定义不带按钮通知栏"></a>2.自定义不带按钮通知栏</h4><p>实现方法如下：</p>
-<pre><code>//先设定RemoteViews
-RemoteViews view_custom = new RemoteViews(getPackageName(), R.layout.view_custom);
-//设置对应IMAGEVIEW的ID的资源图片
-view_custom.setImageViewResource(R.id.custom_icon, R.drawable.icon);
-//view_custom.setInt(R.id.custom_icon,&quot;setBackgroundResource&quot;,R.drawable.icon);
-view_custom.setTextViewText(R.id.tv_custom_title, &quot;今日头条&quot;);
-view_custom.setTextViewText(R.id.tv_custom_content, &quot;金州勇士官方宣布球队已经解雇了主帅马克-杰克逊&quot;);
-</code></pre><p>之后调用：</p>
-<pre><code>mBuilder.setContent(view_custom)
-</code></pre><p>来设定自定义的这个布局。</p>
-<h4 id="最近遇到的代码例子："><a href="#最近遇到的代码例子：" class="headerlink" title="最近遇到的代码例子："></a>最近遇到的代码例子：</h4><pre><code>//final String STATUS_BAR_COVER_CLICK_ACTION=&quot;download&quot;;
-    private void showNotification() {
-
-        final NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
-        final RemoteViews mRemoteViews = new RemoteViews(getPackageName(), R.layout.layout_notification_custom);
-
-
-//        Intent buttonIntent=new Intent(this, SendNewsActivity.class);
-//        buttonIntent.putExtra(&quot;key&quot;, 1456546);
-//        buttonIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        mBuilder.setContent(mRemoteViews)
-                .setWhen(System.currentTimeMillis())// 通知产生的时间，会在通知信息里显示
-                .setPriority(Notification.PRIORITY_DEFAULT)// 设置该通知优先级
-                .setSmallIcon(R.drawable.myicon).setAutoCancel(true);
-
-//        BroadcastReceiver onClickReceiver = new BroadcastReceiver() {
-//            private boolean flag = false;
-//            @Override
-//            public void onReceive(Context context, Intent intent) {
-//                if (intent.getAction().equals(STATUS_BAR_COVER_CLICK_ACTION)) {
-//                 //在这里处理点击事件
-//                   ToastUtil.show(&quot;========wobeidianjile&quot;);
-//                 //取消通知栏
-////                    mNotificationManager.cancel(0);
-//                }
-//            }};
-
-//        IntentFilter filter = new IntentFilter();
-//        filter.addAction(STATUS_BAR_COVER_CLICK_ACTION);
-//        registerReceiver(onClickReceiver, filter);
-//        Intent buttonIntent = new Intent(STATUS_BAR_COVER_CLICK_ACTION);
-
-        Intent buttonIntent=new Intent();
-        buttonIntent.setAction(Intent.ACTION_VIEW);
-        buttonIntent.setData(Uri.parse(&quot;http://img.zcool.cn/community/01b28d554bcd6e000001bf72eacf96.jpg&quot;));
-        PendingIntent pendingIntent=PendingIntent.getActivity(this,0,buttonIntent,PendingIntent.FLAG_UPDATE_CURRENT);
-//        PendingIntent pendingIntent=PendingIntent.getBroadcast(this, 0, buttonIntent, 0);
-        mBuilder.setContentIntent(pendingIntent);
-//        mRemoteViews.setOnClickPendingIntent(R.id.image,pendingIntent);
-        Notification notify = mBuilder.build();
-Picasso.with(this).load(bean.getImg()).into(mRemoteViews,R.id.image,0,notify);
-        mNotificationManager.notify(0, notify);
-    }
-</code></pre><p>###Android 5.0之后通知栏图标为白色的解决方案：</p>
-<p>####1.<br>Android 5.0(API23)针对targetSdkVersion&gt;=21（Build.VERSION_CODES.LOLLIPOP是21，非23 )， 通知栏图标均自动做了过滤处理，为了统一整个系统的风格。 </p>
-<pre><code>if (entry.icon != null) {
-            if (entry.targetSdk &gt;= Build.VERSION_CODES.LOLLIPOP) {
-                entry.icon.setColorFilter(mContext.getResources().getColor(android.R.color.white));
-            } else {
-                entry.icon.setColorFilter(null);
-            }
-        }
-</code></pre><p>目前可行的就是把AndroidManifest.xml uses-sdk节点的targetSdkVersion属性设置为21以下（不含21）。</p>
-<p>####2.<br>在5.0之前的版本用一个图片，在之后的版本用另一张只有白色和透明的颜色，然后再设置一个背景颜色</p>
-<pre><code>if (android.os.Build.VERSION.SDK_INT &lt; 21)                         
-     nf.icon = R.drawable.ic_launcher;                     
-else {                         
-     nf.icon = R.drawable.ic_launcher_notification;                         
-     Class&lt;?&gt; clazz = nf.getClass();                         
-     Field field = clazz.getDeclaredField(&quot;color&quot;);                         
-     field.setAccessible(true);                         
-     field.set(nf, context.getResources().getColor(R.color.red_launcher));         
-    }
-</code></pre><p>###<a href="https://github.com/iosline/Notification" target="_blank" rel="external">知识点示例代码</a></p>
-
+<h5 id="2-自定义不带按钮通知栏"><a href="#2-自定义不带按钮通知栏" class="headerlink" title="2.自定义不带按钮通知栏"></a>2.自定义不带按钮通知栏</h5><p>实现方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">	<span class="comment">//先设定RemoteViews</span></div><div class="line">	RemoteViews view_custom = <span class="keyword">new</span> RemoteViews(getPackageName(), R.layout.view_custom);</div><div class="line">	<span class="comment">//设置对应IMAGEVIEW的ID的资源图片</span></div><div class="line">	view_custom.setImageViewResource(R.id.custom_icon, R.drawable.icon);</div><div class="line">	<span class="comment">//view_custom.setInt(R.id.custom_icon,"setBackgroundResource",R.drawable.icon);</span></div><div class="line">	view_custom.setTextViewText(R.id.tv_custom_title, <span class="string">"今日头条"</span>);</div><div class="line">	view_custom.setTextViewText(R.id.tv_custom_content, <span class="string">"金州勇士官方宣布球队已经解雇了主帅马克-杰克逊"</span>);</div><div class="line">```	</div><div class="line"></div><div class="line">之后调用：</div><div class="line"></div><div class="line">```java</div><div class="line">	mBuilder.setContent(view_custom)</div></pre></td></tr></table></figure>
+<p>来设定自定义的这个布局。</p>
+<h5 id="最近遇到的代码例子："><a href="#最近遇到的代码例子：" class="headerlink" title="最近遇到的代码例子："></a>最近遇到的代码例子：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//final String STATUS_BAR_COVER_CLICK_ACTION="download";</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">showNotification</span><span class="params">()</span> </span>&#123;</div><div class="line">       </div><div class="line">        <span class="keyword">final</span> NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">        NotificationCompat.Builder mBuilder = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">final</span> RemoteViews mRemoteViews = <span class="keyword">new</span> RemoteViews(getPackageName(), R.layout.layout_notification_custom);</div><div class="line">       </div><div class="line"></div><div class="line"><span class="comment">//        Intent buttonIntent=new Intent(this, SendNewsActivity.class);</span></div><div class="line"><span class="comment">//        buttonIntent.putExtra("key", 1456546);</span></div><div class="line"><span class="comment">//        buttonIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span></div><div class="line"></div><div class="line">        mBuilder.setContent(mRemoteViews)</div><div class="line">                .setWhen(System.currentTimeMillis())<span class="comment">// 通知产生的时间，会在通知信息里显示</span></div><div class="line">                .setPriority(Notification.PRIORITY_DEFAULT)<span class="comment">// 设置该通知优先级</span></div><div class="line">                .setSmallIcon(R.drawable.myicon).setAutoCancel(<span class="keyword">true</span>);</div><div class="line"></div><div class="line"><span class="comment">//        BroadcastReceiver onClickReceiver = new BroadcastReceiver() &#123;</span></div><div class="line"><span class="comment">//            private boolean flag = false;</span></div><div class="line"><span class="comment">//            @Override</span></div><div class="line"><span class="comment">//            public void onReceive(Context context, Intent intent) &#123;</span></div><div class="line"><span class="comment">//                if (intent.getAction().equals(STATUS_BAR_COVER_CLICK_ACTION)) &#123;</span></div><div class="line"><span class="comment">//                 //在这里处理点击事件</span></div><div class="line"><span class="comment">//                   ToastUtil.show("========wobeidianjile");</span></div><div class="line"><span class="comment">//                 //取消通知栏</span></div><div class="line"><span class="comment">////                    mNotificationManager.cancel(0);</span></div><div class="line"><span class="comment">//                &#125;</span></div><div class="line"><span class="comment">//            &#125;&#125;;</span></div><div class="line"></div><div class="line"><span class="comment">//        IntentFilter filter = new IntentFilter();</span></div><div class="line"><span class="comment">//        filter.addAction(STATUS_BAR_COVER_CLICK_ACTION);</span></div><div class="line"><span class="comment">//        registerReceiver(onClickReceiver, filter);</span></div><div class="line"><span class="comment">//        Intent buttonIntent = new Intent(STATUS_BAR_COVER_CLICK_ACTION);</span></div><div class="line"></div><div class="line">        Intent buttonIntent=<span class="keyword">new</span> Intent();</div><div class="line">        buttonIntent.setAction(Intent.ACTION_VIEW);</div><div class="line">        buttonIntent.setData(Uri.parse(<span class="string">"http://img.zcool.cn/community/01b28d554bcd6e000001bf72eacf96.jpg"</span>));</div><div class="line">        PendingIntent pendingIntent=PendingIntent.getActivity(<span class="keyword">this</span>,<span class="number">0</span>,buttonIntent,PendingIntent.FLAG_UPDATE_CURRENT);</div><div class="line"><span class="comment">//        PendingIntent pendingIntent=PendingIntent.getBroadcast(this, 0, buttonIntent, 0);</span></div><div class="line">        mBuilder.setContentIntent(pendingIntent);</div><div class="line"><span class="comment">//        mRemoteViews.setOnClickPendingIntent(R.id.image,pendingIntent);</span></div><div class="line">        Notification notify = mBuilder.build();</div><div class="line">Picasso.with(<span class="keyword">this</span>).load(bean.getImg()).into(mRemoteViews,R.id.image,<span class="number">0</span>,notify);</div><div class="line">        mNotificationManager.notify(<span class="number">0</span>, notify);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h4 id="Android-5-0之后通知栏图标为白色的解决方案："><a href="#Android-5-0之后通知栏图标为白色的解决方案：" class="headerlink" title="Android 5.0之后通知栏图标为白色的解决方案："></a>Android 5.0之后通知栏图标为白色的解决方案：</h4><h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><p>Android 5.0(API23)针对targetSdkVersion&gt;=21（Build.VERSION_CODES.LOLLIPOP是21，非23 )， 通知栏图标均自动做了过滤处理，为了统一整个系统的风格。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (entry.icon != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (entry.targetSdk &gt;= Build.VERSION_CODES.LOLLIPOP) &#123;</div><div class="line">                entry.icon.setColorFilter(mContext.getResources().getColor(android.R.color.white));</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                entry.icon.setColorFilter(<span class="keyword">null</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>目前可行的就是把AndroidManifest.xml uses-sdk节点的targetSdkVersion属性设置为21以下（不含21）。</p>
+<h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5><p>在5.0之前的版本用一个图片，在之后的版本用另一张只有白色和透明的颜色，然后再设置一个背景颜色</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (android.os.Build.VERSION.SDK_INT &lt; <span class="number">21</span>) 						</div><div class="line">     nf.icon = R.drawable.ic_launcher; 					</div><div class="line"><span class="keyword">else</span> &#123; 						</div><div class="line">     nf.icon = R.drawable.ic_launcher_notification; 						</div><div class="line">     Class&lt;?&gt; clazz = nf.getClass(); 						</div><div class="line">     Field field = clazz.getDeclaredField(<span class="string">"color"</span>); 						</div><div class="line">     field.setAccessible(<span class="keyword">true</span>); 						</div><div class="line">     field.set(nf, context.getResources().getColor(R.color.red_launcher)); 		</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h4 id="知识点示例代码"><a href="#知识点示例代码" class="headerlink" title="知识点示例代码"></a><a href="https://github.com/iosline/Notification" target="_blank" rel="external">知识点示例代码</a></h4>
       
     </div>
 
@@ -406,6 +405,27 @@ else {
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -438,6 +458,25 @@ else {
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/02/24/通知学习之自定义通知/"
+     data-title="通知学习之自定义通知"
+     data-content=""
+     data-url="http://yoursite.com/2016/02/24/通知学习之自定义通知/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -448,6 +487,10 @@ else {
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/24/通知学习之自定义通知/"
+           data-title="通知学习之自定义通知" data-url="http://yoursite.com/2016/02/24/通知学习之自定义通知/">
+      </div>
     
   </div>
 
@@ -483,10 +526,10 @@ else {
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -497,7 +540,21 @@ else {
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -506,12 +563,41 @@ else {
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -523,7 +609,7 @@ else {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意："><span class="nav-number">1.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤如下："><span class="nav-number">2.</span> <span class="nav-text">步骤如下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码模块："><span class="nav-number"></span> <span class="nav-text">代码模块：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-自定义带按钮通知栏-如下样式"><span class="nav-number">1.</span> <span class="nav-text">1.自定义带按钮通知栏(如下样式)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-自定义不带按钮通知栏"><span class="nav-number">2.</span> <span class="nav-text">2.自定义不带按钮通知栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最近遇到的代码例子："><span class="nav-number">3.</span> <span class="nav-text">最近遇到的代码例子：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意："><span class="nav-number">1.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤如下："><span class="nav-number">2.</span> <span class="nav-text">步骤如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码模块："><span class="nav-number">3.</span> <span class="nav-text">代码模块：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-自定义带按钮通知栏-如下样式"><span class="nav-number">3.1.</span> <span class="nav-text">1.自定义带按钮通知栏(如下样式)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-自定义不带按钮通知栏"><span class="nav-number">3.2.</span> <span class="nav-text">2.自定义不带按钮通知栏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最近遇到的代码例子："><span class="nav-number">3.3.</span> <span class="nav-text">最近遇到的代码例子：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-5-0之后通知栏图标为白色的解决方案："><span class="nav-number">4.</span> <span class="nav-text">Android 5.0之后通知栏图标为白色的解决方案：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-number">4.1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2"><span class="nav-number">4.2.</span> <span class="nav-text">2.</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识点示例代码"><span class="nav-number">5.</span> <span class="nav-text">知识点示例代码</span></a></li></ol></div>
             
           </div>
         </section>
@@ -546,7 +632,7 @@ else {
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -637,18 +723,275 @@ else {
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

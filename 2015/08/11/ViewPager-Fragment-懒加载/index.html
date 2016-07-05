@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,33 +95,36 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
-<meta name="description" content="###一、在ViewPager上做文章（原理上可行，但实际上未起作用）viewpager默认多加载一个page
+<meta name="description" content="在ViewPager上做文章（原理上可行，但实际上未起作用）viewpager默认多加载一个page
 重写viewPager,将v4包里的ViewPager代码复制粘贴到新定义的LazyViewPager  
 只需该一个默认变量值 
-private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  即默认加载多加载0个">
+1private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  即默认加载多加载0个
+在Fr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ViewPager+Fragment 懒加载">
 <meta property="og:url" content="http://yoursite.com/2015/08/11/ViewPager-Fragment-懒加载/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###一、在ViewPager上做文章（原理上可行，但实际上未起作用）viewpager默认多加载一个page
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="在ViewPager上做文章（原理上可行，但实际上未起作用）viewpager默认多加载一个page
 重写viewPager,将v4包里的ViewPager代码复制粘贴到新定义的LazyViewPager  
 只需该一个默认变量值 
-private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  即默认加载多加载0个">
+1private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  即默认加载多加载0个
+在Fr">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/2015011308525158.gif">
-<meta property="og:updated_time" content="2016-02-25T03:59:49.000Z">
+<meta property="og:updated_time" content="2016-07-05T12:47:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ViewPager+Fragment 懒加载">
-<meta name="twitter:description" content="###一、在ViewPager上做文章（原理上可行，但实际上未起作用）viewpager默认多加载一个page
+<meta name="twitter:description" content="在ViewPager上做文章（原理上可行，但实际上未起作用）viewpager默认多加载一个page
 重写viewPager,将v4包里的ViewPager代码复制粘贴到新定义的LazyViewPager  
 只需该一个默认变量值 
-private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  即默认加载多加载0个">
+1private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  即默认加载多加载0个
+在Fr">
 <meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/2015011308525158.gif">
 
 
@@ -127,7 +148,7 @@ private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  �
 
   <link rel="canonical" href="http://yoursite.com/2015/08/11/ViewPager-Fragment-懒加载/"/>
 
-  <title> ViewPager+Fragment 懒加载 | Hexo </title>
+  <title> ViewPager+Fragment 懒加载 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -135,6 +156,16 @@ private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  �
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -158,7 +189,7 @@ private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  �
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -231,9 +262,32 @@ private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  �
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -288,11 +342,27 @@ private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  �
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/11/ViewPager-Fragment-懒加载/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/11/ViewPager-Fragment-懒加载/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/08/11/ViewPager-Fragment-懒加载/" class="leancloud_visitors" data-flag-title="ViewPager+Fragment 懒加载">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -307,269 +377,21 @@ private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  �
       
 
       
-        <p>###一、在ViewPager上做文章（原理上可行，但实际上未起作用）<br>viewpager默认多加载一个page</p>
+        <h3 id="在ViewPager上做文章（原理上可行，但实际上未起作用）"><a href="#在ViewPager上做文章（原理上可行，但实际上未起作用）" class="headerlink" title="在ViewPager上做文章（原理上可行，但实际上未起作用）"></a>在ViewPager上做文章（原理上可行，但实际上未起作用）</h3><p>viewpager默认多加载一个page</p>
 <p>重写viewPager,将v4包里的ViewPager代码复制粘贴到新定义的LazyViewPager  </p>
 <p>只需该一个默认变量值 </p>
-<pre><code>private static final int DEFAULT_OFFSCREEN_PAGES = 0;   //默认为1 改为0  即默认加载多加载0个
-</code></pre><p>###二、在Fragment上做文章<br>做应用开发的时候，一个Activity里面可能会以viewpager（或其他容器）与多个Fragment来组合使用，而如果每个fragment都需要去加载数据，或从本地加载，或从网络加载，那么在这个activity刚创建的时候就变成需要初始化大量资源。这样的结果，我们当然不会满意。那么，能不能做到当切换到这个fragment的时候，它才去初始化呢？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_OFFSCREEN_PAGES = <span class="number">0</span>;   <span class="comment">//默认为1 改为0  即默认加载多加载0个</span></div></pre></td></tr></table></figure>
+<h3 id="在Fragment上做文章"><a href="#在Fragment上做文章" class="headerlink" title="在Fragment上做文章"></a>在Fragment上做文章</h3><p>做应用开发的时候，一个Activity里面可能会以viewpager（或其他容器）与多个Fragment来组合使用，而如果每个fragment都需要去加载数据，或从本地加载，或从网络加载，那么在这个activity刚创建的时候就变成需要初始化大量资源。这样的结果，我们当然不会满意。那么，能不能做到当切换到这个fragment的时候，它才去初始化呢？</p>
 <p><b>答案就在Fragment里的setUserVisibleHint这个方法里</b></p>
 <p>该方法用于告诉系统，这个Fragment的UI是否是可见的。所以我们只需要继承Fragment并重写该方法，即可实现在fragment可见时才进行数据加载操作，即Fragment的懒加载。</p>
-<p>####效果图：<br><img src="http://7xl32g.com1.z0.glb.clouddn.com/2015011308525158.gif"></p>
-<p>####代码如下：</p>
-<pre><code>public abstract class BaseFragment extends Fragment {  
-    protected boolean isVisible;  
-
-    protected boolean isFirst=true;
-    /** 
-     * 在这里实现Fragment数据的缓加载. 
-     * @param isVisibleToUser 
-     */  
-    @Override  
-    public void setUserVisibleHint(boolean isVisibleToUser) {  
-        super.setUserVisibleHint(isVisibleToUser);  
-        if(getUserVisibleHint()) {  
-            isVisible = true;  
-            onVisible();  
-        } else {  
-            isVisible = false;  
-            onInvisible();  
-        }  
-    }  
-
-    protected void onVisible(){  
-        if(isFirst){
-            lazyLoad();  
-            isFirst=false;
-        }
-
-    }  
-
-    protected abstract void lazyLoad();  
-
-    protected void onInvisible(){}  
-}  
-</code></pre><p>在LazyFragment，我增加了三个方法，一个是onVisiable，即fragment被设置为可见时调用，一个是onInvisible，即fragment被设置为不可见时调用。另外再写了一个lazyLoad的抽象方法，该方法在onVisible里面调用。你可能会想，为什么不在getUserVisibleHint里面就直接调用呢？</p>
-<p>###使用<br>我这么写是为了代码的复用。因为在fragment中，我们还需要创建视图（onCreateView()方法），可能还需要在它不可见时就进行其他小量的初始化操作（比如初始化需要通过AIDL调用的远程服务）等。而setUserVisibleHint是在onCreateView之前调用的，那么在视图未初始化的时候，在lazyLoad当中就使用的话，就会有空指针的异常。而把lazyLoad抽离成一个方法，那么它的子类就可以这样做：</p>
-<pre><code>public class CustomListFragment extends BaseFragment {
-
-private static final String FRAGMENT_INDEX = fragment_index;
-private final int FIRST_FRAGMENT = 0;
-private final int SECOND_FRAGMENT = 1;
-private final int THIRD_FRAGMENT = 2;
-
-private TextView mFragmentView;
-
-private int mCurIndex = -1;
-/** 标志位，标志已经初始化完成 */
-private boolean isPrepared;
-/** 是否已被加载过一次，第二次就不再去请求数据了 */
-private boolean mHasLoadedOnce;
-
-/**
- * 创建新实例
- * 
- * @param index
- * @return
- */
-public static CustomListFragment newInstance(int index) {
-    Bundle bundle = new Bundle();
-    bundle.putInt(FRAGMENT_INDEX, index);
-    CustomListFragment fragment = new CustomListFragment();
-    fragment.setArguments(bundle);
-    return fragment;
-}
-
-@Override
-public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    if(mFragmentView == null) {
-        mFragmentView = (TextView) inflater.inflate(R.layout.fragment, container, false);
-        //获得索引值
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            mCurIndex = bundle.getInt(FRAGMENT_INDEX);
-        }
-        isPrepared = true;
-        lazyLoad();
-    }
-
-    //因为共用一个Fragment视图，所以当前这个视图已被加载到Activity中，必须先清除后再加入Activity
-    ViewGroup parent = (ViewGroup)mFragmentView.getParent();
-    if(parent != null) {
-        parent.removeView(mFragmentView);
-    }
-    return mFragmentView;
-}
-
-@Override
-protected void lazyLoad() {
-    if (!isPrepared || !isVisible || mHasLoadedOnce) {
-        return;
-    }
-
-    new AsyncTask&lt;void, boolean=&quot;&quot;&gt;() {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            //显示加载进度对话框
-            UIHelper.showDialogForLoading(getActivity(), 正在加载..., true);
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... params) {
-            try {
-                Thread.sleep(2000);
-                //在这里添加调用接口获取数据的代码
-                //doSomething()
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return true;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean isSuccess) {
-            if (isSuccess) {
-                // 加载成功
-                setView();
-                mHasLoadedOnce = true;
-            } else {
-                // 加载失败
-            }
-            //关闭对话框
-            UIHelper.hideDialogForLoading();
-        }
-    }.execute();
-}
-
-private void setView() {
-    // 根据索引加载不同视图
-    switch (mCurIndex) {
-    case FIRST_FRAGMENT:
-        mFragmentView.setText(第一个);
-        break;
-
-    case SECOND_FRAGMENT:
-        mFragmentView.setText(第二个);
-        break;
-
-    case THIRD_FRAGMENT:
-        mFragmentView.setText(第三个);
-        break;
-    }
-}
-  }
-</code></pre><p>在上面的类当中，我们增加了一个标志位isPrepared，用于标志是否初始化完成。然后在我们所需要的初始化操作完成之后调用，如上面的例子当中，在初始化view之后，设置 isPrepared为true，同时调用lazyLoad()方法。而在lazyLoad()当中，判断isPrepared和isVisible只要有一个不为true就不往下执行。也就是仅当初始化完成，并且可见的时候才继续加载，这样的避免了未初始化完成就使用而带来的问题。 </p>
-<p>####注意：<br><b>这样会引发一个问题，就是fragment每次来回切换都会判断是否可见，可见就加lazyload(),就会造成加载数据，我们不想加载….</b></p>
-<p>####解决办法：<br><b>在lazyFragemnt 或者在 继承lazyFragment的fragment 中添加一个 标记值 默认 mHasLoadedOnce; 加载前先判断;第一次加载之后将 mHasLoadedOnce=true;</b></p>
-<p>####最后<br>到这里我们只是写好了Fragment，在FragmentActivity中还需要对ViewPager设置一下，让它每次只加载一个Fragment，ViewPager.setOffscreenPageLimit(int limit)，其中参数可以设为0或者1，参数小于1时，会默认用1来作为参数，未设置之前，ViewPager会默认加载两个Fragment。所以，我们只需要调用下它，设置下加载Fragment个数即可。</p>
-<pre><code>public class MainActivity extends FragmentActivity implements OnClickListener{
-
-    private RadioButton mFstBtn;
-    private RadioButton mSndBtn;
-    private RadioButton mThdBtn;
-
-    private ViewPager mViewPager;
-    private ListFragmentPagerAdapter mPagerAdapter;
-    private List&lt;fragment&gt; mFragments = new ArrayList&lt;fragment&gt;();
-
-    private final int FIRST_FRAGMENT = 0;
-    private final int SECOND_FRAGMENT = 1;
-    private final int THIRD_FRAGMENT = 2;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initButton();
-        initViewPager();
-    }
-
-
-    /**
-     * 初始化按钮
-     */
-    private void initButton() {
-        mFstBtn = (RadioButton)findViewById(R.id.id_rb_fst);
-        mFstBtn.setOnClickListener(this);
-        mSndBtn = (RadioButton)findViewById(R.id.id_rb_snd);
-        mSndBtn.setOnClickListener(this);
-        mThdBtn = (RadioButton)findViewById(R.id.id_rb_thd);
-        mThdBtn.setOnClickListener(this);
-    }
-
-
-    /**
-     * 初始化ViewPager控件
-     */
-    private void initViewPager() {
-        mViewPager = (ViewPager)findViewById(R.id.id_vp_viewpager);
-        //关闭预加载，默认一次只加载一个Fragment
-        mViewPager.setOffscreenPageLimit(1);
-        //添加Fragment
-        mFragments.add(CustomListFragment.newInstance(FIRST_FRAGMENT));
-        mFragments.add(CustomListFragment.newInstance(SECOND_FRAGMENT));
-        mFragments.add(CustomListFragment.newInstance(THIRD_FRAGMENT));
-        //适配器
-        mPagerAdapter = new ListFragmentPagerAdapter(getSupportFragmentManager(), mFragments);
-        mViewPager.setAdapter(mPagerAdapter);
-        mViewPager.setOnPageChangeListener(onPageChangeListener);
-    }
-
-
-    private OnPageChangeListener onPageChangeListener = new OnPageChangeListener() {
-
-        @Override
-        public void onPageSelected(int position) {
-            //根据用户选中的按钮修改按钮样式
-            switch (position) {
-            case FIRST_FRAGMENT:
-                mFstBtn.setChecked(true);
-                mSndBtn.setChecked(false);
-                mThdBtn.setChecked(false);
-                break;
-
-            case SECOND_FRAGMENT:
-                mFstBtn.setChecked(false);
-                mSndBtn.setChecked(true);
-                mThdBtn.setChecked(false);
-                break;
-
-            case THIRD_FRAGMENT:
-                mFstBtn.setChecked(false);
-                mSndBtn.setChecked(false);
-                mThdBtn.setChecked(true);
-            break;
-            }
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {}
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {}
-    };
-
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-        case R.id.id_rb_fst:
-            mViewPager.setCurrentItem(FIRST_FRAGMENT);
-            break;
-
-        case R.id.id_rb_snd:
-            mViewPager.setCurrentItem(SECOND_FRAGMENT);
-            break;
-
-        case R.id.id_rb_thd:
-            mViewPager.setCurrentItem(THIRD_FRAGMENT);
-            break;
-        }
-    }
-}
-</code></pre><p>####小需求：<br>在懒加载的基础上 有时还需要viewpager的缓存，也就是不需要每次都加载，viewpager默认只保持当前条目的前一个和后一个条目…</p>
+<h4 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：</h4><p><img src="http://7xl32g.com1.z0.glb.clouddn.com/2015011308525158.gif"></p>
+<h4 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div></pre></td><td class="code"><pre><div class="line">	public abstract class BaseFragment extends Fragment &#123;  </div><div class="line">	    protected boolean isVisible;  </div><div class="line"></div><div class="line">        protected boolean isFirst=true;</div><div class="line">	    /** </div><div class="line">	     * 在这里实现Fragment数据的缓加载. </div><div class="line">	     * @param isVisibleToUser </div><div class="line">	     */  </div><div class="line">	    @Override  </div><div class="line">	    public void setUserVisibleHint(boolean isVisibleToUser) &#123;  </div><div class="line">	        super.setUserVisibleHint(isVisibleToUser);  </div><div class="line">	        if(getUserVisibleHint()) &#123;  </div><div class="line">	            isVisible = true;  </div><div class="line">	            onVisible();  </div><div class="line">	        &#125; else &#123;  </div><div class="line">	            isVisible = false;  </div><div class="line">	            onInvisible();  </div><div class="line">	        &#125;  </div><div class="line">	    &#125;  </div><div class="line">	  </div><div class="line">	    protected void onVisible()&#123;  </div><div class="line">			if(isFirst)&#123;</div><div class="line">				lazyLoad();  </div><div class="line">	            isFirst=false;</div><div class="line">			&#125;</div><div class="line">	        </div><div class="line">	    &#125;  </div><div class="line">	  </div><div class="line">	    protected abstract void lazyLoad();  </div><div class="line">	  </div><div class="line">	    protected void onInvisible()&#123;&#125;  </div><div class="line">	&#125;  </div><div class="line">``</div><div class="line">在LazyFragment，我增加了三个方法，一个是onVisiable，即fragment被设置为可见时调用，一个是onInvisible，即fragment被设置为不可见时调用。另外再写了一个lazyLoad的抽象方法，该方法在onVisible里面调用。你可能会想，为什么不在getUserVisibleHint里面就直接调用呢？</div><div class="line"></div><div class="line">### 使用</div><div class="line">我这么写是为了代码的复用。因为在fragment中，我们还需要创建视图（onCreateView()方法），可能还需要在它不可见时就进行其他小量的初始化操作（比如初始化需要通过AIDL调用的远程服务）等。而setUserVisibleHint是在onCreateView之前调用的，那么在视图未初始化的时候，在lazyLoad当中就使用的话，就会有空指针的异常。而把lazyLoad抽离成一个方法，那么它的子类就可以这样做：</div><div class="line"></div><div class="line">```java</div><div class="line">	public class CustomListFragment extends BaseFragment &#123;</div><div class="line"> </div><div class="line">    private static final String FRAGMENT_INDEX = fragment_index;</div><div class="line">    private final int FIRST_FRAGMENT = 0;</div><div class="line">    private final int SECOND_FRAGMENT = 1;</div><div class="line">    private final int THIRD_FRAGMENT = 2;</div><div class="line"> </div><div class="line">    private TextView mFragmentView;</div><div class="line"> </div><div class="line">    private int mCurIndex = -1;</div><div class="line">    /** 标志位，标志已经初始化完成 */</div><div class="line">    private boolean isPrepared;</div><div class="line">    /** 是否已被加载过一次，第二次就不再去请求数据了 */</div><div class="line">    private boolean mHasLoadedOnce;</div><div class="line"> </div><div class="line">    /**</div><div class="line">     * 创建新实例</div><div class="line">     * </div><div class="line">     * @param index</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    public static CustomListFragment newInstance(int index) &#123;</div><div class="line">        Bundle bundle = new Bundle();</div><div class="line">        bundle.putInt(FRAGMENT_INDEX, index);</div><div class="line">        CustomListFragment fragment = new CustomListFragment();</div><div class="line">        fragment.setArguments(bundle);</div><div class="line">        return fragment;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    @Override</div><div class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) &#123;</div><div class="line">        if(mFragmentView == null) &#123;</div><div class="line">            mFragmentView = (TextView) inflater.inflate(R.layout.fragment, container, false);</div><div class="line">            //获得索引值</div><div class="line">            Bundle bundle = getArguments();</div><div class="line">            if (bundle != null) &#123;</div><div class="line">                mCurIndex = bundle.getInt(FRAGMENT_INDEX);</div><div class="line">            &#125;</div><div class="line">            isPrepared = true;</div><div class="line">            lazyLoad();</div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        //因为共用一个Fragment视图，所以当前这个视图已被加载到Activity中，必须先清除后再加入Activity</div><div class="line">        ViewGroup parent = (ViewGroup)mFragmentView.getParent();</div><div class="line">        if(parent != null) &#123;</div><div class="line">            parent.removeView(mFragmentView);</div><div class="line">        &#125;</div><div class="line">        return mFragmentView;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    @Override</div><div class="line">    protected void lazyLoad() &#123;</div><div class="line">        if (!isPrepared || !isVisible || mHasLoadedOnce) &#123;</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        new AsyncTask&lt;void, boolean=""&gt;() &#123;</div><div class="line"> </div><div class="line">            @Override</div><div class="line">            protected void onPreExecute() &#123;</div><div class="line">                super.onPreExecute();</div><div class="line">                //显示加载进度对话框</div><div class="line">                UIHelper.showDialogForLoading(getActivity(), 正在加载..., true);</div><div class="line">            &#125;</div><div class="line"> </div><div class="line">            @Override</div><div class="line">            protected Boolean doInBackground(Void... params) &#123;</div><div class="line">                try &#123;</div><div class="line">                    Thread.sleep(2000);</div><div class="line">                    //在这里添加调用接口获取数据的代码</div><div class="line">                    //doSomething()</div><div class="line">                &#125; catch (Exception e) &#123;</div><div class="line">                    e.printStackTrace();</div><div class="line">                &#125;</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line"> </div><div class="line">            @Override</div><div class="line">            protected void onPostExecute(Boolean isSuccess) &#123;</div><div class="line">                if (isSuccess) &#123;</div><div class="line">                    // 加载成功</div><div class="line">                    setView();</div><div class="line">                    mHasLoadedOnce = true;</div><div class="line">                &#125; else &#123;</div><div class="line">                    // 加载失败</div><div class="line">                &#125;</div><div class="line">                //关闭对话框</div><div class="line">                UIHelper.hideDialogForLoading();</div><div class="line">            &#125;</div><div class="line">        &#125;.execute();</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    private void setView() &#123;</div><div class="line">        // 根据索引加载不同视图</div><div class="line">        switch (mCurIndex) &#123;</div><div class="line">        case FIRST_FRAGMENT:</div><div class="line">            mFragmentView.setText(第一个);</div><div class="line">            break;</div><div class="line"> </div><div class="line">        case SECOND_FRAGMENT:</div><div class="line">            mFragmentView.setText(第二个);</div><div class="line">            break;</div><div class="line"> </div><div class="line">        case THIRD_FRAGMENT:</div><div class="line">            mFragmentView.setText(第三个);</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">  	&#125;</div></pre></td></tr></table></figure>
+<p>在上面的类当中，我们增加了一个标志位isPrepared，用于标志是否初始化完成。然后在我们所需要的初始化操作完成之后调用，如上面的例子当中，在初始化view之后，设置 isPrepared为true，同时调用lazyLoad()方法。而在lazyLoad()当中，判断isPrepared和isVisible只要有一个不为true就不往下执行。也就是仅当初始化完成，并且可见的时候才继续加载，这样的避免了未初始化完成就使用而带来的问题。 </p>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p><b>这样会引发一个问题，就是fragment每次来回切换都会判断是否可见，可见就加lazyload(),就会造成加载数据，我们不想加载….</b></p>
+<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p><b>在lazyFragemnt 或者在 继承lazyFragment的fragment 中添加一个 标记值 默认 mHasLoadedOnce; 加载前先判断;第一次加载之后将 mHasLoadedOnce=true;</b></p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>到这里我们只是写好了Fragment，在FragmentActivity中还需要对ViewPager设置一下，让它每次只加载一个Fragment，ViewPager.setOffscreenPageLimit(int limit)，其中参数可以设为0或者1，参数小于1时，会默认用1来作为参数，未设置之前，ViewPager会默认加载两个Fragment。所以，我们只需要调用下它，设置下加载Fragment个数即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">FragmentActivity</span> <span class="keyword">implements</span> <span class="title">OnClickListener</span></span>&#123;</div><div class="line"> </div><div class="line">    <span class="keyword">private</span> RadioButton mFstBtn;</div><div class="line">    <span class="keyword">private</span> RadioButton mSndBtn;</div><div class="line">    <span class="keyword">private</span> RadioButton mThdBtn;</div><div class="line">     </div><div class="line">    <span class="keyword">private</span> ViewPager mViewPager;</div><div class="line">    <span class="keyword">private</span> ListFragmentPagerAdapter mPagerAdapter;</div><div class="line">    <span class="keyword">private</span> List&lt;fragment&gt; mFragments = <span class="keyword">new</span> ArrayList&lt;fragment&gt;();</div><div class="line">     </div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> FIRST_FRAGMENT = <span class="number">0</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> SECOND_FRAGMENT = <span class="number">1</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> THIRD_FRAGMENT = <span class="number">2</span>;</div><div class="line">     </div><div class="line">     </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        initButton();</div><div class="line">        initViewPager();</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">     </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 初始化按钮</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initButton</span><span class="params">()</span> </span>&#123;</div><div class="line">        mFstBtn = (RadioButton)findViewById(R.id.id_rb_fst);</div><div class="line">        mFstBtn.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        mSndBtn = (RadioButton)findViewById(R.id.id_rb_snd);</div><div class="line">        mSndBtn.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        mThdBtn = (RadioButton)findViewById(R.id.id_rb_thd);</div><div class="line">        mThdBtn.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">     </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 初始化ViewPager控件</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initViewPager</span><span class="params">()</span> </span>&#123;</div><div class="line">        mViewPager = (ViewPager)findViewById(R.id.id_vp_viewpager);</div><div class="line">        <span class="comment">//关闭预加载，默认一次只加载一个Fragment</span></div><div class="line">        mViewPager.setOffscreenPageLimit(<span class="number">1</span>);</div><div class="line">        <span class="comment">//添加Fragment</span></div><div class="line">        mFragments.add(CustomListFragment.newInstance(FIRST_FRAGMENT));</div><div class="line">        mFragments.add(CustomListFragment.newInstance(SECOND_FRAGMENT));</div><div class="line">        mFragments.add(CustomListFragment.newInstance(THIRD_FRAGMENT));</div><div class="line">        <span class="comment">//适配器</span></div><div class="line">        mPagerAdapter = <span class="keyword">new</span> ListFragmentPagerAdapter(getSupportFragmentManager(), mFragments);</div><div class="line">        mViewPager.setAdapter(mPagerAdapter);</div><div class="line">        mViewPager.setOnPageChangeListener(onPageChangeListener);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">     </div><div class="line">    <span class="keyword">private</span> OnPageChangeListener onPageChangeListener = <span class="keyword">new</span> OnPageChangeListener() &#123;</div><div class="line">         </div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">            <span class="comment">//根据用户选中的按钮修改按钮样式</span></div><div class="line">            <span class="keyword">switch</span> (position) &#123;</div><div class="line">            <span class="keyword">case</span> FIRST_FRAGMENT:</div><div class="line">                mFstBtn.setChecked(<span class="keyword">true</span>);</div><div class="line">                mSndBtn.setChecked(<span class="keyword">false</span>);</div><div class="line">                mThdBtn.setChecked(<span class="keyword">false</span>);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"> </div><div class="line">            <span class="keyword">case</span> SECOND_FRAGMENT:</div><div class="line">                mFstBtn.setChecked(<span class="keyword">false</span>);</div><div class="line">                mSndBtn.setChecked(<span class="keyword">true</span>);</div><div class="line">                mThdBtn.setChecked(<span class="keyword">false</span>);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">                 </div><div class="line">            <span class="keyword">case</span> THIRD_FRAGMENT:</div><div class="line">                mFstBtn.setChecked(<span class="keyword">false</span>);</div><div class="line">                mSndBtn.setChecked(<span class="keyword">false</span>);</div><div class="line">                mThdBtn.setChecked(<span class="keyword">true</span>);</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> arg0, <span class="keyword">float</span> arg1, <span class="keyword">int</span> arg2)</span> </span>&#123;&#125;</div><div class="line">         </div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> arg0)</span> </span>&#123;&#125;</div><div class="line">    &#125;;</div><div class="line">     </div><div class="line">     </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">        <span class="keyword">case</span> R.id.id_rb_fst:</div><div class="line">            mViewPager.setCurrentItem(FIRST_FRAGMENT);</div><div class="line">            <span class="keyword">break</span>;</div><div class="line"> </div><div class="line">        <span class="keyword">case</span> R.id.id_rb_snd:</div><div class="line">            mViewPager.setCurrentItem(SECOND_FRAGMENT);</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">             </div><div class="line">        <span class="keyword">case</span> R.id.id_rb_thd:</div><div class="line">            mViewPager.setCurrentItem(THIRD_FRAGMENT);</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="小需求："><a href="#小需求：" class="headerlink" title="小需求："></a>小需求：</h4><p>在懒加载的基础上 有时还需要viewpager的缓存，也就是不需要每次都加载，viewpager默认只保持当前条目的前一个和后一个条目…</p>
 <p>这是我们就需要设置缓存条目的数量</p>
 <pre><code>mViewPager.setOffscreenPageLimit(limitNum);
 </code></pre>
@@ -585,6 +407,27 @@ private void setView() {
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -596,8 +439,8 @@ private void setView() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/10/ScrollView滑动到顶部或底部的响应/" rel="next" title="ScrollView滑动到顶部或底部的相应">
-                <i class="fa fa-chevron-left"></i> ScrollView滑动到顶部或底部的相应
+              <a href="/2015/08/10/ScrollView滑动到顶部或底部的响应/" rel="next" title="ScrollView滑动到顶部或底部的响应">
+                <i class="fa fa-chevron-left"></i> ScrollView滑动到顶部或底部的响应
               </a>
             
           </div>
@@ -621,6 +464,25 @@ private void setView() {
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/08/11/ViewPager-Fragment-懒加载/"
+     data-title="ViewPager+Fragment 懒加载"
+     data-content=""
+     data-url="http://yoursite.com/2015/08/11/ViewPager-Fragment-懒加载/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -631,6 +493,10 @@ private void setView() {
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/08/11/ViewPager-Fragment-懒加载/"
+           data-title="ViewPager+Fragment 懒加载" data-url="http://yoursite.com/2015/08/11/ViewPager-Fragment-懒加载/">
+      </div>
     
   </div>
 
@@ -666,10 +532,10 @@ private void setView() {
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -680,7 +546,21 @@ private void setView() {
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -689,12 +569,41 @@ private void setView() {
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -706,7 +615,7 @@ private void setView() {
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在ViewPager上做文章（原理上可行，但实际上未起作用）"><span class="nav-number">1.</span> <span class="nav-text">在ViewPager上做文章（原理上可行，但实际上未起作用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Fragment上做文章"><span class="nav-number">2.</span> <span class="nav-text">在Fragment上做文章</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图："><span class="nav-number">2.1.</span> <span class="nav-text">效果图：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下："><span class="nav-number">2.2.</span> <span class="nav-text">代码如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意："><span class="nav-number">2.3.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法："><span class="nav-number">2.4.</span> <span class="nav-text">解决办法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后"><span class="nav-number">2.5.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小需求："><span class="nav-number">2.6.</span> <span class="nav-text">小需求：</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -729,7 +638,7 @@ private void setView() {
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -820,18 +729,275 @@ private void setView() {
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

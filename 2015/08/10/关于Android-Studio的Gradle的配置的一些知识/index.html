@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -68,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="AndroidStudio," />
 
 
 
@@ -77,35 +95,29 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
-<meta name="description" content="###一、采用签名不再是debug的签名  直接在编辑环境中运行app默认是debug签名的，我们想更改签名不是debug（例如，微信sdk接入分享的使用要求apk文件不能是debug签名，否则不生效）。
+<meta name="description" content="一、采用签名不再是debug的签名  直接在编辑环境中运行app默认是debug签名的，我们想更改签名不是debug（例如，微信sdk接入分享的使用要求apk文件不能是debug签名，否则不生效）。
   我们需要在项目的build.gradle中android{} 根目录中添加：
-android{                        //在他的目录下添加
-
-     signing">
+12345678910111213141516171819202122232425262728293031323334">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Android Studio的Gradle文件配置的一些知识">
 <meta property="og:url" content="http://yoursite.com/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###一、采用签名不再是debug的签名  直接在编辑环境中运行app默认是debug签名的，我们想更改签名不是debug（例如，微信sdk接入分享的使用要求apk文件不能是debug签名，否则不生效）。
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="一、采用签名不再是debug的签名  直接在编辑环境中运行app默认是debug签名的，我们想更改签名不是debug（例如，微信sdk接入分享的使用要求apk文件不能是debug签名，否则不生效）。
   我们需要在项目的build.gradle中android{} 根目录中添加：
-android{                        //在他的目录下添加
-
-     signing">
-<meta property="og:updated_time" content="2015-12-15T09:22:07.000Z">
+12345678910111213141516171819202122232425262728293031323334">
+<meta property="og:updated_time" content="2016-07-05T06:00:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Android Studio的Gradle文件配置的一些知识">
-<meta name="twitter:description" content="###一、采用签名不再是debug的签名  直接在编辑环境中运行app默认是debug签名的，我们想更改签名不是debug（例如，微信sdk接入分享的使用要求apk文件不能是debug签名，否则不生效）。
+<meta name="twitter:description" content="一、采用签名不再是debug的签名  直接在编辑环境中运行app默认是debug签名的，我们想更改签名不是debug（例如，微信sdk接入分享的使用要求apk文件不能是debug签名，否则不生效）。
   我们需要在项目的build.gradle中android{} 根目录中添加：
-android{                        //在他的目录下添加
-
-     signing">
+12345678910111213141516171819202122232425262728293031323334">
 
 
 
@@ -128,7 +140,7 @@ android{                        //在他的目录下添加
 
   <link rel="canonical" href="http://yoursite.com/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/"/>
 
-  <title> 关于Android Studio的Gradle文件配置的一些知识 | Hexo </title>
+  <title> 关于Android Studio的Gradle文件配置的一些知识 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,6 +148,16 @@ android{                        //在他的目录下添加
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -159,7 +181,7 @@ android{                        //在他的目录下添加
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -232,9 +254,32 @@ android{                        //在他的目录下添加
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -289,11 +334,27 @@ android{                        //在他的目录下添加
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/10/关于Android-Studio的Gradle的配置的一些知识/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/" class="leancloud_visitors" data-flag-title="关于Android Studio的Gradle文件配置的一些知识">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -308,92 +369,40 @@ android{                        //在他的目录下添加
       
 
       
-        <p>###一、采用签名不再是debug的签名<br>  直接在编辑环境中运行app默认是debug签名的，我们想更改签名不是debug（例如，微信sdk接入分享的使用要求apk文件不能是debug签名，否则不生效）。</p>
+        <h3 id="一、采用签名不再是debug的签名"><a href="#一、采用签名不再是debug的签名" class="headerlink" title="一、采用签名不再是debug的签名"></a>一、采用签名不再是debug的签名</h3><p>  直接在编辑环境中运行app默认是debug签名的，我们想更改签名不是debug（例如，微信sdk接入分享的使用要求apk文件不能是debug签名，否则不生效）。</p>
 <p>  我们需要在项目的build.gradle中android{} 根目录中添加：</p>
-<pre><code>android{                        //在他的目录下添加
-
-     signingConfigs{
-            debug{
-                storeFile file(&quot;haha.keystore&quot;)            //签名文件的名字 这是在根目录下
-                storePassword &quot;haha123456&quot;                 //密码
-                keyAlias &quot;zzu&quot;                            //组织（这个是刚开始生成签名文件时填的）
-                keyPassword &quot;haha123456&quot;                   //key密码
-            }
-        }
- }
-</code></pre><p>同时还要经签名文件 haha.keystore放到项目app的根目录下</p>
-<p>或者在项目的build.gradle中android{}根目录中添加：</p>
-<pre><code>Properties properties = new Properties()
-properties.load(project.rootProject.file(&apos;local.properties&apos;).newDataInputStream())
-
-signingConfigs {
-        haha {                                              //haha 这个名字是随意命名的
-            storeFile file(&quot;../keystore/haha.keystore&quot;)     // 签名文件的路径   这是在根目录下新建了keystore文件夹
-            storePassword properties.getProperty(&quot;Password&quot;)
-            keyAlias properties.getProperty(&quot;keyAlias&quot;)
-            keyPassword properties.getProperty(&quot;Password&quot;)
-        }
-
-
- buildTypes {
-        release {
-            signingConfig signingConfigs.haha      //配置
-            minifyEnabled false    //时候开启混淆
-            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;   //混淆文件
-        }
-
-        debug {
-            signingConfig signingConfigs.haha
-        }
-    }
-</code></pre><p>然后在local.properties 中添加 </p>
-<pre><code>keyAlias=haha
-Password=haha123
-</code></pre><p>###二、直接生成以什么命名格式的apk文件</p>
-<p>同样是在项目的build.gradle中android{}根目录中添加：</p>
-<pre><code>applicationVariants.all {
-       variant -&gt;
-           variant.outputs.each {
-               output -&gt;
-                   def oldFile = output.outputFile
-                   if (variant.buildType.name.equals(&apos;release&apos;)) {
-
-                         //生成的就是  bizhi-版本号-版本名_singed.apk
-                       def releaseApkName=&apos;bizhi-&apos;+defaultConfig.versionCode+&quot;-&quot;+defaultConfig.versionName+&quot;-signed.apk&quot;
-                       output.outputFile=new File(oldFile.parent,releaseApkName)
-                   }
-           }
-   }
-</code></pre><p>###三、Gradle多渠道打包<br>以有多渠道打包为例，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">	android&#123;                        <span class="comment">//在他的目录下添加</span></div><div class="line">	 </div><div class="line">		 signingConfigs&#123;</div><div class="line">		        debug&#123;</div><div class="line">		            <span class="function">storeFile <span class="title">file</span><span class="params">(<span class="string">"haha.keystore"</span>)</span>            <span class="comment">//签名文件的名字 这是在根目录下</span></span></div><div class="line">		            storePassword "haha123456"                 <span class="comment">//密码</span></div><div class="line">		            keyAlias "zzu"                            <span class="comment">//组织（这个是刚开始生成签名文件时填的）</span></div><div class="line">		            keyPassword "haha123456"                   <span class="comment">//key密码</span></div><div class="line">		        &#125;</div><div class="line">		    &#125;</div><div class="line">	 &#125;</div><div class="line">```	 </div><div class="line">	 </div><div class="line">同时还要经签名文件 haha.keystore放到项目app的根目录下</div><div class="line"></div><div class="line">或者在项目的build.gradle中android&#123;&#125;根目录中添加：</div><div class="line"></div><div class="line">```java</div><div class="line">    Properties properties = <span class="keyword">new</span> Properties()</div><div class="line">    properties.load(project.rootProject.file(<span class="string">'local.properties'</span>).newDataInputStream())</div><div class="line"></div><div class="line">	signingConfigs &#123;</div><div class="line">	        haha &#123;                                              <span class="comment">//haha 这个名字是随意命名的</span></div><div class="line">	            <span class="function">storeFile <span class="title">file</span><span class="params">(<span class="string">"../keystore/haha.keystore"</span>)</span>     <span class="comment">// 签名文件的路径   这是在根目录下新建了keystore文件夹</span></span></div><div class="line">	            storePassword properties.<span class="title">getProperty</span><span class="params">(<span class="string">"Password"</span>)</span></div><div class="line">	            keyAlias properties.<span class="title">getProperty</span><span class="params">(<span class="string">"keyAlias"</span>)</span></div><div class="line">	            keyPassword properties.<span class="title">getProperty</span><span class="params">(<span class="string">"Password"</span>)</span></div><div class="line">	        &#125;</div><div class="line"></div><div class="line"></div><div class="line">	 buildTypes &#123;</div><div class="line">	        release &#123;</div><div class="line">	            signingConfig signingConfigs.haha      <span class="comment">//配置</span></div><div class="line">	            minifyEnabled <span class="keyword">false</span>    <span class="comment">//时候开启混淆</span></div><div class="line">	            <span class="function">proguardFiles <span class="title">getDefaultProguardFile</span><span class="params">(<span class="string">'proguard-android.txt'</span>)</span>, 'proguard-rules.pro'   <span class="comment">//混淆文件</span></span></div><div class="line">	        &#125;</div><div class="line">	</div><div class="line">	        debug &#123;</div><div class="line">	            signingConfig signingConfigs.haha</div><div class="line">	        &#125;</div><div class="line">	    &#125;</div></pre></td></tr></table></figure>
+<p>然后在local.properties 中添加 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">keyAlias=haha</div><div class="line">Password=haha123</div></pre></td></tr></table></figure>
+<h3 id="二、直接生成以什么命名格式的apk文件"><a href="#二、直接生成以什么命名格式的apk文件" class="headerlink" title="二、直接生成以什么命名格式的apk文件"></a>二、直接生成以什么命名格式的apk文件</h3><p>同样是在项目的build.gradle中android{}根目录中添加：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">applicationVariants.all &#123;</div><div class="line">       variant -&gt;</div><div class="line">           variant.outputs.each &#123;</div><div class="line">               output -&gt;</div><div class="line">                   def oldFile = output.<span class="function">outputFile</span></div><div class="line">                   <span class="title">if</span> <span class="params">(variant.buildType.name.equals(<span class="string">'release'</span>)</span>) &#123;</div><div class="line">	</div><div class="line">                            <span class="comment">//生成的就是  bizhi-版本号-版本名_singed.apk</span></div><div class="line">                       def releaseApkName=<span class="string">'bizhi-'</span>+defaultConfig.versionCode+<span class="string">"-"</span>+defaultConfig.versionName+<span class="string">"-signed.apk"</span></div><div class="line">                       output.outputFile=<span class="keyword">new</span> File(oldFile.parent,releaseApkName)</div><div class="line">                   &#125;</div><div class="line">           &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h3 id="三、Gradle多渠道打包"><a href="#三、Gradle多渠道打包" class="headerlink" title="三、Gradle多渠道打包"></a>三、Gradle多渠道打包</h3><p>以有多渠道打包为例，</p>
 <p>在AndroidManifest.xml里面会有这么一段：</p>
-<pre><code>&lt;meta-data
-    android:name=&quot;UMENG_CHANNEL&quot;
-    android:value=&quot;Channel_ID&quot; /&gt;
-</code></pre><p>里面的Channel_ID就是渠道标示。我们的目标就是在编译的时候这个值能够自动变化。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;meta-data</div><div class="line">    android:name=<span class="string">"UMENG_CHANNEL"</span></div><div class="line">    android:value=<span class="string">"Channel_ID"</span> /&gt;</div></pre></td></tr></table></figure>
+<p>里面的Channel_ID就是渠道标示。我们的目标就是在编译的时候这个值能够自动变化。</p>
 <p><li>第一步 在AndroidManifest.xml里配置PlaceHolder</li></p>
-<pre><code>&lt;meta-data
-    android:name=&quot;UMENG_CHANNEL&quot;
-    android:value=&quot;${UMENG_CHANNEL_VALUE}&quot; /&gt;
-</code></pre><p><li>第二步 在build.gradle设置productFlavors</li></p>
-<pre><code>android {  
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;meta-data</div><div class="line">    android:name=<span class="string">"UMENG_CHANNEL"</span></div><div class="line">    android:value=<span class="string">"$&#123;UMENG_CHANNEL_VALUE&#125;"</span> /&gt;</div></pre></td></tr></table></figure>
+<p><li>第二步 在build.gradle设置productFlavors</li></p>
+<pre><code class="java">android {  
     productFlavors {
         xiaomi {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;xiaomi&quot;]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: <span class="string">"xiaomi"</span>]
         }
         _360 {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;_360&quot;]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: <span class="string">"_360"</span>]
         }
         baidu {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;baidu&quot;]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: <span class="string">"baidu"</span>]
         }
         wandoujia {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;wandoujia&quot;]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: <span class="string">"wandoujia"</span>]
         }
     }  
 }
-</code></pre><p>或者批量修改</p>
+</code></pre>
+<p>或者批量修改</p>
 <p>全选复制放进笔记</p>
-<pre><code>android {  
+<pre><code class="java">android {  
     productFlavors {
         xiaomi {}
         _360 {}
@@ -406,6 +415,7 @@ Password=haha123
     }
 }
 </code></pre>
+
       
     </div>
 
@@ -418,11 +428,38 @@ Password=haha123
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AndroidStudio/" rel="tag">#AndroidStudio</a>
+          
+        </div>
       
 
       
@@ -454,6 +491,25 @@ Password=haha123
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/08/10/关于Android-Studio的Gradle的配置的一些知识/"
+     data-title="关于Android Studio的Gradle文件配置的一些知识"
+     data-content=""
+     data-url="http://yoursite.com/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -464,6 +520,10 @@ Password=haha123
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/08/10/关于Android-Studio的Gradle的配置的一些知识/"
+           data-title="关于Android Studio的Gradle文件配置的一些知识" data-url="http://yoursite.com/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/">
+      </div>
     
   </div>
 
@@ -499,10 +559,10 @@ Password=haha123
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -513,7 +573,21 @@ Password=haha123
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -522,12 +596,41 @@ Password=haha123
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -539,7 +642,7 @@ Password=haha123
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、采用签名不再是debug的签名"><span class="nav-number">1.</span> <span class="nav-text">一、采用签名不再是debug的签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、直接生成以什么命名格式的apk文件"><span class="nav-number">2.</span> <span class="nav-text">二、直接生成以什么命名格式的apk文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Gradle多渠道打包"><span class="nav-number">3.</span> <span class="nav-text">三、Gradle多渠道打包</span></a></li></ol></div>
             
           </div>
         </section>
@@ -562,7 +665,7 @@ Password=haha123
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -653,18 +756,275 @@ Password=haha123
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

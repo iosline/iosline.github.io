@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,29 +95,26 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
-<meta name="description" content="#三种方案解决ScrollView嵌套listview、gridView的问题
-###出现的问题：   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。
-   2.嵌套中的子ListView和GridvIew是无法滑动的，因为子控件的滑">
+<meta name="description" content="出现的问题：   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。
+   2.嵌套中的子ListView和GridvIew是无法滑动的，因为子控件的滑动事件会被外面的ScrollView吃掉，如果想让子控件可以滑动，只能强行的截取滑动的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决scrollview中嵌套listview、gridview的问题">
 <meta property="og:url" content="http://yoursite.com/2015/07/23/解决scrollview中嵌套listview、gridview的问题/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#三种方案解决ScrollView嵌套listview、gridView的问题
-###出现的问题：   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。
-   2.嵌套中的子ListView和GridvIew是无法滑动的，因为子控件的滑">
-<meta property="og:updated_time" content="2015-07-25T04:19:07.000Z">
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="出现的问题：   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。
+   2.嵌套中的子ListView和GridvIew是无法滑动的，因为子控件的滑动事件会被外面的ScrollView吃掉，如果想让子控件可以滑动，只能强行的截取滑动的">
+<meta property="og:updated_time" content="2016-07-05T13:00:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决scrollview中嵌套listview、gridview的问题">
-<meta name="twitter:description" content="#三种方案解决ScrollView嵌套listview、gridView的问题
-###出现的问题：   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。
-   2.嵌套中的子ListView和GridvIew是无法滑动的，因为子控件的滑">
+<meta name="twitter:description" content="出现的问题：   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。
+   2.嵌套中的子ListView和GridvIew是无法滑动的，因为子控件的滑动事件会被外面的ScrollView吃掉，如果想让子控件可以滑动，只能强行的截取滑动的">
 
 
 
@@ -122,7 +137,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2015/07/23/解决scrollview中嵌套listview、gridview的问题/"/>
 
-  <title> 解决scrollview中嵌套listview、gridview的问题 | Hexo </title>
+  <title> 解决scrollview中嵌套listview、gridview的问题 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -130,6 +145,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -153,7 +178,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -226,9 +251,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -283,11 +331,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/解决scrollview中嵌套listview、gridview的问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/" class="leancloud_visitors" data-flag-title="解决scrollview中嵌套listview、gridview的问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -302,127 +366,30 @@
       
 
       
-        <p>#三种方案解决ScrollView嵌套listview、gridView的问题</p>
-<p>###出现的问题：<br>   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。</p>
+        <h3 id="出现的问题："><a href="#出现的问题：" class="headerlink" title="出现的问题："></a>出现的问题：</h3><p>   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。</p>
 <p>   2.嵌套中的子ListView和GridvIew是无法滑动的，因为子控件的滑动事件会被外面的ScrollView吃掉，如果想让子控件可以滑动，只能强行的截取滑动的相关事件了。</p>
-<p>###原因：原因就是scroll事件的消费处理以及ListView控件的高度设定问题。</p>
-<p>###解决的办法：</p>
-<p>####一、手动设置listview高度<br>    /**</p>
-<pre><code>* 动态设置ListView的高度
-* @param listView
-*/
-public static void setListViewHeightBasedOnChildren(ListView listView) {
-if(listView == null) return;
-ListAdapter listAdapter = listView.getAdapter();
-if (listAdapter == null) {
-    // pre-condition
-    return;
-}
-int totalHeight = 0;
-for (int i = 0; i &lt; listAdapter.getCount(); i++) {
-    View listItem = listAdapter.getView(i, null, listView);
-    listItem.measure(0, 0);
-    totalHeight += listItem.getMeasuredHeight();
-}
-ViewGroup.LayoutParams params = listView.getLayoutParams();
-params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-listView.setLayoutParams(params);
-}
-</code></pre><p>  上面这个方法就是设定ListView的高度了，<b>在为ListView设置了Adapter之后使用</b>，就可以解决问题了。</p>
+<h3 id="原因：原因就是scroll事件的消费处理以及ListView控件的高度设定问题。"><a href="#原因：原因就是scroll事件的消费处理以及ListView控件的高度设定问题。" class="headerlink" title="原因：原因就是scroll事件的消费处理以及ListView控件的高度设定问题。"></a>原因：原因就是scroll事件的消费处理以及ListView控件的高度设定问题。</h3><h3 id="解决的办法："><a href="#解决的办法：" class="headerlink" title="解决的办法："></a>解决的办法：</h3><h4 id="一、手动设置listview高度"><a href="#一、手动设置listview高度" class="headerlink" title="一、手动设置listview高度"></a>一、手动设置listview高度</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 动态设置ListView的高度</div><div class="line">* <span class="doctag">@param</span> listView</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setListViewHeightBasedOnChildren</span><span class="params">(ListView listView)</span> </span>&#123;</div><div class="line">   <span class="keyword">if</span>(listView == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">   ListAdapter listAdapter = listView.getAdapter();</div><div class="line">   <span class="keyword">if</span> (listAdapter == <span class="keyword">null</span>) &#123;</div><div class="line">       <span class="comment">// pre-condition</span></div><div class="line">       <span class="keyword">return</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">int</span> totalHeight = <span class="number">0</span>;</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; listAdapter.getCount(); i++) &#123;</div><div class="line">       View listItem = listAdapter.getView(i, <span class="keyword">null</span>, listView);</div><div class="line">       listItem.measure(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">       totalHeight += listItem.getMeasuredHeight();</div><div class="line">   &#125;</div><div class="line">   ViewGroup.LayoutParams params = listView.getLayoutParams();</div><div class="line">   params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - <span class="number">1</span>));</div><div class="line">   listView.setLayoutParams(params);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  上面这个方法就是设定ListView的高度了，<b>在为ListView设置了Adapter之后使用</b>，就可以解决问题了。</p>
 <p>  但是这个方法有个两个细节需要注意：</p>
 <p>   <b>一是Adapter中getView方法返回的View的必须由LinearLayout组成</b>，因为只有LinearLayout才有measure()方法，如果使用其他的布局如RelativeLayout，在调用listItem.measure(0, 0);时就会抛异常，因为除LinearLayout外的其他布局的这个方法就是直接抛异常的，没理由…。我最初使用的就是这个方法，但是因为子控件的顶层布局是RelativeLayout，所以一直报错，不得不放弃这个方法。</p>
 <p>   <b>二是需要手动把ScrollView滚动至最顶端</b>，因为使用这个方法的话，默认在ScrollView顶端的项是ListView，具体原因不了解，求大神解答…可以在Activity中设置：</p>
-<pre><code>sv = (ScrollView) findViewById(R.id.act_solution_1_sv);
-sv.ScrollTo(0,0);
-</code></pre><p>####二、使用LinearLayout取代ListView</p>
-<p>既然ListView不能适应ScrollView，那就换一个可以适应ScrollView的控件，干嘛非要吊死在ListView这一棵树上呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sv = (ScrollView) findViewById(R.id.act_solution_1_sv);</div><div class="line">sv.ScrollTo(0,0);</div></pre></td></tr></table></figure>
+<h4 id="二、使用LinearLayout取代ListView"><a href="#二、使用LinearLayout取代ListView" class="headerlink" title="二、使用LinearLayout取代ListView"></a>二、使用LinearLayout取代ListView</h4><p>既然ListView不能适应ScrollView，那就换一个可以适应ScrollView的控件，干嘛非要吊死在ListView这一棵树上呢？</p>
 <p>而LinearLayout是最好的选择。但如果我仍想继续使用已经定义好的Adater呢？我们只需要自定义一个类继承自LinearLayout，为其加上对BaseAdapter的适配。</p>
-<pre><code>/**
-* 取代ListView的LinearLayout，使之能够成功嵌套在ScrollView中
-* @author 
-*/
-public class LinearLayoutForListView extends LinearLayout {
-private BaseAdapter adapter;
-private OnClickListener onClickListener = null;
-/**
- * 绑定布局
- */
-public void bindLinearLayout() {
-    int count = adapter.getCount();
-    this.removeAllViews();
-    for (int i = 0; i &lt; count; i++) {
-        View v = adapter.getView(i, null, null);
-        v.setOnClickListener(this.onClickListener);
-        addView(v, i);
-    }
-   Log.v(&quot;countTAG&quot;, &quot;&quot; + count);
-}
-public LinearLayoutForListView(Context context) {
-    super(context);
-    }
-}
-</code></pre><p>它的使用和listview一样，写在布局文件里 然后setAdapter就ok了</p>
-<p>####三、自定义适应ScrollView的listview</p>
-<p>自定义一个类继承自ListView，通过重写其onMeasure方法，达到对ScrollView适配的效果。</p>
-<pre><code>import android.content.Context;
-import android.util.AttributeSet;
-import android.widget.ListView;
-public class ListViewForScrollView extends ListView {
-    public ListViewForScrollView(Context context) {
-        super(context);
-    }
-    public ListViewForScrollView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-    public ListViewForScrollView(Context context, AttributeSet attrs,
-        int defStyle) {
-        super(context, attrs, defStyle);
-    }
-    @Override
-    /**
-     * 重写该方法，达到使ListView适应ScrollView的效果
-     */
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2,
-        MeasureSpec.AT_MOST);
-        super.onMeasure(widthMeasureSpec, expandSpec);
-    }
-}
-</code></pre><p>三个构造方法完全不用动，只要重写onMeasure方法，需要改动的地方比起方法2少了不是一点半点…</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 取代ListView的LinearLayout，使之能够成功嵌套在ScrollView中</div><div class="line">* <span class="doctag">@author</span> </div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinearLayoutForListView</span> <span class="keyword">extends</span> <span class="title">LinearLayout</span> </span>&#123;</div><div class="line">   <span class="keyword">private</span> BaseAdapter adapter;</div><div class="line">   <span class="keyword">private</span> OnClickListener onClickListener = <span class="keyword">null</span>;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * 绑定布局</div><div class="line">    */</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bindLinearLayout</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">int</span> count = adapter.getCount();</div><div class="line">       <span class="keyword">this</span>.removeAllViews();</div><div class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">           View v = adapter.getView(i, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">           v.setOnClickListener(<span class="keyword">this</span>.onClickListener);</div><div class="line">           addView(v, i);</div><div class="line">       &#125;</div><div class="line">      Log.v(<span class="string">"countTAG"</span>, <span class="string">""</span> + count);</div><div class="line">   &#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">LinearLayoutForListView</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">       <span class="keyword">super</span>(context);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它的使用和listview一样，写在布局文件里 然后setAdapter就ok了</p>
+<h4 id="三、自定义适应ScrollView的listview"><a href="#三、自定义适应ScrollView的listview" class="headerlink" title="三、自定义适应ScrollView的listview"></a>三、自定义适应ScrollView的listview</h4><p>自定义一个类继承自ListView，通过重写其onMeasure方法，达到对ScrollView适配的效果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.content.Context;</div><div class="line"><span class="keyword">import</span> android.util.AttributeSet;</div><div class="line"><span class="keyword">import</span> android.widget.ListView;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListViewForScrollView</span> <span class="keyword">extends</span> <span class="title">ListView</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ListViewForScrollView</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ListViewForScrollView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ListViewForScrollView</span><span class="params">(Context context, AttributeSet attrs,</span></span></div><div class="line">        <span class="keyword">int</span> defStyle) &#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyle);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 重写该方法，达到使ListView适应ScrollView的效果</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; <span class="number">2</span>,</div><div class="line">        MeasureSpec.AT_MOST);</div><div class="line">        <span class="keyword">super</span>.onMeasure(widthMeasureSpec, expandSpec);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>三个构造方法完全不用动，只要重写onMeasure方法，需要改动的地方比起方法2少了不是一点半点…</p>
 <p>在xml布局中和Activty中使用的ListView改成这个自定义ListView就行了。代码就省了吧…</p>
 <p>这个方法和方法1有一个同样的毛病，就是默认显示的首项是ListView，需要手动把ScrollView滚动至最顶端。</p>
-<pre><code>sv = (ScrollView) findViewById(R.id.act_solution_4_sv);
-sv.smoothScrollTo(0, 0);
-</code></pre><p><b>GridView也一样，只需重写onMeasure()方法即可</b></p>
-<pre><code>public class NoScrollGridView extends GridView{  
-
-     public NoScrollGridView(Context context, AttributeSet attrs){  
-          super(context, attrs);  
-     }  
-
-     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec){  
-          int mExpandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2, MeasureSpec.AT_MOST);  
-          super.onMeasure(widthMeasureSpec, mExpandSpec);  
-     }  
-}  
-</code></pre><p>####注意：</p>
-<p>使用PullToRefresh下拉刷新和上拉加载更多时，sv.ScrollTo(0,0) 是起不到作用的。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">	sv = (ScrollView) findViewById(R.id.act_solution_4_sv);</div><div class="line">	sv.smoothScrollTo(0, 0);</div><div class="line">```	</div><div class="line">&lt;b&gt;GridView也一样，只需重写onMeasure()方法即可&lt;/b&gt;</div><div class="line"></div><div class="line">```java</div><div class="line">	public class NoScrollGridView extends GridView&#123;  </div><div class="line">	  </div><div class="line">	     public NoScrollGridView(Context context, AttributeSet attrs)&#123;  </div><div class="line">	          super(context, attrs);  </div><div class="line">	     &#125;  </div><div class="line">	  </div><div class="line">	     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec)&#123;  </div><div class="line">	          int mExpandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2, MeasureSpec.AT_MOST);  </div><div class="line">	          super.onMeasure(widthMeasureSpec, mExpandSpec);  </div><div class="line">	     &#125;  </div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>使用PullToRefresh下拉刷新和上拉加载更多时，sv.ScrollTo(0,0) 是起不到作用的。</p>
 <p>解决办法一：  亲测没用</p>
-<pre><code>pullScrollView.getRefreshableView().ScrollTo(0,0);
-</code></pre><p>解决办法二： 在PullToRefreshAdapterViewBase源码中添加这两个方法即可 （本人觉得麻烦，不建议）</p>
-<pre><code>public final void setSelection(int scrollTop){
-      mRefreshableView.setSelection(scrollTop);
-  }
-   public final int getFirstVisiablePosition(){
-       return mRefreshableView.getFirstVisiablePosition();
-   }
-</code></pre><p>解决办法三：<b>让listview顶部的组件获得焦点（非常好用）</b></p>
-<pre><code>testPager.requestFocus();
-tsstPager.setFocusable(true);
-testPager.setFocusableInTouchMode(true);
-</code></pre><p>#总结：</p>
-<p>####上述几个方法无非就是对listview（gridview）进行重新测量，但在pullToRefresh加载更多和下拉刷新时，会出现不停的测量，不停的刷新数据，手机屏幕乱跳等现象。解决办法：暂无。有能力再解决。</p>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pullScrollView.getRefreshableView().ScrollTo(<span class="number">0</span>,<span class="number">0</span>);</div></pre></td></tr></table></figure>
+<p>解决办法二： 在PullToRefreshAdapterViewBase源码中添加这两个方法即可 （本人觉得麻烦，不建议）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">	 public final void setSelection(int scrollTop)&#123;</div><div class="line">	       mRefreshableView.setSelection(scrollTop);</div><div class="line">	   &#125;</div><div class="line">	    public final int getFirstVisiablePosition()&#123;</div><div class="line">	        return mRefreshableView.getFirstVisiablePosition();</div><div class="line">	    &#125;</div><div class="line">```	    </div><div class="line">解决办法三：&lt;b&gt;让listview顶部的组件获得焦点（非常好用),有时需注意使用顺序&lt;/b&gt;</div><div class="line">	</div><div class="line">```java		 </div><div class="line">		tsstPager.setFocusable(true);</div><div class="line">		testPager.setFocusableInTouchMode(true);</div><div class="line">		testPager.requestFocus();</div></pre></td></tr></table></figure>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><h4 id="上述几个方法无非就是对listview（gridview）进行重新测量，但在pullToRefresh加载更多和下拉刷新时，会出现不停的测量，不停的刷新数据，手机屏幕乱跳等现象。解决办法：暂无。有能力再解决。"><a href="#上述几个方法无非就是对listview（gridview）进行重新测量，但在pullToRefresh加载更多和下拉刷新时，会出现不停的测量，不停的刷新数据，手机屏幕乱跳等现象。解决办法：暂无。有能力再解决。" class="headerlink" title="上述几个方法无非就是对listview（gridview）进行重新测量，但在pullToRefresh加载更多和下拉刷新时，会出现不停的测量，不停的刷新数据，手机屏幕乱跳等现象。解决办法：暂无。有能力再解决。"></a>上述几个方法无非就是对listview（gridview）进行重新测量，但在pullToRefresh加载更多和下拉刷新时，会出现不停的测量，不停的刷新数据，手机屏幕乱跳等现象。解决办法：暂无。有能力再解决。</h4>
       
     </div>
 
@@ -435,6 +402,27 @@ testPager.setFocusableInTouchMode(true);
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -471,6 +459,25 @@ testPager.setFocusableInTouchMode(true);
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/07/23/解决scrollview中嵌套listview、gridview的问题/"
+     data-title="解决scrollview中嵌套listview、gridview的问题"
+     data-content=""
+     data-url="http://yoursite.com/2015/07/23/解决scrollview中嵌套listview、gridview的问题/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -481,6 +488,10 @@ testPager.setFocusableInTouchMode(true);
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/07/23/解决scrollview中嵌套listview、gridview的问题/"
+           data-title="解决scrollview中嵌套listview、gridview的问题" data-url="http://yoursite.com/2015/07/23/解决scrollview中嵌套listview、gridview的问题/">
+      </div>
     
   </div>
 
@@ -516,10 +527,10 @@ testPager.setFocusableInTouchMode(true);
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -530,7 +541,21 @@ testPager.setFocusableInTouchMode(true);
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -539,12 +564,41 @@ testPager.setFocusableInTouchMode(true);
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -556,7 +610,7 @@ testPager.setFocusableInTouchMode(true);
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#出现的问题："><span class="nav-number">1.</span> <span class="nav-text">出现的问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原因：原因就是scroll事件的消费处理以及ListView控件的高度设定问题。"><span class="nav-number">2.</span> <span class="nav-text">原因：原因就是scroll事件的消费处理以及ListView控件的高度设定问题。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决的办法："><span class="nav-number">3.</span> <span class="nav-text">解决的办法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、手动设置listview高度"><span class="nav-number">3.1.</span> <span class="nav-text">一、手动设置listview高度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、使用LinearLayout取代ListView"><span class="nav-number">3.2.</span> <span class="nav-text">二、使用LinearLayout取代ListView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、自定义适应ScrollView的listview"><span class="nav-number">3.3.</span> <span class="nav-text">三、自定义适应ScrollView的listview</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意："><span class="nav-number">3.4.</span> <span class="nav-text">注意：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#上述几个方法无非就是对listview（gridview）进行重新测量，但在pullToRefresh加载更多和下拉刷新时，会出现不停的测量，不停的刷新数据，手机屏幕乱跳等现象。解决办法：暂无。有能力再解决。"><span class="nav-number">4.1.</span> <span class="nav-text">上述几个方法无非就是对listview（gridview）进行重新测量，但在pullToRefresh加载更多和下拉刷新时，会出现不停的测量，不停的刷新数据，手机屏幕乱跳等现象。解决办法：暂无。有能力再解决。</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -579,7 +633,7 @@ testPager.setFocusableInTouchMode(true);
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -670,18 +724,275 @@ testPager.setFocusableInTouchMode(true);
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

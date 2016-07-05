@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,42 +95,42 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
-<meta name="description" content="###一、概述EventBus是一款针对Android优化的发布/订阅事件总线。
+<meta name="description" content="一、概述EventBus是一款针对Android优化的发布/订阅事件总线。
 主要功能是替代Intent、Handler、BroadCast在Fragment、Activity、Service、线程之间传递消息。
 优点是，开销小，代码更优雅，以及将发送者和接受者解耦。
 作为一个消息总线，有三个主要的元素：
 Event：事件
 Event 可以是任意类型的对象
-Subscriber:事件订阅者，接">
+Subscriber:事件订阅者，接收特定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EventBus使用详解">
 <meta property="og:url" content="http://yoursite.com/2016/02/16/EventBus使用详解/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###一、概述EventBus是一款针对Android优化的发布/订阅事件总线。
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="一、概述EventBus是一款针对Android优化的发布/订阅事件总线。
 主要功能是替代Intent、Handler、BroadCast在Fragment、Activity、Service、线程之间传递消息。
 优点是，开销小，代码更优雅，以及将发送者和接受者解耦。
 作为一个消息总线，有三个主要的元素：
 Event：事件
 Event 可以是任意类型的对象
-Subscriber:事件订阅者，接">
+Subscriber:事件订阅者，接收特定">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/greendao.gif">
-<meta property="og:updated_time" content="2016-02-16T10:23:00.000Z">
+<meta property="og:updated_time" content="2016-07-05T03:21:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EventBus使用详解">
-<meta name="twitter:description" content="###一、概述EventBus是一款针对Android优化的发布/订阅事件总线。
+<meta name="twitter:description" content="一、概述EventBus是一款针对Android优化的发布/订阅事件总线。
 主要功能是替代Intent、Handler、BroadCast在Fragment、Activity、Service、线程之间传递消息。
 优点是，开销小，代码更优雅，以及将发送者和接受者解耦。
 作为一个消息总线，有三个主要的元素：
 Event：事件
 Event 可以是任意类型的对象
-Subscriber:事件订阅者，接">
+Subscriber:事件订阅者，接收特定">
 <meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/greendao.gif">
 
 
@@ -136,7 +154,7 @@ Subscriber:事件订阅者，接">
 
   <link rel="canonical" href="http://yoursite.com/2016/02/16/EventBus使用详解/"/>
 
-  <title> EventBus使用详解 | Hexo </title>
+  <title> EventBus使用详解 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,6 +162,16 @@ Subscriber:事件订阅者，接">
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -167,7 +195,7 @@ Subscriber:事件订阅者，接">
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -240,9 +268,32 @@ Subscriber:事件订阅者，接">
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -297,11 +348,27 @@ Subscriber:事件订阅者，接">
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/16/EventBus使用详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/16/EventBus使用详解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2016/02/16/EventBus使用详解/" class="leancloud_visitors" data-flag-title="EventBus使用详解">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -316,7 +383,7 @@ Subscriber:事件订阅者，接">
       
 
       
-        <p>###一、概述<br>EventBus是一款针对Android优化的发布/订阅事件总线。</p>
+        <h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>EventBus是一款针对Android优化的发布/订阅事件总线。</p>
 <p>主要功能是替代Intent、Handler、BroadCast在Fragment、Activity、Service、线程之间传递消息。</p>
 <p>优点是，开销小，代码更优雅，以及将发送者和接受者解耦。</p>
 <p>作为一个消息总线，有三个主要的元素：</p>
@@ -331,10 +398,9 @@ Subscriber:事件订阅者，接">
 <ul><li>PostThread：事件的处理在和事件的发送在相同的进程，所以事件处理时间不应太长，不然影响事件的发送线程，而这个线程可能是UI线程。对应的函数名是onEvent。<br><br></li><li>MainThread: 事件的处理会在UI线程中执行。事件处理时间不能太长，这个不用说的，长了会ANR的，对应的函数名是onEventMainThread。<br><br></li><li>BackgroundThread：事件的处理会在一个后台线程中执行，对应的函数名是onEventBackgroundThread，虽然名字是BackgroundThread，事件处理是在后台线程，但事件处理时间还是不应该太长，因为如果发送事件的线程是后台线程，会直接执行事件，如果当前线程是UI线程，事件会被加到一个队列中，由一个线程依次处理这些事件，如果某个事件处理时间太长，会阻塞后面的事件的派发或处理。<br><br></li><li>Async：事件处理会在单独的线程中执行，主要用于在后台线程中执行耗时操作，每个事件会开启一个线程（有线程池），但最好限制线程的数目。</li></ul>
 
 <p>根据事件订阅都函数名称的不同，会使用不同的ThreadMode，比如果在后台线程加载了数据想在UI线程显示，订阅者只需把函数命名为onEventMainThread。</p>
-<p>###二、基本使用</p>
-<p>导入：</p>
-<pre><code>compile &apos;de.greenrobot:eventbus:2.4.0&apos;
-</code></pre><p>使用方法：</p>
+<h3 id="二、基本使用"><a href="#二、基本使用" class="headerlink" title="二、基本使用"></a>二、基本使用</h3><p>导入：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'de.greenrobot:eventbus:2.4.0'</span></div></pre></td></tr></table></figure>
+<p>使用方法：</p>
 <p>在EventBus中，获取实例的方法一般是采用EventBus.getInstance()来获取默认的EventBus实例</p>
 <p>①.定义事件类型：<br><code>public class MyEvent {}</code></p>
 <p>②.定义事件处理方法：<br><code>public void onEventMainThread</code></p>
@@ -342,8 +408,7 @@ Subscriber:事件订阅者，接">
 <p>③.解除注册订阅者：<br><code>EventBus.getDefault().unregister(this)</code></p>
 <p>④.发送事件：<br><code>EventBus.getDefault().post(new MyEvent())</code></p>
 <p>注册/解除订阅者，是在对事件进行处理的Activity或者Fragment等的onCreate()、onDestoty()中进行的。<br>发送事件的页面中不用注册。</p>
-<p>###三、实战</p>
-<p>现在我们的需求是这样的，两个Fragment组成主界面，左边的Fragment是个目录、即列表，右边的Fragment是详细信息面板；</p>
+<h3 id="三、实战"><a href="#三、实战" class="headerlink" title="三、实战"></a>三、实战</h3><p>现在我们的需求是这样的，两个Fragment组成主界面，左边的Fragment是个目录、即列表，右边的Fragment是详细信息面板；</p>
 <p>a、目录的列表是从网络获取的。</p>
 <p>b、当点击目录上的条目时，动态更新详细信息面板；</p>
 <p>效果图：</p>
@@ -352,148 +417,21 @@ Subscriber:事件订阅者，接">
 <p>a、目录Fragment在onCreate中去开启线程去访问网络获取数据，获取完成以后，通过handler去更新界面。</p>
 <p>b、在目录的Fragment中提供一个接口，然后详细信息面板去注册这个接口，当发生点击时，去回调这个接口，让详细信息面板发生改变。</p>
 <p>这种做法不错的，但是有了EventBus之后，我们有….</p>
-<p>####1.MainActivity及其布局</p>
-<pre><code>public class MainActivity extends FragmentActivity  
-{  
-    @Override  
-    protected void onCreate(Bundle savedInstanceState)  
-    {  
-        super.onCreate(savedInstanceState);  
-        setContentView(R.layout.activity_main);  
-    }  
-
-}  
-</code></pre><p>布局</p>
-<pre><code>&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;  
-    android:layout_width=&quot;match_parent&quot;  
-    android:layout_height=&quot;match_parent&quot;  
-    android:baselineAligned=&quot;false&quot;  
-    android:divider=&quot;?android:attr/dividerHorizontal&quot;  
-    android:orientation=&quot;horizontal&quot;  
-    android:showDividers=&quot;middle&quot; &gt;  
-
-    &lt;fragment  
-        android:id=&quot;@+id/item_list&quot;  
-        android:name=&quot;com.angeldevil.eventbusdemo.ItemListFragment&quot;  
-        android:layout_width=&quot;0dip&quot;  
-        android:layout_height=&quot;match_parent&quot;  
-        android:layout_weight=&quot;1&quot; /&gt;  
-
-    &lt;fragment  
-        android:id=&quot;@+id/item_detail_container&quot;  
-        android:name=&quot;com.angeldevil.eventbusdemo.ItemDetailFragment&quot;  
-        android:layout_width=&quot;0dip&quot;  
-        android:layout_height=&quot;match_parent&quot;  
-        android:layout_weight=&quot;2&quot; /&gt;  
-
-&lt;/LinearLayout&gt;  
-</code></pre><p>可以看到，我们MainActvity可以说没有一行代码，布局文件即两个Fragment组成；</p>
-<p>####2.ItemListFragment<br>首先看个实体类</p>
-<pre><code>public class Item  
-{  
-    public String id;  
-    public String content;  
-
-    public static List&lt;Item&gt; ITEMS = new ArrayList&lt;Item&gt;();  
-    static  
-    {  
-        // Add 6 sample items.  
-        addItem(new Item(&quot;1&quot;, &quot;Item 1&quot;));  
-        addItem(new Item(&quot;2&quot;, &quot;Item 2&quot;));  
-        addItem(new Item(&quot;3&quot;, &quot;Item 3&quot;));  
-        addItem(new Item(&quot;4&quot;, &quot;Item 4&quot;));  
-        addItem(new Item(&quot;5&quot;, &quot;Item 5&quot;));  
-        addItem(new Item(&quot;6&quot;, &quot;Item 6&quot;));  
-    }  
-
-    private static void addItem(Item item)  
-    {  
-        ITEMS.add(item);  
-    }  
-
-    public Item(String id, String content)  
-    {  
-        this.id = id;  
-        this.content = content;  
-    }  
-
-    @Override  
-    public String toString()  
-    {  
-        return content;  
-    }  
-}  
-</code></pre><p>其次，ItemListFragment</p>
-<pre><code>public class ItemListFragment extends ListFragment  
-{  
-
-    @Override  
-    public void onCreate(Bundle savedInstanceState)  
-    {  
-        super.onCreate(savedInstanceState);  
-        // Register  
-        EventBus.getDefault().register(this);  
-    }  
-
-    @Override  
-    public void onDestroy()  
-    {  
-        super.onDestroy();  
-        // Unregister  
-        EventBus.getDefault().unregister(this);  
-    }  
-
-    @Override  
-    public void onViewCreated(View view, Bundle savedInstanceState)  
-    {  
-        super.onViewCreated(view, savedInstanceState);  
-        // 开启线程加载列表  
-        new Thread()  
-        {  
-            public void run()  
-            {  
-                try  
-                {  
-                    Thread.sleep(2000); // 模拟延时  
-                    // 发布事件，在后台线程发的事件  
-                    EventBus.getDefault().post(new ItemListEvent(Item.ITEMS));  
-                } catch (InterruptedException e)  
-                {  
-                    e.printStackTrace();  
-                }  
-            };  
-        }.start();  
-    }  
-
-    public void onEventMainThread(ItemListEvent event)  
-    {  
-        setListAdapter(new ArrayAdapter&lt;Item&gt;(getActivity(),  
-                android.R.layout.simple_list_item_activated_1,  
-                android.R.id.text1, event.getItems()));  
-    }  
-
-    @Override  
-    public void onListItemClick(ListView listView, View view, int position,  
-            long id)  
-    {  
-        super.onListItemClick(listView, view, position, id);  
-        EventBus.getDefault().post(getListView().getItemAtPosition(position));  
-    }  
-
-}  
-</code></pre><p>ItemListFragment里面在onCreate里面进行了事件的订阅，onDestroy里面进行了事件的取消；onViewCreated中我们模拟了一个子线程去网络加载数据，获取成功后我们调用<br>了EventBus.getDefault().post(new ItemListEvent(Item.ITEMS));发布了一个事件；</p>
+<h4 id="1-MainActivity及其布局"><a href="#1-MainActivity及其布局" class="headerlink" title="1.MainActivity及其布局"></a>1.MainActivity及其布局</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">FragmentActivity</span>  </span></div><div class="line">&#123;  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">        setContentView(R.layout.activity_main);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>布局</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  </div><div class="line">    xmlns:tools="http://schemas.android.com/tools"  </div><div class="line">    android:layout_width="match_parent"  </div><div class="line">    android:layout_height="match_parent"  </div><div class="line">    android:baselineAligned="false"  </div><div class="line">    android:divider="?android:attr/dividerHorizontal"  </div><div class="line">    android:orientation="horizontal"  </div><div class="line">    android:showDividers="middle" &gt;  </div><div class="line">  </div><div class="line">    &lt;fragment  </div><div class="line">        android:id="@+id/item_list"  </div><div class="line">        android:name="com.angeldevil.eventbusdemo.ItemListFragment"  </div><div class="line">        android:layout_width="0dip"  </div><div class="line">        android:layout_height="match_parent"  </div><div class="line">        android:layout_weight="1" /&gt;  </div><div class="line">  </div><div class="line">    &lt;fragment  </div><div class="line">        android:id="@+id/item_detail_container"  </div><div class="line">        android:name="com.angeldevil.eventbusdemo.ItemDetailFragment"  </div><div class="line">        android:layout_width="0dip"  </div><div class="line">        android:layout_height="match_parent"  </div><div class="line">        android:layout_weight="2" /&gt;  </div><div class="line">  </div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
+<p>可以看到，我们MainActvity可以说没有一行代码，布局文件即两个Fragment组成；</p>
+<h4 id="2-ItemListFragment"><a href="#2-ItemListFragment" class="headerlink" title="2.ItemListFragment"></a>2.ItemListFragment</h4><p>首先看个实体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Item</span>  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">public</span> String id;  </div><div class="line">    <span class="keyword">public</span> String content;  </div><div class="line">  </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Item&gt; ITEMS = <span class="keyword">new</span> ArrayList&lt;Item&gt;();  </div><div class="line">    <span class="keyword">static</span>  </div><div class="line">    &#123;  </div><div class="line">        <span class="comment">// Add 6 sample items.  </span></div><div class="line">        addItem(<span class="keyword">new</span> Item(<span class="string">"1"</span>, <span class="string">"Item 1"</span>));  </div><div class="line">        addItem(<span class="keyword">new</span> Item(<span class="string">"2"</span>, <span class="string">"Item 2"</span>));  </div><div class="line">        addItem(<span class="keyword">new</span> Item(<span class="string">"3"</span>, <span class="string">"Item 3"</span>));  </div><div class="line">        addItem(<span class="keyword">new</span> Item(<span class="string">"4"</span>, <span class="string">"Item 4"</span>));  </div><div class="line">        addItem(<span class="keyword">new</span> Item(<span class="string">"5"</span>, <span class="string">"Item 5"</span>));  </div><div class="line">        addItem(<span class="keyword">new</span> Item(<span class="string">"6"</span>, <span class="string">"Item 6"</span>));  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addItem</span><span class="params">(Item item)</span>  </span></div><div class="line">    &#123;  </div><div class="line">        ITEMS.add(item);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Item</span><span class="params">(String id, String content)</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">this</span>.id = id;  </div><div class="line">        <span class="keyword">this</span>.content = content;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">return</span> content;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其次，ItemListFragment</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ItemListFragment</span> <span class="keyword">extends</span> <span class="title">ListFragment</span>  </span></div><div class="line">&#123;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">        <span class="comment">// Register  </span></div><div class="line">        EventBus.getDefault().register(<span class="keyword">this</span>);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">super</span>.onDestroy();  </div><div class="line">        <span class="comment">// Unregister  </span></div><div class="line">        EventBus.getDefault().unregister(<span class="keyword">this</span>);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewCreated</span><span class="params">(View view, Bundle savedInstanceState)</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">super</span>.onViewCreated(view, savedInstanceState);  </div><div class="line">        <span class="comment">// 开启线程加载列表  </span></div><div class="line">        <span class="keyword">new</span> Thread()  </div><div class="line">        &#123;  </div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span>  </span></div><div class="line">            &#123;  </div><div class="line">                <span class="keyword">try</span>  </div><div class="line">                &#123;  </div><div class="line">                    Thread.sleep(<span class="number">2000</span>); <span class="comment">// 模拟延时  </span></div><div class="line">                    <span class="comment">// 发布事件，在后台线程发的事件  </span></div><div class="line">                    EventBus.getDefault().post(<span class="keyword">new</span> ItemListEvent(Item.ITEMS));  </div><div class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e)  </div><div class="line">                &#123;  </div><div class="line">                    e.printStackTrace();  </div><div class="line">                &#125;  </div><div class="line">            &#125;;  </div><div class="line">        &#125;.start();  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEventMainThread</span><span class="params">(ItemListEvent event)</span>  </span></div><div class="line">    &#123;  </div><div class="line">        setListAdapter(<span class="keyword">new</span> ArrayAdapter&lt;Item&gt;(getActivity(),  </div><div class="line">                android.R.layout.simple_list_item_activated_1,  </div><div class="line">                android.R.id.text1, event.getItems()));  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onListItemClick</span><span class="params">(ListView listView, View view, <span class="keyword">int</span> position,  </span></span></div><div class="line">            <span class="keyword">long</span> id)  </div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">super</span>.onListItemClick(listView, view, position, id);  </div><div class="line">        EventBus.getDefault().post(getListView().getItemAtPosition(position));  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ItemListFragment里面在onCreate里面进行了事件的订阅，onDestroy里面进行了事件的取消；onViewCreated中我们模拟了一个子线程去网络加载数据，获取成功后我们调用<br>了EventBus.getDefault().post(new ItemListEvent(Item.ITEMS));发布了一个事件；</p>
 <p>onListItemClick则是ListView的点击事件，我们调用了EventBus.getDefault().post(getListView().getItemAtPosition(position));去发布一个事件，</p>
 <p>getListView().getItemAtPosition(position)的类型为Item类型；</p>
 <p>细心的你一定发现了一些诡异的事，直接new Thread()获取到数据以后，竟然没有使用handler；我们界面竟然发生了变化，那么List是何时绑定的数据？</p>
 <p>仔细看下代码，发现这个方法：</p>
-<pre><code>public void onEventMainThread(ItemListEvent event)
-    {
-        setListAdapter(new ArrayAdapter&lt;Item&gt;(getActivity(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1, event.getItems()));
-    }
-</code></pre><p>应该是这个方法为List绑定的数据。那么这个方法是怎么被调用的呢？<br>现在就可以细谈订阅事件与发布事件了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEventMainThread</span><span class="params">(ItemListEvent event)</span></span></div><div class="line">	&#123;</div><div class="line">		setListAdapter(<span class="keyword">new</span> ArrayAdapter&lt;Item&gt;(getActivity(),</div><div class="line">				android.R.layout.simple_list_item_activated_1,</div><div class="line">				android.R.id.text1, event.getItems()));</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>应该是这个方法为List绑定的数据。那么这个方法是怎么被调用的呢？<br>现在就可以细谈订阅事件与发布事件了：</p>
 <p>如果方法名以onEvent开头，则代表要订阅一个事件，MainThread意思，这个方法最终要在UI线程执行；当事件发布的时候，这个方法就会被执行。<br>那么这个事件什么时候发布呢？</p>
 <p>我们的onEventMainThread触发时机应该在new Thread()执行完成之后，可以看到子线程执行完成之后，执行了EventBus.getDefault().post(new ItemListEvent(Item.ITEMS));</p>
 <p>意味着发布了一个事件，当这个事件发布，我们的onEventMainThread就执行了，那么二者的关联关系是什么呢？</p>
@@ -503,69 +441,12 @@ Subscriber:事件订阅者，接">
 <p>然后当子线程执行完毕，调用EventBus.getDefault().post(new ItemListEvent(Item.ITEMS))时，EventBus会根据post中实参的类型，去Map中查找对于的方法，于是找到了我们的onEventMainThread，最终调用反射去执行我们的方法。</p>
 <p>现在应该明白了，整个运行的流程了；那么没有接口却能发生回调应该也能解释了。</p>
 <p>现在我们在看看代码，当Item点击的时候EventBus.getDefault().post(getListView().getItemAtPosition(position));我们同样发布了一个事件，参数为Item；这个事件是为了让详细信息的Fragment去更新数据，不用说，按照上面的推测，详细信息的Fragment里面一个有个这样的方法：    public void onEventMainThread(Item item) ； 是不是呢？我们去看看。</p>
-<p>####3.ItemDetailFragment</p>
-<pre><code>public class ItemDetailFragment extends Fragment  
-{  
-
-    private TextView tvDetail;  
-
-    @Override  
-    public void onCreate(Bundle savedInstanceState)  
-    {  
-        super.onCreate(savedInstanceState);  
-        // register  
-        EventBus.getDefault().register(this);  
-    }  
-
-    @Override  
-    public void onDestroy()  
-    {  
-        super.onDestroy();  
-        // Unregister  
-        EventBus.getDefault().unregister(this);  
-    }  
-
-    /** List点击时会发送些事件，接收到事件后更新详情 */  
-    public void onEventMainThread(Item item)  
-    {  
-        if (item != null)  
-            tvDetail.setText(item.content);  
-    }  
-
-    @Override  
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-            Bundle savedInstanceState)  
-    {  
-        View rootView = inflater.inflate(R.layout.fragment_item_detail,  
-                container, false);  
-        tvDetail = (TextView) rootView.findViewById(R.id.item_detail);  
-        return rootView;  
-    }  
-}  
-</code></pre><p>果然不出我们的所料，真的存在onEventMainThread(Item item)的方法。当然了，必须在onCreate里面首先书写EventBus.getDefault().register(this);让EventBus扫描再说。</p>
+<h4 id="3-ItemDetailFragment"><a href="#3-ItemDetailFragment" class="headerlink" title="3.ItemDetailFragment"></a>3.ItemDetailFragment</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ItemDetailFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span>  </span></div><div class="line">&#123;  </div><div class="line">  </div><div class="line">    <span class="keyword">private</span> TextView tvDetail;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">        <span class="comment">// register  </span></div><div class="line">        EventBus.getDefault().register(<span class="keyword">this</span>);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">super</span>.onDestroy();  </div><div class="line">        <span class="comment">// Unregister  </span></div><div class="line">        EventBus.getDefault().unregister(<span class="keyword">this</span>);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="comment">/** List点击时会发送些事件，接收到事件后更新详情 */</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEventMainThread</span><span class="params">(Item item)</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">if</span> (item != <span class="keyword">null</span>)  </div><div class="line">            tvDetail.setText(item.content);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,  </span></span></div><div class="line">            Bundle savedInstanceState)  </div><div class="line">    &#123;  </div><div class="line">        View rootView = inflater.inflate(R.layout.fragment_item_detail,  </div><div class="line">                container, <span class="keyword">false</span>);  </div><div class="line">        tvDetail = (TextView) rootView.findViewById(R.id.item_detail);  </div><div class="line">        <span class="keyword">return</span> rootView;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>果然不出我们的所料，真的存在onEventMainThread(Item item)的方法。当然了，必须在onCreate里面首先书写EventBus.getDefault().register(this);让EventBus扫描再说。</p>
 <p>那么这个Fragment的流程就是：onCreate时，EventBus扫描当前类，将onEventMainThread以键值对的形式进行存储，键为Item.class ，值为包含该方法的对象。</p>
 <p>然后当ItemListFragment中Item被点击时，发布了一个事件：EventBus.getDefault().post(getListView().getItemAtPosition(position));实参的类型恰好是Item，于是触发我们的<br>onEventMainThread方法，并把Item实参传递进来，我们更新控件。</p>
-<p>####4.Event</p>
-<pre><code>public class Event  
-{  
-    /** 列表加载事件 */  
-    public static class ItemListEvent  
-    {  
-        private List&lt;Item&gt; items;  
-
-        public ItemListEvent(List&lt;Item&gt; items)  
-        {  
-            this.items = items;  
-        }  
-
-        public List&lt;Item&gt; getItems()  
-        {  
-            return items;  
-        }  
-    }  
-
-}  
-</code></pre><p>这个Event 可以是任意类型 可以是个类，还可以是个枚举等，只要参数不同，针对参数的事件做相应的处理。</p>
+<h4 id="4-Event"><a href="#4-Event" class="headerlink" title="4.Event"></a>4.Event</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Event</span>  </span></div><div class="line">&#123;  </div><div class="line">    <span class="comment">/** 列表加载事件 */</span>  </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ItemListEvent</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">private</span> List&lt;Item&gt; items;  </div><div class="line">  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">ItemListEvent</span><span class="params">(List&lt;Item&gt; items)</span>  </span></div><div class="line">        &#123;  </div><div class="line">            <span class="keyword">this</span>.items = items;  </div><div class="line">        &#125;  </div><div class="line">  </div><div class="line">        <span class="function"><span class="keyword">public</span> List&lt;Item&gt; <span class="title">getItems</span><span class="params">()</span>  </span></div><div class="line">        &#123;  </div><div class="line">            <span class="keyword">return</span> items;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个Event 可以是任意类型 可以是个类，还可以是个枚举等，只要参数不同，针对参数的事件做相应的处理。</p>
 
       
     </div>
@@ -579,6 +460,27 @@ Subscriber:事件订阅者，接">
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -615,6 +517,25 @@ Subscriber:事件订阅者，接">
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/02/16/EventBus使用详解/"
+     data-title="EventBus使用详解"
+     data-content=""
+     data-url="http://yoursite.com/2016/02/16/EventBus使用详解/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -625,6 +546,10 @@ Subscriber:事件订阅者，接">
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/16/EventBus使用详解/"
+           data-title="EventBus使用详解" data-url="http://yoursite.com/2016/02/16/EventBus使用详解/">
+      </div>
     
   </div>
 
@@ -660,10 +585,10 @@ Subscriber:事件订阅者，接">
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -674,7 +599,21 @@ Subscriber:事件订阅者，接">
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -683,12 +622,41 @@ Subscriber:事件订阅者，接">
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -700,7 +668,7 @@ Subscriber:事件订阅者，接">
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、概述"><span class="nav-number">1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、基本使用"><span class="nav-number">2.</span> <span class="nav-text">二、基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、实战"><span class="nav-number">3.</span> <span class="nav-text">三、实战</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-MainActivity及其布局"><span class="nav-number">3.1.</span> <span class="nav-text">1.MainActivity及其布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ItemListFragment"><span class="nav-number">3.2.</span> <span class="nav-text">2.ItemListFragment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ItemDetailFragment"><span class="nav-number">3.3.</span> <span class="nav-text">3.ItemDetailFragment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Event"><span class="nav-number">3.4.</span> <span class="nav-text">4.Event</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -723,7 +691,7 @@ Subscriber:事件订阅者，接">
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -814,18 +782,275 @@ Subscriber:事件订阅者，接">
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

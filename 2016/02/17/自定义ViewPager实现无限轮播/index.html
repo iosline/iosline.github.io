@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,7 +95,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
@@ -86,29 +104,20 @@
 
 <meta name="description" content="ViewPager实现的轮播图广告自定义视图，如京东首页的广告轮播图效果；既支持自动轮播页面也支持手势滑动切换页面
 CustomViewPager.java
-public class CustomViewPager extends FrameLayout {
-
-    //自动轮播的时间间隔
-    private final static int TIME_INTERVAL = 5;">
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自定义ViewPager实现无限轮播">
 <meta property="og:url" content="http://yoursite.com/2016/02/17/自定义ViewPager实现无限轮播/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="不忘初心 方得始终">
 <meta property="og:description" content="ViewPager实现的轮播图广告自定义视图，如京东首页的广告轮播图效果；既支持自动轮播页面也支持手势滑动切换页面
 CustomViewPager.java
-public class CustomViewPager extends FrameLayout {
-
-    //自动轮播的时间间隔
-    private final static int TIME_INTERVAL = 5;">
-<meta property="og:updated_time" content="2016-02-24T10:15:29.000Z">
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465">
+<meta property="og:updated_time" content="2016-07-05T02:33:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义ViewPager实现无限轮播">
 <meta name="twitter:description" content="ViewPager实现的轮播图广告自定义视图，如京东首页的广告轮播图效果；既支持自动轮播页面也支持手势滑动切换页面
 CustomViewPager.java
-public class CustomViewPager extends FrameLayout {
-
-    //自动轮播的时间间隔
-    private final static int TIME_INTERVAL = 5;">
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465">
 
 
 
@@ -131,7 +140,7 @@ public class CustomViewPager extends FrameLayout {
 
   <link rel="canonical" href="http://yoursite.com/2016/02/17/自定义ViewPager实现无限轮播/"/>
 
-  <title> 自定义ViewPager实现无限轮播 | Hexo </title>
+  <title> 自定义ViewPager实现无限轮播 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -139,6 +148,16 @@ public class CustomViewPager extends FrameLayout {
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -162,7 +181,7 @@ public class CustomViewPager extends FrameLayout {
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -235,9 +254,32 @@ public class CustomViewPager extends FrameLayout {
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -292,11 +334,27 @@ public class CustomViewPager extends FrameLayout {
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/17/自定义ViewPager实现无限轮播/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/自定义ViewPager实现无限轮播/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2016/02/17/自定义ViewPager实现无限轮播/" class="leancloud_visitors" data-flag-title="自定义ViewPager实现无限轮播">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -313,285 +371,11 @@ public class CustomViewPager extends FrameLayout {
       
         <p>ViewPager实现的轮播图广告自定义视图，如京东首页的广告轮播图效果；<br>既支持自动轮播页面也支持手势滑动切换页面</p>
 <p><b>CustomViewPager.java</b></p>
-<pre><code>public class CustomViewPager extends FrameLayout {
-
-    //自动轮播的时间间隔
-    private final static int TIME_INTERVAL = 5;
-
-    //放轮播图片的ImageView 的list
-    private List&lt;ImageView&gt; imageViewsList;
-
-    private List&lt;LunbotuBean&gt; newsList;
-
-    private ViewPager viewPager;
-    private TextView title;
-    private LinearLayout pointGroup;
-    //当前轮播页
-    private int currentItem = 0;
-    //定时任务
-    private ScheduledExecutorService scheduledExecutorService;
-    //Handler
-    private Handler handler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            viewPager.setCurrentItem(currentItem);
-        }
-
-    };
-
-    public CustomViewPager(Context context) {
-        this(context, null);
-    }
-
-    public CustomViewPager(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    public CustomViewPager(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-
-    }
-
-    public void setData(List&lt;LunbotuBean&gt; newsList, boolean isAutoPlay) {
-        this.newsList = newsList;
-        initView();
-        initData();
-        if (isAutoPlay) {
-            startPlay();
-        }
-    }
-
-    /**
-     * 开始轮播图切换
-     */
-    private void startPlay() {
-        scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        scheduledExecutorService.scheduleAtFixedRate(new SlideShowTask(), 5, 4, TimeUnit.SECONDS);
-    }
-
-    /**
-     * 停止轮播图切换
-     */
-    private void stopPlay() {
-        scheduledExecutorService.shutdown();
-    }
-
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-    }
-
-    /**
-     * 初始化Views等UI
-     */
-    private void initData() {
-        imageViewsList = new ArrayList&lt;&gt;();
-        title.setText(newsList.get(0).getTitle());
-
-        for (int i = 0; i &lt; newsList.size(); i++) {
-            ImageView view = new ImageView(getContext());
-            final LunbotuBean bean = newsList.get(i);
-            final int finalI = i;
-            Ion.with(view).placeholder(R.drawable.img_options_wait_list).load(bean.getImage());
-            view.setScaleType(ScaleType.CENTER_CROP);
-            view.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String[] arr = new String[newsList.size() - finalI];
-                    String[] images = new String[newsList.size() - finalI];
-                    for (int j = 0; j &lt; newsList.size(); j++) {
-                        if (j &gt;= finalI) {
-                            arr[j - finalI] = newsList.get(j).getId();
-                            images[j - finalI] = newsList.get(j).getImage();
-                        }
-                    }
-                    NoteActivity_.intent(getContext()).array(arr).titleImages(images).start();
-                }
-            });
-            imageViewsList.add(view);
-
-            ImageView point = new ImageView(getContext());
-            point.setBackgroundResource(R.drawable.point_bg);
-            if (i == 0) {
-                point.setEnabled(true);
-            } else {
-                point.setEnabled(false);
-            }
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, -2);
-            layoutParams.leftMargin = 10;
-            pointGroup.addView(point, layoutParams);
-        }
-
-
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        viewPager.setFocusable(true);
-
-        viewPager.setAdapter(new CustomPagerAdapter(imageViewsList));
-        viewPager.setOnPageChangeListener(new MyPageChangeListener());
-    }
-
-    private void initView() {
-        LayoutInflater.from(getContext()).inflate(R.layout.layout_custom_viewpager, this, true);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        title = (TextView) findViewById(R.id.lunbo_title);
-        pointGroup = (LinearLayout) findViewById(R.id.ll_point_container);
-
-    }
-
-    private int lastPosition;
-
-
-    /**
-     * ViewPager的监听器
-     * 当ViewPager中页面的状态发生改变时调用
-     *
-     * @author caizhiming
-     */
-    private class MyPageChangeListener implements OnPageChangeListener {
-
-        boolean isAutoPlay = false;
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-            switch (arg0) {
-                case 1:// 手势滑动，空闲中
-                    isAutoPlay = false;
-                    break;
-                case 2:// 界面切换中
-                    isAutoPlay = true;
-                    break;
-                case 0:// 滑动结束，即切换完毕或者加载完毕
-                    // 当前为最后一张，此时从右向左滑，则切换到第一张
-                    if (viewPager.getCurrentItem() == viewPager.getAdapter().getCount() - 1 &amp;&amp; !isAutoPlay) {
-                        viewPager.setCurrentItem(0);
-                    }
-                    // 当前为第一张，此时从左向右滑，则切换到最后一张
-                    else if (viewPager.getCurrentItem() == 0 &amp;&amp; !isAutoPlay) {
-                        viewPager.setCurrentItem(viewPager.getAdapter().getCount() - 1);
-                    }
-                    break;
-            }
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-            // TODO Auto-generated method stub
-
-        }
-
-        @Override
-        public void onPageSelected(int pos) {
-            title.setText(newsList.get(pos).getTitle());
-            pointGroup.getChildAt(lastPosition).setEnabled(false);
-            pointGroup.getChildAt(pos).setEnabled(true);
-            lastPosition = pos;
-
-        }
-
-    }
-
-    /**
-     * 执行轮播图切换任务
-     *
-     * @author caizhiming
-     */
-    private class SlideShowTask implements Runnable {
-
-        @Override
-        public void run() {
-            synchronized (viewPager) {
-                currentItem = (currentItem + 1) % imageViewsList.size();
-                handler.obtainMessage().sendToTarget();
-            }
-        }
-
-    }
-
-    /**
-     * 销毁ImageView资源，回收内存
-     *
-     * @author caizhiming
-     */
-    private void destoryBitmaps() {
-
-        for (int i = 0; i &lt; imageViewsList.size(); i++) {
-            ImageView imageView = imageViewsList.get(i);
-            Drawable drawable = imageView.getDrawable();
-            if (drawable != null) {
-                //解除drawable对view的引用
-                drawable.setCallback(null);
-            }
-        }
-    }
-
-}
-</code></pre><p><b>布局文件</b></p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot;&gt;
-
-    &lt;android.support.v4.view.ViewPager
-        android:id=&quot;@+id/viewPager&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;150dp&quot; /&gt;
-
-    &lt;RelativeLayout
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:padding=&quot;5dp&quot;&gt;
-
-        &lt;TextView
-            android:id=&quot;@+id/lunbo_title&quot;
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_toLeftOf=&quot;@+id/ll_point_container&quot;
-            android:singleLine=&quot;true&quot;
-            android:textColor=&quot;@color/black&quot;
-            android:textSize=&quot;16sp&quot;
-            /&gt;
-
-        &lt;LinearLayout
-            android:id=&quot;@+id/ll_point_container&quot;
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_alignParentRight=&quot;true&quot;
-            android:layout_centerVertical=&quot;true&quot;
-            android:orientation=&quot;horizontal&quot; /&gt;
-    &lt;/RelativeLayout&gt;
-&lt;/LinearLayout&gt;
-</code></pre><p><b>CustomPagerAdapter.java</b></p>
-<pre><code>public class CustomPagerAdapter extends PagerAdapter{
-
-    public List&lt;ImageView&gt; imageViewList;
-    public CustomPagerAdapter(List&lt;ImageView&gt; imageViewsList){
-       this.imageViewList=imageViewsList;
-    }
-    @Override
-    public void destroyItem(View container, int position, Object object) {
-        ((ViewPager)container).removeView(imageViewList.get(position));
-    }
-
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == object;
-    }
-
-    @Override
-    public Object instantiateItem(View container, int position) {
-        ((ViewPager)container).addView(imageViewList.get(position));
-        return imageViewList.get(position);
-    }
-
-    @Override
-    public int getCount() {
-        return imageViewList.size();
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomViewPager</span> <span class="keyword">extends</span> <span class="title">FrameLayout</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">//自动轮播的时间间隔</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> TIME_INTERVAL = <span class="number">5</span>;</div><div class="line"></div><div class="line">    <span class="comment">//放轮播图片的ImageView 的list</span></div><div class="line">    <span class="keyword">private</span> List&lt;ImageView&gt; imageViewsList;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> List&lt;LunbotuBean&gt; newsList;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ViewPager viewPager;</div><div class="line">    <span class="keyword">private</span> TextView title;</div><div class="line">    <span class="keyword">private</span> LinearLayout pointGroup;</div><div class="line">    <span class="comment">//当前轮播页</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> currentItem = <span class="number">0</span>;</div><div class="line">    <span class="comment">//定时任务</span></div><div class="line">    <span class="keyword">private</span> ScheduledExecutorService scheduledExecutorService;</div><div class="line">    <span class="comment">//Handler</span></div><div class="line">    <span class="keyword">private</span> Handler handler = <span class="keyword">new</span> Handler() &#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>.handleMessage(msg);</div><div class="line">            viewPager.setCurrentItem(currentItem);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomViewPager</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomViewPager</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomViewPager</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyle)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyle);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(List&lt;LunbotuBean&gt; newsList, <span class="keyword">boolean</span> isAutoPlay)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.newsList = newsList;</div><div class="line">        initView();</div><div class="line">        initData();</div><div class="line">        <span class="keyword">if</span> (isAutoPlay) &#123;</div><div class="line">            startPlay();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 开始轮播图切换</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">startPlay</span><span class="params">()</span> </span>&#123;</div><div class="line">        scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();</div><div class="line">        scheduledExecutorService.scheduleAtFixedRate(<span class="keyword">new</span> SlideShowTask(), <span class="number">5</span>, <span class="number">4</span>, TimeUnit.SECONDS);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 停止轮播图切换</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">stopPlay</span><span class="params">()</span> </span>&#123;</div><div class="line">        scheduledExecutorService.shutdown();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDetachedFromWindow</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDetachedFromWindow();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 初始化Views等UI</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initData</span><span class="params">()</span> </span>&#123;</div><div class="line">        imageViewsList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        title.setText(newsList.get(<span class="number">0</span>).getTitle());</div><div class="line">       </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; newsList.size(); i++) &#123;</div><div class="line">            ImageView view = <span class="keyword">new</span> ImageView(getContext());</div><div class="line">            <span class="keyword">final</span> LunbotuBean bean = newsList.get(i);</div><div class="line">            <span class="keyword">final</span> <span class="keyword">int</span> finalI = i;</div><div class="line">            Ion.with(view).placeholder(R.drawable.img_options_wait_list).load(bean.getImage());</div><div class="line">            view.setScaleType(ScaleType.CENTER_CROP);</div><div class="line">            view.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                    String[] arr = <span class="keyword">new</span> String[newsList.size() - finalI];</div><div class="line">                    String[] images = <span class="keyword">new</span> String[newsList.size() - finalI];</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; newsList.size(); j++) &#123;</div><div class="line">                        <span class="keyword">if</span> (j &gt;= finalI) &#123;</div><div class="line">                            arr[j - finalI] = newsList.get(j).getId();</div><div class="line">                            images[j - finalI] = newsList.get(j).getImage();</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                    NoteActivity_.intent(getContext()).array(arr).titleImages(images).start();</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">            imageViewsList.add(view);</div><div class="line"></div><div class="line">            ImageView point = <span class="keyword">new</span> ImageView(getContext());</div><div class="line">            point.setBackgroundResource(R.drawable.point_bg);</div><div class="line">            <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</div><div class="line">                point.setEnabled(<span class="keyword">true</span>);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                point.setEnabled(<span class="keyword">false</span>);</div><div class="line">            &#125;</div><div class="line">            LinearLayout.LayoutParams layoutParams = <span class="keyword">new</span> LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, -<span class="number">2</span>);</div><div class="line">            layoutParams.leftMargin = <span class="number">10</span>;</div><div class="line">            pointGroup.addView(point, layoutParams);</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">        viewPager = (ViewPager) findViewById(R.id.viewPager);</div><div class="line">        viewPager.setFocusable(<span class="keyword">true</span>);</div><div class="line"></div><div class="line">        viewPager.setAdapter(<span class="keyword">new</span> CustomPagerAdapter(imageViewsList));</div><div class="line">        viewPager.setOnPageChangeListener(<span class="keyword">new</span> MyPageChangeListener());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</div><div class="line">        LayoutInflater.from(getContext()).inflate(R.layout.layout_custom_viewpager, <span class="keyword">this</span>, <span class="keyword">true</span>);</div><div class="line">        viewPager = (ViewPager) findViewById(R.id.viewPager);</div><div class="line">        title = (TextView) findViewById(R.id.lunbo_title);</div><div class="line">        pointGroup = (LinearLayout) findViewById(R.id.ll_point_container);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> lastPosition;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * ViewPager的监听器</div><div class="line">     * 当ViewPager中页面的状态发生改变时调用</div><div class="line">     *</div><div class="line">     * <span class="doctag">@author</span> caizhiming</div><div class="line">     */</div><div class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">MyPageChangeListener</span> <span class="keyword">implements</span> <span class="title">OnPageChangeListener</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">boolean</span> isAutoPlay = <span class="keyword">false</span>;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> arg0)</span> </span>&#123;</div><div class="line">            <span class="keyword">switch</span> (arg0) &#123;</div><div class="line">                <span class="keyword">case</span> <span class="number">1</span>:<span class="comment">// 手势滑动，空闲中</span></div><div class="line">                    isAutoPlay = <span class="keyword">false</span>;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> <span class="number">2</span>:<span class="comment">// 界面切换中</span></div><div class="line">                    isAutoPlay = <span class="keyword">true</span>;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> <span class="number">0</span>:<span class="comment">// 滑动结束，即切换完毕或者加载完毕</span></div><div class="line">                    <span class="comment">// 当前为最后一张，此时从右向左滑，则切换到第一张</span></div><div class="line">                    <span class="keyword">if</span> (viewPager.getCurrentItem() == viewPager.getAdapter().getCount() - <span class="number">1</span> &amp;&amp; !isAutoPlay) &#123;</div><div class="line">                        viewPager.setCurrentItem(<span class="number">0</span>);</div><div class="line">                    &#125;</div><div class="line">                    <span class="comment">// 当前为第一张，此时从左向右滑，则切换到最后一张</span></div><div class="line">                    <span class="keyword">else</span> <span class="keyword">if</span> (viewPager.getCurrentItem() == <span class="number">0</span> &amp;&amp; !isAutoPlay) &#123;</div><div class="line">                        viewPager.setCurrentItem(viewPager.getAdapter().getCount() - <span class="number">1</span>);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> arg0, <span class="keyword">float</span> arg1, <span class="keyword">int</span> arg2)</span> </span>&#123;</div><div class="line">            <span class="comment">// TODO Auto-generated method stub</span></div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</div><div class="line">            title.setText(newsList.get(pos).getTitle());</div><div class="line">            pointGroup.getChildAt(lastPosition).setEnabled(<span class="keyword">false</span>);</div><div class="line">            pointGroup.getChildAt(pos).setEnabled(<span class="keyword">true</span>);</div><div class="line">            lastPosition = pos;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 执行轮播图切换任务</div><div class="line">     *</div><div class="line">     * <span class="doctag">@author</span> caizhiming</div><div class="line">     */</div><div class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">SlideShowTask</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">synchronized</span> (viewPager) &#123;</div><div class="line">                currentItem = (currentItem + <span class="number">1</span>) % imageViewsList.size();</div><div class="line">                handler.obtainMessage().sendToTarget();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 销毁ImageView资源，回收内存</div><div class="line">     *</div><div class="line">     * <span class="doctag">@author</span> caizhiming</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">destoryBitmaps</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; imageViewsList.size(); i++) &#123;</div><div class="line">            ImageView imageView = imageViewsList.get(i);</div><div class="line">            Drawable drawable = imageView.getDrawable();</div><div class="line">            <span class="keyword">if</span> (drawable != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="comment">//解除drawable对view的引用</span></div><div class="line">                drawable.setCallback(<span class="keyword">null</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><b>布局文件</b></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line">&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"</div><div class="line">    android:layout_width="match_parent"</div><div class="line">    android:layout_height="match_parent"</div><div class="line">    android:orientation="vertical"&gt;</div><div class="line"></div><div class="line">    &lt;android.support.v4.view.ViewPager</div><div class="line">        android:id="@+id/viewPager"</div><div class="line">        android:layout_width="match_parent"</div><div class="line">        android:layout_height="150dp" /&gt;</div><div class="line"></div><div class="line">    &lt;RelativeLayout</div><div class="line">        android:layout_width="match_parent"</div><div class="line">        android:layout_height="wrap_content"</div><div class="line">        android:padding="5dp"&gt;</div><div class="line"></div><div class="line">        &lt;TextView</div><div class="line">            android:id="@+id/lunbo_title"</div><div class="line">            android:layout_width="match_parent"</div><div class="line">            android:layout_height="wrap_content"</div><div class="line">            android:layout_toLeftOf="@+id/ll_point_container"</div><div class="line">            android:singleLine="true"</div><div class="line">            android:textColor="@color/black"</div><div class="line">            android:textSize="16sp"</div><div class="line">            /&gt;</div><div class="line"></div><div class="line">        &lt;LinearLayout</div><div class="line">            android:id="@+id/ll_point_container"</div><div class="line">            android:layout_width="wrap_content"</div><div class="line">            android:layout_height="wrap_content"</div><div class="line">            android:layout_alignParentRight="true"</div><div class="line">            android:layout_centerVertical="true"</div><div class="line">            android:orientation="horizontal" /&gt;</div><div class="line">    &lt;/RelativeLayout&gt;</div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
+<p><b>CustomPagerAdapter.java</b></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomPagerAdapter</span> <span class="keyword">extends</span> <span class="title">PagerAdapter</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> List&lt;ImageView&gt; imageViewList;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomPagerAdapter</span><span class="params">(List&lt;ImageView&gt; imageViewsList)</span></span>&#123;</div><div class="line">       <span class="keyword">this</span>.imageViewList=imageViewsList;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroyItem</span><span class="params">(View container, <span class="keyword">int</span> position, Object object)</span> </span>&#123;</div><div class="line">        ((ViewPager)container).removeView(imageViewList.get(position));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isViewFromObject</span><span class="params">(View view, Object object)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> view == object;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">instantiateItem</span><span class="params">(View container, <span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        ((ViewPager)container).addView(imageViewList.get(position));</div><div class="line">        <span class="keyword">return</span> imageViewList.get(position);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> imageViewList.size();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -604,6 +388,27 @@ public class CustomViewPager extends FrameLayout {
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -640,6 +445,25 @@ public class CustomViewPager extends FrameLayout {
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/02/17/自定义ViewPager实现无限轮播/"
+     data-title="自定义ViewPager实现无限轮播"
+     data-content=""
+     data-url="http://yoursite.com/2016/02/17/自定义ViewPager实现无限轮播/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -650,6 +474,10 @@ public class CustomViewPager extends FrameLayout {
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/17/自定义ViewPager实现无限轮播/"
+           data-title="自定义ViewPager实现无限轮播" data-url="http://yoursite.com/2016/02/17/自定义ViewPager实现无限轮播/">
+      </div>
     
   </div>
 
@@ -685,10 +513,10 @@ public class CustomViewPager extends FrameLayout {
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -699,7 +527,21 @@ public class CustomViewPager extends FrameLayout {
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -708,12 +550,41 @@ public class CustomViewPager extends FrameLayout {
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -748,7 +619,7 @@ public class CustomViewPager extends FrameLayout {
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -839,18 +710,275 @@ public class CustomViewPager extends FrameLayout {
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

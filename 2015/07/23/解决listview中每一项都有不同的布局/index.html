@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -68,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="listview," />
 
 
 
@@ -77,41 +95,38 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
-<meta name="description" content="#基本的两种方法解决listview中每一项都有不同的布局
-###方法一：（转载）实现代码
+<meta name="description" content="方法一：（转载）实现代码
 Adapter的代码
 其中:ViewHolder分别是三个不同的布局,也就是ListView中每一项的布局
 TYPE_1…是三种类型.
 在使用不同布局的时候,getItemViewType和getViewType不能少,一般是不用这两个函数的重载的
-class RunRankAdapter extends">
+12345678910111213141516171819202122232425262728293031323334353">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决listview中每一项都有不同的布局">
 <meta property="og:url" content="http://yoursite.com/2015/07/23/解决listview中每一项都有不同的布局/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#基本的两种方法解决listview中每一项都有不同的布局
-###方法一：（转载）实现代码
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="方法一：（转载）实现代码
 Adapter的代码
 其中:ViewHolder分别是三个不同的布局,也就是ListView中每一项的布局
 TYPE_1…是三种类型.
 在使用不同布局的时候,getItemViewType和getViewType不能少,一般是不用这两个函数的重载的
-class RunRankAdapter extends">
-<meta property="og:updated_time" content="2015-07-25T06:17:46.000Z">
+12345678910111213141516171819202122232425262728293031323334353">
+<meta property="og:updated_time" content="2016-07-05T12:59:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决listview中每一项都有不同的布局">
-<meta name="twitter:description" content="#基本的两种方法解决listview中每一项都有不同的布局
-###方法一：（转载）实现代码
+<meta name="twitter:description" content="方法一：（转载）实现代码
 Adapter的代码
 其中:ViewHolder分别是三个不同的布局,也就是ListView中每一项的布局
 TYPE_1…是三种类型.
 在使用不同布局的时候,getItemViewType和getViewType不能少,一般是不用这两个函数的重载的
-class RunRankAdapter extends">
+12345678910111213141516171819202122232425262728293031323334353">
 
 
 
@@ -134,7 +149,7 @@ class RunRankAdapter extends">
 
   <link rel="canonical" href="http://yoursite.com/2015/07/23/解决listview中每一项都有不同的布局/"/>
 
-  <title> 解决listview中每一项都有不同的布局 | Hexo </title>
+  <title> 解决listview中每一项都有不同的布局 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,6 +157,16 @@ class RunRankAdapter extends">
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -165,7 +190,7 @@ class RunRankAdapter extends">
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -238,9 +263,32 @@ class RunRankAdapter extends">
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -292,14 +340,49 @@ class RunRankAdapter extends">
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/23/解决listview中每一项都有不同的布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/解决listview中每一项都有不同的布局/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
           
 
           
+          
+             <span id="/2015/07/23/解决listview中每一项都有不同的布局/" class="leancloud_visitors" data-flag-title="解决listview中每一项都有不同的布局">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -314,170 +397,21 @@ class RunRankAdapter extends">
       
 
       
-        <p>#基本的两种方法解决listview中每一项都有不同的布局</p>
-<p>###方法一：（转载）<br>实现代码</p>
+        <h3 id="方法一：（转载）"><a href="#方法一：（转载）" class="headerlink" title="方法一：（转载）"></a>方法一：（转载）</h3><p>实现代码</p>
 <p>Adapter的代码</p>
 <p>其中:ViewHolder分别是三个不同的布局,也就是ListView中每一项的布局</p>
 <p>TYPE_1…是三种类型.</p>
 <p>在使用不同布局的时候,getItemViewType和getViewType不能少,一般是不用这两个函数的重载的</p>
-<pre><code>class RunRankAdapter extends BaseAdapter {  
-    ArrayList&lt;HashMap&lt;String, Object&gt;&gt; ls;  
-    Context mContext;  
-    LinearLayout linearLayout = null;  
-    LayoutInflater inflater;  
-    TextView tex;  
-    final int VIEW_TYPE = 3;  
-    final int TYPE_1 = 0;  
-    final int TYPE_2 = 1;  
-    final int TYPE_3 = 2;  
-
-    public RunRankAdapter(Context context,  
-            ArrayList&lt;HashMap&lt;String, Object&gt;&gt; list) {  
-        ls = list;  
-        mContext = context;  
-    }  
-
-    @Override  
-    public int getCount() {  
-        return ls.size();  
-    }  
-
-    @Override  
-    public Object getItem(int position) {  
-        return ls.get(position);  
-    }  
-
-    @Override  
-    public long getItemId(int position) {  
-        return 0;  
-    }  
-
-    // 每个convert view都会调用此方法，获得当前所需要的view样式  
-    @Override  
-    public int getItemViewType(int position) {  
-        int p = position;  
-        if (p == 0)  
-            return TYPE_1;  
-        else if (p == 1)  
-            return TYPE_2;  
-        else  
-            return TYPE_3;  
-    }  
-
-    @Override  
-    public int getViewTypeCount() {  
-        return 3;  
-    }  
-
-    @Override  
-    public View getView(int position, View convertView, ViewGroup parent) {  
-        ViewHolder1 holder1 = null;  
-        ViewHolder2 holder2 = null;  
-        ViewHolder3 holder3 = null;  
-        int type = getItemViewType(position);  
-        if (convertView == null) {  
-            inflater = LayoutInflater.from(mContext);  
-            // 按当前所需的样式，确定new的布局  
-            switch (type) {  
-            case TYPE_1:  
-
-                convertView = inflater.inflate(R.layout.item_runrank1,  
-                        parent, false);  
-                holder1 = new ViewHolder1();  
-                holder1.rank1 = (TextView) convertView  
-                        .findViewById(R.id.tv_list1_rank);  
-                holder1.time1 = (TextView) convertView  
-                        .findViewById(R.id.tv_list1_time);  
-                convertView.setTag(holder1);  
-                break;  
-            case TYPE_2:  
-                convertView = inflater.inflate(R.layout.item_runrank2,  
-                        parent, false);  
-                holder2 = new ViewHolder2();  
-                holder2.rank2 = (TextView) convertView  
-                        .findViewById(R.id.tv_list2_rank);  
-                holder2.time2 = (TextView) convertView  
-                        .findViewById(R.id.tv_list2_time);  
-                convertView.setTag(holder2);  
-                break;  
-            case TYPE_3:  
-                convertView = inflater.inflate(R.layout.item_runrank3,  
-                        parent, false);  
-                holder3 = new ViewHolder3();  
-                holder3.rank3 = (TextView) convertView  
-                        .findViewById(R.id.tv_list3_rank);  
-                holder3.time3 = (TextView) convertView  
-                        .findViewById(R.id.tv_list3_time);  
-                convertView.setTag(holder3);  
-                break;  
-            default:  
-                break;  
-            }  
-
-        } else {  
-            switch (type) {  
-            case TYPE_1:  
-                holder1 = (ViewHolder1) convertView.getTag();  
-                break;  
-            case TYPE_2:  
-                holder2 = (ViewHolder2) convertView.getTag();  
-                break;  
-            case TYPE_3:  
-                holder3 = (ViewHolder3) convertView.getTag();  
-                break;  
-            }  
-        }  
-        // 设置资源  
-        switch (type) {  
-        case TYPE_1:  
-            holder1.rank1.setText(&quot;&quot; + (position + 1));  
-            holder1.time1.setText(ls.get(position).get(&quot;time&quot;).toString());  
-            break;  
-        case TYPE_2:  
-            holder2.rank2.setText(&quot;&quot; + (position + 1));  
-            holder2.time2.setText(ls.get(position).get(&quot;time&quot;).toString());  
-            holder2.totaldistance2.setText(ls.get(position)  
-            break;  
-        case TYPE_3:  
-            holder3.rank3.setText(&quot;&quot; + (position + 1));  
-            holder3.time3.setText(ls.get(position).get(&quot;time&quot;).toString());  
-            break;  
-        }  
-
-        return convertView;  
-    }  
-
-    public class ViewHolder1 {  
-        TextView rank1;  
-        TextView time1;  
-    }  
-
-    public class ViewHolder2 {  
-        TextView rank2;  
-        TextView time2;  
-    }  
-
-    public class ViewHolder3 {  
-        TextView rank3;  
-        TextView time3;  
-    }  
-}  
-</code></pre><p>使用方式:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RunRankAdapter</span> <span class="keyword">extends</span> <span class="title">BaseAdapter</span> </span>&#123;  </div><div class="line">    ArrayList&lt;HashMap&lt;String, Object&gt;&gt; ls;  </div><div class="line">    Context mContext;  </div><div class="line">    LinearLayout linearLayout = <span class="keyword">null</span>;  </div><div class="line">    LayoutInflater inflater;  </div><div class="line">    TextView tex;  </div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> VIEW_TYPE = <span class="number">3</span>;  </div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> TYPE_1 = <span class="number">0</span>;  </div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> TYPE_2 = <span class="number">1</span>;  </div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> TYPE_3 = <span class="number">2</span>;  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RunRankAdapter</span><span class="params">(Context context,  </span></span></div><div class="line">            ArrayList&lt;HashMap&lt;String, Object&gt;&gt; list) &#123;  </div><div class="line">        ls = list;  </div><div class="line">        mContext = context;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> ls.size();  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getItem</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> ls.get(position);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getItemId</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="comment">// 每个convert view都会调用此方法，获得当前所需要的view样式  </span></div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemViewType</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;  </div><div class="line">        <span class="keyword">int</span> p = position;  </div><div class="line">        <span class="keyword">if</span> (p == <span class="number">0</span>)  </div><div class="line">            <span class="keyword">return</span> TYPE_1;  </div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p == <span class="number">1</span>)  </div><div class="line">            <span class="keyword">return</span> TYPE_2;  </div><div class="line">        <span class="keyword">else</span>  </div><div class="line">            <span class="keyword">return</span> TYPE_3;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getViewTypeCount</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="number">3</span>;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">getView</span><span class="params">(<span class="keyword">int</span> position, View convertView, ViewGroup parent)</span> </span>&#123;  </div><div class="line">        ViewHolder1 holder1 = <span class="keyword">null</span>;  </div><div class="line">        ViewHolder2 holder2 = <span class="keyword">null</span>;  </div><div class="line">        ViewHolder3 holder3 = <span class="keyword">null</span>;  </div><div class="line">        <span class="keyword">int</span> type = getItemViewType(position);  </div><div class="line">        <span class="keyword">if</span> (convertView == <span class="keyword">null</span>) &#123;  </div><div class="line">            inflater = LayoutInflater.from(mContext);  </div><div class="line">            <span class="comment">// 按当前所需的样式，确定new的布局  </span></div><div class="line">            <span class="keyword">switch</span> (type) &#123;  </div><div class="line">            <span class="keyword">case</span> TYPE_1:  </div><div class="line">  </div><div class="line">                convertView = inflater.inflate(R.layout.item_runrank1,  </div><div class="line">                        parent, <span class="keyword">false</span>);  </div><div class="line">                holder1 = <span class="keyword">new</span> ViewHolder1();  </div><div class="line">                holder1.rank1 = (TextView) convertView  </div><div class="line">                        .findViewById(R.id.tv_list1_rank);  </div><div class="line">                holder1.time1 = (TextView) convertView  </div><div class="line">                        .findViewById(R.id.tv_list1_time);  </div><div class="line">                convertView.setTag(holder1);  </div><div class="line">                <span class="keyword">break</span>;  </div><div class="line">            <span class="keyword">case</span> TYPE_2:  </div><div class="line">                convertView = inflater.inflate(R.layout.item_runrank2,  </div><div class="line">                        parent, <span class="keyword">false</span>);  </div><div class="line">                holder2 = <span class="keyword">new</span> ViewHolder2();  </div><div class="line">                holder2.rank2 = (TextView) convertView  </div><div class="line">                        .findViewById(R.id.tv_list2_rank);  </div><div class="line">                holder2.time2 = (TextView) convertView  </div><div class="line">                        .findViewById(R.id.tv_list2_time);  </div><div class="line">                convertView.setTag(holder2);  </div><div class="line">                <span class="keyword">break</span>;  </div><div class="line">            <span class="keyword">case</span> TYPE_3:  </div><div class="line">                convertView = inflater.inflate(R.layout.item_runrank3,  </div><div class="line">                        parent, <span class="keyword">false</span>);  </div><div class="line">                holder3 = <span class="keyword">new</span> ViewHolder3();  </div><div class="line">                holder3.rank3 = (TextView) convertView  </div><div class="line">                        .findViewById(R.id.tv_list3_rank);  </div><div class="line">                holder3.time3 = (TextView) convertView  </div><div class="line">                        .findViewById(R.id.tv_list3_time);  </div><div class="line">                convertView.setTag(holder3);  </div><div class="line">                <span class="keyword">break</span>;  </div><div class="line">            <span class="keyword">default</span>:  </div><div class="line">                <span class="keyword">break</span>;  </div><div class="line">            &#125;  </div><div class="line">  </div><div class="line">        &#125; <span class="keyword">else</span> &#123;  </div><div class="line">            <span class="keyword">switch</span> (type) &#123;  </div><div class="line">            <span class="keyword">case</span> TYPE_1:  </div><div class="line">                holder1 = (ViewHolder1) convertView.getTag();  </div><div class="line">                <span class="keyword">break</span>;  </div><div class="line">            <span class="keyword">case</span> TYPE_2:  </div><div class="line">                holder2 = (ViewHolder2) convertView.getTag();  </div><div class="line">                <span class="keyword">break</span>;  </div><div class="line">            <span class="keyword">case</span> TYPE_3:  </div><div class="line">                holder3 = (ViewHolder3) convertView.getTag();  </div><div class="line">                <span class="keyword">break</span>;  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">        <span class="comment">// 设置资源  </span></div><div class="line">        <span class="keyword">switch</span> (type) &#123;  </div><div class="line">        <span class="keyword">case</span> TYPE_1:  </div><div class="line">            holder1.rank1.setText(<span class="string">""</span> + (position + <span class="number">1</span>));  </div><div class="line">            holder1.time1.setText(ls.get(position).get(<span class="string">"time"</span>).toString());  </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">case</span> TYPE_2:  </div><div class="line">            holder2.rank2.setText(<span class="string">""</span> + (position + <span class="number">1</span>));  </div><div class="line">            holder2.time2.setText(ls.get(position).get(<span class="string">"time"</span>).toString());  </div><div class="line">            holder2.totaldistance2.setText(ls.get(position)  </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">case</span> TYPE_3:  </div><div class="line">            holder3.rank3.setText(<span class="string">""</span> + (position + <span class="number">1</span>));  </div><div class="line">            holder3.time3.setText(ls.get(position).get(<span class="string">"time"</span>).toString());  </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        &#125;  </div><div class="line">  </div><div class="line">        <span class="keyword">return</span> convertView;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder1</span> </span>&#123;  </div><div class="line">        TextView rank1;  </div><div class="line">        TextView time1;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder2</span> </span>&#123;  </div><div class="line">        TextView rank2;  </div><div class="line">        TextView time2;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder3</span> </span>&#123;  </div><div class="line">        TextView rank3;  </div><div class="line">        TextView time3;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用方式:</p>
 <p>声明并定义自己的Adapter,在ListView中设置他的Adapter</p>
-<pre><code>private RunRankAdapter runRankAdapter;    
-ArrayList&lt;HashMap&lt;String, Object&gt;&gt; runRank;    
-ListView lv_runRank;  
-runRank = new ArrayList&lt;HashMap&lt;String, Object&gt;&gt;();    
-runRankAdapter = new RunRankAdapter(this, runRank);    
-lv_runRank = (ListView) findViewById(R.id.lv_runRank);    
-lv_runRank.setAdapter(runRankAdapter);  
-</code></pre><p>###方法二：<br>在主布局文件中包含一个LinearLayout. 并且设置android:orientation=”vertical”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> RunRankAdapter runRankAdapter;    </div><div class="line">ArrayList&lt;HashMap&lt;String, Object&gt;&gt; runRank;    </div><div class="line">ListView lv_runRank;  </div><div class="line">runRank = <span class="keyword">new</span> ArrayList&lt;HashMap&lt;String, Object&gt;&gt;();    </div><div class="line">runRankAdapter = <span class="keyword">new</span> RunRankAdapter(<span class="keyword">this</span>, runRank);    </div><div class="line">lv_runRank = (ListView) findViewById(R.id.lv_runRank);    </div><div class="line">lv_runRank.setAdapter(runRankAdapter);</div></pre></td></tr></table></figure>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><p>在主布局文件中包含一个LinearLayout. 并且设置android:orientation=”vertical”</p>
 <p>定义两种不同的布局文件，然后代码中,根据不同条件调用.addview向LinearLayout加载就可以了</p>
-<p>#自己的理解：  （拿两个不同的item举例）<br>这两种方法不同的item少了还行，多了就行不通了</p>
-<p>####方法一：<br>创建两个不同布局的item，然后在adapter中根据position位置的不同判断添加不同的item布局</p>
-<p>####方法二：<br>创建一个布局文件，用LinearLayout设置android:orientation=”vertical”<br>定义两种不同的布局，在代码中根据position及条件设置Visiablity属性为visiable及gone即可。</p>
-<p>###复杂的多个item不同的情况，后续实现添加,敬请期待……..</p>
-
+<h3 id="自己的理解：-（拿两个不同的item举例）"><a href="#自己的理解：-（拿两个不同的item举例）" class="headerlink" title="自己的理解：  （拿两个不同的item举例）"></a>自己的理解：  （拿两个不同的item举例）</h3><p>这两种方法不同的item少了还行，多了就行不通了</p>
+<h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p>创建两个不同布局的item，然后在adapter中根据position位置的不同判断添加不同的item布局</p>
+<h4 id="方法二：-1"><a href="#方法二：-1" class="headerlink" title="方法二："></a>方法二：</h4><p>创建一个布局文件，用LinearLayout设置android:orientation=”vertical”<br>定义两种不同的布局，在代码中根据position及条件设置Visiablity属性为visiable及gone即可。</p>
+<h3 id="复杂的多个item不同的情况，后续实现添加-敬请期待……"><a href="#复杂的多个item不同的情况，后续实现添加-敬请期待……" class="headerlink" title="复杂的多个item不同的情况，后续实现添加,敬请期待…….."></a>复杂的多个item不同的情况，后续实现添加,敬请期待……..</h3>
       
     </div>
 
@@ -490,11 +424,38 @@ lv_runRank.setAdapter(runRankAdapter);
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/listview/" rel="tag">#listview</a>
+          
+        </div>
       
 
       
@@ -526,6 +487,25 @@ lv_runRank.setAdapter(runRankAdapter);
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/07/23/解决listview中每一项都有不同的布局/"
+     data-title="解决listview中每一项都有不同的布局"
+     data-content=""
+     data-url="http://yoursite.com/2015/07/23/解决listview中每一项都有不同的布局/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -536,6 +516,10 @@ lv_runRank.setAdapter(runRankAdapter);
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/07/23/解决listview中每一项都有不同的布局/"
+           data-title="解决listview中每一项都有不同的布局" data-url="http://yoursite.com/2015/07/23/解决listview中每一项都有不同的布局/">
+      </div>
     
   </div>
 
@@ -571,10 +555,10 @@ lv_runRank.setAdapter(runRankAdapter);
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -585,7 +569,21 @@ lv_runRank.setAdapter(runRankAdapter);
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -594,12 +592,41 @@ lv_runRank.setAdapter(runRankAdapter);
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -611,7 +638,7 @@ lv_runRank.setAdapter(runRankAdapter);
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一：（转载）"><span class="nav-number">1.</span> <span class="nav-text">方法一：（转载）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二："><span class="nav-number">2.</span> <span class="nav-text">方法二：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自己的理解：-（拿两个不同的item举例）"><span class="nav-number">3.</span> <span class="nav-text">自己的理解：  （拿两个不同的item举例）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一："><span class="nav-number">3.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：-1"><span class="nav-number">3.2.</span> <span class="nav-text">方法二：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂的多个item不同的情况，后续实现添加-敬请期待……"><span class="nav-number">4.</span> <span class="nav-text">复杂的多个item不同的情况，后续实现添加,敬请期待……..</span></a></li></ol></div>
             
           </div>
         </section>
@@ -634,7 +661,7 @@ lv_runRank.setAdapter(runRankAdapter);
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -725,18 +752,275 @@ lv_runRank.setAdapter(runRankAdapter);
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,44 +95,32 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
-<meta name="description" content="#Android Studio插件GsonFormat快速实现JavaBean
-#一.安装
-###方法一：
-1.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins–&amp;gt;Browse repositores..搜索GsonFormat
+<meta name="description" content="安装方法一：1.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins–&amp;gt;Browse repositores..搜索GsonFormat
 2.安装插件,重启android studio
-###方法二：
-1.下载GsonFormat.jar ;
-2.Andro">
+方法二：1.下载GsonFormat.jar ;
+2.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins –&amp;gt;insta">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Studio插件GsonFormat快速实现JavaBean">
 <meta property="og:url" content="http://yoursite.com/2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#Android Studio插件GsonFormat快速实现JavaBean
-#一.安装
-###方法一：
-1.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins–&amp;gt;Browse repositores..搜索GsonFormat
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="安装方法一：1.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins–&amp;gt;Browse repositores..搜索GsonFormat
 2.安装插件,重启android studio
-###方法二：
-1.下载GsonFormat.jar ;
-2.Andro">
-<meta property="og:updated_time" content="2015-10-09T09:38:35.000Z">
+方法二：1.下载GsonFormat.jar ;
+2.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins –&amp;gt;insta">
+<meta property="og:updated_time" content="2016-07-05T12:45:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio插件GsonFormat快速实现JavaBean">
-<meta name="twitter:description" content="#Android Studio插件GsonFormat快速实现JavaBean
-#一.安装
-###方法一：
-1.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins–&amp;gt;Browse repositores..搜索GsonFormat
+<meta name="twitter:description" content="安装方法一：1.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins–&amp;gt;Browse repositores..搜索GsonFormat
 2.安装插件,重启android studio
-###方法二：
-1.下载GsonFormat.jar ;
-2.Andro">
+方法二：1.下载GsonFormat.jar ;
+2.Android studio File-&amp;gt;Settings..-&amp;gt;Plugins –&amp;gt;insta">
 
 
 
@@ -137,7 +143,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/"/>
 
-  <title> Android Studio插件GsonFormat快速实现JavaBean | Hexo </title>
+  <title> Android Studio插件GsonFormat快速实现JavaBean | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -145,6 +151,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -168,7 +184,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -241,9 +257,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -298,11 +337,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/" class="leancloud_visitors" data-flag-title="Android Studio插件GsonFormat快速实现JavaBean">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -317,49 +372,15 @@
       
 
       
-        <p>#Android Studio插件GsonFormat快速实现JavaBean</p>
-<p>#一.安装</p>
-<p>###方法一：</p>
-<p>1.Android studio File-&gt;Settings..-&gt;Plugins–&gt;Browse repositores..搜索GsonFormat</p>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>1.Android studio File-&gt;Settings..-&gt;Plugins–&gt;Browse repositores..搜索GsonFormat</p>
 <p>2.安装插件,重启android studio</p>
-<p>###方法二：</p>
-<p>1.下载GsonFormat.jar ;</p>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><p>1.下载GsonFormat.jar ;</p>
 <p>2.Android studio File-&gt;Settings..-&gt;Plugins –&gt;install plugin from disk..导入下载GsonFormat.jar</p>
 <p>3.重启android studio  </p>
-<p>#二、使用方法</p>
-<p>####1.新建一个bean的实体类 </p>
-<p>####2.Code –&gt; Generate –&gt;GsonFormat 或者使用Generate的快捷键 Alt+Insert</p>
-<p>####3.将写好的简单json格式的粘贴上去，ok就行了</p>
-<p>简单的实体类</p>
-<pre><code>{
-&quot;name&quot;: &quot;小名&quot;,
-&quot;gender&quot;: &quot;man&quot;,
-&quot;age&quot;: 15,
-&quot;height&quot;: &quot;160cm&quot;,
-}
-</code></pre><p>复杂的实体类</p>
-<pre><code>{ 
-“name”: “王五”, 
-“gender”: “man”, 
-“age”: 15, 
-“height”: “140cm”, 
-“addr”: { 
-“province”: “fujian”, 
-“city”: “quanzhou”, 
-“code”: “300000” 
-}, 
-“hobby”: [ 
-{ 
-“name”: “billiards”, 
-“code”: “1” 
-}, 
-{ 
-“name”: “computerGame”, 
-“code”: “2” 
-} 
-] 
-}
-</code></pre>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-新建一个bean的实体类"><a href="#1-新建一个bean的实体类" class="headerlink" title="1.新建一个bean的实体类"></a>1.新建一个bean的实体类</h3><h3 id="2-Code-–-gt-Generate-–-gt-GsonFormat-或者使用Generate的快捷键-Alt-Insert"><a href="#2-Code-–-gt-Generate-–-gt-GsonFormat-或者使用Generate的快捷键-Alt-Insert" class="headerlink" title="2.Code –&gt; Generate –&gt;GsonFormat 或者使用Generate的快捷键 Alt+Insert"></a>2.Code –&gt; Generate –&gt;GsonFormat 或者使用Generate的快捷键 Alt+Insert</h3><h3 id="3-将写好的简单json格式的粘贴上去，ok就行了"><a href="#3-将写好的简单json格式的粘贴上去，ok就行了" class="headerlink" title="3.将写好的简单json格式的粘贴上去，ok就行了"></a>3.将写好的简单json格式的粘贴上去，ok就行了</h3><p>简单的实体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="string">"name"</span>: <span class="string">"小名"</span>,</div><div class="line"><span class="string">"gender"</span>: <span class="string">"man"</span>,</div><div class="line"><span class="string">"age"</span>: <span class="number">15</span>,</div><div class="line"><span class="string">"height"</span>: <span class="string">"160cm"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>复杂的实体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">“name”: “王五”, </div><div class="line">“gender”: “man”, </div><div class="line">“age”: <span class="number">15</span>, </div><div class="line">“height”: “<span class="number">140</span>cm”, </div><div class="line">“addr”: &#123; </div><div class="line">“province”: “fujian”, </div><div class="line">“city”: “quanzhou”, </div><div class="line">“code”: “<span class="number">300000</span>” </div><div class="line">&#125;, </div><div class="line">“hobby”: [ </div><div class="line">&#123; </div><div class="line">“name”: “billiards”, </div><div class="line">“code”: “<span class="number">1</span>” </div><div class="line">&#125;, </div><div class="line">&#123; </div><div class="line">“name”: “computerGame”, </div><div class="line">“code”: “<span class="number">2</span>” </div><div class="line">&#125; </div><div class="line">] </div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -372,6 +393,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -408,6 +450,25 @@
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/"
+     data-title="Android Studio插件GsonFormat快速实现JavaBean"
+     data-content=""
+     data-url="http://yoursite.com/2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -418,6 +479,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/"
+           data-title="Android Studio插件GsonFormat快速实现JavaBean" data-url="http://yoursite.com/2015/10/09/Android-Studio插件GsonFormat快速实现JavaBean/">
+      </div>
     
   </div>
 
@@ -453,10 +518,10 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -467,7 +532,21 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -476,12 +555,41 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -493,7 +601,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一："><span class="nav-number">1.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二："><span class="nav-number">1.2.</span> <span class="nav-text">方法二：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">2.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-新建一个bean的实体类"><span class="nav-number">2.1.</span> <span class="nav-text">1.新建一个bean的实体类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Code-–-gt-Generate-–-gt-GsonFormat-或者使用Generate的快捷键-Alt-Insert"><span class="nav-number">2.2.</span> <span class="nav-text">2.Code –> Generate –>GsonFormat 或者使用Generate的快捷键 Alt+Insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-将写好的简单json格式的粘贴上去，ok就行了"><span class="nav-number">2.3.</span> <span class="nav-text">3.将写好的简单json格式的粘贴上去，ok就行了</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -516,7 +624,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -607,18 +715,275 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

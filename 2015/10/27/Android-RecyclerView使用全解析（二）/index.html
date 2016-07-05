@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -77,44 +95,26 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
 
 
 
 
 
 
-<meta name="description" content="###一、多Item布局实现(MultipleItem)如果之前你用过ListView实现过此功能，那么你一定对下面这两个方法并不陌生
-@Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(position);
-    }
-
-    @Override
-    pu">
+<meta name="description" content="多Item布局实现(MultipleItem)如果之前你用过ListView实现过此功能，那么你一定对下面这两个方法并不陌生
+123456789@Override    public int getItemViewType(int position) &amp;#123;        return super.getItemViewType(position);    &amp;#125;    @Overri">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android-RecyclerView使用全解析(二)">
 <meta property="og:url" content="http://yoursite.com/2015/10/27/Android-RecyclerView使用全解析（二）/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###一、多Item布局实现(MultipleItem)如果之前你用过ListView实现过此功能，那么你一定对下面这两个方法并不陌生
-@Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(position);
-    }
-
-    @Override
-    pu">
-<meta property="og:updated_time" content="2015-10-27T02:56:16.000Z">
+<meta property="og:site_name" content="不忘初心 方得始终">
+<meta property="og:description" content="多Item布局实现(MultipleItem)如果之前你用过ListView实现过此功能，那么你一定对下面这两个方法并不陌生
+123456789@Override    public int getItemViewType(int position) &amp;#123;        return super.getItemViewType(position);    &amp;#125;    @Overri">
+<meta property="og:updated_time" content="2016-07-05T12:39:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android-RecyclerView使用全解析(二)">
-<meta name="twitter:description" content="###一、多Item布局实现(MultipleItem)如果之前你用过ListView实现过此功能，那么你一定对下面这两个方法并不陌生
-@Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(position);
-    }
-
-    @Override
-    pu">
+<meta name="twitter:description" content="多Item布局实现(MultipleItem)如果之前你用过ListView实现过此功能，那么你一定对下面这两个方法并不陌生
+123456789@Override    public int getItemViewType(int position) &amp;#123;        return super.getItemViewType(position);    &amp;#125;    @Overri">
 
 
 
@@ -137,7 +137,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2015/10/27/Android-RecyclerView使用全解析（二）/"/>
 
-  <title> Android-RecyclerView使用全解析(二) | Hexo </title>
+  <title> Android-RecyclerView使用全解析(二) | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -145,6 +145,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -168,7 +178,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">不忘初心 方得始终</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -241,9 +251,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -298,11 +331,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/27/Android-RecyclerView使用全解析（二）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/Android-RecyclerView使用全解析（二）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2015/10/27/Android-RecyclerView使用全解析（二）/" class="leancloud_visitors" data-flag-title="Android-RecyclerView使用全解析(二)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -317,260 +366,93 @@
       
 
       
-        <p>###一、多Item布局实现(MultipleItem)<br>如果之前你用过ListView实现过此功能，那么你一定对下面这两个方法并不陌生</p>
-<pre><code>@Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(position);
-    }
-
-    @Override
-    public int getViewTypeCount() {
-        return super.getViewTypeCount();
-    }
-</code></pre><p>其中<b>getItemViewType</b>方法是用来获取当前项Item(position参数)是哪种类型的布局</p>
+        <h4 id="多Item布局实现-MultipleItem"><a href="#多Item布局实现-MultipleItem" class="headerlink" title="多Item布局实现(MultipleItem)"></a>多Item布局实现(MultipleItem)</h4><p>如果之前你用过ListView实现过此功能，那么你一定对下面这两个方法并不陌生</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemViewType</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getItemViewType(position);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getViewTypeCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getViewTypeCount();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>其中<b>getItemViewType</b>方法是用来获取当前项Item(position参数)是哪种类型的布局</p>
 <p><b>getViewTypeCount</b>方法是用来获取当前listview总共有多少种类型的布局。</p>
 <p>如果你用RecyclerView，你会发现getViewTypeCount这个方法没有了，只有一个<b>getItemViewType</b>方法，用法和listview没有任何区别，这里要注意的就是这个函数<b>onCreateViewHolder(ViewGroup parent, int viewType)</b>这里的第二个参数就是View的类型，可以根据这个类型判断去创建不同item的ViewHolder。</p>
-<pre><code>public class MultipleItemAdapter extends RecyclerView.Adapter&lt;RecyclerView.ViewHolder&gt; {
-    public static enum ITEM_TYPE {
-        ITEM_TYPE_IMAGE,
-        ITEM_TYPE_TEXT
-    }
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MultipleItemAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">RecyclerView</span>.<span class="title">ViewHolder</span>&gt; </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">enum</span> ITEM_TYPE &#123;</div><div class="line">        ITEM_TYPE_IMAGE,</div><div class="line">        ITEM_TYPE_TEXT</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> LayoutInflater mLayoutInflater;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Context mContext;</div><div class="line">    <span class="keyword">private</span> String[] mTitles;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MultipleItemAdapter</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        mTitles = context.getResources().getStringArray(R.array.titles);</div><div class="line">        mContext = context;</div><div class="line">        mLayoutInflater = LayoutInflater.from(context);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> RecyclerView.<span class="function">ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (viewType == ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal()) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ImageViewHolder(mLayoutInflater.inflate(R.layout.item_image, parent, <span class="keyword">false</span>));</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TextViewHolder(mLayoutInflater.inflate(R.layout.item_text, parent, <span class="keyword">false</span>));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(RecyclerView.ViewHolder holder, <span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (holder <span class="keyword">instanceof</span> TextViewHolder) &#123;</div><div class="line">            ((TextViewHolder) holder).mTextView.setText(mTitles[position]);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (holder <span class="keyword">instanceof</span> ImageViewHolder) &#123;</div><div class="line">            ((ImageViewHolder) holder).mTextView.setText(mTitles[position]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemViewType</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> position % <span class="number">2</span> == <span class="number">0</span> ? ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal() : ITEM_TYPE.ITEM_TYPE_TEXT.ordinal();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mTitles == <span class="keyword">null</span> ? <span class="number">0</span> : mTitles.length;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TextViewHolder</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ViewHolder</span> </span>&#123;</div><div class="line">        <span class="meta">@InjectView</span>(R.id.text_view)</div><div class="line">        TextView mTextView;</div><div class="line"></div><div class="line">        TextViewHolder(View view) &#123;</div><div class="line">            <span class="keyword">super</span>(view);</div><div class="line">            ButterKnife.inject(<span class="keyword">this</span>, view);</div><div class="line">            view.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                    Log.d(<span class="string">"TextViewHolder"</span>, <span class="string">"onClick--&gt; position = "</span> + getPosition());</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageViewHolder</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ViewHolder</span> </span>&#123;</div><div class="line">        <span class="meta">@InjectView</span>(R.id.text_view)</div><div class="line">        TextView mTextView;</div><div class="line">        <span class="meta">@InjectView</span>(R.id.image_view)</div><div class="line">        ImageView mImageView;</div><div class="line"></div><div class="line">        ImageViewHolder(View view) &#123;</div><div class="line">            <span class="keyword">super</span>(view);</div><div class="line">            ButterKnife.inject(<span class="keyword">this</span>, view);</div><div class="line">            view.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                    Log.d(<span class="string">"ImageViewHolder"</span>, <span class="string">"onClick--&gt; position = "</span> + getPosition());</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>怎么样，是不是很简单，没错，就是这么简单，但是只要会了这个多Item，那么你就可以做出很多效果了，比如HeaderView和BottomView也是可以通过这种方式来实现的。(<a href="https://github.com/Frank-Zhu/AndroidRecyclerViewDemo/blob/master/app/src/main/java/com/frankzhu/recyclerviewdemo/adapter/HeaderBottomItemAdapter.java" target="_blank" rel="external">HeaderView Adapter</a>)</p>
+<h4 id="嵌套RecyclerView-不好，会出各种问题：例，底部下方会有大量空白空间等"><a href="#嵌套RecyclerView-不好，会出各种问题：例，底部下方会有大量空白空间等" class="headerlink" title="嵌套RecyclerView(不好，会出各种问题：例，底部下方会有大量空白空间等)"></a>嵌套RecyclerView(不好，会出各种问题：例，底部下方会有大量空白空间等)</h4><p>一般是不推荐使用嵌套RecycleView的，和ListView是类似的，遇到这种需要嵌套的View一般都是想别的办法来规避，比如<b>动态AddView</b>，或者通过<b>RecycleView的MultipleItemAdapter</b>来实现，通过设置不同的ItemType布局不同的View，但是有时候会闲麻烦，想直接就用嵌套的方式来做，那么和ListView实现方式不同的是，ListView的实现一般都是继承ListView然后复写onMeasure方法，如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">       <span class="keyword">int</span> expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; <span class="number">2</span>, MeasureSpec.AT_MOST);</div><div class="line">       <span class="keyword">super</span>.onMeasure(widthMeasureSpec, expandSpec);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>但是RecycleView的实现方式不再是继承RecycleView来做，而是通过<b>修改LayoutManager</b>的方式，即通过继承LinearLayoutManager GridLayoutManager StaggeredGridLayoutManager来修改子控件的测量，下面给出主要代码：</p>
+<h4 id="FullyLinearLayoutManager"><a href="#FullyLinearLayoutManager" class="headerlink" title="FullyLinearLayoutManager"></a>FullyLinearLayoutManager</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span>[] mMeasuredDimension = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(RecyclerView.Recycler recycler, RecyclerView.State state,</span></span></div><div class="line">                          <span class="keyword">int</span> widthSpec, <span class="keyword">int</span> heightSpec) &#123;</div><div class="line"></div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> widthMode = View.MeasureSpec.getMode(widthSpec);</div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> heightMode = View.MeasureSpec.getMode(heightSpec);</div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> widthSize = View.MeasureSpec.getSize(widthSpec);</div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> heightSize = View.MeasureSpec.getSize(heightSpec);</div><div class="line"></div><div class="line">        Log.i(TAG, <span class="string">"onMeasure called. \nwidthMode "</span> + widthMode</div><div class="line">                + <span class="string">" \nheightMode "</span> + heightSpec</div><div class="line">                + <span class="string">" \nwidthSize "</span> + widthSize</div><div class="line">                + <span class="string">" \nheightSize "</span> + heightSize</div><div class="line">                + <span class="string">" \ngetItemCount() "</span> + getItemCount());</div><div class="line"></div><div class="line">        <span class="keyword">int</span> width = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> height = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; getItemCount(); i++) &#123;</div><div class="line">            measureScrapChild(recycler, i,</div><div class="line">                    View.MeasureSpec.makeMeasureSpec(i, View.MeasureSpec.UNSPECIFIED),</div><div class="line">                    View.MeasureSpec.makeMeasureSpec(i, View.MeasureSpec.UNSPECIFIED),</div><div class="line">                    mMeasuredDimension);</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (getOrientation() == HORIZONTAL) &#123;</div><div class="line">                width = width + mMeasuredDimension[<span class="number">0</span>];</div><div class="line">                <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</div><div class="line">                    height = mMeasuredDimension[<span class="number">1</span>];</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                height = height + mMeasuredDimension[<span class="number">1</span>];</div><div class="line">                <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</div><div class="line">                    width = mMeasuredDimension[<span class="number">0</span>];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">switch</span> (widthMode) &#123;</div><div class="line">            <span class="keyword">case</span> View.MeasureSpec.EXACTLY:</div><div class="line">                width = widthSize;</div><div class="line">            <span class="keyword">case</span> View.MeasureSpec.AT_MOST:</div><div class="line">            <span class="keyword">case</span> View.MeasureSpec.UNSPECIFIED:</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">switch</span> (heightMode) &#123;</div><div class="line">            <span class="keyword">case</span> View.MeasureSpec.EXACTLY:</div><div class="line">                height = heightSize;</div><div class="line">            <span class="keyword">case</span> View.MeasureSpec.AT_MOST:</div><div class="line">            <span class="keyword">case</span> View.MeasureSpec.UNSPECIFIED:</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        setMeasuredDimension(width, height);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">measureScrapChild</span><span class="params">(RecyclerView.Recycler recycler, <span class="keyword">int</span> position, <span class="keyword">int</span> widthSpec,</span></span></div><div class="line">                                   <span class="keyword">int</span> heightSpec, <span class="keyword">int</span>[] measuredDimension) &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            View view = recycler.getViewForPosition(<span class="number">0</span>);<span class="comment">//fix 动态添加时报IndexOutOfBoundsException</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span> (view != <span class="keyword">null</span>) &#123;</div><div class="line">                RecyclerView.LayoutParams p = (RecyclerView.LayoutParams) view.getLayoutParams();</div><div class="line"></div><div class="line">                <span class="keyword">int</span> childWidthSpec = ViewGroup.getChildMeasureSpec(widthSpec,</div><div class="line">                        getPaddingLeft() + getPaddingRight(), p.width);</div><div class="line"></div><div class="line">                <span class="keyword">int</span> childHeightSpec = ViewGroup.getChildMeasureSpec(heightSpec,</div><div class="line">                        getPaddingTop() + getPaddingBottom(), p.height);</div><div class="line"></div><div class="line">                view.measure(childWidthSpec, childHeightSpec);</div><div class="line">                measuredDimension[<span class="number">0</span>] = view.getMeasuredWidth() + p.leftMargin + p.rightMargin;</div><div class="line">                measuredDimension[<span class="number">1</span>] = view.getMeasuredHeight() + p.bottomMargin + p.topMargin;</div><div class="line">                recycler.recycleView(view);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h4 id="FullyGridLayoutManager"><a href="#FullyGridLayoutManager" class="headerlink" title="FullyGridLayoutManager"></a>FullyGridLayoutManager</h4><pre><code class="java"><span class="keyword">private</span> <span class="keyword">int</span>[] mMeasuredDimension = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];
 
-    private final LayoutInflater mLayoutInflater;
-    private final Context mContext;
-    private String[] mTitles;
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(RecyclerView.Recycler recycler, RecyclerView.State state, <span class="keyword">int</span> widthSpec, <span class="keyword">int</span> heightSpec)</span> </span>{
+        <span class="keyword">final</span> <span class="keyword">int</span> widthMode = View.MeasureSpec.getMode(widthSpec);
+        <span class="keyword">final</span> <span class="keyword">int</span> heightMode = View.MeasureSpec.getMode(heightSpec);
+        <span class="keyword">final</span> <span class="keyword">int</span> widthSize = View.MeasureSpec.getSize(widthSpec);
+        <span class="keyword">final</span> <span class="keyword">int</span> heightSize = View.MeasureSpec.getSize(heightSpec);
 
-    public MultipleItemAdapter(Context context) {
-        mTitles = context.getResources().getStringArray(R.array.titles);
-        mContext = context;
-        mLayoutInflater = LayoutInflater.from(context);
-    }
-
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal()) {
-            return new ImageViewHolder(mLayoutInflater.inflate(R.layout.item_image, parent, false));
-        } else {
-            return new TextViewHolder(mLayoutInflater.inflate(R.layout.item_text, parent, false));
-        }
-    }
-
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof TextViewHolder) {
-            ((TextViewHolder) holder).mTextView.setText(mTitles[position]);
-        } else if (holder instanceof ImageViewHolder) {
-            ((ImageViewHolder) holder).mTextView.setText(mTitles[position]);
-        }
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        return position % 2 == 0 ? ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal() : ITEM_TYPE.ITEM_TYPE_TEXT.ordinal();
-    }
-
-    @Override
-    public int getItemCount() {
-        return mTitles == null ? 0 : mTitles.length;
-    }
-
-    public static class TextViewHolder extends RecyclerView.ViewHolder {
-        @InjectView(R.id.text_view)
-        TextView mTextView;
-
-        TextViewHolder(View view) {
-            super(view);
-            ButterKnife.inject(this, view);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d(&quot;TextViewHolder&quot;, &quot;onClick--&gt; position = &quot; + getPosition());
-                }
-            });
-        }
-    }
-
-    public static class ImageViewHolder extends RecyclerView.ViewHolder {
-        @InjectView(R.id.text_view)
-        TextView mTextView;
-        @InjectView(R.id.image_view)
-        ImageView mImageView;
-
-        ImageViewHolder(View view) {
-            super(view);
-            ButterKnife.inject(this, view);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d(&quot;ImageViewHolder&quot;, &quot;onClick--&gt; position = &quot; + getPosition());
-                }
-            });
-        }
-    }
-    }
-</code></pre><p>怎么样，是不是很简单，没错，就是这么简单，但是只要会了这个多Item，那么你就可以做出很多效果了，比如HeaderView和BottomView也是可以通过这种方式来实现的。(<a href="https://github.com/Frank-Zhu/AndroidRecyclerViewDemo/blob/master/app/src/main/java/com/frankzhu/recyclerviewdemo/adapter/HeaderBottomItemAdapter.java" target="_blank" rel="external">HeaderView Adapter</a>)</p>
-<p>###二、嵌套RecyclerView(不好，会出各种问题：例，底部下方会有大量空白空间等)<br>一般是不推荐使用嵌套RecycleView的，和ListView是类似的，遇到这种需要嵌套的View一般都是想别的办法来规避，比如<b>动态AddView</b>，或者通过<b>RecycleView的MultipleItemAdapter</b>来实现，通过设置不同的ItemType布局不同的View，但是有时候会闲麻烦，想直接就用嵌套的方式来做，那么和ListView实现方式不同的是，ListView的实现一般都是继承ListView然后复写onMeasure方法，如下所示：</p>
-<pre><code>@Override
-   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-       int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2, MeasureSpec.AT_MOST);
-       super.onMeasure(widthMeasureSpec, expandSpec);
-   }
-</code></pre><p>但是RecycleView的实现方式不再是继承RecycleView来做，而是通过<b>修改LayoutManager</b>的方式，即通过继承LinearLayoutManager GridLayoutManager StaggeredGridLayoutManager来修改子控件的测量，下面给出主要代码：</p>
-<p>####FullyLinearLayoutManager</p>
-<pre><code>private int[] mMeasuredDimension = new int[2];
-
-    @Override
-    public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state,
-                          int widthSpec, int heightSpec) {
-
-        final int widthMode = View.MeasureSpec.getMode(widthSpec);
-        final int heightMode = View.MeasureSpec.getMode(heightSpec);
-        final int widthSize = View.MeasureSpec.getSize(widthSpec);
-        final int heightSize = View.MeasureSpec.getSize(heightSpec);
-
-        Log.i(TAG, &quot;onMeasure called. \nwidthMode &quot; + widthMode
-                + &quot; \nheightMode &quot; + heightSpec
-                + &quot; \nwidthSize &quot; + widthSize
-                + &quot; \nheightSize &quot; + heightSize
-                + &quot; \ngetItemCount() &quot; + getItemCount());
-
-        int width = 0;
-        int height = 0;
-        for (int i = 0; i &lt; getItemCount(); i++) {
+        <span class="keyword">int</span> width = <span class="number">0</span>;
+        <span class="keyword">int</span> height = <span class="number">0</span>;
+        <span class="keyword">int</span> count = getItemCount();
+        <span class="keyword">int</span> span = getSpanCount();
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) {
             measureScrapChild(recycler, i,
                     View.MeasureSpec.makeMeasureSpec(i, View.MeasureSpec.UNSPECIFIED),
                     View.MeasureSpec.makeMeasureSpec(i, View.MeasureSpec.UNSPECIFIED),
                     mMeasuredDimension);
 
-            if (getOrientation() == HORIZONTAL) {
-                width = width + mMeasuredDimension[0];
-                if (i == 0) {
-                    height = mMeasuredDimension[1];
+            <span class="keyword">if</span> (getOrientation() == HORIZONTAL) {
+                <span class="keyword">if</span> (i % span == <span class="number">0</span>) {
+                    width = width + mMeasuredDimension[<span class="number">0</span>];
                 }
-            } else {
-                height = height + mMeasuredDimension[1];
-                if (i == 0) {
-                    width = mMeasuredDimension[0];
+                <span class="keyword">if</span> (i == <span class="number">0</span>) {
+                    height = mMeasuredDimension[<span class="number">1</span>];
+                }
+            } <span class="keyword">else</span> {
+                <span class="keyword">if</span> (i % span == <span class="number">0</span>) {
+                    height = height + mMeasuredDimension[<span class="number">1</span>];
+                }
+                <span class="keyword">if</span> (i == <span class="number">0</span>) {
+                    width = mMeasuredDimension[<span class="number">0</span>];
                 }
             }
         }
-        switch (widthMode) {
-            case View.MeasureSpec.EXACTLY:
+
+        <span class="keyword">switch</span> (widthMode) {
+            <span class="keyword">case</span> View.MeasureSpec.EXACTLY:
                 width = widthSize;
-            case View.MeasureSpec.AT_MOST:
-            case View.MeasureSpec.UNSPECIFIED:
+            <span class="keyword">case</span> View.MeasureSpec.AT_MOST:
+            <span class="keyword">case</span> View.MeasureSpec.UNSPECIFIED:
         }
 
-        switch (heightMode) {
-            case View.MeasureSpec.EXACTLY:
+        <span class="keyword">switch</span> (heightMode) {
+            <span class="keyword">case</span> View.MeasureSpec.EXACTLY:
                 height = heightSize;
-            case View.MeasureSpec.AT_MOST:
-            case View.MeasureSpec.UNSPECIFIED:
+            <span class="keyword">case</span> View.MeasureSpec.AT_MOST:
+            <span class="keyword">case</span> View.MeasureSpec.UNSPECIFIED:
         }
 
         setMeasuredDimension(width, height);
     }
 
-    private void measureScrapChild(RecyclerView.Recycler recycler, int position, int widthSpec,
-                                   int heightSpec, int[] measuredDimension) {
-        try {
-            View view = recycler.getViewForPosition(0);//fix 动态添加时报IndexOutOfBoundsException
-
-            if (view != null) {
-                RecyclerView.LayoutParams p = (RecyclerView.LayoutParams) view.getLayoutParams();
-
-                int childWidthSpec = ViewGroup.getChildMeasureSpec(widthSpec,
-                        getPaddingLeft() + getPaddingRight(), p.width);
-
-                int childHeightSpec = ViewGroup.getChildMeasureSpec(heightSpec,
-                        getPaddingTop() + getPaddingBottom(), p.height);
-
-                view.measure(childWidthSpec, childHeightSpec);
-                measuredDimension[0] = view.getMeasuredWidth() + p.leftMargin + p.rightMargin;
-                measuredDimension[1] = view.getMeasuredHeight() + p.bottomMargin + p.topMargin;
-                recycler.recycleView(view);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-        }
-    }
-</code></pre><p>####FullyGridLayoutManager</p>
-<pre><code>private int[] mMeasuredDimension = new int[2];
-
-    @Override
-    public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int widthSpec, int heightSpec) {
-        final int widthMode = View.MeasureSpec.getMode(widthSpec);
-        final int heightMode = View.MeasureSpec.getMode(heightSpec);
-        final int widthSize = View.MeasureSpec.getSize(widthSpec);
-        final int heightSize = View.MeasureSpec.getSize(heightSpec);
-
-        int width = 0;
-        int height = 0;
-        int count = getItemCount();
-        int span = getSpanCount();
-        for (int i = 0; i &lt; count; i++) {
-            measureScrapChild(recycler, i,
-                    View.MeasureSpec.makeMeasureSpec(i, View.MeasureSpec.UNSPECIFIED),
-                    View.MeasureSpec.makeMeasureSpec(i, View.MeasureSpec.UNSPECIFIED),
-                    mMeasuredDimension);
-
-            if (getOrientation() == HORIZONTAL) {
-                if (i % span == 0) {
-                    width = width + mMeasuredDimension[0];
-                }
-                if (i == 0) {
-                    height = mMeasuredDimension[1];
-                }
-            } else {
-                if (i % span == 0) {
-                    height = height + mMeasuredDimension[1];
-                }
-                if (i == 0) {
-                    width = mMeasuredDimension[0];
-                }
-            }
-        }
-
-        switch (widthMode) {
-            case View.MeasureSpec.EXACTLY:
-                width = widthSize;
-            case View.MeasureSpec.AT_MOST:
-            case View.MeasureSpec.UNSPECIFIED:
-        }
-
-        switch (heightMode) {
-            case View.MeasureSpec.EXACTLY:
-                height = heightSize;
-            case View.MeasureSpec.AT_MOST:
-            case View.MeasureSpec.UNSPECIFIED:
-        }
-
-        setMeasuredDimension(width, height);
-    }
-
-    private void measureScrapChild(RecyclerView.Recycler recycler, int position, int widthSpec,
-                                   int heightSpec, int[] measuredDimension) {
-        if (position &lt; getItemCount()) {
-            try {
-                View view = recycler.getViewForPosition(0);//fix 动态添加时报IndexOutOfBoundsException
-                if (view != null) {
+    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">measureScrapChild</span><span class="params">(RecyclerView.Recycler recycler, <span class="keyword">int</span> position, <span class="keyword">int</span> widthSpec,
+                                   <span class="keyword">int</span> heightSpec, <span class="keyword">int</span>[] measuredDimension)</span> </span>{
+        <span class="keyword">if</span> (position &lt; getItemCount()) {
+            <span class="keyword">try</span> {
+                View view = recycler.getViewForPosition(<span class="number">0</span>);<span class="comment">//fix 动态添加时报IndexOutOfBoundsException</span>
+                <span class="keyword">if</span> (view != <span class="keyword">null</span>) {
                     RecyclerView.LayoutParams p = (RecyclerView.LayoutParams) view.getLayoutParams();
-                    int childWidthSpec = ViewGroup.getChildMeasureSpec(widthSpec,
+                    <span class="keyword">int</span> childWidthSpec = ViewGroup.getChildMeasureSpec(widthSpec,
                             getPaddingLeft() + getPaddingRight(), p.width);
-                    int childHeightSpec = ViewGroup.getChildMeasureSpec(heightSpec,
+                    <span class="keyword">int</span> childHeightSpec = ViewGroup.getChildMeasureSpec(heightSpec,
                             getPaddingTop() + getPaddingBottom(), p.height);
                     view.measure(childWidthSpec, childHeightSpec);
-                    measuredDimension[0] = view.getMeasuredWidth() + p.leftMargin + p.rightMargin;
-                    measuredDimension[1] = view.getMeasuredHeight() + p.bottomMargin + p.topMargin;
+                    measuredDimension[<span class="number">0</span>] = view.getMeasuredWidth() + p.leftMargin + p.rightMargin;
+                    measuredDimension[<span class="number">1</span>] = view.getMeasuredHeight() + p.bottomMargin + p.topMargin;
                     recycler.recycleView(view);
                 }
-            } catch (Exception e) {
+            } <span class="keyword">catch</span> (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 </code></pre>
+
       
     </div>
 
@@ -583,6 +465,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -619,6 +522,25 @@
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/10/27/Android-RecyclerView使用全解析（二）/"
+     data-title="Android-RecyclerView使用全解析(二)"
+     data-content=""
+     data-url="http://yoursite.com/2015/10/27/Android-RecyclerView使用全解析（二）/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -629,6 +551,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/10/27/Android-RecyclerView使用全解析（二）/"
+           data-title="Android-RecyclerView使用全解析(二)" data-url="http://yoursite.com/2015/10/27/Android-RecyclerView使用全解析（二）/">
+      </div>
     
   </div>
 
@@ -664,10 +590,10 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.jpg"
+               alt="Mr.J" />
+          <p class="site-author-name" itemprop="name">Mr.J</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -678,7 +604,21 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -687,12 +627,41 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iosline" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -704,7 +673,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#多Item布局实现-MultipleItem"><span class="nav-number">1.</span> <span class="nav-text">多Item布局实现(MultipleItem)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套RecyclerView-不好，会出各种问题：例，底部下方会有大量空白空间等"><span class="nav-number">2.</span> <span class="nav-text">嵌套RecyclerView(不好，会出各种问题：例，底部下方会有大量空白空间等)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FullyLinearLayoutManager"><span class="nav-number">3.</span> <span class="nav-text">FullyLinearLayoutManager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FullyGridLayoutManager"><span class="nav-number">4.</span> <span class="nav-text">FullyGridLayoutManager</span></a></li></ol></div>
             
           </div>
         </section>
@@ -727,7 +696,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Mr.J</span>
 </div>
 
 <div class="powered-by">
@@ -818,18 +787,275 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"51uptech"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("w2DbKPoNAQAqtcYmoBd2GYYC-gzGzoHsz", "SYFGLmao1enONsl1VzOiRQn6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
