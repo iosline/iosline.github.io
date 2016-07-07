@@ -4,6 +4,66 @@
   
     
     <entry>
+      <title><![CDATA[初尝Mac工具推荐及开发环境配置]]></title>
+      <url>http://yoursite.com/2016/07/07/%E5%88%9D%E5%B0%9DMac%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E5%8F%8A%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<p>销匿了一段时间之后，又基本回到正常的开发工作，随着这次的开始，首先在配置上正所谓步枪换AK了，从之前的Windows升级到了现在到处充满高大上的牛逼MacBook Pro(尤其是价格),其次是从所谓的二三线城市郑州转移到了充满xx与xx的帝都(其实是然并卵)，最后才是最重要的，那就是作者的水平实在是太菜了，有很大的进步空间啊啊啊啊。</p>
+<p>废话不多说，书归正传。</p>
+<p>经同学的指点，才慢慢熟悉OS系统，都是大神啊，上来就给你玩终端命令，看来是用windows图形化界面比较懒了，以后要多用命令。</p>
+<h3 id="推荐环节"><a href="#推荐环节" class="headerlink" title="推荐环节"></a>推荐环节</h3><h4 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2:"></a><a href="http://www.iterm2.com/" target="_blank" rel="external">iTerm2:</a></h4><p>一款终端工具,点此可以跳转到官网下载。</p>
+<h4 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew:"></a><a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">Homebrew:</a></h4><p>在终端的基础上，推荐一款可以通过终端来下载app的工具,点此连接，即可快速掌握其作用。</p>
+<p>通过brew下载的默认安装路径：/usr/local/</p>
+<h4 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh/" target="_blank" rel="external">oh-my-zsh</a></h4><p>我们大多数人使用苹果自带的Bash,一般人也就当做terminal来使用了，并没有什么太大的差别。</p>
+<p>zsh具有强大的自动补全功能，当然还有很多其他的功能。</p>
+<p>zsh虽然很强大，但是特别不容易上手，但是世界之大，能人很多，国外有个人在Github上有个开源项目就是 让你快速上手Zsh的，它叫<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">on my zsh</a>.</p>
+<h5 id="zsh的安装-ohmyz"><a href="#zsh的安装-ohmyz" class="headerlink" title="zsh的安装: ohmyz"></a>zsh的安装: <a href="http://ohmyz.sh/" target="_blank" rel="external">ohmyz</a></h5><pre><code>点此链接进入，在终端打入命令即可
+</code></pre><h5 id="zsh的使用"><a href="#zsh的使用" class="headerlink" title="zsh的使用"></a>zsh的使用</h5><h5 id="zsh与bash的切换"><a href="#zsh与bash的切换" class="headerlink" title="zsh与bash的切换"></a>zsh与bash的切换</h5><p>bash—-&gt;zsh :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/zsh</div></pre></td></tr></table></figure>
+<p>zsh—–&gt;bash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/bash</div></pre></td></tr></table></figure>
+<h4 id="vi"><a href="#vi" class="headerlink" title="vi:"></a><a href="http://www.eepw.com.cn/article/48018.htm" target="_blank" rel="external">vi:</a></h4><p>一款在终端进行编辑的编辑器工具,里面详细的介绍了vi的使用方法，可以点此连接查看。</p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="Mac下adb不起作用"><a href="#Mac下adb不起作用" class="headerlink" title="Mac下adb不起作用"></a>Mac下adb不起作用</h4><p>原因：是由于zsh的缘故</p>
+<p>解决方案：</p>
+<p>在.bash_profile中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export PATH=$&#123;PATH&#125;:/Users/jiayongkai/Library/Android/sdk/platform-tools</div><div class="line">export PATH=$&#123;PATH&#125;:/Users/jiayongkai/Library/Android/sdk/tools</div></pre></td></tr></table></figure>
+<p>然后找到User目录下面的.zshrc文件，我的在jiayongkai/.zshrc.在文件最后添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">\# Enable my profile</div><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>检查是否成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ source .bash_profile</div><div class="line">$ echo $adb </div><div class="line">$ adb -version</div></pre></td></tr></table></figure>
+<h4 id="Mac下JAVA-HOME的配置"><a href="#Mac下JAVA-HOME的配置" class="headerlink" title="Mac下JAVA_HOME的配置"></a>Mac下JAVA_HOME的配置</h4><p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">\# 使用vim打开.bash_profile文件，加入java环境变量</div><div class="line">$ vim .bash_profile</div><div class="line">export JAVA_HOME=$(/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home)</div><div class="line">export PATH=$&#123;PATH&#125;:$&#123;JAVA_HOME&#125;/bin</div></pre></td></tr></table></figure>
+<p>检查是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ source .bash_profile</div><div class="line">$ echo $JAVA_HOME </div><div class="line">$ java -version</div></pre></td></tr></table></figure>
+<h4 id="Mac下ANDROID-HOME的配置"><a href="#Mac下ANDROID-HOME的配置" class="headerlink" title="Mac下ANDROID_HOME的配置"></a>Mac下ANDROID_HOME的配置</h4><p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ vim .bash_profile </div><div class="line">export ANDROID_HOME=~/Library/Android/sdk</div><div class="line">export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools</div></pre></td></tr></table></figure>
+<p>检查是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ source .bash_profile</div><div class="line">$ echo $ANDROID_HOME </div><div class="line">$ adb</div></pre></td></tr></table></figure>
+<h4 id="Mac下Gradle的配置"><a href="#Mac下Gradle的配置" class="headerlink" title="Mac下Gradle的配置"></a>Mac下Gradle的配置</h4><p>Android Studio 自带的gradle路径为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Applications/Android\ Studio.app/Contents/gradle/gradle-2.10/bin</div></pre></td></tr></table></figure>
+<p>步骤：</p>
+<p>1.打开终端</p>
+<p>2.输入：vim ~/.bash_profile</p>
+<p>3.进入编辑模式</p>
+<p>4.在文本末尾添加如下信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export GRADLE_HOME=/Applications/Android\ Studio.app/Contents/gradle/gradle-2.10</div><div class="line">export PATH=$&#123;PATH&#125;:$&#123;GRADLE_HOME&#125;/bin</div></pre></td></tr></table></figure>
+<p>5.退出编辑模式，输入:wq退出</p>
+<p>6.输入：gradle -v显示如下信息，表明环境变量配置成功</p>
+<hr>
+<p>Gradle 2.10</p>
+<hr>
+<p>检查是否成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ source .bash_profile</div><div class="line">$ echo $gradle </div><div class="line">$ gradle -version</div></pre></td></tr></table></figure>
+<h4 id="Mac下MAVEN-HOME的配置"><a href="#Mac下MAVEN-HOME的配置" class="headerlink" title="Mac下MAVEN_HOME的配置"></a>Mac下MAVEN_HOME的配置</h4><p>Android Studio自带gradle与maven，所以不用下载，这里演示一下通过brew下载maven,再配置。</p>
+<p>1.使用brew下载并配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install maven</div></pre></td></tr></table></figure>
+<p>2.去官网下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">下载地址：</div><div class="line">Maven：http://maven.apache.org/</div><div class="line"></div><div class="line">将下载的maven解压并复制/移动到你需要的目录 </div><div class="line">比如：/usr/local/maven</div></pre></td></tr></table></figure>
+<p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ vim .bash_profile</div><div class="line">export MAVEN_HOME=/usr/local/maven/apache-maven-x.x.x</div><div class="line">export PATH=$MAVEN_HOME/bin:$PATH</div></pre></td></tr></table></figure>
+<p>检查是否成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ source .bash_profile</div><div class="line">$ echo $MAVEN_HOME</div><div class="line">$ mvn -version</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[通知学习之自定义通知]]></title>
       <url>http://yoursite.com/2016/02/24/%E9%80%9A%E7%9F%A5%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E9%80%9A%E7%9F%A5/</url>
       <content type="html"><![CDATA[<p>实现自定义的通知栏效果：</p>
