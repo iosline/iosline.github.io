@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/07/07/%E5%88%9D%E5%B0%9DMac%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E5%8F%8A%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2016-07-08T02:04:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>初尝Mac工具推荐及开发环境配置</title>
+        <pubTime>2016-07-07T08:47:01.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>环境配置</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/14/Android-%E6%9C%80%E7%81%AB%E7%9A%84%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6AndroidAnnotations%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2016-07-05T14:24:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android 最火的快速开发框架AndroidAnnotations使用详解</title>
+        <pubTime>2015-10-14T08:47:48.000Z</pubTime>
+        
+        <tag>注解</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://yoursite.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/08/10/%E5%85%B3%E4%BA%8E%E7%80%91%E5%B8%83%E6%B5%81%E8%A7%A3%E5%86%B3OOM%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-07-05T14:21:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于瀑布流解决OOM问题</title>
+        <pubTime>2015-08-10T06:36:01.000Z</pubTime>
+        
+        <tag>瀑布流</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://yoursite.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/23/%E5%85%B3%E4%BA%8EEditText%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E5%88%AB%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2016-07-05T14:21:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于EditText的一些特别使用</title>
+        <pubTime>2015-07-23T09:59:26.000Z</pubTime>
+        
+        <tag>EditText</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://yoursite.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/30/%E5%85%B3%E4%BA%8EViewPager%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2016-07-05T14:21:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于ViewPager的一些知识</title>
+        <pubTime>2015-07-30T07:22:39.000Z</pubTime>
+        
+        <tag>ViewPager</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://yoursite.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/16/my-first-blog/</loc>
+    <lastmod>2016-07-05T13:02:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>my first blog</title>
+        <pubTime>2015-07-16T06:47:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/23/%E8%A7%A3%E5%86%B3scrollview%E4%B8%AD%E5%B5%8C%E5%A5%97listview%E3%80%81gridview%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-07-05T13:00:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>解决scrollview中嵌套listview、gridview的问题</title>
+        <pubTime>2015-07-23T10:28:31.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/23/%E8%A7%A3%E5%86%B3listview%E4%B8%AD%E6%AF%8F%E4%B8%80%E9%A1%B9%E9%83%BD%E6%9C%89%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B8%83%E5%B1%80/</loc>
+    <lastmod>2016-07-05T12:59:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>解决listview中每一项都有不同的布局</title>
+        <pubTime>2015-07-23T10:29:27.000Z</pubTime>
+        
+        <tag>listview</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://yoursite.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E3%80%81%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A%E5%8F%8APullToRegresh%E6%A1%86%E6%9E%B6%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2016-07-05T12:58:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法</title>
+        <pubTime>2015-07-23T10:31:10.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/23/%E5%BC%80%E5%8F%91Android%E5%A3%81%E7%BA%B8-%E8%AE%BE%E7%BD%AE%E5%A3%81%E7%BA%B8%E3%80%81%E8%AE%BE%E7%BD%AE%E9%94%81%E5%B1%8F%E5%BF%83%E5%BE%97/</loc>
+    <lastmod>2016-07-05T12:56:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>开发Android壁纸:设置壁纸、设置锁屏心得</title>
+        <pubTime>2015-07-23T10:32:44.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/25/android%E5%B0%86%E7%BB%99%E5%AE%9A%E5%9B%BE%E7%89%87%E7%BB%B4%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE%E5%90%8E%EF%BC%8C%E6%88%AA%E5%8F%96%E6%AD%A3%E4%B8%AD%E9%97%B4%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2%E9%83%A8%E5%88%86/</loc>
+    <lastmod>2016-07-05T12:53:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>android将给定图片维持宽高比例缩放后，截取正中间的正方形部分</title>
+        <pubTime>2015-07-25T02:51:17.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/30/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9F%A9%E5%BD%A2%E3%80%81%E5%9C%86%E5%BD%A2%E7%AD%89%E8%BE%B9%E6%A1%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2016-07-05T12:53:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义矩形、圆形等边框及相关知识</title>
+        <pubTime>2015-07-30T04:31:27.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/08/10/ScrollView%E6%BB%91%E5%8A%A8%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E5%BA%95%E9%83%A8%E7%9A%84%E5%93%8D%E5%BA%94/</loc>
+    <lastmod>2016-07-05T12:49:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>ScrollView滑动到顶部或底部的响应</title>
+        <pubTime>2015-08-10T10:10:53.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/08/11/ViewPager-Fragment-%E6%87%92%E5%8A%A0%E8%BD%BD/</loc>
+    <lastmod>2016-07-05T12:47:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>ViewPager+Fragment 懒加载</title>
+        <pubTime>2015-08-11T08:44:38.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/09/Jsoup%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2016-07-05T12:46:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>Jsoup抓取网页数据</title>
+        <pubTime>2015-10-09T08:42:09.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/09/Android-Studio%E6%8F%92%E4%BB%B6GsonFormat%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0JavaBean/</loc>
+    <lastmod>2016-07-05T12:45:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android Studio插件GsonFormat快速实现JavaBean</title>
+        <pubTime>2015-10-09T09:22:50.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/10/%E8%BF%9B%E5%85%A5-Material-Design%E6%97%B6%E4%BB%A3%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8Bdesign%E5%8C%85/</loc>
+    <lastmod>2016-07-05T12:43:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>进入 Material Design时代（一）之design包</title>
+        <pubTime>2015-10-10T02:25:34.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/10/Android%E6%B2%89%E6%B5%B8%E5%BC%8F%E9%80%9A%E7%9F%A5%E6%A0%8F%E7%9A%84%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E5%BA%93SystemBarTint%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2016-07-05T12:42:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android沉浸式通知栏的一个开源库SystemBarTint的使用</title>
+        <pubTime>2015-10-10T06:50:18.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/10/Android-RecyclerView%E4%BD%BF%E7%94%A8%E5%85%A8%E8%A7%A3%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <lastmod>2016-07-05T12:42:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android RecyclerView使用全解析</title>
+        <pubTime>2015-10-10T07:04:10.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/13/SwipeRefreshLayout-RecyclerView-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A/</loc>
+    <lastmod>2016-07-05T12:41:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>SwipeRefreshLayout + RecyclerView 实现下拉刷新和上拉加载更多</title>
+        <pubTime>2015-10-13T07:09:26.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/27/Android-RecyclerView%E4%BD%BF%E7%94%A8%E5%85%A8%E8%A7%A3%E6%9E%90%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    <lastmod>2016-07-05T12:39:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android-RecyclerView使用全解析(二)</title>
+        <pubTime>2015-10-27T02:38:27.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/29/Android%E5%A6%82%E4%BD%95%E4%BB%8E%E7%B3%BB%E7%BB%9F%E5%9B%BE%E5%BA%93%E4%B8%AD%E9%80%89%E6%8B%A9%E5%9B%BE%E7%89%87/</loc>
+    <lastmod>2016-07-05T12:38:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android如何从系统图库中选择图片</title>
+        <pubTime>2015-10-29T02:31:16.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/12/15/%E4%BB%BFQQ%E5%A5%BD%E5%8F%8B%E5%88%97%E8%A1%A8/</loc>
+    <lastmod>2016-07-05T12:36:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>仿QQ好友列表</title>
+        <pubTime>2015-12-15T09:28:06.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/12/17/Android%E4%B8%ADWebView%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%B8%80%EF%BC%88%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%EF%BC%89/</loc>
+    <lastmod>2016-07-05T11:06:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android中WebView使用之一（基础用法）</title>
+        <pubTime>2015-12-17T08:41:51.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/02/24/%E9%80%9A%E7%9F%A5%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E9%80%9A%E7%9F%A5/</loc>
+    <lastmod>2016-07-05T10:59:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>通知学习之自定义通知</title>
+        <pubTime>2016-02-24T08:23:17.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/08/10/%E5%85%B3%E4%BA%8EAndroid-Studio%E7%9A%84Gradle%E7%9A%84%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2016-07-05T06:00:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于Android Studio的Gradle文件配置的一些知识</title>
+        <pubTime>2015-08-10T06:17:05.000Z</pubTime>
+        
+        <tag>AndroidStudio</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/02/16/EventBus%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2016-07-05T03:21:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>EventBus使用详解</title>
+        <pubTime>2016-02-16T09:26:41.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/12/17/Android%E4%B8%ADWebView%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%BA%8C%EF%BC%88JavaScript%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8%EF%BC%89/</loc>
+    <lastmod>2016-07-05T03:15:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android中WebView使用之二（JavaScript代码使用）</title>
+        <pubTime>2015-12-17T09:11:55.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/08/17/Android%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B9%8BBitmap%E7%B1%BB/</loc>
+    <lastmod>2016-07-05T03:12:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android图像处理之Bitmap类</title>
+        <pubTime>2015-08-17T03:49:57.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/02/24/Android%E9%80%9A%E7%9F%A5%E8%AF%A6%E8%A7%A3%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2016-07-05T03:11:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android通知详解学习</title>
+        <pubTime>2016-02-24T07:05:50.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/17/Android-Studio%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E7%B1%BB%E5%BA%93/</loc>
+    <lastmod>2016-07-05T03:04:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android Studio如何导入第三方类库</title>
+        <pubTime>2015-10-17T04:03:52.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/10/31/Android-%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2016-07-05T02:34:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android 夜间模式的简单实现</title>
+        <pubTime>2015-10-31T02:29:58.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/02/17/%E8%87%AA%E5%AE%9A%E4%B9%89ViewPager%E5%AE%9E%E7%8E%B0%E6%97%A0%E9%99%90%E8%BD%AE%E6%92%AD/</loc>
+    <lastmod>2016-07-05T02:33:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义ViewPager实现无限轮播</title>
+        <pubTime>2016-02-17T06:41:05.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/01/18/Android-Listview%E5%88%97%E8%A1%A8%E4%B8%AD%E8%A7%86%E9%A2%91%E7%9A%84%E6%92%AD%E6%94%BE%E4%B8%8E%E6%9A%82%E5%81%9C%E5%8F%8A%E4%B9%8B%E9%97%B4%E7%9A%84%E7%89%B5%E5%88%B6/</loc>
+    <lastmod>2016-02-16T10:27:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android Listview列表中视频的播放与暂停及之间的牵制</title>
+        <pubTime>2016-01-18T09:25:20.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
