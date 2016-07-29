@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/2015/08/11/ViewPager-Fragment-%E6%87%92%E5%8A%A0%E8%BD%BD/</loc>
+    <lastmod>2016-07-29T09:36:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>ViewPager+Fragment 懒加载</title>
+        <pubTime>2015-08-11T08:44:38.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2015/10/10/%E8%BF%9B%E5%85%A5-Material-Design%E6%97%B6%E4%BB%A3%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8Bdesign%E5%8C%85/</loc>
     <lastmod>2016-07-13T02:35:56.000Z</lastmod>
     <data>
@@ -252,21 +267,6 @@
         <display>
         <title>ScrollView滑动到顶部或底部的响应</title>
         <pubTime>2015-08-10T10:10:53.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2015/08/11/ViewPager-Fragment-%E6%87%92%E5%8A%A0%E8%BD%BD/</loc>
-    <lastmod>2016-07-05T12:47:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>ViewPager+Fragment 懒加载</title>
-        <pubTime>2015-08-11T08:44:38.000Z</pubTime>
         
          
            
