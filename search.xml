@@ -63,9 +63,7 @@
 <p>就是你编辑代码的地方。</p>
 <p>版本库(Repository)</p>
 <p>工作区有一个隐藏目录 .git ,这个不算工作区，是Git的版本库。</p>
-<p>Git的版本库里存了很多东西，其中最重要的就是成为stage(或者index)的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD.<br><img src="http://www.liaoxuefeng.com/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0"><br>我们将文件往版本库添加的时候，实际上是分两步执行的：</p>
-<p><li>第一步，是用 git add命令添加，实际上是把文件添加到暂存区。</li></p>
-<p><li>第二步，git commit 提交更改，实际上是将暂存区的所有内容提交到当前分支上。</li></p>
+<p>Git的版本库里存了很多东西，其中最重要的就是成为stage(或者index)的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD.<br><img src="http://www.liaoxuefeng.com/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0"><br>我们将文件往版本库添加的时候，实际上是分两步执行的：<br>第一步，是用 git add命令添加，实际上是把文件添加到暂存区。<br>第二步，git commit 提交更改，实际上是将暂存区的所有内容提交到当前分支上。</p>
 <p>因为我们创建版本库时，git自动为我们创建了唯一一个master主分支，所以git commit 就是往master分支上提交。</p>
 <p>可以理解为需要提交的文件统统放到暂存区，然后一次性提交所有文件到版本库。</p>
 <p>实践：</p>
@@ -111,9 +109,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">➜  learngit git:(master) ✗ git status</div><div class="line">On branch master</div><div class="line">Changes not staged <span class="keyword">for</span> commit:</div><div class="line">  (use <span class="string">"git add &lt;file&gt;..."</span> to update what will be committed)</div><div class="line">  (use <span class="string">"git checkout -- &lt;file&gt;..."</span> to discard changes in working directory)</div><div class="line"></div><div class="line">	modified:   readme.<span class="function">txt</span></div><div class="line"></div><div class="line">no changes added to <span class="title">commit</span> <span class="params">(use <span class="string">"git add"</span> and/or <span class="string">"git commit -a"</span>)</span></div></pre></td></tr></table></figure>
 <p>git告诉你，仍然发生了修改， git checkout – file可以丢弃工作区的修改。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -- readme.txt</div></pre></td></tr></table></figure>
-<p>意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：</p>
-<p><li>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一样的状态。</li></p>
-<p><li>一种是readme.txt已经添加到暂存区，又做了修改，现在，撤销修改就回到添加到暂存区后的状态。<br>总之，就是让这个文件回到最近一次 git commit 或 git add 的状态。</li></p>
+<p>意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一样的状态。<br>一种是readme.txt已经添加到暂存区，又做了修改，现在，撤销修改就回到添加到暂存区后的状态。<br>总之，就是让这个文件回到最近一次 git commit 或 git add 的状态。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  learngit git:(master) ✗ git checkout -- readme.txt</div><div class="line">➜  learngit git:(master) cat readme.txt</div><div class="line">Git is a distributed version control system.</div><div class="line">Git is free softwore distributed under the GPL.</div><div class="line">Git has a mutable index called stage.</div><div class="line">Git tracks changes.</div></pre></td></tr></table></figure>
 <p>git checkout – file 命令中的 – 很重要，没有 – ，就变成了”切换到另一个分支”命令</p>
 <h5 id="二、撤销暂存区的修改"><a href="#二、撤销暂存区的修改" class="headerlink" title="二、撤销暂存区的修改"></a>二、撤销暂存区的修改</h5><p>修改和上面一样的reademe.txt ，并且 git add 到了暂存区，在 commit之前撤销，这时 git status 查看：</p>
@@ -141,13 +137,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -- test.txt</div></pre></td></tr></table></figure>
 <p>git checkout 其实就是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以一键还原。</p>
 <h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><p>Git是分布式版本控制系统，同一个Git仓库，可以分布在不同的机器上，任何一台机器的版本库其实都是一样的。</p>
-<p>有现成的提供Git仓库托管服务的，国外的GitHub和国内的Coding(使用方法基本一致)。本地的Git仓库和GitHub之间的传输是通过SSH加密的。需要一点设置：</p>
-<p><li>第一步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果已经有了，可以直接下一步。如果没有，打开命令行窗口，创建ssh key:</li></p>
+<p>有现成的提供Git仓库托管服务的，国外的GitHub和国内的Coding(使用方法基本一致)。本地的Git仓库和GitHub之间的传输是通过SSH加密的。需要一点设置：<br>第一步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果已经有了，可以直接下一步。如果没有，打开命令行窗口，创建ssh key:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure>
 <p>你需要把邮件地址换成你自己的邮件地址，一路回车，默认值即可。</p>
-<p>一切顺利的话，可以在用户主目录里找到.ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是SSH Key的密钥对，id_rsa是私钥，不能泄露，id_rsa.pub是公钥，没啥事。</p>
-<p><li> 第二步：登录 GitHub ,打开 “Account Settings”,”SSH Keys”页面。</li></p>
-<p><li>第三步：点”Add SSH Key”,填上任意 title，在key文本框里粘贴 id_rsa.pub 文件的内容。</li></p>
+<p>一切顺利的话，可以在用户主目录里找到.ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是SSH Key的密钥对，id_rsa是私钥，不能泄露，id_rsa.pub是公钥，没啥事。<br> 第二步：登录 GitHub ,打开 “Account Settings”,”SSH Keys”页面。<br>第三步：点”Add SSH Key”,填上任意 title，在key文本框里粘贴 id_rsa.pub 文件的内容。</p>
 <p>为什么GitHub 需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人。而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。</p>
 <p>push代码 有两种方式：HTTPS SSH<br>前者每次需要输入用户名 密码。<br>使用SSH Key 是为了 push 代码的时候，使用 SSH 方式访问仓库，就不用每次输入 GitHub 和 Coding 的用户名 密码.</p>
 <h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><p>登录GitHub,然后右上角，”Create a new repo”,创建一个新的仓库：</p>
@@ -202,7 +195,7 @@
 <p>注意到上面的 Fast-forward 信息，Git告诉我们，这次合并是”快进模式”，也就是直接把 master 指向 dev的当前提交，所以合并速度非常快。</p>
 <p>合并完成后，就可以放心的删除 dev分支了：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(master) git branch -<span class="function">d dev</span></div><div class="line">Deleted branch <span class="title">dev</span> <span class="params">(was <span class="number">58</span>cbcc2)</span>.</div></pre></td></tr></table></figure>
-<h5 id="小结：-5"><a href="#小结：-5" class="headerlink" title="小结："></a>小结：</h5><ul><br><li> 查看分支：git branch</li><br><li> 创建分支：git branch <name></name></li><br><li> 切换分支：git checkout <name></name></li><br><li> 创建+切换分支：git checkout -b <name></name></li><br><li> 合并某分支到当前分支：git merge <name></name></li><br><li> 删除分支：git branch -d <name></name></li><br></ul>
+<h5 id="小结：-5"><a href="#小结：-5" class="headerlink" title="小结："></a>小结：</h5><ul><br> 查看分支：git branch<br> 创建分支：git branch <name><br> 切换分支：git checkout <name><br> 创建+切换分支：git checkout -b <name><br> 合并某分支到当前分支：git merge <name><br> 删除分支：git branch -d <name><br></name></name></name></name></name></ul>
 
 <h4 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h4><p>有时候，同时改了同一个文件，合并分支会出现冲突。</p>
 <p>实践：<br>我们在 dev 分支对README.md 进行修改，然后提交：</p>
@@ -254,15 +247,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(master) git checkout dev</div><div class="line">Switched to branch <span class="string">'dev'</span></div><div class="line">➜  gitskills git:(dev) git status</div><div class="line">On branch dev</div><div class="line">nothing to commit, working directory clean</div></pre></td></tr></table></figure>
 <p>工作区是干净的，刚才的工作现场存到哪去了？ 用 git stash list 命令查看：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(dev) git stash list</div><div class="line">stash@&#123;<span class="number">0</span>&#125;: WIP on dev: <span class="number">7</span>c0a3e9 merge with no-ff</div></pre></td></tr></table></figure>
-<p>工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：</p>
-<p><li>一是用 git stash apply 恢复，但是恢复后，stash 内容并不删除，你需要用 git stash drop 来删除：</li></p>
-<p><li>另一种是用 git stash pop,恢复恩同时把 stash 内容也删了：</li></p>
+<p>工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：<br>一是用 git stash apply 恢复，但是恢复后，stash 内容并不删除，你需要用 git stash drop 来删除：<br>另一种是用 git stash pop,恢复恩同时把 stash 内容也删了：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(dev) git stash pop</div><div class="line">On branch dev</div><div class="line">Changes not staged <span class="keyword">for</span> commit:</div><div class="line">  (use <span class="string">"git add &lt;file&gt;..."</span> to update what will be committed)</div><div class="line">  (use <span class="string">"git checkout -- &lt;file&gt;..."</span> to discard changes in working directory)</div><div class="line"></div><div class="line">	modified:   README.<span class="function">md</span></div><div class="line"></div><div class="line">no changes added to <span class="title">commit</span> <span class="params">(use <span class="string">"git add"</span> and/or <span class="string">"git commit -a"</span>)</span></div><div class="line">Dropped refs/stash@&#123;<span class="number">0</span>&#125; (<span class="number">0</span>a3541b3127b9cf7d536dea28f0a48256bda724e)</div></pre></td></tr></table></figure>
 <p>再用 git stash list 查看，就看不到任何 stash 内容了：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(dev) ✗ git stash list</div></pre></td></tr></table></figure>
 <p>你可以多次 stash,恢复的时候，先用 git stash list 查看，然后恢复指定的 stash ,用命令：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(dev) ✗ git stash apply stash@&#123;<span class="number">0</span>&#125;</div></pre></td></tr></table></figure>
-<h5 id="小结"><a href="#小结" class="headerlink" title="小结:"></a>小结:</h5><ul><br><li>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除。</li><br><li>当手头工作没有完成时，先把工作现场 git stash 一下，然后去修复bug，修复后，再 git stash pop,回到工作现场。</li><br></ul>
+<h5 id="小结"><a href="#小结" class="headerlink" title="小结:"></a>小结:</h5><ul><br>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除。<br>当手头工作没有完成时，先把工作现场 git stash 一下，然后去修复bug，修复后，再 git stash pop,回到工作现场。<br></ul>
 
 <h4 id="Feature分支"><a href="#Feature分支" class="headerlink" title="Feature分支"></a>Feature分支</h4><p>软件开发中，总有无穷无尽的新的功能要添加进来。</p>
 <p>添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后删除改feature分支。</p>
@@ -289,10 +280,7 @@
 <p>如果要推送其他分支，比如 dev，就改成 ：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(master) git push origin dev</div></pre></td></tr></table></figure>
 <p>但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢?</p>
-<p><li>master 分支是主分支，因此要时刻与远程同步；</li></p>
-<p><li>dev 分支是开发分支，团队所有成员都需要在上面工作，所以也需要远程同步；</li></p>
-<p><li>bug分支只用于本地修复bug，没必要推送到远程了，除非老板要看看你每周到底修复了几个bug；</li></p>
-<p><li>feature分支是否推送到远程，取决于你是否和你的小伙伴合作在上面开发。</li></p>
+<p>master 分支是主分支，因此要时刻与远程同步；<br>dev 分支是开发分支，团队所有成员都需要在上面工作，所以也需要远程同步；<br>bug分支只用于本地修复bug，没必要推送到远程了，除非老板要看看你每周到底修复了几个bug；<br>feature分支是否推送到远程，取决于你是否和你的小伙伴合作在上面开发。</p>
 <h5 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h5><p>多人协作时，大家都会往master和dev分支上推送各自的修改。</p>
 <p>现在，模拟一个你的伙伴，可以在另一台电脑(注意要把SSH Key添加到GitHub)或者同一台电脑的另一个目录下克隆：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  Documents cd gitskills2</div><div class="line">➜  gitskills2 git clone git<span class="meta">@git</span>.coding.net:iosline/gitskills.git</div><div class="line">Cloning into <span class="string">'gitskills'</span>...</div><div class="line">remote: Counting objects: <span class="number">27</span>, done.</div><div class="line">remote: Compressing objects: <span class="number">100</span>% (<span class="number">25</span>/<span class="number">25</span>), done.</div><div class="line">remote: Total <span class="number">27</span> (delta <span class="number">6</span>), reused <span class="number">4</span> (delta <span class="number">0</span>)</div><div class="line">Receiving objects: <span class="number">100</span>% (<span class="number">27</span>/<span class="number">27</span>), done.</div><div class="line">Resolving deltas: <span class="number">100</span>% (<span class="number">6</span>/<span class="number">6</span>), done.</div><div class="line">Checking connectivity... done.</div></pre></td></tr></table></figure>
@@ -312,9 +300,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(dev) git pull</div><div class="line">Auto-merging README.<span class="function">md</span></div><div class="line"><span class="title">CONFLICT</span> <span class="params">(content)</span>: Merge conflict in README.md</div><div class="line">Automatic merge failed; fix conflicts and then commit the result.</div></pre></td></tr></table></figure>
 <p>这回 git pull 成功，但是合并有冲突，需要手动解决，解决办法和分支管理的解决冲突一样。解决后，提交，再push:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(dev) ✗ git add README.md</div><div class="line">➜  gitskills git:(dev) ✗ git commit -m <span class="string">"solve origin dev conflict"</span></div><div class="line">[dev d421542] solve origin dev conflict</div><div class="line">➜  gitskills git:(dev) git push origin dev</div><div class="line">Counting objects: <span class="number">6</span>, done.</div><div class="line">Delta compression using up to <span class="number">8</span> threads.</div><div class="line">Compressing objects: <span class="number">100</span>% (<span class="number">6</span>/<span class="number">6</span>), done.</div><div class="line">Writing objects: <span class="number">100</span>% (<span class="number">6</span>/<span class="number">6</span>), <span class="number">684</span> bytes | <span class="number">0</span> bytes/s, done.</div><div class="line">Total <span class="number">6</span> (delta <span class="number">2</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)</div><div class="line">To git<span class="meta">@git</span>.coding.net:iosline/gitskills.git</div><div class="line">   <span class="number">3</span>c548eb..d421542  dev -&gt; dev</div></pre></td></tr></table></figure>
-<p>因此，多人协作的工作模式通常是这样的：</p>
-<p><li>首先，先用 git pull 从远程拉代码，检查更新，有冲突解决冲突</li></p>
-<p><li>之后，再用 git push origin branch-name 推送<br>如果 git pull 提示 “no tracking informtion”，则说明本地分支与远程分支的链接关系没有创建，用命令 git branch –set-upstream branch-name origin/branch-name</li></p>
+<p>因此，多人协作的工作模式通常是这样的：<br>首先，先用 git pull 从远程拉代码，检查更新，有冲突解决冲突<br>之后，再用 git push origin branch-name 推送<br>如果 git pull 提示 “no tracking informtion”，则说明本地分支与远程分支的链接关系没有创建，用命令 git branch –set-upstream branch-name origin/branch-name</p>
 <h5 id="小结-1"><a href="#小结-1" class="headerlink" title="小结:"></a>小结:</h5><p>查看远程仓库信息: git remote -v</p>
 <p>本地新建的分支如果不推送到远程，对其他人是不可见的</p>
 <p>从本地推送分支，使用 git push origin branch-name,如果推送失败，先用 git pull抓取远程的心提交</p>
@@ -350,7 +336,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(master) git tag -a v0.1 -m <span class="string">"version 0.1 released"</span> <span class="number">58</span>cbcc2</div></pre></td></tr></table></figure>
 <p>用命令 git show <tagname>可以看到说明文字：</tagname></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tag v0.1</div><div class="line">Tagger: iosline &lt;<span class="number">949022813</span><span class="meta">@qq</span>.com&gt;</div><div class="line">Date:   Mon Sep <span class="number">19</span> <span class="number">15</span>:<span class="number">49</span>:<span class="number">11</span> <span class="number">2016</span> +<span class="number">0800</span></div><div class="line"></div><div class="line">version <span class="number">0.1</span> released</div></pre></td></tr></table></figure>
-<h5 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h5><ul><br><li> 命令 git tag <tagname> 用于新建一个标签，默认为HEAD，也可以指定一个 commit id。</tagname></li><br><li> git tag -a <tagname> -m “desc” 可以指定标签信息。</tagname></li><br><li> git tag 可以查看所有标签。</li><br></ul>
+<h5 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h5><ul><br> 命令 git tag <tagname> 用于新建一个标签，默认为HEAD，也可以指定一个 commit id。<br> git tag -a <tagname> -m “desc” 可以指定标签信息。<br> git tag 可以查看所有标签。<br></tagname></tagname></ul>
 
 <h4 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h4><p>如果标签打错了，也可以删除：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(master) git tag -d v0.1</div><div class="line">Deleted tag <span class="string">'v0.1'</span> (was <span class="number">6715e1</span>b)</div></pre></td></tr></table></figure>
@@ -364,10 +350,7 @@
 <p>然后，从远程删除。删除命令也是 push ,但是格式如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">➜  gitskills git:(master) git push origin :refs/tags/v0.5</div><div class="line">To git<span class="meta">@git</span>.coding.net:iosline/gitskills.git</div><div class="line"> - [deleted]         v0.5</div></pre></td></tr></table></figure>
 <p>要看看是否真的从远程库删除了标签，可以登录 Coding 查看。</p>
-<h5 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h5><p><li>命令 git push origin <tagname>可以推送一个本地标签</tagname></li></p>
-<p><li>命令 git push origin –tags 可以推送所有未推送过的本地标签</li></p>
-<p><li>命令 git tag -d <tagname> 可以删除一个本地标签</tagname></li></p>
-<p><li>命令 git push origin :refs/tags/<tagname>可以删除一个远程标签</tagname></li></p>
+<h5 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h5><p>命令 git push origin <tagname>可以推送一个本地标签<br>命令 git push origin –tags 可以推送所有未推送过的本地标签<br>命令 git tag -d <tagname> 可以删除一个本地标签<br>命令 git push origin :refs/tags/<tagname>可以删除一个远程标签</tagname></tagname></tagname></p>
 ]]></content>
     </entry>
     
