@@ -43,7 +43,7 @@
 <p>Git 提供了一个命令 git reflog 用来记录你的每一次命令</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  learngit git:(master) git reflog</div><div class="line">d6a07e5 HEAD@&#123;<span class="number">0</span>&#125;: reset: moving to d6a07e5c</div><div class="line">acf3e0a HEAD@&#123;<span class="number">1</span>&#125;: reset: moving to HEAD^</div><div class="line">d6a07e5 HEAD@&#123;<span class="number">2</span>&#125;: commit: update line two</div><div class="line">acf3e0a HEAD@&#123;<span class="number">3</span>&#125;: commit: add distributed</div><div class="line"><span class="number">5f</span>b0f7b HEAD@&#123;<span class="number">4</span>&#125;: commit (initial): wrote a readme file</div></pre></td></tr></table></figure>
 <p>又可以想回到哪个版本，回到哪个版本了~~~</p>
-<h5 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h5><ul><br><li>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令：git reset –hard comment id</li><br><li>穿梭前，用 git log可以查看提交历史，以便确定要回退到哪个版本。</li><br><li>要重返未来，用 git reflog 查看命令历史，以便确定回到未来的哪个版本。</li><br></ul>
+<h5 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h5><ul><br><li>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令：git reset –hard comment id</li><br><li>穿梭前，用 git log可以查看提交历史，以便确定要回退到哪个版本。</li><br><li>要重返未来，用 git reflog 查看命令历史，以便确定回到未来的哪个版本。</li><br><br></ul>
 
 <h4 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h4><p>git和其他版本控制系统如SVN的一个不同之处就是有暂存区的概念</p>
 <p>工作区(Working Directory)</p>
