@@ -126,7 +126,7 @@ Git从零开始(初始化)学习(命令行)首先新建一个版本库，即仓�
 <meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/001384908892295909f96758654469cad60dc50edfa9abd000/0">
 <meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/001384909115478645b93e2b5ae4dc78da049a0d1704a41000/0">
 <meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/001384909222841acf964ec9e6a4629a35a7a30588281bb000/0">
-<meta property="og:updated_time" content="2016-09-19T09:13:55.000Z">
+<meta property="og:updated_time" content="2016-09-19T09:23:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 初级教程">
 <meta name="twitter:description" content="本文全部内容均来自廖学峰的官方Git教程，我只是依葫芦画瓢学习了一遍做了个记录。
@@ -402,8 +402,7 @@ Git从零开始(初始化)学习(命令行)首先新建一个版本库，即仓�
 <p>-m后面输入的是本次提交的说明。</p>
 <h5 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h5><p>初始化一个Git仓库,使用 git init 命令。</p>
 <p>添加文件到git仓库，分两步：</p>
-<ul><br><li>第一步，使用命令 git add <file>,注意，可反复多次使用，添加多个文件。</file></li><br><li>第二步，使用命令 git commit -m “desc”,完成</li><br></ul>
-
+<p>第一步，使用命令 git add <file>,注意，可反复多次使用，添加多个文件。<br>第二步，使用命令 git commit -m “desc”,完成。</file></p>
 <h3 id="时光机穿梭"><a href="#时光机穿梭" class="headerlink" title="时光机穿梭"></a>时光机穿梭</h3><p>我们已经成功添加并提交了一个readme.txt文件，我们修改readme.txt文件，改成内容如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git is a distributed version control system.</div><div class="line">Git is free software.</div></pre></td></tr></table></figure>
 <p>现在，运行 git status 命令看看结果：</p>
@@ -518,7 +517,6 @@ Git从零开始(初始化)学习(命令行)首先新建一个版本库，即仓�
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -- test.txt</div></pre></td></tr></table></figure>
 <p>git checkout 其实就是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以一键还原。</p>
 <h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><p>Git是分布式版本控制系统，同一个Git仓库，可以分布在不同的机器上，任何一台机器的版本库其实都是一样的。</p>
-
 <p>有现成的提供Git仓库托管服务的，国外的GitHub和国内的Coding(使用方法基本一致)。本地的Git仓库和GitHub之间的传输是通过SSH加密的。需要一点设置：</p>
 <p><li>第一步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果已经有了，可以直接下一步。如果没有，打开命令行窗口，创建ssh key:</li></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure>
@@ -551,7 +549,7 @@ Git从零开始(初始化)学习(命令行)首先新建一个版本库，即仓�
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  Documents git clone git<span class="meta">@git</span>.coding.net:iosline/gitskills.git</div><div class="line">Cloning into <span class="string">'gitskills'</span>...</div><div class="line">remote: Counting objects: <span class="number">4</span>, done.</div><div class="line">remote: Compressing objects: <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), done.</div><div class="line">remote: Total <span class="number">4</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)</div><div class="line">Receiving objects: <span class="number">100</span>% (<span class="number">4</span>/<span class="number">4</span>), done.</div><div class="line">Checking connectivity... done.</div><div class="line">➜  Documents cd gitskills</div><div class="line">➜  gitskills git:(master) ls</div><div class="line">README.md</div></pre></td></tr></table></figure>
 <p>进入本地的gitskills目录，就可以看到 README.md了。</p>
 <p>也许你已经注意到，GitHub 或 Coding 给出的地址不止一个，还可以用https 这样的地址。实际上 Git支持多种协议，默认的 git://使用ssh，但也可以使用https 等其他协议。</p>
-<p></p><p>使用https 除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令。</p><p></p>
+<p>使用https 除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令。</p>
 <h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><h4 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h4><p>在版本回退里，你已经知道，每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master,master才是指向提交的，所以，HEAD指向的就是当前分支。</p>
 <p>一开始的时候，master分支是一条线，Git用master指向最新的提交，再用HEAD指向master,就能确定当前分支，以及当前分支的提交点：<br><img src="http://www.liaoxuefeng.com/files/attachments/0013849087937492135fbf4bbd24dfcbc18349a8a59d36d000/0"><br>每次提交，master分支都会向前移动一步，随着你不断的提交，master分支的线也越来越长：</p>
 <p>当我们创建新的分支，例如 dev时，Git新建了一个指针叫dev，指向master相同的提交点，再把HEAD指向dev,就表示当前分支在dev上。<br><img src="http://www.liaoxuefeng.com/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0"><br>Git 创建一个分支很快，因为除了增加一个dev指针，改改HEAD的指向，工作区的文件没有任何变化。</p>
@@ -693,9 +691,13 @@ Git从零开始(初始化)学习(命令行)首先新建一个版本库，即仓�
 <p>因此，多人协作的工作模式通常是这样的：</p>
 <p><li>首先，先用 git pull 从远程拉代码，检查更新，有冲突解决冲突</li></p>
 <p><li>之后，再用 git push origin branch-name 推送<br>如果 git pull 提示 “no tracking informtion”，则说明本地分支与远程分支的链接关系没有创建，用命令 git branch –set-upstream branch-name origin/branch-name</li></p>
-<h5 id="小结-1"><a href="#小结-1" class="headerlink" title="小结:"></a>小结:</h5><ul><br><li>查看远程仓库信息: git remote -v</li><br><li>本地新建的分支如果不推送到远程，对其他人是不可见的</li><br><li>从本地推送分支，使用 git push origin branch-name,如果推送失败，先用 git pull抓取远程的心提交</li><br><li>在本地创建和远程分支对应的分支，使用 git checkout -b branch-name origin/branch-name ,本地和远程分支的名称最好一样</li><br><li>建立本地分支和远程分支的关联，使用 git branch –set-upstream branch-name origin/branch-name</li><br><li>从远程抓取分支，使用 git pull ,如果有冲突，要先处理冲突。</li><br></ul>
-
-<h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p></p><p>发布一个版本时，我们通常现在版本库中打一个标签(tag)，这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就把那个打标签时刻的历史版本取出来。所以，标签也是版本库的一个快照。</p><p></p>
+<h5 id="小结-1"><a href="#小结-1" class="headerlink" title="小结:"></a>小结:</h5><p>查看远程仓库信息: git remote -v</p>
+<p>本地新建的分支如果不推送到远程，对其他人是不可见的</p>
+<p>从本地推送分支，使用 git push origin branch-name,如果推送失败，先用 git pull抓取远程的心提交</p>
+<p>在本地创建和远程分支对应的分支，使用 git checkout -b branch-name origin/branch-name ,本地和远程分支的名称最好一样。</p>
+<p>建立本地分支和远程分支的关联，使用 git branch –set-upstream branch-name origin/branch-name。</p>
+<p>从远程抓取分支，使用 git pull ,如果有冲突，要先处理冲突。</p>
+<h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p>发布一个版本时，我们通常现在版本库中打一个标签(tag)，这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就把那个打标签时刻的历史版本取出来。所以，标签也是版本库的一个快照。</p>
 <p>Git的标签虽然是版本库的快照，但其实它就是指向某个 commit 的指针(跟分支很想对不对？但分支可以移动，标签不能移动)，所以创建和删除标签都是瞬间完成的。</p>
 <p>Git有commit，为什么还要引入tag？</p>
 <p>“请把上周一的那个版本打包发布，commit号是6a5819e…”</p>
