@@ -102,22 +102,16 @@
 
 
 
-<meta name="description" content="WebView基础使用WebView是View的一个子类，可以让你在activity中显示网页。
-　　可以在布局文件中写入WebView：比如下面这个写了一个填满整个屏幕的WebView：　
-12345678910111213	&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;	&amp;lt;WebView  xmlns:android=&quot;http://schema">
+<meta name="description" content="WebView基础使用WebView是View的一个子类，可以让你在activity中显示网页。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android中WebView使用之一（基础用法）">
 <meta property="og:url" content="http://yoursite.com/2015/12/17/Android中WebView使用之一（基础用法）/index.html">
 <meta property="og:site_name" content="不忘初心 方得始终">
-<meta property="og:description" content="WebView基础使用WebView是View的一个子类，可以让你在activity中显示网页。
-　　可以在布局文件中写入WebView：比如下面这个写了一个填满整个屏幕的WebView：　
-12345678910111213	&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;	&amp;lt;WebView  xmlns:android=&quot;http://schema">
-<meta property="og:updated_time" content="2016-07-05T11:06:31.000Z">
+<meta property="og:description" content="WebView基础使用WebView是View的一个子类，可以让你在activity中显示网页。">
+<meta property="og:updated_time" content="2016-07-29T09:44:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中WebView使用之一（基础用法）">
-<meta name="twitter:description" content="WebView基础使用WebView是View的一个子类，可以让你在activity中显示网页。
-　　可以在布局文件中写入WebView：比如下面这个写了一个填满整个屏幕的WebView：　
-12345678910111213	&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;	&amp;lt;WebView  xmlns:android=&quot;http://schema">
+<meta name="twitter:description" content="WebView基础使用WebView是View的一个子类，可以让你在activity中显示网页。">
 
 
 
@@ -370,6 +364,7 @@
 
       
         <h3 id="WebView基础使用"><a href="#WebView基础使用" class="headerlink" title="WebView基础使用"></a>WebView基础使用</h3><p>WebView是View的一个子类，可以让你在activity中显示网页。</p>
+<a id="more"></a>
 <p>　　可以在布局文件中写入WebView：比如下面这个写了一个填满整个屏幕的WebView：　</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">	&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</div><div class="line">	&lt;WebView  xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">	    android:id=<span class="string">"@+id/webview"</span></div><div class="line">	    android:layout_width=<span class="string">"fill_parent"</span></div><div class="line">	    android:layout_height=<span class="string">"fill_parent"</span></div><div class="line">	/&gt;</div><div class="line">``` </div><div class="line"></div><div class="line">　　加载一个网页，使用loadUrl()：</div><div class="line"></div><div class="line">```java</div><div class="line">	WebView myWebView = (WebView) findViewById(R.id.webview);</div><div class="line">	myWebView.loadUrl(<span class="string">"http://www.example.com"</span>);</div></pre></td></tr></table></figure>
 <h4 id="一、设置WebView要现实的网页"><a href="#一、设置WebView要现实的网页" class="headerlink" title="一、设置WebView要现实的网页"></a>一、设置WebView要现实的网页</h4><p>设置WevView要显示的网页方法有很多：</p>
@@ -575,7 +570,7 @@ shouldOverrideUrlLoading(WebView view, String url)
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

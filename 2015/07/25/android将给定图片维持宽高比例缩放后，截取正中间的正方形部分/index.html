@@ -103,20 +103,20 @@
 
 
 <meta name="description" content="一、本地图片本地图片只需将图片转换为bitmap对象即可。
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/**    * 将给定图片维持宽高比缩放后，截取正中间的正方形部分。    * @param bitmap      原图    * @param edgeLength">
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/**    * 将给定图片维持宽高比缩放后，截取正中间的正方形部分。    * @param bitmap      原图    * @param edgeLengt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android将给定图片维持宽高比例缩放后，截取正中间的正方形部分">
 <meta property="og:url" content="http://yoursite.com/2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/index.html">
 <meta property="og:site_name" content="不忘初心 方得始终">
 <meta property="og:description" content="一、本地图片本地图片只需将图片转换为bitmap对象即可。
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/**    * 将给定图片维持宽高比缩放后，截取正中间的正方形部分。    * @param bitmap      原图    * @param edgeLength">
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/**    * 将给定图片维持宽高比缩放后，截取正中间的正方形部分。    * @param bitmap      原图    * @param edgeLengt">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/smallPicture.png">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/bigPicture.png">
-<meta property="og:updated_time" content="2016-07-05T12:53:47.000Z">
+<meta property="og:updated_time" content="2016-07-29T09:43:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android将给定图片维持宽高比例缩放后，截取正中间的正方形部分">
 <meta name="twitter:description" content="一、本地图片本地图片只需将图片转换为bitmap对象即可。
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/**    * 将给定图片维持宽高比缩放后，截取正中间的正方形部分。    * @param bitmap      原图    * @param edgeLength">
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/**    * 将给定图片维持宽高比缩放后，截取正中间的正方形部分。    * @param bitmap      原图    * @param edgeLengt">
 <meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/smallPicture.png">
 
 
@@ -369,7 +369,8 @@
       
 
       
-        <h3 id="一、本地图片"><a href="#一、本地图片" class="headerlink" title="一、本地图片"></a>一、本地图片</h3><p>本地图片只需将图片转换为bitmap对象即可。</p>
+        <a id="more"></a>
+<h3 id="一、本地图片"><a href="#一、本地图片" class="headerlink" title="一、本地图片"></a>一、本地图片</h3><p>本地图片只需将图片转换为bitmap对象即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">    * 将给定图片维持宽高比缩放后，截取正中间的正方形部分。</div><div class="line">    * <span class="doctag">@param</span> bitmap      原图</div><div class="line">    * <span class="doctag">@param</span> edgeLength  希望得到的正方形部分的边长</div><div class="line">    * <span class="doctag">@return</span>  缩放截取正中部分后的位图。</div><div class="line">    */</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">centerSquareScaleBitmap</span><span class="params">(Bitmap bitmap, <span class="keyword">int</span> edgeLength)</span></span></div><div class="line">  &#123;</div><div class="line">   <span class="keyword">if</span>(<span class="keyword">null</span> == bitmap || edgeLength &lt;= <span class="number">0</span>)</div><div class="line">   &#123;</div><div class="line">    <span class="keyword">return</span>  <span class="keyword">null</span>;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   Bitmap result = bitmap;</div><div class="line">   <span class="keyword">int</span> widthOrg = bitmap.getWidth();</div><div class="line">   <span class="keyword">int</span> heightOrg = bitmap.getHeight();</div><div class="line">   </div><div class="line">   <span class="keyword">if</span>(widthOrg &gt; edgeLength &amp;&amp; heightOrg &gt; edgeLength)</div><div class="line">   &#123;</div><div class="line">    <span class="comment">//压缩到一个最小长度是edgeLength的bitmap</span></div><div class="line">    <span class="keyword">int</span> longerEdge = (<span class="keyword">int</span>)(edgeLength * Math.max(widthOrg, heightOrg) / Math.min(widthOrg, heightOrg));</div><div class="line">    <span class="keyword">int</span> scaledWidth = widthOrg &gt; heightOrg ? longerEdge : edgeLength;</div><div class="line">    <span class="keyword">int</span> scaledHeight = widthOrg &gt; heightOrg ? edgeLength : longerEdge;</div><div class="line">    Bitmap scaledBitmap;</div><div class="line">    </div><div class="line">          <span class="keyword">try</span>&#123;</div><div class="line">           scaledBitmap = Bitmap.createScaledBitmap(bitmap, scaledWidth, scaledHeight, <span class="keyword">true</span>);</div><div class="line">          &#125; </div><div class="line">          <span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">           <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">          &#125;</div><div class="line">          </div><div class="line">       <span class="comment">//从图中截取正中间的正方形部分。</span></div><div class="line">       <span class="keyword">int</span> xTopLeft = (scaledWidth - edgeLength) / <span class="number">2</span>;</div><div class="line">       <span class="keyword">int</span> yTopLeft = (scaledHeight - edgeLength) / <span class="number">2</span>;</div><div class="line">       </div><div class="line">       <span class="keyword">try</span>&#123;</div><div class="line">        result = Bitmap.createBitmap(scaledBitmap, xTopLeft, yTopLeft, edgeLength, edgeLength);</div><div class="line">        scaledBitmap.recycle();</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">       &#125;         </div><div class="line">   &#125;</div><div class="line">        </div><div class="line">   <span class="keyword">return</span> result;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <h3 id="二、网络图片"><a href="#二、网络图片" class="headerlink" title="二、网络图片"></a>二、网络图片</h3><p>使用xUtils框架中的Bitmaputils的display方法可以有效地将网络上的图片成功的显示在ImageView布局上。</p>
 <p>其中new BitmapCallBack接口中的onLoadCompleted方法，表示load成功，可以得到Bitmap对象，截取我们就是要对bitmap进行操作。</p>
@@ -523,7 +524,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
