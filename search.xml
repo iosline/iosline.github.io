@@ -7,7 +7,7 @@
       <title><![CDATA[自定义View流式布局自动换行]]></title>
       <url>http://yoursite.com/2016/10/13/%E8%87%AA%E5%AE%9A%E4%B9%89View%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80%E8%87%AA%E5%8A%A8%E6%8D%A2%E8%A1%8C/</url>
       <content type="html"><![CDATA[<h3 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h3><p><img src="http://ac-myg6wstv.clouddn.com/350bf29922554144acaa"></p>
-<p>###一、流式布局的实现<br>实现原理：采用面向对象思想将整个布局分为很多行的对象，每个行对象管理自己行内的孩子，这里通过集合来管理。</p>
+<h3 id="一、流式布局的实现"><a href="#一、流式布局的实现" class="headerlink" title="一、流式布局的实现"></a>一、流式布局的实现</h3><p>实现原理：采用面向对象思想将整个布局分为很多行的对象，每个行对象管理自己行内的孩子，这里通过集合来管理。</p>
 <h4 id="1-内部类Line的实现"><a href="#1-内部类Line的实现" class="headerlink" title="1.内部类Line的实现"></a>1.内部类Line的实现</h4><h5 id="定义行的基本属性"><a href="#定义行的基本属性" class="headerlink" title="定义行的基本属性"></a>定义行的基本属性</h5><p><li>List：管理行中的孩子</li></p>
 <p><li>maxWidth：行的最大宽度</li></p>
 <p><li>usedWidth：使用的宽度</li></p>
