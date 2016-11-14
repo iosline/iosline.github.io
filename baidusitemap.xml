@@ -4,6 +4,88 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/11/14/Android-Studio%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</loc>
+    <lastmod>2016-11-14T09:51:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android Studio的一些坑</title>
+        <pubTime>2016-11-14T08:57:52.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/14/Mac%E4%B8%8B%E5%8F%8D%E7%BC%96%E8%AF%91apk%E5%8F%8A%E6%89%8B%E5%8A%A8%E5%91%BD%E4%BB%A4apk%E7%AD%BE%E5%90%8D/</loc>
+    <lastmod>2016-11-14T08:54:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mac下反编译apk及手动命令apk签名</title>
+        <pubTime>2016-11-14T08:03:15.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/08/10/%E5%85%B3%E4%BA%8EAndroid-Studio%E7%9A%84Gradle%E7%9A%84%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2016-11-07T06:36:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于Android Studio的Gradle文件配置的一些知识</title>
+        <pubTime>2015-08-10T06:17:05.000Z</pubTime>
+        
+        <tag>AndroidStudio</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/30/%E5%85%B3%E4%BA%8EViewPager%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2016-10-24T11:09:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于ViewPager的一些知识</title>
+        <pubTime>2015-07-30T07:22:39.000Z</pubTime>
+        
+        <tag>ViewPager</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://yoursite.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/20/RxJava%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2016-10-13T09:32:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>RxJava入门</title>
+        <pubTime>2016-09-20T03:39:23.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/10/13/%E8%87%AA%E5%AE%9A%E4%B9%89View%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80%E8%87%AA%E5%8A%A8%E6%8D%A2%E8%A1%8C/</loc>
     <lastmod>2016-10-13T09:30:21.000Z</lastmod>
     <data>
@@ -47,21 +129,6 @@
         
         <tag>异常</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/09/20/RxJava%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2016-09-22T10:59:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>RxJava入门</title>
-        <pubTime>2016-09-20T03:39:23.000Z</pubTime>
-        
          
            
         </display>
@@ -260,26 +327,6 @@
         <pubTime>2015-08-10T06:36:01.000Z</pubTime>
         
         <tag>瀑布流</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://yoursite.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2015/07/30/%E5%85%B3%E4%BA%8EViewPager%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2016-07-05T14:21:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于ViewPager的一些知识</title>
-        <pubTime>2015-07-30T07:22:39.000Z</pubTime>
-        
-        <tag>ViewPager</tag>
          
          
            
@@ -501,23 +548,6 @@
         <title>通知学习之自定义通知</title>
         <pubTime>2016-02-24T08:23:17.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2015/08/10/%E5%85%B3%E4%BA%8EAndroid-Studio%E7%9A%84Gradle%E7%9A%84%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2016-07-05T06:00:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于Android Studio的Gradle文件配置的一些知识</title>
-        <pubTime>2015-08-10T06:17:05.000Z</pubTime>
-        
-        <tag>AndroidStudio</tag>
-         
          
            
         </display>
