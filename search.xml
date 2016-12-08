@@ -19,8 +19,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">         String content=URLDecoder.decode(commentInfo.getContent(), <span class="string">"UTF-8"</span>);            holder.content.setText(content);</div><div class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
 <p>解码完，textview显示的就是一个表情了。</p>
 <p>搞定。</p>
-<p>####自定义表情的扩展</p>
-<p>强烈推荐：<br><a href="http://blog.csdn.net/javazejian/article/details/52126391" target="_blank" rel="external">http://blog.csdn.net/javazejian/article/details/52126391</a></p>
+<h4 id="自定义表情的扩展"><a href="#自定义表情的扩展" class="headerlink" title="自定义表情的扩展"></a>自定义表情的扩展</h4><p>强烈推荐：<br><a href="http://blog.csdn.net/javazejian/article/details/52126391" target="_blank" rel="external">http://blog.csdn.net/javazejian/article/details/52126391</a></p>
 <p>这篇博客写的相当不错，相当的流畅，有兴趣的可以看看。</p>
 ]]></content>
     </entry>

@@ -118,7 +118,7 @@
 获取不到表情的任何信息，这个犯愁了。查了好多资料，都是自定义添加的表情，根本没法获取输入法自带的表情。
 输入法表情的获取黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：
 123456String title=nul">
-<meta property="og:updated_time" content="2016-12-08T09:42:38.000Z">
+<meta property="og:updated_time" content="2016-12-08T09:44:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android输入法表情的获取、显示及上传服务器">
 <meta name="twitter:description" content="最近，在我们的项目中新增评论这一块，内容中还要有表情。行吧，开始做吧：
@@ -391,8 +391,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">         String content=URLDecoder.decode(commentInfo.getContent(), <span class="string">"UTF-8"</span>);            holder.content.setText(content);</div><div class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
 <p>解码完，textview显示的就是一个表情了。</p>
 <p>搞定。</p>
-<p>####自定义表情的扩展</p>
-<p>强烈推荐：<br><a href="http://blog.csdn.net/javazejian/article/details/52126391" target="_blank" rel="external">http://blog.csdn.net/javazejian/article/details/52126391</a></p>
+<h4 id="自定义表情的扩展"><a href="#自定义表情的扩展" class="headerlink" title="自定义表情的扩展"></a>自定义表情的扩展</h4><p>强烈推荐：<br><a href="http://blog.csdn.net/javazejian/article/details/52126391" target="_blank" rel="external">http://blog.csdn.net/javazejian/article/details/52126391</a></p>
 <p>这篇博客写的相当不错，相当的流畅，有兴趣的可以看看。</p>
 
       
@@ -615,7 +614,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入法表情的获取"><span class="nav-number">2.</span> <span class="nav-text">输入法表情的获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入法表情的获取-1"><span class="nav-number">3.</span> <span class="nav-text">输入法表情的获取</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入法表情的获取"><span class="nav-number">2.</span> <span class="nav-text">输入法表情的获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入法表情的获取-1"><span class="nav-number">3.</span> <span class="nav-text">输入法表情的获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义表情的扩展"><span class="nav-number">4.</span> <span class="nav-text">自定义表情的扩展</span></a></li></ol></div>
             
           </div>
         </section>
