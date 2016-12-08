@@ -103,30 +103,30 @@
 
 
 <meta name="description" content="最近，在我们的项目中新增评论这一块，内容中还要有表情。行吧，开始做吧：
-####问题做着做着发现并不是那么一回事
+问题做着做着发现并不是那么一回事
 1edittext.getText().toString()；
 获取不到表情的任何信息，这个犯愁了。查了好多资料，都是自定义添加的表情，根本没法获取输入法自带的表情。
-####输入法表情的获取黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：
-123456String t">
+输入法表情的获取黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：
+123456String title=nul">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android输入法表情的获取、显示及上传服务器">
 <meta property="og:url" content="http://yoursite.com/2016/12/08/Android输入法表情的获取、显示及上传服务器/index.html">
 <meta property="og:site_name" content="不忘初心 方得始终">
 <meta property="og:description" content="最近，在我们的项目中新增评论这一块，内容中还要有表情。行吧，开始做吧：
-####问题做着做着发现并不是那么一回事
+问题做着做着发现并不是那么一回事
 1edittext.getText().toString()；
 获取不到表情的任何信息，这个犯愁了。查了好多资料，都是自定义添加的表情，根本没法获取输入法自带的表情。
-####输入法表情的获取黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：
-123456String t">
-<meta property="og:updated_time" content="2016-12-08T09:39:36.000Z">
+输入法表情的获取黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：
+123456String title=nul">
+<meta property="og:updated_time" content="2016-12-08T09:42:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android输入法表情的获取、显示及上传服务器">
 <meta name="twitter:description" content="最近，在我们的项目中新增评论这一块，内容中还要有表情。行吧，开始做吧：
-####问题做着做着发现并不是那么一回事
+问题做着做着发现并不是那么一回事
 1edittext.getText().toString()；
 获取不到表情的任何信息，这个犯愁了。查了好多资料，都是自定义添加的表情，根本没法获取输入法自带的表情。
-####输入法表情的获取黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：
-123456String t">
+输入法表情的获取黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：
+123456String title=nul">
 
 
 
@@ -379,16 +379,15 @@
 
       
         <p>最近，在我们的项目中新增评论这一块，内容中还要有表情。行吧，开始做吧：</p>
-<p>####问题<br>做着做着发现并不是那么一回事</p>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>做着做着发现并不是那么一回事</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">edittext.getText().toString()；</div></pre></td></tr></table></figure>
 <p>获取不到表情的任何信息，这个犯愁了。查了好多资料，都是自定义添加的表情，根本没法获取输入法自带的表情。</p>
-<p>####输入法表情的获取<br>黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：</p>
+<h4 id="输入法表情的获取"><a href="#输入法表情的获取" class="headerlink" title="输入法表情的获取"></a>输入法表情的获取</h4><p>黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">String title=<span class="keyword">null</span>;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">      title = URLEncoder.encode(editTitle.getText().toString(),<span class="string">"UTF-8"</span>);</div><div class="line">&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">      e.printStackTrace();</div><div class="line">                    &#125;</div></pre></td></tr></table></figure>
 <p>对，你没有看错，就是对获取到的进行一次URL编码。</p>
 <p>这样得到的结果就是这样一堆东西，将这个东西上传至服务器</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%F0%<span class="number">9F</span>%<span class="number">98</span>%B3</div></pre></td></tr></table></figure>
-<p>####输入法表情的获取</p>
-<p>从服务器获取到表情的字符串之后，要想显示，还需要URL解码：</p>
+<h4 id="输入法表情的获取-1"><a href="#输入法表情的获取-1" class="headerlink" title="输入法表情的获取"></a>输入法表情的获取</h4><p>从服务器获取到表情的字符串之后，要想显示，还需要URL解码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">         String content=URLDecoder.decode(commentInfo.getContent(), <span class="string">"UTF-8"</span>);            holder.content.setText(content);</div><div class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
 <p>解码完，textview显示的就是一个表情了。</p>
 <p>搞定。</p>
@@ -616,7 +615,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入法表情的获取"><span class="nav-number">2.</span> <span class="nav-text">输入法表情的获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入法表情的获取-1"><span class="nav-number">3.</span> <span class="nav-text">输入法表情的获取</span></a></li></ol></div>
             
           </div>
         </section>
