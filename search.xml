@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title><![CDATA[Android输入法表情的获取、显示及上传服务器]]></title>
+      <url>http://yoursite.com/2016/12/08/Android%E8%BE%93%E5%85%A5%E6%B3%95%E8%A1%A8%E6%83%85%E7%9A%84%E8%8E%B7%E5%8F%96%E3%80%81%E6%98%BE%E7%A4%BA%E5%8F%8A%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p>最近，在我们的项目中新增评论这一块，内容中还要有表情。行吧，开始做吧：</p>
+<p>####问题<br>做着做着发现并不是那么一回事</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">edittext.getText().toString()；</div></pre></td></tr></table></figure>
+<p>获取不到表情的任何信息，这个犯愁了。查了好多资料，都是自定义添加的表情，根本没法获取输入法自带的表情。</p>
+<p>####输入法表情的获取<br>黄天不负有心人，查了好几天资料，终于找到了获取输入法表情的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">String title=<span class="keyword">null</span>;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">      title = URLEncoder.encode(editTitle.getText().toString(),<span class="string">"UTF-8"</span>);</div><div class="line">&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">      e.printStackTrace();</div><div class="line">                    &#125;</div></pre></td></tr></table></figure>
+<p>对，你没有看错，就是对获取到的进行一次URL编码。</p>
+<p>这样得到的结果就是这样一堆东西，将这个东西上传至服务器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%F0%<span class="number">9F</span>%<span class="number">98</span>%B3</div></pre></td></tr></table></figure>
+<p>####输入法表情的获取</p>
+<p>从服务器获取到表情的字符串之后，要想显示，还需要URL解码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">         String content=URLDecoder.decode(commentInfo.getContent(), <span class="string">"UTF-8"</span>);            holder.content.setText(content);</div><div class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>解码完，textview显示的就是一个表情了。</p>
+<p>搞定。</p>
+<p>####自定义表情的扩展</p>
+<p>强烈推荐：<br><a href="http://blog.csdn.net/javazejian/article/details/52126391" target="_blank" rel="external">http://blog.csdn.net/javazejian/article/details/52126391</a></p>
+<p>这篇博客写的相当不错，相当的流畅，有兴趣的可以看看。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于Coding与Git配合在Studio的一些使用]]></title>
       <url>http://yoursite.com/2016/11/15/%E5%85%B3%E4%BA%8ECoding%E4%B8%8EGit%E9%85%8D%E5%90%88%E5%9C%A8Studio%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h4 id="1-Coding与Git的关联"><a href="#1-Coding与Git的关联" class="headerlink" title="1.Coding与Git的关联"></a>1.Coding与Git的关联</h4><p><li>1:在coding.net上创建项目，用于放置你的项目的文件</li></p>
