@@ -102,15 +102,25 @@
 
 
 
-<meta name="description" content="不忘初心,方得始终">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不忘初心 方得始终">
-<meta property="og:url" content="http://yoursite.com/tags/Git/index.html">
+<meta name="description" content="现在android项目基本都在使用Android Studio进行开发，使用一些开源的第三方库来快速开发在所难免，好多库都替代了传统的导入库的方式，使用流行方便的gradle方式，直接在app的build.gradle引入，非常方便快捷。
+但是在引入多个库的同时，会出现一些异常，今天就重复依赖怎么解决做一个总结。
+重复依赖什么是重复依赖？当使用gradle导入依赖时，可能会出现不同的依赖包含了同一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决Android Studio重复依赖导致的transform异常">
+<meta property="og:url" content="http://yoursite.com/2017/04/13/解决Android-Studio重复依赖导致的transform异常/index.html">
 <meta property="og:site_name" content="不忘初心 方得始终">
-<meta property="og:description" content="不忘初心,方得始终">
+<meta property="og:description" content="现在android项目基本都在使用Android Studio进行开发，使用一些开源的第三方库来快速开发在所难免，好多库都替代了传统的导入库的方式，使用流行方便的gradle方式，直接在app的build.gradle引入，非常方便快捷。
+但是在引入多个库的同时，会出现一些异常，今天就重复依赖怎么解决做一个总结。
+重复依赖什么是重复依赖？当使用gradle导入依赖时，可能会出现不同的依赖包含了同一">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/45CD60D8-E352-405E-89AE-AD758C0C1AC1.png">
+<meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/3C3B122D-154D-4ED5-942D-01CB04409D4A.png">
+<meta property="og:updated_time" content="2017-04-13T10:00:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不忘初心 方得始终">
-<meta name="twitter:description" content="不忘初心,方得始终">
+<meta name="twitter:title" content="解决Android Studio重复依赖导致的transform异常">
+<meta name="twitter:description" content="现在android项目基本都在使用Android Studio进行开发，使用一些开源的第三方库来快速开发在所难免，好多库都替代了传统的导入库的方式，使用流行方便的gradle方式，直接在app的build.gradle引入，非常方便快捷。
+但是在引入多个库的同时，会出现一些异常，今天就重复依赖怎么解决做一个总结。
+重复依赖什么是重复依赖？当使用gradle导入依赖时，可能会出现不同的依赖包含了同一">
+<meta name="twitter:image" content="http://7xl32g.com1.z0.glb.clouddn.com/45CD60D8-E352-405E-89AE-AD758C0C1AC1.png">
 
 
 
@@ -131,9 +141,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Git/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/13/解决Android-Studio重复依赖导致的transform异常/"/>
 
-  <title> 标签: Git | 不忘初心 方得始终 </title>
+  <title> 解决Android Studio重复依赖导致的transform异常 | 不忘初心 方得始终 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +174,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,74 +295,197 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Git
-        <small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/15/关于Coding与Git配合在Studio的一些使用/" itemprop="url">
-              
-                <span itemprop="name">关于Coding与Git配合在Studio的一些使用</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-15T11:11:31+08:00"
-              content="2016-11-15" >
-          11-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/19/Git-初级教程/" itemprop="url">
-              
-                <span itemprop="name">Git 初级教程</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-19T16:37:23+08:00"
-              content="2016-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                解决Android Studio重复依赖导致的transform异常
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-13T11:42:35+08:00" content="2017-04-13">
+              2017-04-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/13/解决Android-Studio重复依赖导致的transform异常/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/13/解决Android-Studio重复依赖导致的transform异常/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/04/13/解决Android-Studio重复依赖导致的transform异常/" class="leancloud_visitors" data-flag-title="解决Android Studio重复依赖导致的transform异常">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>现在android项目基本都在使用Android Studio进行开发，使用一些开源的第三方库来快速开发在所难免，好多库都替代了传统的导入库的方式，使用流行方便的gradle方式，直接在app的build.gradle引入，非常方便快捷。</p>
+<p>但是在引入多个库的同时，会出现一些异常，今天就<b>重复依赖</b>怎么解决做一个总结。</p>
+<h4 id="重复依赖"><a href="#重复依赖" class="headerlink" title="重复依赖"></a>重复依赖</h4><p>什么是重复依赖？当使用gradle导入依赖时，可能会出现不同的依赖包含了同一个jar，在编译期间不会报错。可一旦run app的时候，就会报。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Error:Execution failed <span class="keyword">for</span> task <span class="string">':app:transformClassesWithJarMergingForDebug'</span>.</div><div class="line">&gt; com.android.build.api.transform.TransformException: java.util.zip.ZipException: duplicate entry: okhttp3/Address.class</div></pre></td></tr></table></figure>
+<p>TransformException 重复依赖了okhttp这个jar包。</p>
+<p>解决的方法是在<b>引入依赖的时候把相同的jar去除掉</b>。</p>
+<p>下面是咱的依赖：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:</span></div><div class="line">compile <span class="string">'cn.bmob.android:bmob-sdk:3.5.0'</span></div><div class="line"><span class="comment">//如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)</span></div><div class="line">compile <span class="string">'cn.bmob.android:http-legacy:1.0'</span></div><div class="line">compile <span class="string">'com.qiniu:qiniu-android-sdk:7.3.+'</span></div></pre></td></tr></table></figure>
+<p>这是我们可以发现，okhttp3/<b>Address.class</b></p>
+<p>我们可以通过Search Everywhere去定位这个类（默认快捷键是双击shift）。</p>
+<p><img src="http://7xl32g.com1.z0.glb.clouddn.com/45CD60D8-E352-405E-89AE-AD758C0C1AC1.png"></p>
+<p>通过搜索的确发现了两个一模一样的类,而且来自不同的依赖,而重复的类库正是okhttp.</p>
+<p>Bmob移动云Sdk引入了okhttp,七牛云存储也同样的引入了okhttp.</p>
+<p>找到问题的根源的。那我们现在如何去除相同的类库呢?</p>
+<h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><p>在AS中，选择以project显示项目，找到最下面的External Libraries，然后继续找，找到相对应的类库</p>
+<p><img src="http://7xl32g.com1.z0.glb.clouddn.com/3C3B122D-154D-4ED5-942D-01CB04409D4A.png"></p>
+<p>找到artifactId为okhttp的引用，找到groupId,去除groupId的依赖。(此处artifactId为parent,是因为在okhttp.jar包找到了)</p>
+<p>这个就是导致报错的直接原因。复制里面groupId，到你的app的build.gradle里，找到那个依赖，添加</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; exclude group: <span class="string">'com.squareup.okhttp3'</span> &#125;</div></pre></td></tr></table></figure>
+<p>把这个groudId的引用去除掉.</p>
+<p>最后的情况如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">compile(<span class="string">'com.qiniu:qiniu-android-sdk:7.3.+'</span>)</div><div class="line">        &#123; exclude group: <span class="string">'com.squareup.okhttp3'</span> &#125;</div></pre></td></tr></table></figure>
+<p>到此问题就解决了，如果你有多个重复依赖的话，就按照本文所给出的方法，一个一个去重。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.J WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mr.J Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/07/Android内存泄露分析总结-一/" rel="next" title="Android内存泄露分析总结(一)">
+                <i class="fa fa-chevron-left"></i> Android内存泄露分析总结(一)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/13/Android-上传图片到七牛云存储/" rel="prev" title="Android 上传图片到七牛云存储">
+                Android 上传图片到七牛云存储 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/04/13/解决Android-Studio重复依赖导致的transform异常/"
+     data-title="解决Android Studio重复依赖导致的transform异常"
+     data-content=""
+     data-url="http://yoursite.com/2017/04/13/解决Android-Studio重复依赖导致的transform异常/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -360,6 +493,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/13/解决Android-Studio重复依赖导致的transform异常/"
+           data-title="解决Android Studio重复依赖导致的transform异常" data-url="http://yoursite.com/2017/04/13/解决Android-Studio重复依赖导致的transform异常/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -379,8 +520,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -463,6 +613,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#重复依赖"><span class="nav-number">1.</span> <span class="nav-text">重复依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#去重"><span class="nav-number">2.</span> <span class="nav-text">去重</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -571,6 +732,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
