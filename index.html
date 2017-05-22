@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -27,53 +30,34 @@
 
 
 
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-  
-  
-  
-  
+
 
   
-    
-    
+  
+  
   
 
   
     
-      
     
+  
 
-    
+  
+
+  
+
   
 
   
 
   
     
-      
     
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -81,9 +65,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -95,7 +79,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -114,26 +98,37 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: false,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://yoursite.com/"/>
 
-  <title> 不忘初心 方得始终 </title>
+
+
+
+
+  <title>不忘初心 方得始终</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,15 +137,20 @@
 
 
 
+
+
   <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      hm.src = "https://hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+
+
 
 
 
@@ -164,31 +164,35 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">不忘初心 方得始终</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不忘初心 方得始终</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -247,36 +251,25 @@
           </a>
         </li>
       
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="#" class="popup-trigger">
-          
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/baidusitemap.xml" rel="section">
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
             
-            搜索
+            站点地图
           </a>
         </li>
+      
+
       
     </ul>
   
 
   
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
-    </div>
-  
 </nav>
+
+
 
  </div>
     </header>
@@ -291,13 +284,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/Android-上传图片到七牛云存储/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -305,27 +308,27 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/04/13/Android-上传图片到七牛云存储/" itemprop="url">
-                  Android 上传图片到七牛云存储
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/04/13/Android-上传图片到七牛云存储/" itemprop="url">Android 上传图片到七牛云存储</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-13T12:56:25+08:00" content="2017-04-13">
-              2017-04-13
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T12:56:25+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -333,33 +336,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2017/04/13/Android-上传图片到七牛云存储/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/13/Android-上传图片到七牛云存储/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/13/Android-上传图片到七牛云存储/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2017/04/13/Android-上传图片到七牛云存储/" class="leancloud_visitors" data-flag-title="Android 上传图片到七牛云存储">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -372,13 +382,18 @@
           自己弄一个项目要上传头像等图片至网络云存储，就找到了七牛。但是翻了七牛的Android SDK文档，一直卡在没有后台我怎么获取上传凭证。翻了好多资料，终于找到了解决办法，记录一下：
 12345678910111213141516171819202122232425262728293031323334
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/04/13/Android-上传图片到七牛云存储/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -396,6 +411,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -407,13 +424,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/解决Android-Studio重复依赖导致的transform异常/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -421,27 +448,27 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/04/13/解决Android-Studio重复依赖导致的transform异常/" itemprop="url">
-                  解决Android Studio重复依赖导致的transform异常
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/04/13/解决Android-Studio重复依赖导致的transform异常/" itemprop="url">解决Android Studio重复依赖导致的transform异常</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-13T11:42:35+08:00" content="2017-04-13">
-              2017-04-13
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T11:42:35+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -449,33 +476,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2017/04/13/解决Android-Studio重复依赖导致的transform异常/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/13/解决Android-Studio重复依赖导致的transform异常/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/13/解决Android-Studio重复依赖导致的transform异常/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2017/04/13/解决Android-Studio重复依赖导致的transform异常/" class="leancloud_visitors" data-flag-title="解决Android Studio重复依赖导致的transform异常">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -488,13 +522,18 @@
           现在android项目基本都在使用Android Studio进行开发，使用一些开源的第三方库来快速开发在所难免，好多库都替代了传统的导入库的方式，使用流行方便的gradle方式，直接在app的build.gradle引入，非常方便快捷。
 但是在引入多个库的同时，会出现一些异常，今天就重复依赖怎么解
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/04/13/解决Android-Studio重复依赖导致的transform异常/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -512,6 +551,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -523,13 +564,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/07/Android内存泄露分析总结-一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -537,27 +588,27 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/04/07/Android内存泄露分析总结-一/" itemprop="url">
-                  Android内存泄露分析总结(一)
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/04/07/Android内存泄露分析总结-一/" itemprop="url">Android内存泄露分析总结(一)</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-07T17:04:35+08:00" content="2017-04-07">
-              2017-04-07
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-07T17:04:35+08:00">
+                2017-04-07
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -565,33 +616,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2017/04/07/Android内存泄露分析总结-一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/07/Android内存泄露分析总结-一/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/07/Android内存泄露分析总结-一/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2017/04/07/Android内存泄露分析总结-一/" class="leancloud_visitors" data-flag-title="Android内存泄露分析总结(一)">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -606,13 +664,18 @@
 什么是内存这里面所提到的内存一般是指 Android 手机的 RAM。
 RAM 
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/04/07/Android内存泄露分析总结-一/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -630,6 +693,8 @@ RAM
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -641,13 +706,23 @@ RAM
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/json的解析及数据转换为json上传服务器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -655,27 +730,27 @@ RAM
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/03/30/json的解析及数据转换为json上传服务器/" itemprop="url">
-                  json的解析及数据转换为json上传服务器
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/03/30/json的解析及数据转换为json上传服务器/" itemprop="url">json的解析及数据转换为json上传服务器</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-30T17:34:39+08:00" content="2017-03-30">
-              2017-03-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T17:34:39+08:00">
+                2017-03-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -683,33 +758,40 @@ RAM
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2017/03/30/json的解析及数据转换为json上传服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/30/json的解析及数据转换为json上传服务器/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/30/json的解析及数据转换为json上传服务器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2017/03/30/json的解析及数据转换为json上传服务器/" class="leancloud_visitors" data-flag-title="json的解析及数据转换为json上传服务器">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -724,13 +806,18 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 解析Json字符串后台返回的json字符串
 123456789101112131415161718192
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/03/30/json的解析及数据转换为json上传服务器/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -748,6 +835,8 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -759,13 +848,23 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/22/Android-冷启动秒开app/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -773,27 +872,27 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/02/22/Android-冷启动秒开app/" itemprop="url">
-                  Android 冷启动秒开app
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/02/22/Android-冷启动秒开app/" itemprop="url">Android 冷启动秒开app</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-22T10:14:44+08:00" content="2017-02-22">
-              2017-02-22
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-22T10:14:44+08:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -801,33 +900,40 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2017/02/22/Android-冷启动秒开app/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/22/Android-冷启动秒开app/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/22/Android-冷启动秒开app/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2017/02/22/Android-冷启动秒开app/" class="leancloud_visitors" data-flag-title="Android 冷启动秒开app">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -841,13 +947,18 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 看完这篇文章，回家就试了试，确实能起到一定的效果，微信就是这样做的，在前辈的基础上，做个记录。
 什么是冷启动时间？冷启动时间是指从手机左面点击APP的那一刻起到启动页面的Activity调
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/02/22/Android-冷启动秒开app/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -865,6 +976,8 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -876,13 +989,23 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/TextView实现超链接自定义跳转及解决在ListView中的事件冲突/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -890,27 +1013,27 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/12/23/TextView实现超链接自定义跳转及解决在ListView中的事件冲突/" itemprop="url">
-                  TextView实现超链接自定义跳转及解决在ListView中的事件冲突
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/12/23/TextView实现超链接自定义跳转及解决在ListView中的事件冲突/" itemprop="url">TextView实现超链接自定义跳转及解决在ListView中的事件冲突</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-23T18:27:09+08:00" content="2016-12-23">
-              2016-12-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-23T18:27:09+08:00">
+                2016-12-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -918,33 +1041,40 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/12/23/TextView实现超链接自定义跳转及解决在ListView中的事件冲突/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/TextView实现超链接自定义跳转及解决在ListView中的事件冲突/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/TextView实现超链接自定义跳转及解决在ListView中的事件冲突/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2016/12/23/TextView实现超链接自定义跳转及解决在ListView中的事件冲突/" class="leancloud_visitors" data-flag-title="TextView实现超链接自定义跳转及解决在ListView中的事件冲突">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -957,13 +1087,18 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           一、在TextView中跳转url1.要想在textview中显示url连接，首先在布局文件中添加autoLink属性：
 12345&lt;TextView        android:id="@+id/content"        android:layout_width="wrap_cont
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2016/12/23/TextView实现超链接自定义跳转及解决在ListView中的事件冲突/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -981,6 +1116,8 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -992,13 +1129,23 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/09/Android-webview-loadData-图片点击/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -1006,27 +1153,27 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/12/09/Android-webview-loadData-图片点击/" itemprop="url">
-                  Android webview loadData 图片点击
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/12/09/Android-webview-loadData-图片点击/" itemprop="url">Android webview loadData 图片点击</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-09T17:44:31+08:00" content="2016-12-09">
-              2016-12-09
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-09T17:44:31+08:00">
+                2016-12-09
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1034,33 +1181,40 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/12/09/Android-webview-loadData-图片点击/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/09/Android-webview-loadData-图片点击/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/09/Android-webview-loadData-图片点击/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2016/12/09/Android-webview-loadData-图片点击/" class="leancloud_visitors" data-flag-title="Android webview loadData 图片点击">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -1074,13 +1228,18 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 今天的标题有点特殊，全是一点一点的不成句，这是有原因的，因为如果成句成为标题的话比较长，所以干脆透露知识点吧。
 前述意思是：webview加载拼凑的html时，就要用loadData了，loadUrl就行不通了，但是还想知道用户点击了哪张图片，网上的一些教程要么是加载的ht
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2016/12/09/Android-webview-loadData-图片点击/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1098,6 +1257,8 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1109,13 +1270,23 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/08/Android输入法表情的获取、显示及上传服务器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -1123,27 +1294,27 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/12/08/Android输入法表情的获取、显示及上传服务器/" itemprop="url">
-                  Android输入法表情的获取、显示及上传服务器
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/12/08/Android输入法表情的获取、显示及上传服务器/" itemprop="url">Android输入法表情的获取、显示及上传服务器</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-08T17:23:31+08:00" content="2016-12-08">
-              2016-12-08
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-08T17:23:31+08:00">
+                2016-12-08
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1151,33 +1322,40 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/12/08/Android输入法表情的获取、显示及上传服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/08/Android输入法表情的获取、显示及上传服务器/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/08/Android输入法表情的获取、显示及上传服务器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2016/12/08/Android输入法表情的获取、显示及上传服务器/" class="leancloud_visitors" data-flag-title="Android输入法表情的获取、显示及上传服务器">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -1193,13 +1371,18 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 获取不到表情的任何信息，这个犯愁了。查了好多资料，都是自定义添加的表情，根本没法获取输入法自带的表情。
 客户端输入法表情的获取(U
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2016/12/08/Android输入法表情的获取、显示及上传服务器/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1217,6 +1400,8 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1228,13 +1413,23 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/15/关于Coding与Git配合在Studio的一些使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -1242,27 +1437,27 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/11/15/关于Coding与Git配合在Studio的一些使用/" itemprop="url">
-                  关于Coding与Git配合在Studio的一些使用
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/11/15/关于Coding与Git配合在Studio的一些使用/" itemprop="url">关于Coding与Git配合在Studio的一些使用</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-15T11:11:31+08:00" content="2016-11-15">
-              2016-11-15
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-15T11:11:31+08:00">
+                2016-11-15
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1270,33 +1465,40 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/11/15/关于Coding与Git配合在Studio的一些使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/15/关于Coding与Git配合在Studio的一些使用/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/15/关于Coding与Git配合在Studio的一些使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2016/11/15/关于Coding与Git配合在Studio的一些使用/" class="leancloud_visitors" data-flag-title="关于Coding与Git配合在Studio的一些使用">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -1312,12 +1514,13 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 打开idea，主菜单file-setting-version control-git 配置好git
 3.将项目加
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2016/11/15/关于Coding与Git配合在Studio的一些使用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1330,7 +1533,13 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
     </div>
 
+    <div>
+      
+    </div>
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -1347,13 +1556,23 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/ListView中EditText的使用注意/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -1361,27 +1580,27 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/11/14/ListView中EditText的使用注意/" itemprop="url">
-                  ListView中EditText的使用注意
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/11/14/ListView中EditText的使用注意/" itemprop="url">ListView中EditText的使用注意</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-14T18:37:19+08:00" content="2016-11-14">
-              2016-11-14
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T18:37:19+08:00">
+                2016-11-14
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1389,33 +1608,40 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/11/14/ListView中EditText的使用注意/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/ListView中EditText的使用注意/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/ListView中EditText的使用注意/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2016/11/14/ListView中EditText的使用注意/" class="leancloud_visitors" data-flag-title="ListView中EditText的使用注意">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -1431,12 +1657,13 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 2.或者动态设置对象集合position位置下edittext要显示的值,
 根据position即数组下标,在getV
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2016/11/14/ListView中EditText的使用注意/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1449,7 +1676,13 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
       
     </div>
 
+    <div>
+      
+    </div>
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -1497,25 +1730,32 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
                alt="Mr.J" />
           <p class="site-author-name" itemprop="name">Mr.J</p>
-          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
+           
+              <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">51</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -1523,8 +1763,10 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -1547,6 +1789,15 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
                 </a>
               </span>
             
+              <span class="links-of-author-item">
+                <a href="https://www.xiaolei0808.com" target="_blank" title="Mr.King's Blog">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Mr.King's Blog
+                </a>
+              </span>
+            
           
         </div>
 
@@ -1558,27 +1809,24 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
           <div class="links-of-blogroll motion-element links-of-blogroll-inline">
             <div class="links-of-blogroll-title">
               <i class="fa  fa-fw fa-globe"></i>
-              友情链接
+              
             </div>
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://androidcat.com/?step=1&view=CatFragment" title="AndoidCat" target="_blank">AndoidCat</a>
+                  <a href="http://www.jikedaohang.com/#part2" title="极客导航" target="_blank">极客导航</a>
                 </li>
               
             </ul>
           </div>
         
 
+        
+
+
       </section>
+
+      
 
       
 
@@ -1592,7 +1840,7 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+         <div class="copyright" >
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
@@ -1600,11 +1848,12 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mr.J</span>
-  <span>&nbsp&nbsp|&nbsp&nbsp<a href="/baidusitemap.xml">百度网站地图</a></span>
+  &nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="/baidusitemap.xml">百度网站地图</a></span>
 </div>
 
+
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
@@ -1612,28 +1861,31 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
-<span id="busuanzi_container_page_pv">
-    &nbsp&nbsp|&nbsp&nbsp本页点击<span id="busuanzi_value_page_pv"></span>次
-  </span>
-  <span id="busuanzi_container_site_pv">
-    &nbsp&nbsp|&nbsp&nbsp本站总访问量<span id="busuanzi_value_site_pv"></span>次
-  </span>
-  <span id="busuanzi_container_site_uv">
-  &nbsp&nbsp|&nbsp&nbsp你是第<span id="busuanzi_value_site_uv"></span>位访客
-  </span>
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
+
+&nbsp;&nbsp;|&nbsp;&nbsp;本页点击 <span id="busuanzi_value_page_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;本站总点击 <span id="busuanzi_value_site_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+
+
+
+
         
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1652,47 +1904,65 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 
 
 
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
 
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
   
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
 
 
 
@@ -1717,7 +1987,8 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 
   
     
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
     <script src="/js/src/hook-duoshuo.js"></script>
   
 
@@ -1726,138 +1997,21 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
 
 
 
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-       search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
 
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
 
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-    'use strict';
-    $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-            // get the contents from search data
-            isfetched = true;
-            $('.popup').detach().appendTo('.header-inner');
-            var datas = $( "entry", xmlResponse ).map(function() {
-                return {
-                    title: $( "title", this ).text(),
-                    content: $("content",this).text(),
-                    url: $( "url" , this).text()
-                };
-            }).get();
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function(){
-                var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';                
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length > 1) {
-                // perform local searching
-                datas.forEach(function(data) {
-                    var isMatch = true;
-                    var content_index = [];
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                    var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if(data_title != '' && data_content != '') {
-                        keywords.forEach(function(keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
-                            if( index_title < 0 && index_content < 0 ){
-                                isMatch = false;
-                            } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                            }
-                        });
-                    }
-                    // show search results
-                    if (isMatch) {
-                        matchcounts += 1;
-                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                        var content = data.content.trim().replace(/<[^>]+>/g,"");
-                        if (first_occur >= 0) {
-                            // cut out 100 characters
-                            var start = first_occur - 20;
-                            var end = first_occur + 80;
-                            if(start < 0){
-                                start = 0;
-                            }
-                            if(start == 0){
-                                end = 50;
-                            }
-                            if(end > content.length){
-                                end = content.length;
-                            }
-                            var match_content = content.substring(start, end);
-                            // highlight all keywords
-                            keywords.forEach(function(keyword){
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                            });
-                            
-                            str += "<p class=\"search-result\">" + match_content +"...</p>"
-                        }
-                        str += "</li>";
-                    }
-                })};
-                str += "</ul>";
-                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-                $resultContent.innerHTML = str;
-            });
-            proceedsearch();
-        }
-    });}
 
-    // handle and trigger popup window;
-    $('.popup-trigger').mousedown(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
 
-    });
 
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
+
+
+
+
 
   
+
+
+
+
 
   
 
@@ -1967,6 +2121,12 @@ JsonObject和JsonArray不仅能够做到将json格式的字符串解析成普通
   </script>
 
 
+
+  
+
+  
+
+  
 
   
 

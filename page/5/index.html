@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -27,53 +30,34 @@
 
 
 
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-  
-  
-  
-  
+
 
   
-    
-    
+  
+  
   
 
   
     
-      
     
+  
 
-    
+  
+
+  
+
   
 
   
 
   
     
-      
     
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -81,9 +65,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -95,7 +79,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -114,26 +98,37 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: false,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://yoursite.com/page/5/"/>
 
-  <title> 不忘初心 方得始终 </title>
+
+
+
+
+  <title>不忘初心 方得始终</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,15 +137,20 @@
 
 
 
+
+
   <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
+      hm.src = "https://hm.baidu.com/hm.js?1543ee8e745b22ebe68a539c7faf500d";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+
+
 
 
 
@@ -164,31 +164,35 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">不忘初心 方得始终</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不忘初心 方得始终</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -247,36 +251,25 @@
           </a>
         </li>
       
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="#" class="popup-trigger">
-          
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/baidusitemap.xml" rel="section">
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
             
-            搜索
+            站点地图
           </a>
         </li>
+      
+
       
     </ul>
   
 
   
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
-    </div>
-  
 </nav>
+
+
 
  </div>
     </header>
@@ -291,13 +284,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/08/10/关于瀑布流解决OOM问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -305,38 +308,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/08/10/关于瀑布流解决OOM问题/" itemprop="url">
-                  关于瀑布流解决OOM问题
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/08/10/关于瀑布流解决OOM问题/" itemprop="url">关于瀑布流解决OOM问题</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-10T14:36:01+08:00" content="2015-08-10">
-              2015-08-10
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-10T14:36:01+08:00">
+                2015-08-10
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
                     <span itemprop="name">android</span>
                   </a>
@@ -344,7 +351,6 @@
 
                 
                 
-
               
             </span>
           
@@ -352,33 +358,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/08/10/关于瀑布流解决OOM问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/10/关于瀑布流解决OOM问题/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/10/关于瀑布流解决OOM问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/08/10/关于瀑布流解决OOM问题/" class="leancloud_visitors" data-flag-title="关于瀑布流解决OOM问题">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -392,13 +405,18 @@
 借鉴  资源借鉴      //百度网盘里面有我借鉴的资源，可以下载来看一下
 自定义ScrollVi
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/08/10/关于瀑布流解决OOM问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -416,6 +434,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -427,13 +447,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -441,27 +471,27 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/" itemprop="url">
-                  关于Android Studio的Gradle文件配置的一些知识
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/" itemprop="url">关于Android Studio的Gradle文件配置的一些知识</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-10T14:17:05+08:00" content="2015-08-10">
-              2015-08-10
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-10T14:17:05+08:00">
+                2015-08-10
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -469,33 +499,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/10/关于Android-Studio的Gradle的配置的一些知识/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/10/关于Android-Studio的Gradle的配置的一些知识/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/" class="leancloud_visitors" data-flag-title="关于Android Studio的Gradle文件配置的一些知识">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -509,13 +546,18 @@
   我们需要在项目的build.gradle中android{} 根目录中添加：
 123456789
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/08/10/关于Android-Studio的Gradle的配置的一些知识/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -533,6 +575,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -544,13 +588,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/30/关于ViewPager的一些知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -558,38 +612,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/07/30/关于ViewPager的一些知识/" itemprop="url">
-                  关于ViewPager的一些知识
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/07/30/关于ViewPager的一些知识/" itemprop="url">关于ViewPager的一些知识</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-30T15:22:39+08:00" content="2015-07-30">
-              2015-07-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-30T15:22:39+08:00">
+                2015-07-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
                     <span itemprop="name">android</span>
                   </a>
@@ -597,7 +655,6 @@
 
                 
                 
-
               
             </span>
           
@@ -605,33 +662,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/07/30/关于ViewPager的一些知识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/30/关于ViewPager的一些知识/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/30/关于ViewPager的一些知识/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/07/30/关于ViewPager的一些知识/" class="leancloud_visitors" data-flag-title="关于ViewPager的一些知识">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -646,13 +710,18 @@
 方法一：
 123456789101112131415161718192021222
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/07/30/关于ViewPager的一些知识/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -670,6 +739,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -681,13 +752,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/30/自定义矩形、圆形等边框及相关知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -695,27 +776,27 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/07/30/自定义矩形、圆形等边框及相关知识/" itemprop="url">
-                  自定义矩形、圆形等边框及相关知识
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/07/30/自定义矩形、圆形等边框及相关知识/" itemprop="url">自定义矩形、圆形等边框及相关知识</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-30T12:31:27+08:00" content="2015-07-30">
-              2015-07-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-30T12:31:27+08:00">
+                2015-07-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -723,33 +804,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/07/30/自定义矩形、圆形等边框及相关知识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/30/自定义矩形、圆形等边框及相关知识/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/30/自定义矩形、圆形等边框及相关知识/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/07/30/自定义矩形、圆形等边框及相关知识/" class="leancloud_visitors" data-flag-title="自定义矩形、圆形等边框及相关知识">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -762,13 +850,18 @@
           需求一： 做一个一半矩形、一半圆形的边框，而且左边没有边框、其他上、右、下要有1像素的边框。
 123456789101112131415161718192021222324&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;layer-list xmlns
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/07/30/自定义矩形、圆形等边框及相关知识/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -786,6 +879,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -797,13 +892,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -811,27 +916,27 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/" itemprop="url">
-                  android将给定图片维持宽高比例缩放后，截取正中间的正方形部分
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/" itemprop="url">android将给定图片维持宽高比例缩放后，截取正中间的正方形部分</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-25T10:51:17+08:00" content="2015-07-25">
-              2015-07-25
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-25T10:51:17+08:00">
+                2015-07-25
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -839,33 +944,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/" class="leancloud_visitors" data-flag-title="android将给定图片维持宽高比例缩放后，截取正中间的正方形部分">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -879,13 +991,18 @@
 一、本地图片本地图片只需将图片转换为bitmap对象即可。
 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/**    * 将给定图片维持宽高比缩放后，截取正中间的正方形部分
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/07/25/android将给定图片维持宽高比例缩放后，截取正中间的正方形部分/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -903,6 +1020,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -914,13 +1033,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -928,27 +1057,27 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/" itemprop="url">
-                  开发Android壁纸:设置壁纸、设置锁屏心得
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/" itemprop="url">开发Android壁纸:设置壁纸、设置锁屏心得</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-23T18:32:44+08:00" content="2015-07-23">
-              2015-07-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-23T18:32:44+08:00">
+                2015-07-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -956,33 +1085,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/" class="leancloud_visitors" data-flag-title="开发Android壁纸:设置壁纸、设置锁屏心得">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -996,13 +1132,18 @@
 源码下载：这个我还没添加到github上，添加之后更改本位置的内容
 设置壁纸12345678910111213141516171819202122232425262728
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/07/23/开发Android壁纸-设置壁纸、设置锁屏心得/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1020,6 +1161,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1031,13 +1174,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -1045,27 +1198,27 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/" itemprop="url">
-                  Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/" itemprop="url">Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-23T18:31:10+08:00" content="2015-07-23">
-              2015-07-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-23T18:31:10+08:00">
+                2015-07-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1073,33 +1226,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/" class="leancloud_visitors" data-flag-title="Android自定义下拉刷新、上拉加载更多及PullToRefresh框架的用法">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -1111,13 +1271,18 @@
           
           一、首先Android Studio 如何集成PullToRefresh框架1234dependencies &#123;       compile 'com.loopeer.android.thirdparty.pulltorefresh:Android-PullToRefresh:2.1.1'
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/07/23/Android自定义下拉刷新、上拉加载更多及PullToRegresh框架的用法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1135,6 +1300,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1146,13 +1313,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/23/解决listview中每一项都有不同的布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -1160,38 +1337,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/07/23/解决listview中每一项都有不同的布局/" itemprop="url">
-                  解决listview中每一项都有不同的布局
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/07/23/解决listview中每一项都有不同的布局/" itemprop="url">解决listview中每一项都有不同的布局</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-23T18:29:27+08:00" content="2015-07-23">
-              2015-07-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-23T18:29:27+08:00">
+                2015-07-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
                     <span itemprop="name">android</span>
                   </a>
@@ -1199,7 +1380,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1207,33 +1387,40 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/07/23/解决listview中每一项都有不同的布局/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/解决listview中每一项都有不同的布局/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/解决listview中每一项都有不同的布局/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/07/23/解决listview中每一项都有不同的布局/" class="leancloud_visitors" data-flag-title="解决listview中每一项都有不同的布局">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -1250,13 +1437,18 @@ TYPE_1…是三种类型.
 在使用不同布局的时候,getItemViewType和getViewType不能少,一般是不用这两个函数的重载的
 123456789101
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/07/23/解决listview中每一项都有不同的布局/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1274,6 +1466,8 @@ TYPE_1…是三种类型.
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1285,13 +1479,23 @@ TYPE_1…是三种类型.
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/23/解决scrollview中嵌套listview、gridview的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -1299,27 +1503,27 @@ TYPE_1…是三种类型.
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/" itemprop="url">
-                  解决scrollview中嵌套listview、gridview的问题
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/" itemprop="url">解决scrollview中嵌套listview、gridview的问题</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-23T18:28:31+08:00" content="2015-07-23">
-              2015-07-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-23T18:28:31+08:00">
+                2015-07-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1327,33 +1531,40 @@ TYPE_1…是三种类型.
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/解决scrollview中嵌套listview、gridview的问题/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/解决scrollview中嵌套listview、gridview的问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/" class="leancloud_visitors" data-flag-title="解决scrollview中嵌套listview、gridview的问题">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -1366,13 +1577,18 @@ TYPE_1…是三种类型.
           出现的问题：   1.在SrollView中嵌套ListView，ListView的显示会有问题，只显示一行或显示效果与预期不同，这是因为android禁止这样使用，放入ScrollView中的ListView的高度是无法计算的。
    2.嵌套中的子ListView和GridvIew是无法滑动的，
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/07/23/解决scrollview中嵌套listview、gridview的问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1390,6 +1606,8 @@ TYPE_1…是三种类型.
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1401,13 +1619,23 @@ TYPE_1…是三种类型.
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/23/关于EditText的一些特别使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.J">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不忘初心 方得始终">
+    </span>
 
     
       <header class="post-header">
@@ -1415,38 +1643,42 @@ TYPE_1…是三种类型.
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/07/23/关于EditText的一些特别使用/" itemprop="url">
-                  关于EditText的一些特别使用
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/07/23/关于EditText的一些特别使用/" itemprop="url">关于EditText的一些特别使用</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-23T17:59:26+08:00" content="2015-07-23">
-              2015-07-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-23T17:59:26+08:00">
+                2015-07-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
                     <span itemprop="name">android</span>
                   </a>
@@ -1454,7 +1686,6 @@ TYPE_1…是三种类型.
 
                 
                 
-
               
             </span>
           
@@ -1462,33 +1693,40 @@ TYPE_1…是三种类型.
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/07/23/关于EditText的一些特别使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/关于EditText的一些特别使用/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/关于EditText的一些特别使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
              <span id="/2015/07/23/关于EditText的一些特别使用/" class="leancloud_visitors" data-flag-title="关于EditText的一些特别使用">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -1502,12 +1740,13 @@ TYPE_1…是三种类型.
 解决办法：   在布局文件中，在这个EditText组件的父view中添加
 1234567891011121314151617181920     
           ...
-
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2015/07/23/关于EditText的一些特别使用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1520,7 +1759,13 @@ TYPE_1…是三种类型.
       
     </div>
 
+    <div>
+      
+    </div>
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -1568,25 +1813,32 @@ TYPE_1…是三种类型.
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
                alt="Mr.J" />
           <p class="site-author-name" itemprop="name">Mr.J</p>
-          <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
+           
+              <p class="site-description motion-element" itemprop="description">不忘初心,方得始终</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">51</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -1594,8 +1846,10 @@ TYPE_1…是三种类型.
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -1618,6 +1872,15 @@ TYPE_1…是三种类型.
                 </a>
               </span>
             
+              <span class="links-of-author-item">
+                <a href="https://www.xiaolei0808.com" target="_blank" title="Mr.King's Blog">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Mr.King's Blog
+                </a>
+              </span>
+            
           
         </div>
 
@@ -1629,27 +1892,24 @@ TYPE_1…是三种类型.
           <div class="links-of-blogroll motion-element links-of-blogroll-inline">
             <div class="links-of-blogroll-title">
               <i class="fa  fa-fw fa-globe"></i>
-              友情链接
+              
             </div>
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://xiaolei0808.com/" title="MrKing’s Blog" target="_blank">MrKing’s Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://androidcat.com/?step=1&view=CatFragment" title="AndoidCat" target="_blank">AndoidCat</a>
+                  <a href="http://www.jikedaohang.com/#part2" title="极客导航" target="_blank">极客导航</a>
                 </li>
               
             </ul>
           </div>
         
 
+        
+
+
       </section>
+
+      
 
       
 
@@ -1663,7 +1923,7 @@ TYPE_1…是三种类型.
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+         <div class="copyright" >
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
@@ -1671,11 +1931,12 @@ TYPE_1…是三种类型.
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mr.J</span>
-  <span>&nbsp&nbsp|&nbsp&nbsp<a href="/baidusitemap.xml">百度网站地图</a></span>
+  &nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="/baidusitemap.xml">百度网站地图</a></span>
 </div>
 
+
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
@@ -1683,28 +1944,31 @@ TYPE_1…是三种类型.
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
-<span id="busuanzi_container_page_pv">
-    &nbsp&nbsp|&nbsp&nbsp本页点击<span id="busuanzi_value_page_pv"></span>次
-  </span>
-  <span id="busuanzi_container_site_pv">
-    &nbsp&nbsp|&nbsp&nbsp本站总访问量<span id="busuanzi_value_site_pv"></span>次
-  </span>
-  <span id="busuanzi_container_site_uv">
-  &nbsp&nbsp|&nbsp&nbsp你是第<span id="busuanzi_value_site_uv"></span>位访客
-  </span>
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
+
+&nbsp;&nbsp;|&nbsp;&nbsp;本页点击 <span id="busuanzi_value_page_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;本站总点击 <span id="busuanzi_value_site_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+
+
+
+
         
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1723,47 +1987,65 @@ TYPE_1…是三种类型.
 
 
 
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
 
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
   
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
 
 
 
@@ -1788,7 +2070,8 @@ TYPE_1…是三种类型.
 
   
     
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
     <script src="/js/src/hook-duoshuo.js"></script>
   
 
@@ -1797,138 +2080,21 @@ TYPE_1…是三种类型.
 
 
 
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-       search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
 
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
 
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-    'use strict';
-    $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-            // get the contents from search data
-            isfetched = true;
-            $('.popup').detach().appendTo('.header-inner');
-            var datas = $( "entry", xmlResponse ).map(function() {
-                return {
-                    title: $( "title", this ).text(),
-                    content: $("content",this).text(),
-                    url: $( "url" , this).text()
-                };
-            }).get();
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function(){
-                var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';                
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length > 1) {
-                // perform local searching
-                datas.forEach(function(data) {
-                    var isMatch = true;
-                    var content_index = [];
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                    var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if(data_title != '' && data_content != '') {
-                        keywords.forEach(function(keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
-                            if( index_title < 0 && index_content < 0 ){
-                                isMatch = false;
-                            } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                            }
-                        });
-                    }
-                    // show search results
-                    if (isMatch) {
-                        matchcounts += 1;
-                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                        var content = data.content.trim().replace(/<[^>]+>/g,"");
-                        if (first_occur >= 0) {
-                            // cut out 100 characters
-                            var start = first_occur - 20;
-                            var end = first_occur + 80;
-                            if(start < 0){
-                                start = 0;
-                            }
-                            if(start == 0){
-                                end = 50;
-                            }
-                            if(end > content.length){
-                                end = content.length;
-                            }
-                            var match_content = content.substring(start, end);
-                            // highlight all keywords
-                            keywords.forEach(function(keyword){
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                            });
-                            
-                            str += "<p class=\"search-result\">" + match_content +"...</p>"
-                        }
-                        str += "</li>";
-                    }
-                })};
-                str += "</ul>";
-                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-                $resultContent.innerHTML = str;
-            });
-            proceedsearch();
-        }
-    });}
 
-    // handle and trigger popup window;
-    $('.popup-trigger').mousedown(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
 
-    });
 
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
+
+
+
+
 
   
+
+
+
+
 
   
 
@@ -2038,6 +2204,12 @@ TYPE_1…是三种类型.
   </script>
 
 
+
+  
+
+  
+
+  
 
   
 

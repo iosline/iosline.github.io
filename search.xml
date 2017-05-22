@@ -21,26 +21,30 @@
       <content type="html"><![CDATA[<p>现在android项目基本都在使用Android Studio进行开发，使用一些开源的第三方库来快速开发在所难免，好多库都替代了传统的导入库的方式，使用流行方便的gradle方式，直接在app的build.gradle引入，非常方便快捷。</p>
 <p>但是在引入多个库的同时，会出现一些异常，今天就<b>重复依赖</b>怎么解决做一个总结。</p>
 <h4 id="重复依赖"><a href="#重复依赖" class="headerlink" title="重复依赖"></a>重复依赖</h4><p>什么是重复依赖？当使用gradle导入依赖时，可能会出现不同的依赖包含了同一个jar，在编译期间不会报错。可一旦run app的时候，就会报。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Error:Execution failed <span class="keyword">for</span> task <span class="string">':app:transformClassesWithJarMergingForDebug'</span>.</div><div class="line">&gt; com.android.build.api.transform.TransformException: java.util.zip.ZipException: duplicate entry: okhttp3/Address.class</div></pre></td></tr></table></figure>
-<p>TransformException 重复依赖了okhttp这个jar包。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Error:Execution failed <span class="keyword">for</span> task <span class="string">':app:transformClassesWithJarMergingForDebug'</span>.</div><div class="line">&gt; com.android.build.api.transform.TransformException: java.util.zip.ZipException: duplicate entry: com/google/gson/annotations/Expose.class</div></pre></td></tr></table></figure>
+<p>TransformException 重复依赖了gson这个jar包。</p>
 <p>解决的方法是在<b>引入依赖的时候把相同的jar去除掉</b>。</p>
 <p>下面是咱的依赖：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:</span></div><div class="line">compile <span class="string">'cn.bmob.android:bmob-sdk:3.5.0'</span></div><div class="line"><span class="comment">//如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)</span></div><div class="line">compile <span class="string">'cn.bmob.android:http-legacy:1.0'</span></div><div class="line">compile <span class="string">'com.qiniu:qiniu-android-sdk:7.3.+'</span></div></pre></td></tr></table></figure>
-<p>这是我们可以发现，okhttp3/<b>Address.class</b></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:</span></div><div class="line">compile <span class="string">'cn.bmob.android:bmob-sdk:3.5.0'</span></div><div class="line"><span class="comment">//如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)</span></div><div class="line">compile <span class="string">'cn.bmob.android:http-legacy:1.0'</span></div><div class="line">compile (<span class="string">'com.squareup.retrofit2:retrofit:2.1.0'</span>)</div><div class="line">compile (<span class="string">'com.squareup.retrofit2:converter-gson:2.1.0'</span>)</div></pre></td></tr></table></figure>
+<p>这是我们可以发现，gson/<b> Expose.class </b></p>
 <p>我们可以通过Search Everywhere去定位这个类（默认快捷键是双击shift）。</p>
-<p><img src="http://7xl32g.com1.z0.glb.clouddn.com/45CD60D8-E352-405E-89AE-AD758C0C1AC1.png"></p>
-<p>通过搜索的确发现了两个一模一样的类,而且来自不同的依赖,而重复的类库正是okhttp.</p>
-<p>Bmob移动云Sdk引入了okhttp,七牛云存储也同样的引入了okhttp.</p>
+<p><img src="http://7xl32g.com1.z0.glb.clouddn.com/E0C18222-0EB6-45B4-A1DD-BD8E4AC96D42.png"></p>
+<p>通过搜索的确发现了两个一模一样的类,而且来自不同的依赖,而重复的类库正是gson.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.squareup.retrofit2:converter-gson:2.1.0'</span></div></pre></td></tr></table></figure>
+<p>Bmob移动云Sdk引入了gson,retrofit也同样的引入了gson.</p>
 <p>找到问题的根源的。那我们现在如何去除相同的类库呢?</p>
 <h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><p>在AS中，选择以project显示项目，找到最下面的External Libraries，然后继续找，找到相对应的类库</p>
-<p><img src="http://7xl32g.com1.z0.glb.clouddn.com/3C3B122D-154D-4ED5-942D-01CB04409D4A.png"></p>
-<p>找到artifactId为okhttp的引用，找到groupId,去除groupId的依赖。(此处artifactId为parent,是因为在okhttp.jar包找到了)</p>
+<p><img src="http://7xl32g.com1.z0.glb.clouddn.com/D3D40050-C742-4D55-AB06-101BEDD94998.png"></p>
+<p>如图依次点开之后发现了一个pom.xml，这里面就是关于这个jar的一些配置文件</p>
+<p>找到artifactId为gson的引用，找到groupId,去除groupId的依赖。</p>
 <p>这个就是导致报错的直接原因。复制里面groupId，到你的app的build.gradle里，找到那个依赖，添加</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; exclude group: <span class="string">'com.squareup.okhttp3'</span> &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; exclude group: <span class="string">'com.google.code.gson'</span> &#125;</div></pre></td></tr></table></figure>
 <p>把这个groudId的引用去除掉.</p>
 <p>最后的情况如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">compile(<span class="string">'com.qiniu:qiniu-android-sdk:7.3.+'</span>)</div><div class="line">        &#123; exclude group: <span class="string">'com.squareup.okhttp3'</span> &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">compile (<span class="string">'com.squareup.retrofit2:converter-gson:2.1.0'</span>)</div><div class="line">        &#123;exclude group: <span class="string">'com.google.code.gson'</span>&#125;</div></pre></td></tr></table></figure>
 <p>到此问题就解决了，如果你有多个重复依赖的话，就按照本文所给出的方法，一个一个去重。</p>
+<p>一个引用同时牵扯其他多个重复依赖的话，这样做：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">compile (<span class="string">'com.squareup.retrofit2:converter-gson:2.1.0'</span>)</div><div class="line">        &#123;exclude group: <span class="string">'com.google.code.gson'</span></div><div class="line">         exclude group: <span class="string">'com.squareup.okhttp3'</span>&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
