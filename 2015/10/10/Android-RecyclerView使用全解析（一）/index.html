@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/hor_gridview.gif">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/pull.png">
 <meta property="og:image" content="http://7xl32g.com1.z0.glb.clouddn.com/pull_animator.gif">
-<meta property="og:updated_time" content="2017-05-25T03:25:19.000Z">
+<meta property="og:updated_time" content="2017-05-25T03:53:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android RecyclerView使用全解析">
 <meta name="twitter:description" content="一、概述整体上看RecyclerView架构，提供了一种插拔式的体验，高度的解耦，异常的灵活，通过设置它提供的不同LayoutManager，ItemDecoration , ItemAnimator实现令人瞠目的效果。
@@ -299,7 +299,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.J">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -433,7 +433,7 @@
 <p>主要在getItemOffsets方法中，去判断如果是最后一行，则不需要绘制底部；如果是最后一列，则不需要绘制右边，整个判断也考虑到了StaggeredGridLayoutManager的横向和纵向，所以稍稍有些复杂。最重要还是去理解，如何绘制什么的不重要。一般如果仅仅是希望有空隙，还是去设置item的margin方便。</p>
 <p><img src="http://7xl32g.com1.z0.glb.clouddn.com/gridview.png" width="300dp" height="500dp"></p>
 <h5 id="StaggeredGridLayoutMnager"><a href="#StaggeredGridLayoutMnager" class="headerlink" title="StaggeredGridLayoutMnager"></a>StaggeredGridLayoutMnager</h5><p>瀑布流式的布局，其实他可以实现GridLayoutManager一样的功能，仅仅按照下列代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mRecyclerView.setLayoutManager(new GridLayoutManager(this,4));</span></div><div class="line">   mRecyclerView.setLayoutManager(<span class="keyword">new</span> StaggeredGridLayoutManager(<span class="number">4</span>,        StaggeredGridLayoutManager.VERTICAL));</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mRecyclerView.setLayoutManager(new GridLayoutManager(this,4));</span></div><div class="line">   mRecyclerView.setLayoutManager(<span class="keyword">new</span> StaggeredGridLayoutManager(<span class="number">4</span>,        StaggeredGridLayoutManager.VERTICAL));</div><div class="line">   layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);<span class="comment">//可防止Item切换</span></div></pre></td></tr></table></figure>
 <p>这两种写法显示的效果是一致的，但是注意StaggeredGridLayoutManager构造的第二个参数传一个orientation，如果传入的是StaggeredGridLayoutManager.VERTICAL代表有多少列；那么传入的如果是StaggeredGridLayoutManager.HORIZONTAL就代表有多少行，比如本例如果改为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mRecyclerView.setLayoutManager(<span class="keyword">new</span> StaggeredGridLayoutManager(<span class="number">4</span>,</div><div class="line">        StaggeredGridLayoutManager.HORIZONTAL));</div></pre></td></tr></table></figure>
 <p>可以看到，固定为4行，变成了左右滑动。有一点需要注意，如果是横向的时候，item的宽度需要注意去设置，毕竟横向的宽度没有约束了，应为控件可以横向滚动了。<br>如果你需要一样横向滚动的GridView，那么恭喜你。</p>
@@ -603,7 +603,7 @@ http://blog.csdn.net/lmj623565791" target="_blank" rel="external">【张鸿洋�
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
+               src="/images/avatar.png"
                alt="Mr.J" />
           <p class="site-author-name" itemprop="name">Mr.J</p>
            
