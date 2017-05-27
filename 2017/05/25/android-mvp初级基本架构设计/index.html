@@ -116,7 +116,7 @@ MVC(model-view-controller)model主要负责数据的获取本地或网络及相�
     fancybox: false,
     motion: true,
     duoshuo: {
-      userId: '0',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
@@ -330,16 +330,6 @@ MVC(model-view-controller)model主要负责数据的获取本地或网络及相�
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/25/android-mvp初级基本架构设计/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/25/android-mvp初级基本架构设计/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -442,6 +432,10 @@ MVC(model-view-controller)model主要负责数据的获取本地或网络及相�
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/05/26/设计模式系列之-Builder模式/" rel="prev" title="设计模式系列之--Builder模式">
+                设计模式系列之--Builder模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -472,9 +466,7 @@ MVC(model-view-controller)model主要负责数据的获取本地或网络及相�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/05/25/android-mvp初级基本架构设计/"
-           data-title="android mvp初级基本架构设计" data-url="http://yoursite.com/2017/05/25/android-mvp初级基本架构设计/">
-      </div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -522,7 +514,7 @@ MVC(model-view-controller)model主要负责数据的获取本地或网络及相�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -535,7 +527,7 @@ MVC(model-view-controller)model主要负责数据的获取本地或网络及相�
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -756,34 +748,39 @@ MVC(model-view-controller)model主要负责数据的获取本地或网络及相�
 
   
 
+
   
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2134296"></script>
+      <!-- UY END -->
     
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"51uptech"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
+
+
+
 
   
-
-
-
-
-
-
-
-
-
-
 
 
 
